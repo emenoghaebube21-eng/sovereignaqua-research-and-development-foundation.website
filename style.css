@@ -91,3 +91,32 @@ margin-bottom:15px;
 .program-card h3{
 margin-top:10px;
   }
+.global-outreach{
+padding:60px 20px;
+text-align:center;
+background:#ffffff;
+}
+
+.global-outreach img{
+max-width:800px;
+width:100%;
+margin-top:20px;
+}
+
+.research{
+padding:60px 20px;
+text-align:center;
+background:#f7f7f7;
+}
+
+.footer{
+background:#0a3d62;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.footer-content{
+max-width:800px;
+margin:auto;
+}
