@@ -1,7 +1,7 @@
 index.html
 style.css
 images/
-   water.jpg
-   environment.jpg
-   humanitarian.jpg
+assets/images/Water.jpg
+assets/images/Humanitarian.jpg
+assets/images/Environmental.jpg
 world-map-political.jpg
