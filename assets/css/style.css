@@ -23,6 +23,46 @@ section {
 padding: 40px;
 max-width: 900px;
 margin: auto;
+  .donation-box {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 700px;
+  padding: 40px 20px;
+  background: #f5f9fc;
+  border-radius: 12px;
+}
+
+.donation-box h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.donation-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.btn-monthly {
+  background: #28a745;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.btn-monthly:hover {
+  background: #218838;
+}
+
+.small-text {
+  font-size: 13px;
+  color: #666;
+  margin-top: 15px;
+}
 }
 
 footer {
