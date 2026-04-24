@@ -279,3 +279,11 @@ margin:auto;
 .nav-links a:hover {
   color: #1e90ff;
 }
+.card {
+  width: 350px;
+  padding: 20px;
+  background: #0b1c2c;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
