@@ -1,6 +1,1286 @@
-<h1>Mission</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SovereignAqua Foundation | Research & Innovation Division</title>
+
+<meta name="description"
+content="SovereignAqua Research & Development Foundation scientific research systems, sustainability innovation programs, environmental analytics, engineering studies, and global development initiatives.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+
+font-family:'Inter', sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#140021,
+#1f0030,
+#0d0018
+);
+
+overflow-x:hidden;
+
+color:white;
+}
+
+/* =========================================================
+   COSMIC BACKGROUND
+========================================================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at top left,
+rgba(179,0,255,0.12),
+transparent 35%),
+
+radial-gradient(circle at bottom right,
+rgba(0,255,255,0.10),
+transparent 40%),
+
+radial-gradient(circle at center,
+rgba(255,255,255,0.03),
+transparent 50%);
+
+z-index:-5;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:22px 60px;
+
+background:
+rgba(10,0,18,0.72);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+
+z-index:9999;
+}
+
+.logo{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:30px;
+
+background:
+linear-gradient(
+90deg,
+#ff7bff,
+#7fe7ff,
+#b300ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:15px;
+
+transition:0.3s;
+}
+
+.nav-links a:hover{
+
+color:#ff7bff;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.research-hero{
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+padding:0 40px;
+}
+
+/* Background Video */
+
+.research-hero video{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+z-index:-4;
+}
+
+/* Overlay */
+
+.research-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,0.75),
+rgba(15,0,25,0.94)
+);
+
+z-index:-3;
+}
+
+/* Futuristic Grid */
+
+.research-hero::after{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+background-size:70px 70px;
+
+z-index:-2;
+}
+
+/* Hero Content */
+
+.hero-content{
+
+max-width:1300px;
+
+text-align:center;
+
+z-index:20;
+}
+
+.hero-subtitle{
+
+display:inline-block;
+
+padding:12px 28px;
+
+border-radius:50px;
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(14px);
+
+font-size:14px;
+
+letter-spacing:1.5px;
+
+text-transform:uppercase;
+
+margin-bottom:28px;
+
+color:#ff9cff;
+}
+
+/* Hero Heading */
+
+.hero-content h1{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:88px;
+
+line-height:1.05;
+
+margin-bottom:32px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#ff9cff,
+#7fe7ff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 35px rgba(179,0,255,0.22);
+}
+
+/* Hero Text */
+
+.hero-content p{
+
+font-size:22px;
+
+line-height:2;
+
+max-width:1080px;
+
+margin:auto;
+
+color:#e8dcf5;
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+margin-top:50px;
+
+display:flex;
+justify-content:center;
+gap:22px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+
+padding:18px 36px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:0.4s;
+}
+
+.btn-primary{
+
+background:
+linear-gradient(
+135deg,
+#b300ff,
+#0077ff
+);
+
+color:white;
+
+box-shadow:
+0 0 35px rgba(179,0,255,0.25);
+}
+
+.btn-primary:hover{
+
+transform:translateY(-4px);
+}
+
+.btn-secondary{
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(14px);
+
+color:white;
+}
+
+.btn-secondary:hover{
+
+background:
+rgba(255,255,255,0.10);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section{
+
+padding:120px 40px;
+}
+
+.container{
+
+max-width:1400px;
+
+margin:auto;
+}
+
+/* Titles */
+
+.section-title{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:60px;
+
+text-align:center;
+
+margin-bottom:30px;
+
+background:
+linear-gradient(
+90deg,
+#ff9cff,
+#7fe7ff,
+#ff9cff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-description{
+
+font-size:21px;
+
+line-height:2;
+
+max-width:1150px;
+
+margin:auto;
+
+text-align:center;
+
+color:#e4d8f1;
+}
+
+/* =========================================================
+   RESEARCH GRID
+========================================================= */
+
+.research-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(360px,1fr));
+
+gap:40px;
+
+margin-top:80px;
+}
+
+/* Research Card */
+
+.research-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:32px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.02)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+transition:0.5s;
+
+box-shadow:
+0 0 40px rgba(0,0,0,0.35);
+}
+
+.research-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 40px rgba(179,0,255,0.22);
+}
+
+/* Top Glow */
+
+.research-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:6px;
+
+background:
+linear-gradient(
+90deg,
+#b300ff,
+#7fe7ff
+);
+}
+
+/* Content */
+
+.research-content{
+
+padding:40px;
+}
+
+/* Icon */
+
+.research-icon{
+
+width:90px;
+height:90px;
+
+border-radius:24px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:38px;
+
+background:
+linear-gradient(
+135deg,
+#b300ff,
+#0077ff
+);
+
+margin-bottom:28px;
+
+box-shadow:
+0 0 25px rgba(179,0,255,0.25);
+}
+
+/* Heading */
+
+.research-content h3{
+
+font-size:34px;
+
+margin-bottom:22px;
+
+color:#ff9cff;
+}
+
+/* Text */
+
+.research-content p{
+
+font-size:17px;
+
+line-height:2;
+
+color:#e4d8f1;
+}
+
+/* =========================================================
+   LAB PANEL
+========================================================= */
+
+.lab-panel{
+
+margin-top:100px;
+
+padding:70px;
+
+border-radius:36px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 45px rgba(0,0,0,0.35);
+}
+
+/* Lab Grid */
+
+.lab-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:60px;
+}
+
+/* Lab Card */
+
+.lab-card{
+
+padding:30px;
+
+border-radius:24px;
+
+background:
+rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.06);
+
+transition:0.4s;
+}
+
+.lab-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 0 30px rgba(179,0,255,0.15);
+}
+
+.lab-card h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+color:#7fe7ff;
+}
+
+.lab-card p{
+
+font-size:16px;
+
+line-height:1.9;
+}
+
+/* =========================================================
+   FUTURE PANEL
+========================================================= */
+
+.future-panel{
+
+margin-top:100px;
+
+padding:90px 60px;
+
+border-radius:40px;
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+rgba(179,0,255,0.14),
+rgba(0,119,255,0.10)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 0 50px rgba(179,0,255,0.18);
+}
+
+.future-panel h2{
+
+font-size:56px;
+
+margin-bottom:28px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#ff9cff,
+#7fe7ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.future-panel p{
+
+font-size:20px;
+
+line-height:2;
+
+max-width:1000px;
+
+margin:auto;
+
+color:#f0e6fa;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+padding:90px 40px;
+
+text-align:center;
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,0.03),
+rgba(255,255,255,0.01)
+);
+
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer h2{
+
+font-size:42px;
+
+margin-bottom:22px;
+
+color:#ff9cff;
+}
+
+footer p{
+
+font-size:17px;
+
+line-height:1.9;
+
+max-width:900px;
+
+margin:auto;
+
+color:#e4d8f1;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+.hero-content h1{
+font-size:58px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+padding:18px 20px;
+
+flex-direction:column;
+
+gap:18px;
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+}
+
+.hero-content h1{
+font-size:44px;
+}
+
+.section-title{
+font-size:42px;
+}
+
+.lab-panel,
+.future-panel{
+padding:35px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+<div class="logo">
+SOVEREIGNAQUA
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="mission.html">Mission</a>
+<a href="projects.html">Projects</a>
+<a href="research.html">Research</a>
+<a href="governance.html">Governance</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section class="research-hero">
+
+<video autoplay muted loop playsinline>
+<source src="assets/videos/sovereignaqua-bg.mp4" type="video/mp4">
+</video>
+
+<div class="hero-content">
+
+<div class="hero-subtitle">
+
+Advanced Scientific Systems • Sustainability Analytics • Innovation Research
+
+</div>
+
+<h1>
+
+Research & Innovation Ecosystem
+
+</h1>
 
 <p>
-SovereignAqua Foundation advances sustainable infrastructure
-research and environmental stewardship initiatives worldwide.
+
+The SovereignAqua Research & Development Foundation maintains
+an advanced multidisciplinary research ecosystem integrating
+scientific innovation,
+environmental analytics,
+water infrastructure engineering,
+sustainability modeling,
+humanitarian systems research,
+and strategic technological development initiatives designed
+to support scalable long-term global sustainability solutions.
+
 </p>
+
+<div class="hero-buttons">
+
+<a href="#research-programs" class="btn-primary">
+Explore Research Programs
+</a>
+
+<a href="#future-systems" class="btn-secondary">
+Future Innovation Systems
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH PROGRAMS
+========================================================= -->
+
+<section class="section" id="research-programs">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Advanced Research Divisions
+
+</h2>
+
+<p class="section-description">
+
+The Foundation’s research ecosystem integrates specialized
+scientific divisions and analytical development systems supporting
+sustainability engineering,
+environmental restoration,
+infrastructure innovation,
+resource optimization,
+humanitarian operational analytics,
+and advanced interdisciplinary research initiatives.
+
+</p>
+
+
+<div class="research-grid">
+
+<!-- CARD 1 -->
+
+<div class="research-card">
+
+<div class="research-content">
+
+<div class="research-icon">
+🧪
+</div>
+
+<h3>
+Water Systems Engineering Research
+</h3>
+
+<p>
+
+Focused on advanced water purification technologies,
+sustainable infrastructure systems,
+resource distribution optimization,
+water quality analytics,
+filtration innovation,
+and scalable engineering frameworks supporting
+long-term water security development initiatives.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CARD 2 -->
+
+<div class="research-card">
+
+<div class="research-content">
+
+<div class="research-icon">
+🌐
+</div>
+
+<h3>
+Environmental Analytics & Sustainability Modeling
+</h3>
+
+<p>
+
+Supports ecological analysis systems,
+climate resilience forecasting,
+environmental sustainability modeling,
+resource conservation analytics,
+ecosystem impact research,
+and sustainability performance assessment frameworks
+through multidisciplinary environmental research operations.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CARD 3 -->
+
+<div class="research-card">
+
+<div class="research-content">
+
+<div class="research-icon">
+⚡
+</div>
+
+<h3>
+Renewable Infrastructure Innovation
+</h3>
+
+<p>
+
+Advancing renewable energy integration systems,
+sustainable infrastructure engineering,
+hybrid operational technologies,
+resource efficiency optimization,
+and resilient infrastructure development models
+through strategic engineering innovation research.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CARD 4 -->
+
+<div class="research-card">
+
+<div class="research-content">
+
+<div class="research-icon">
+📡
+</div>
+
+<h3>
+Humanitarian Systems Intelligence
+</h3>
+
+<p>
+
+Developing humanitarian logistics analytics,
+deployment coordination systems,
+emergency response optimization models,
+resource allocation frameworks,
+and strategic humanitarian operational intelligence
+supporting international outreach initiatives.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CARD 5 -->
+
+<div class="research-card">
+
+<div class="research-content">
+
+<div class="research-icon">
+🛰️
+</div>
+
+<h3>
+Global Infrastructure Monitoring
+</h3>
+
+<p>
+
+Research focused on infrastructure performance analytics,
+regional sustainability monitoring systems,
+environmental observation frameworks,
+operational risk assessment models,
+and long-term infrastructure resilience planning strategies.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CARD 6 -->
+
+<div class="research-card">
+
+<div class="research-content">
+
+<div class="research-icon">
+🔬
+</div>
+
+<h3>
+Scientific Innovation Laboratory
+</h3>
+
+<p>
+
+An interdisciplinary innovation platform supporting
+scientific experimentation,
+prototype development,
+technology integration systems,
+research collaboration networks,
+and sustainability-driven analytical innovation frameworks.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     LAB FRAMEWORK
+========================================================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="lab-panel">
+
+<h2 class="section-title">
+
+Research Infrastructure Framework
+
+</h2>
+
+<p class="section-description">
+
+The Foundation’s research architecture integrates operational laboratories,
+data analytics systems,
+engineering development platforms,
+environmental intelligence frameworks,
+and collaborative scientific innovation programs supporting
+long-term institutional sustainability and infrastructure advancement.
+
+</p>
+
+
+<div class="lab-grid">
+
+<div class="lab-card">
+
+<h3>
+Analytical Research Laboratories
+</h3>
+
+<p>
+
+Supporting environmental testing,
+water quality assessment,
+engineering experimentation,
+sustainability diagnostics,
+and multidisciplinary infrastructure analysis systems.
+
+</p>
+
+</div>
+
+
+<div class="lab-card">
+
+<h3>
+Global Research Partnerships
+</h3>
+
+<p>
+
+Coordinating collaborative scientific relationships with
+universities,
+engineering institutions,
+development agencies,
+and sustainability research organizations.
+
+</p>
+
+</div>
+
+
+<div class="lab-card">
+
+<h3>
+Data Intelligence Systems
+</h3>
+
+<p>
+
+Maintaining sustainability data frameworks,
+operational analytics systems,
+infrastructure monitoring intelligence,
+and environmental forecasting platforms.
+
+</p>
+
+</div>
+
+
+<div class="lab-card">
+
+<h3>
+Innovation Development Programs
+</h3>
+
+<p>
+
+Advancing prototype engineering,
+technology experimentation,
+renewable systems integration,
+and future sustainability infrastructure initiatives.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FUTURE SYSTEMS
+========================================================= -->
+
+<section class="section" id="future-systems">
+
+<div class="container">
+
+<div class="future-panel">
+
+<h2>
+
+Future Scientific Development Systems
+
+</h2>
+
+<p>
+
+The SovereignAqua Research & Development Foundation continues
+to expand its multidisciplinary innovation ecosystem through
+advanced sustainability engineering,
+artificial intelligence-supported environmental analytics,
+renewable infrastructure systems,
+humanitarian logistics intelligence,
+and scalable scientific development frameworks designed
+to strengthen long-term ecological resilience
+and sustainable global infrastructure advancement.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<h2>
+
+SovereignAqua Research & Development Foundation
+
+</h2>
+
+<p>
+
+Advancing scientific innovation,
+environmental intelligence systems,
+infrastructure engineering,
+sustainability analytics,
+and multidisciplinary research initiatives
+through strategic collaboration and global development frameworks.
+
+</p>
+
+<p style="margin-top:25px;">
+
+Info@sovereignaquaresearchanddevelopmentfoundation.org
+
+</p>
+
+<p style="
+margin-top:28px;
+font-size:14px;
+opacity:0.75;
+">
+
+© 2026 SovereignAqua Research & Development Foundation.
+All Rights Reserved.
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
