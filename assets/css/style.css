@@ -40,7 +40,481 @@
 /* =========================
    GLOBAL RESET
 ========================= */
+/* =========================================================
+   CINEMATIC 4K HOME HERO SYSTEM
+========================================================= */
 
+.research-hero{
+
+position:relative;
+
+height:120vh;
+
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:0 50px;
+
+perspective:1800px;
+}
+
+/* =========================================================
+   VIDEO BACKGROUND
+========================================================= */
+
+.research-hero video{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+width:110%;
+height:110%;
+
+object-fit:cover;
+
+transform:
+translate(-50%,-50%)
+scale(1.08);
+
+animation:
+cinematicZoom 18s ease-in-out infinite alternate;
+
+filter:
+brightness(0.35)
+contrast(1.2)
+saturate(1.25);
+
+z-index:-6;
+}
+
+/* =========================================================
+   DARK CINEMATIC OVERLAY
+========================================================= */
+
+.research-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(0,0,0,0.70),
+rgba(4,8,20,0.92)
+),
+
+radial-gradient(circle at top left,
+rgba(0,240,255,0.08),
+transparent 35%),
+
+radial-gradient(circle at bottom right,
+rgba(122,0,255,0.12),
+transparent 35%);
+
+z-index:-5;
+}
+
+/* =========================================================
+   FUTURISTIC GRID
+========================================================= */
+
+.research-hero::after{
+
+content:"";
+
+position:absolute;
+
+width:140%;
+height:140%;
+
+top:-20%;
+left:-20%;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+);
+
+background-size:90px 90px;
+
+transform:
+rotateX(70deg)
+translateY(180px)
+scale(1.5);
+
+animation:gridMove 18s linear infinite;
+
+opacity:0.5;
+
+z-index:-4;
+}
+
+/* =========================================================
+   FLOATING ORBS
+========================================================= */
+
+.light-orb{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(80px);
+
+opacity:0.5;
+
+mix-blend-mode:screen;
+
+animation:floatOrb 10s ease-in-out infinite;
+}
+
+.orb-one{
+
+width:500px;
+height:500px;
+
+background:
+rgba(0,240,255,0.20);
+
+top:10%;
+left:-10%;
+}
+
+.orb-two{
+
+width:420px;
+height:420px;
+
+background:
+rgba(122,0,255,0.18);
+
+bottom:-5%;
+right:-10%;
+
+animation-delay:3s;
+}
+
+.orb-three{
+
+width:280px;
+height:280px;
+
+background:
+rgba(255,0,229,0.18);
+
+top:45%;
+right:20%;
+
+animation-delay:6s;
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+position:relative;
+
+max-width:1350px;
+
+text-align:center;
+
+z-index:10;
+
+transform-style:preserve-3d;
+
+animation:heroFloat 7s ease-in-out infinite;
+}
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.hero-subtitle{
+
+display:inline-block;
+
+padding:14px 30px;
+
+margin-bottom:35px;
+
+border-radius:60px;
+
+background:
+rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.10);
+
+backdrop-filter:blur(18px);
+
+font-size:14px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#00f0ff;
+
+box-shadow:
+0 0 25px rgba(0,240,255,0.14);
+}
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero-content h1{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:105px;
+
+line-height:1.02;
+
+margin-bottom:35px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00f0ff,
+#7a00ff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+
+0 0 30px rgba(0,240,255,0.20),
+
+0 0 70px rgba(122,0,255,0.15);
+}
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-content p{
+
+font-size:22px;
+
+line-height:2.1;
+
+max-width:1100px;
+
+margin:auto;
+
+color:#dce8ff;
+}
+
+/* =========================================================
+   BUTTON SYSTEM
+========================================================= */
+
+.hero-buttons{
+
+margin-top:55px;
+
+display:flex;
+justify-content:center;
+gap:24px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+
+padding:18px 40px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:0.4s;
+}
+
+/* PRIMARY */
+
+.btn-primary{
+
+background:
+linear-gradient(
+135deg,
+#00f0ff,
+#0077ff
+);
+
+color:white;
+
+box-shadow:
+0 0 35px rgba(0,240,255,0.22);
+}
+
+.btn-primary:hover{
+
+transform:translateY(-5px);
+}
+
+/* SECONDARY */
+
+.btn-secondary{
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(16px);
+
+color:white;
+}
+
+.btn-secondary:hover{
+
+background:
+rgba(255,255,255,0.10);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cinematicZoom{
+
+0%{
+
+transform:
+translate(-50%,-50%)
+scale(1.05);
+}
+
+100%{
+
+transform:
+translate(-50%,-50%)
+scale(1.15);
+}
+
+}
+
+@keyframes gridMove{
+
+0%{
+
+transform:
+rotateX(70deg)
+translateY(180px)
+translateX(0);
+}
+
+100%{
+
+transform:
+rotateX(70deg)
+translateY(180px)
+translateX(-90px);
+}
+
+}
+
+@keyframes floatOrb{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-35px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes heroFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* =========================================================
+   MOBILE OPTIMIZATION
+========================================================= */
+
+@media(max-width:992px){
+
+.hero-content h1{
+font-size:62px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+.research-hero{
+height:100vh;
+padding:0 20px;
+}
+
+.hero-content h1{
+font-size:44px;
+}
+
+.hero-content p{
+font-size:16px;
+}
+
+.hero-subtitle{
+font-size:12px;
+}
+
+.research-hero video{
+
+width:140%;
+height:120%;
+}
+
+}
 *{
 margin:0;
 padding:0;
@@ -885,6 +1359,537 @@ font-size:12px;
 .btn-monthly{
 
 width:100%;
+}
+
+}
+/* =========================================================
+   4K CINEMATIC IMAGE SYSTEM
+   ULTRA HD • 3D DEPTH • PARALLAX EFFECT
+========================================================= */
+
+/* =========================================
+   HERO IMAGE CONTAINER
+========================================= */
+
+.research-hero{
+
+position:relative;
+
+height:120vh;
+
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+perspective:1800px;
+}
+
+/* =========================================
+   MAIN 4K IMAGE
+========================================= */
+
+.research-hero img{
+
+position:absolute;
+
+width:110%;
+height:110%;
+
+object-fit:cover;
+
+transform:
+scale(1.08)
+translateZ(0);
+
+animation:
+cinematicZoom 18s ease-in-out infinite alternate;
+
+filter:
+brightness(0.38)
+contrast(1.2)
+saturate(1.3)
+sharpness(1.2);
+
+z-index:-6;
+}
+
+/* =========================================
+   CINEMATIC DEPTH OVERLAY
+========================================= */
+
+.research-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(0,0,0,0.72),
+rgba(4,8,20,0.88)
+),
+
+radial-gradient(circle at center,
+rgba(0,240,255,0.08),
+transparent 60%),
+
+radial-gradient(circle at top right,
+rgba(122,0,255,0.12),
+transparent 40%);
+
+backdrop-filter:blur(1px);
+
+z-index:-5;
+}
+
+/* =========================================
+   3D GRID MOTION SYSTEM
+========================================= */
+
+.research-hero::after{
+
+content:"";
+
+position:absolute;
+
+width:140%;
+height:140%;
+
+top:-20%;
+left:-20%;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+);
+
+background-size:90px 90px;
+
+transform:
+rotateX(70deg)
+translateY(180px)
+scale(1.5);
+
+animation:gridMove 16s linear infinite;
+
+opacity:0.5;
+
+z-index:-4;
+}
+
+/* =========================================
+   FLOATING LIGHT ORBS
+========================================= */
+
+.light-orb{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(70px);
+
+opacity:0.55;
+
+mix-blend-mode:screen;
+
+animation:floatOrb 10s ease-in-out infinite;
+}
+
+/* Orb 1 */
+
+.orb-one{
+
+width:500px;
+height:500px;
+
+background:
+rgba(0,240,255,0.20);
+
+top:10%;
+left:-10%;
+}
+
+/* Orb 2 */
+
+.orb-two{
+
+width:450px;
+height:450px;
+
+background:
+rgba(122,0,255,0.20);
+
+bottom:-5%;
+right:-10%;
+
+animation-delay:3s;
+}
+
+/* Orb 3 */
+
+.orb-three{
+
+width:300px;
+height:300px;
+
+background:
+rgba(255,0,229,0.18);
+
+top:40%;
+right:20%;
+
+animation-delay:6s;
+}
+
+/* =========================================
+   HERO CONTENT DEPTH
+========================================= */
+
+.hero-content{
+
+position:relative;
+
+z-index:10;
+
+transform-style:preserve-3d;
+
+animation:heroFloat 7s ease-in-out infinite;
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero-content h1{
+
+font-size:110px;
+
+line-height:1;
+
+font-family:'Orbitron', sans-serif;
+
+margin-bottom:35px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00f0ff,
+#7a00ff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+
+0 0 30px rgba(0,240,255,0.22),
+
+0 0 60px rgba(122,0,255,0.16),
+
+0 0 120px rgba(255,255,255,0.08);
+
+transform:
+translateZ(80px);
+}
+
+/* =========================================
+   HERO PARAGRAPH
+========================================= */
+
+.hero-content p{
+
+font-size:23px;
+
+line-height:2.2;
+
+max-width:1150px;
+
+margin:auto;
+
+color:#dce8ff;
+
+transform:
+translateZ(50px);
+}
+
+/* =========================================
+   HERO SUBTITLE
+========================================= */
+
+.hero-subtitle{
+
+display:inline-block;
+
+padding:14px 30px;
+
+margin-bottom:35px;
+
+border-radius:60px;
+
+background:
+rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.10);
+
+backdrop-filter:blur(18px);
+
+font-size:14px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#00f0ff;
+
+transform:
+translateZ(90px);
+
+box-shadow:
+0 0 25px rgba(0,240,255,0.14);
+}
+
+/* =========================================
+   3D IMAGE CARDS
+========================================= */
+
+.bento-card{
+
+position:relative;
+
+transform-style:preserve-3d;
+
+perspective:1500px;
+
+overflow:hidden;
+
+border-radius:36px;
+
+transition:0.6s ease;
+}
+
+.bento-card:hover{
+
+transform:
+rotateX(6deg)
+rotateY(-6deg)
+translateY(-10px)
+scale(1.02);
+}
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.bento-card img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+transition:0.8s ease;
+
+filter:
+brightness(0.48)
+contrast(1.15)
+saturate(1.2);
+}
+
+/* Hover Zoom */
+
+.bento-card:hover img{
+
+transform:
+scale(1.08);
+}
+
+/* =========================================
+   GLASS OVERLAY
+========================================= */
+
+.bento-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+180deg,
+transparent,
+rgba(4,8,20,0.92)
+);
+
+padding:40px;
+
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+
+backdrop-filter:blur(1px);
+
+transform:
+translateZ(50px);
+}
+
+/* =========================================
+   CARD TITLES
+========================================= */
+
+.bento-overlay h3{
+
+font-size:38px;
+
+margin-bottom:20px;
+
+color:white;
+
+text-shadow:
+0 0 20px rgba(0,240,255,0.15);
+}
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.bento-overlay p{
+
+font-size:17px;
+
+line-height:2;
+
+color:#dce8ff;
+}
+
+/* =========================================
+   CINEMATIC ANIMATIONS
+========================================= */
+
+@keyframes cinematicZoom{
+
+0%{
+
+transform:
+scale(1.05)
+translateY(0px);
+}
+
+100%{
+
+transform:
+scale(1.15)
+translateY(-15px);
+}
+
+}
+
+@keyframes gridMove{
+
+0%{
+transform:
+rotateX(70deg)
+translateY(180px)
+translateX(0);
+}
+
+100%{
+transform:
+rotateX(70deg)
+translateY(180px)
+translateX(-90px);
+}
+
+}
+
+@keyframes floatOrb{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-35px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes heroFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* =========================================
+   RESPONSIVE SYSTEM
+========================================= */
+
+@media(max-width:992px){
+
+.hero-content h1{
+font-size:68px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+.research-hero{
+height:100vh;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:48px;
+}
+
+.hero-content p{
+font-size:16px;
+}
+
+.hero-subtitle{
+font-size:12px;
+}
+
+.research-hero img{
+
+width:140%;
+height:120%;
 }
 
 }
