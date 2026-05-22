@@ -1,238 +1,1185 @@
-<section id="global-outreach" style="padding:80px 40px;background:#f4f7fa;">
+<!DOCTYPE html>
+<html lang="en">
 
-<h2 style="font-size:52px;color:#0f4c75;margin-bottom:30px;">
-Global Outreach, International Development & Strategic Operations Program
-</h2>
+<head>
 
-<p style="font-size:21px;line-height:2;color:#333;max-width:1200px;">
-The SovereignAqua Research & Development Foundation is a multidisciplinary
-international development organization established to advance sustainable
-water infrastructure systems, environmental stewardship initiatives,
-humanitarian logistics coordination, scientific research collaboration,
-and long-term ecological sustainability programs throughout multiple
-global regions.
-</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p style="font-size:21px;line-height:2;color:#333;max-width:1200px;margin-top:25px;">
-The Foundation’s Global Outreach Program serves as the central operational
-framework through which international partnerships, infrastructure
-development projects, research initiatives, humanitarian support systems,
-and regional sustainability operations are coordinated under a unified
-administrative and governance structure.
-</p>
+<title>SovereignAqua Foundation | Mission & Global Development Framework</title>
 
-<p style="font-size:21px;line-height:2;color:#333;max-width:1200px;margin-top:25px;">
-Through collaborative engagement with governmental agencies, engineering
-institutions, humanitarian organizations, universities, environmental
-research programs, private sector development groups, and regional
-community networks, the Foundation seeks to implement scalable and
-research-driven solutions capable of strengthening infrastructure
-resilience, resource sustainability, and humanitarian preparedness in
-both emerging and developed regions.
-</p>
+<meta name="description"
+content="SovereignAqua Research & Development Foundation mission, global outreach initiatives, sustainability divisions, humanitarian operations, and institutional development framework.">
 
-<div style="margin-top:70px;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<h3 style="font-size:40px;color:#0f4c75;margin-bottom:25px;">
-Global Administrative & Governance Structure
-</h3>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<p style="font-size:20px;line-height:1.9;color:#333;max-width:1150px;">
-The SovereignAqua Research & Development Foundation operates under a
-centralized international governance structure responsible for maintaining
-organizational oversight, strategic policy implementation, institutional
-compliance, financial stewardship, operational accountability, and
-global program coordination.
-</p>
+<style>
 
-<p style="font-size:20px;line-height:1.9;color:#333;max-width:1150px;margin-top:20px;">
-The Foundation’s administrative hierarchy is designed to ensure that
-all operational divisions, subsidiary initiatives, outreach programs,
-research operations, and regional project offices function under
-a coordinated international development framework while maintaining
-specialized operational responsibilities according to their designated
-sector focus.
-</p>
+/* =========================================================
+   GLOBAL FOUNDATION UI SYSTEM
+========================================================= */
+
+:root{
+
+--primary:#00d9ff;
+--secondary:#0077ff;
+
+--dark:#02111d;
+--dark-alt:#071b2c;
+
+--text:#ffffff;
+--text-soft:#d7e8f2;
+--text-muted:#9eb7c7;
+
+--glass:
+rgba(255,255,255,0.05);
+
+--glass-border:
+rgba(255,255,255,0.08);
+
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Inter', sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#02111d,
+#041b2d,
+#02111d
+);
+
+overflow-x:hidden;
+
+color:white;
+}
+
+/* =========================================================
+   FLOATING AURA BACKGROUND
+========================================================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle at top left,
+rgba(0,217,255,0.12),
+transparent 35%),
+
+radial-gradient(circle at bottom right,
+rgba(0,119,255,0.10),
+transparent 40%);
+
+z-index:-5;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:22px 60px;
+
+background:
+rgba(2,17,29,0.72);
+
+backdrop-filter:blur(16px);
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+
+z-index:9999;
+}
+
+.logo{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:30px;
+
+background:
+linear-gradient(
+90deg,
+#7fe7ff,
+#00d9ff,
+#7fe7ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:15px;
+
+transition:0.3s;
+}
+
+.nav-links a:hover{
+
+color:#7fe7ff;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.mission-hero{
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+padding:0 40px;
+}
+
+/* Background Video */
+
+.mission-hero video{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+z-index:-4;
+}
+
+/* Overlay */
+
+.mission-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,0.65),
+rgba(2,17,29,0.92)
+);
+
+z-index:-3;
+}
+
+/* Aqua Grid */
+
+.mission-hero::after{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+background-size:60px 60px;
+
+z-index:-2;
+}
+
+/* Content */
+
+.hero-content{
+
+max-width:1250px;
+
+text-align:center;
+
+z-index:20;
+}
+
+.hero-subtitle{
+
+display:inline-block;
+
+padding:12px 26px;
+
+border-radius:50px;
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(14px);
+
+font-size:14px;
+
+letter-spacing:1.5px;
+
+text-transform:uppercase;
+
+margin-bottom:28px;
+
+color:#7fe7ff;
+}
+
+/* Main Heading */
+
+.hero-content h1{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:88px;
+
+line-height:1.05;
+
+margin-bottom:32px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#7fe7ff,
+#00d9ff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 30px rgba(0,217,255,0.20);
+}
+
+/* Paragraph */
+
+.hero-content p{
+
+font-size:22px;
+
+line-height:2;
+
+max-width:1050px;
+
+margin:auto;
+
+color:#d9edf5;
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+margin-top:50px;
+
+display:flex;
+justify-content:center;
+gap:22px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+
+padding:18px 36px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:0.4s;
+}
+
+.btn-primary{
+
+background:
+linear-gradient(
+135deg,
+#00d9ff,
+#0077ff
+);
+
+color:white;
+
+box-shadow:
+0 0 30px rgba(0,217,255,0.25);
+}
+
+.btn-primary:hover{
+
+transform:translateY(-4px);
+}
+
+.btn-secondary{
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(14px);
+
+color:white;
+}
+
+.btn-secondary:hover{
+
+background:
+rgba(255,255,255,0.10);
+}
+
+/* =========================================================
+   SECTION SYSTEM
+========================================================= */
+
+.section{
+
+padding:110px 40px;
+}
+
+.container{
+
+max-width:1350px;
+
+margin:auto;
+}
+
+/* Titles */
+
+.section-title{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:58px;
+
+text-align:center;
+
+margin-bottom:28px;
+
+background:
+linear-gradient(
+90deg,
+#7fe7ff,
+#00d9ff,
+#7fe7ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-description{
+
+font-size:21px;
+
+line-height:2;
+
+max-width:1100px;
+
+margin:auto;
+
+text-align:center;
+
+color:#d7e8f2;
+}
+
+/* =========================================================
+   DIVISION GRID
+========================================================= */
+
+.division-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(340px,1fr));
+
+gap:35px;
+
+margin-top:70px;
+}
+
+/* Card */
+
+.division-card{
+
+position:relative;
+
+padding:38px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.02)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+overflow:hidden;
+
+transition:0.5s;
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 0 35px rgba(0,0,0,0.35);
+}
+
+/* Glow */
+
+.division-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+135deg,
+transparent,
+rgba(0,217,255,0.12),
+transparent
+);
+
+opacity:0;
+
+transition:0.5s;
+}
+
+.division-card:hover::before{
+opacity:1;
+}
+
+.division-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 30px rgba(0,217,255,0.18);
+}
+
+/* Icon */
+
+.division-icon{
+
+width:80px;
+height:80px;
+
+border-radius:20px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:34px;
+
+background:
+linear-gradient(
+135deg,
+#00d9ff,
+#0077ff
+);
+
+margin-bottom:28px;
+
+box-shadow:
+0 0 25px rgba(0,217,255,0.20);
+}
+
+/* Card Heading */
+
+.division-card h3{
+
+font-size:34px;
+
+margin-bottom:22px;
+
+color:#7fe7ff;
+}
+
+/* Text */
+
+.division-card p{
+
+font-size:17px;
+
+line-height:2;
+
+color:#dcebf2;
+}
+
+/* =========================================================
+   HIERARCHY PANEL
+========================================================= */
+
+.hierarchy-panel{
+
+margin-top:90px;
+
+padding:60px;
+
+border-radius:32px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 40px rgba(0,0,0,0.35);
+}
+
+.hierarchy-panel h2{
+
+font-size:52px;
+
+margin-bottom:25px;
+
+color:#7fe7ff;
+
+text-align:center;
+}
+
+.hierarchy-flow{
+
+margin-top:60px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+}
+
+/* Flow Card */
+
+.flow-card{
+
+padding:28px;
+
+border-radius:24px;
+
+background:
+rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.06);
+
+text-align:center;
+
+transition:0.4s;
+}
+
+.flow-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 0 25px rgba(0,217,255,0.12);
+}
+
+.flow-card h3{
+
+font-size:28px;
+
+margin-bottom:16px;
+
+color:#7fe7ff;
+}
+
+.flow-card p{
+
+font-size:16px;
+
+line-height:1.9;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+padding:80px 40px;
+
+text-align:center;
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,0.03),
+rgba(255,255,255,0.01)
+);
+
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer h2{
+
+font-size:42px;
+
+margin-bottom:22px;
+
+color:#7fe7ff;
+}
+
+footer p{
+
+font-size:17px;
+
+line-height:1.9;
+
+max-width:900px;
+
+margin:auto;
+
+color:#d6e7f1;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+.hero-content h1{
+font-size:58px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+padding:18px 20px;
+
+flex-direction:column;
+
+gap:18px;
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+}
+
+.hero-content h1{
+font-size:44px;
+}
+
+.section-title{
+font-size:42px;
+}
+
+.hierarchy-panel{
+padding:35px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+<div class="logo">
+SOVEREIGNAQUA
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="mission.html">Mission</a>
+<a href="projects.html">Projects</a>
+<a href="research.html">Research</a>
+<a href="governance.html">Governance</a>
+<a href="contact.html">Contact</a>
 
 </div>
 
-<div style="margin-top:60px;background:white;padding:45px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.08);">
+</nav>
 
-<h3 style="font-size:34px;color:#0f4c75;">
-Primary International Divisions & Subsidiary Operations
-</h3>
 
-<h4 style="font-size:28px;color:#00a8cc;margin-top:40px;">
-1. Water Infrastructure Research & Development Division
-</h4>
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
 
-<p style="font-size:19px;line-height:1.9;color:#333;">
-This division serves as the Foundation’s principal engineering and
-infrastructure development body responsible for the advancement,
-research, planning, and coordination of sustainable water systems,
-purification technologies, regional distribution networks, treatment
-facilities, infrastructure modernization projects, and water security
-programs designed to improve access to sustainable clean water resources.
-</p>
+<section class="mission-hero">
 
-<p style="font-size:19px;line-height:1.9;color:#333;margin-top:18px;">
-Operational responsibilities include infrastructure feasibility studies,
-regional engineering partnerships, water sustainability assessments,
-environmental impact evaluations, technological research initiatives,
-and international infrastructure collaboration programs supporting
-both urban and rural development operations.
-</p>
+<video autoplay muted loop playsinline>
+<source src="assets/videos/sovereignaqua-bg.mp4" type="video/mp4">
+</video>
 
-<h4 style="font-size:28px;color:#00a8cc;margin-top:45px;">
-2. Environmental Stewardship & Ecological Sustainability Division
-</h4>
+<div class="hero-content">
 
-<p style="font-size:19px;line-height:1.9;color:#333;">
-The Environmental Stewardship Division functions as the Foundation’s
-primary ecological protection and sustainability management subsidiary.
-This division is responsible for developing environmental preservation
-programs, climate resilience initiatives, ecological restoration
-projects, conservation strategies, sustainable resource management
-systems, and environmental policy research programs.
-</p>
+<div class="hero-subtitle">
 
-<p style="font-size:19px;line-height:1.9;color:#333;margin-top:18px;">
-The division coordinates with regional environmental agencies,
-research institutions, conservation organizations, and sustainability
-partners to support ecosystem restoration, environmental monitoring,
-renewable infrastructure development, and long-term ecological balance
-initiatives within project deployment regions.
-</p>
-
-<h4 style="font-size:28px;color:#00a8cc;margin-top:45px;">
-3. Humanitarian Logistics & Emergency Response Operations Division
-</h4>
-
-<p style="font-size:19px;line-height:1.9;color:#333;">
-This operational division is responsible for coordinating humanitarian
-support logistics, emergency infrastructure deployment, supply chain
-management systems, regional humanitarian outreach coordination,
-disaster response infrastructure support, and strategic resource
-distribution operations during humanitarian assistance initiatives.
-</p>
-
-<p style="font-size:19px;line-height:1.9;color:#333;margin-top:18px;">
-The division maintains collaborative operational partnerships with
-regional humanitarian agencies, emergency management organizations,
-medical logistics providers, transportation coordinators, and
-international relief programs to facilitate organized response
-operations during infrastructure emergencies and humanitarian crises.
-</p>
-
-<h4 style="font-size:28px;color:#00a8cc;margin-top:45px;">
-4. International Research, Innovation & Technology Division
-</h4>
-
-<p style="font-size:19px;line-height:1.9;color:#333;">
-The Research & Innovation Division serves as the Foundation’s scientific,
-technological, and strategic development arm responsible for conducting
-multidisciplinary research programs focused on infrastructure innovation,
-sustainable engineering technologies, environmental science advancement,
-water purification systems, data-driven sustainability planning,
-and humanitarian support technologies.
-</p>
-
-<p style="font-size:19px;line-height:1.9;color:#333;margin-top:18px;">
-This division coordinates international academic collaboration programs,
-scientific research partnerships, engineering studies, technological
-development initiatives, and policy research operations in support of
-the Foundation’s long-term infrastructure and sustainability objectives.
-</p>
-
-<h4 style="font-size:28px;color:#00a8cc;margin-top:45px;">
-5. Global Partnerships, Government Relations & Diplomatic Coordination Division
-</h4>
-
-<p style="font-size:19px;line-height:1.9;color:#333;">
-This division is responsible for maintaining institutional relationships
-with governmental agencies, international development organizations,
-private sector partners, research institutions, infrastructure operators,
-and regional cooperative networks.
-</p>
-
-<p style="font-size:19px;line-height:1.9;color:#333;margin-top:18px;">
-The division facilitates strategic negotiations, partnership development,
-international outreach coordination, policy engagement, cross-border
-project cooperation, and institutional communication initiatives necessary
-for the successful implementation of regional and international programs.
-</p>
+Global Sustainability • Infrastructure Innovation • Humanitarian Development
 
 </div>
 
-<div style="margin-top:70px;">
+<h1>
 
-<h3 style="font-size:38px;color:#0f4c75;">
-Regional Outreach & Field Operations
-</h3>
+Mission & Institutional Development Framework
 
-<p style="font-size:20px;line-height:1.9;color:#333;max-width:1150px;">
-The Foundation’s Global Outreach Program operates through coordinated
-regional field offices, research affiliates, infrastructure deployment
-teams, environmental project coordinators, and humanitarian logistics
-units established in strategic operational regions.
+</h1>
+
+<p>
+
+The SovereignAqua Research & Development Foundation operates
+through a multidisciplinary institutional framework dedicated
+to advancing sustainable water infrastructure systems,
+environmental stewardship initiatives, humanitarian logistics
+coordination, scientific innovation, and global sustainability
+development programs through strategic international collaboration,
+research advancement, and responsible resource stewardship.
+
 </p>
 
-<p style="font-size:20px;line-height:1.9;color:#333;max-width:1150px;margin-top:20px;">
-Regional operational teams are responsible for conducting localized
-infrastructure assessments, environmental evaluations, humanitarian
-support coordination, research implementation, partnership development,
-and project monitoring operations in accordance with the Foundation’s
-international governance and sustainability objectives.
-</p>
+<div class="hero-buttons">
 
-</div>
-
-<div style="margin-top:70px;">
-
-<h3 style="font-size:38px;color:#0f4c75;">
-Long-Term Strategic Objectives
-</h3>
-
-<ul style="font-size:20px;line-height:2;color:#333;max-width:1100px;">
-
-<li>Advancement of sustainable global water infrastructure systems.</li>
-
-<li>Expansion of environmental sustainability and ecological restoration initiatives.</li>
-
-<li>Development of international humanitarian logistics coordination programs.</li>
-
-<li>Establishment of multidisciplinary scientific and engineering research partnerships.</li>
-
-<li>Support for regional infrastructure modernization and resource sustainability.</li>
-
-<li>Promotion of responsible environmental stewardship and climate resilience planning.</li>
-
-<li>Creation of scalable humanitarian support systems for vulnerable communities.</li>
-
-<li>Expansion of international institutional partnerships and development cooperation.</li>
-
-<li>Implementation of long-term infrastructure innovation and sustainability strategies.</li>
-
-</ul>
-
-</div>
-
-<div style="margin-top:80px;text-align:center;">
-
-<a href="#projects"
-style="background:#0f4c75;color:white;padding:16px 32px;
-text-decoration:none;border-radius:8px;font-size:18px;
-margin-right:15px;display:inline-block;">
-Explore Global Projects
+<a href="#divisions" class="btn-primary">
+Explore Foundation Divisions
 </a>
 
-<a href="#contact"
-style="background:#00a8cc;color:white;padding:16px 32px;
-text-decoration:none;border-radius:8px;font-size:18px;
-display:inline-block;">
-Partner With The Foundation
+<a href="#hierarchy" class="btn-secondary">
+Institutional Hierarchy
 </a>
+
+</div>
 
 </div>
 
 </section>
+
+
+<!-- =========================================================
+     DIVISIONS SECTION
+========================================================= -->
+
+<section class="section" id="divisions">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Global Operational Subsidiaries & Divisions
+
+</h2>
+
+<p class="section-description">
+
+The Foundation maintains a structured international operational
+framework integrating specialized divisions and institutional
+subsidiaries responsible for sustainability research,
+infrastructure advancement, environmental coordination,
+humanitarian development, strategic partnerships,
+and global outreach initiatives.
+
+</p>
+
+
+<div class="division-grid">
+
+<!-- CARD 1 -->
+
+<div class="division-card">
+
+<div class="division-icon">
+💧
+</div>
+
+<h3>
+Water Infrastructure Division
+</h3>
+
+<p>
+
+Responsible for engineering research,
+water purification innovation,
+regional infrastructure modernization,
+resource sustainability planning,
+and long-term water security development
+programs supporting sustainable infrastructure
+systems worldwide.
+
+</p>
+
+</div>
+
+
+<!-- CARD 2 -->
+
+<div class="division-card">
+
+<div class="division-icon">
+🌍
+</div>
+
+<h3>
+Environmental Stewardship Division
+</h3>
+
+<p>
+
+Coordinates environmental sustainability initiatives,
+ecosystem restoration programs,
+climate resilience frameworks,
+ecological preservation operations,
+and environmental impact research supporting
+long-term global sustainability objectives.
+
+</p>
+
+</div>
+
+
+<!-- CARD 3 -->
+
+<div class="division-card">
+
+<div class="division-icon">
+🚑
+</div>
+
+<h3>
+Humanitarian Logistics Division
+</h3>
+
+<p>
+
+Develops coordinated humanitarian response systems,
+resource deployment operations,
+emergency infrastructure support,
+regional logistics planning,
+and international outreach initiatives
+supporting vulnerable communities.
+
+</p>
+
+</div>
+
+
+<!-- CARD 4 -->
+
+<div class="division-card">
+
+<div class="division-icon">
+🔬
+</div>
+
+<h3>
+Research & Innovation Division
+</h3>
+
+<p>
+
+Advances scientific innovation through
+infrastructure analytics,
+sustainability research,
+engineering development,
+technology integration,
+and multidisciplinary scientific collaboration
+supporting scalable global solutions.
+
+</p>
+
+</div>
+
+
+<!-- CARD 5 -->
+
+<div class="division-card">
+
+<div class="division-icon">
+🤝
+</div>
+
+<h3>
+Strategic Partnership Division
+</h3>
+
+<p>
+
+Maintains institutional relationships with
+governmental agencies,
+universities,
+international organizations,
+development institutions,
+private sector collaborators,
+and global sustainability networks.
+
+</p>
+
+</div>
+
+
+<!-- CARD 6 -->
+
+<div class="division-card">
+
+<div class="division-icon">
+⚖️
+</div>
+
+<h3>
+Governance & Compliance Division
+</h3>
+
+<p>
+
+Supports organizational integrity through
+ethical governance systems,
+institutional accountability frameworks,
+regulatory compliance coordination,
+financial stewardship oversight,
+and operational transparency procedures.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HIERARCHY PANEL
+========================================================= -->
+
+<section class="section" id="hierarchy">
+
+<div class="container">
+
+<div class="hierarchy-panel">
+
+<h2>
+
+Institutional Hierarchy & Operational Structure
+
+</h2>
+
+<p class="section-description">
+
+The SovereignAqua Research & Development Foundation operates
+through a centralized governance structure integrating
+executive leadership, operational divisions,
+regional coordination systems,
+research affiliates,
+humanitarian deployment programs,
+and sustainability development initiatives.
+
+</p>
+
+<div class="hierarchy-flow">
+
+<div class="flow-card">
+
+<h3>
+Executive Governance
+</h3>
+
+<p>
+
+Provides strategic institutional oversight,
+organizational governance coordination,
+global operational supervision,
+and long-term sustainability planning.
+
+</p>
+
+</div>
+
+
+<div class="flow-card">
+
+<h3>
+Global Operations
+</h3>
+
+<p>
+
+Coordinates international development programs,
+regional infrastructure deployment systems,
+and multidisciplinary sustainability initiatives.
+
+</p>
+
+</div>
+
+
+<div class="flow-card">
+
+<h3>
+Regional Outreach Units
+</h3>
+
+<p>
+
+Supports localized implementation of environmental,
+research,
+humanitarian,
+and infrastructure development programs.
+
+</p>
+
+</div>
+
+
+<div class="flow-card">
+
+<h3>
+Research Affiliates
+</h3>
+
+<p>
+
+Facilitates scientific collaboration,
+engineering studies,
+technology innovation,
+and academic sustainability partnerships.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<h2>
+
+SovereignAqua Research & Development Foundation
+
+</h2>
+
+<p>
+
+Advancing sustainable infrastructure systems,
+environmental stewardship,
+scientific innovation,
+humanitarian coordination,
+and global sustainability development
+through collaborative institutional partnerships
+and multidisciplinary research initiatives.
+
+</p>
+
+<p style="margin-top:25px;">
+
+Info@sovereignaquaresearchanddevelopmentfoundation.org
+
+</p>
+
+<p style="
+margin-top:28px;
+font-size:14px;
+opacity:0.75;
+">
+
+© 2026 SovereignAqua Research & Development Foundation.
+All Rights Reserved.
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
