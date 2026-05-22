@@ -1,520 +1,49 @@
 /* =========================================================
-   SOVEREIGNAQUA RESEARCH & DEVELOPMENT FOUNDATION
-   GLOBAL UI FRAMEWORK — PROFESSIONAL AQUA BIOSPHERE EDITION
-   Optimized For Performance, Responsiveness & Institutional Branding
+   SOVEREIGNAQUA ENTERPRISE UI SYSTEM
+   CINEMATIC AQUA BIOSPHERE ARCHITECTURE
 ========================================================= */
 
-/* =========================
+/* =========================================================
    ROOT VARIABLES
-========================= */
+========================================================= */
 
 :root{
 
---primary:#00cfff;
+--primary:#00f0ff;
 --secondary:#0077ff;
---dark:#02111d;
---dark-alt:#071c2c;
---surface:rgba(255,255,255,0.05);
---surface-light:rgba(255,255,255,0.08);
+--accent:#7a00ff;
+
+--dark:#020814;
+--dark-alt:#07111f;
 
 --text:#ffffff;
---text-soft:#d7e8f2;
---text-muted:#9eb7c7;
+--soft:#dce8ff;
+--muted:#9bb4d1;
+
+--glass:
+rgba(255,255,255,0.05);
+
+--border:
+rgba(255,255,255,0.08);
 
 --success:#28c76f;
 
---border:rgba(255,255,255,0.08);
-
 --shadow:
-0 0 25px rgba(0,0,0,0.30);
+0 0 45px rgba(0,0,0,0.35);
 
---shadow-glow:
-0 0 25px rgba(0,207,255,0.15);
+--glow:
+0 0 35px rgba(0,240,255,0.18);
 
---radius:20px;
+--radius:28px;
 
---transition:0.35s ease;
+--transition:0.4s ease;
 
 }
 
-/* =========================
+/* =========================================================
    GLOBAL RESET
-========================= */
-/* =========================================================
-   CINEMATIC 4K HOME HERO SYSTEM
 ========================================================= */
 
-.research-hero{
-
-position:relative;
-
-height:120vh;
-
-overflow:hidden;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:0 50px;
-
-perspective:1800px;
-}
-
-/* =========================================================
-   VIDEO BACKGROUND
-========================================================= */
-
-.research-hero video{
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-width:110%;
-height:110%;
-
-object-fit:cover;
-
-transform:
-translate(-50%,-50%)
-scale(1.08);
-
-animation:
-cinematicZoom 18s ease-in-out infinite alternate;
-
-filter:
-brightness(0.35)
-contrast(1.2)
-saturate(1.25);
-
-z-index:-6;
-}
-
-/* =========================================================
-   DARK CINEMATIC OVERLAY
-========================================================= */
-
-.research-hero::before{
-
-content:"";
-
-position:absolute;
-
-width:100%;
-height:100%;
-
-background:
-
-linear-gradient(
-180deg,
-rgba(0,0,0,0.70),
-rgba(4,8,20,0.92)
-),
-
-radial-gradient(circle at top left,
-rgba(0,240,255,0.08),
-transparent 35%),
-
-radial-gradient(circle at bottom right,
-rgba(122,0,255,0.12),
-transparent 35%);
-
-z-index:-5;
-}
-
-/* =========================================================
-   FUTURISTIC GRID
-========================================================= */
-
-.research-hero::after{
-
-content:"";
-
-position:absolute;
-
-width:140%;
-height:140%;
-
-top:-20%;
-left:-20%;
-
-background-image:
-
-linear-gradient(
-rgba(255,255,255,0.03) 1px,
-transparent 1px
-),
-
-linear-gradient(
-90deg,
-rgba(255,255,255,0.03) 1px,
-transparent 1px
-);
-
-background-size:90px 90px;
-
-transform:
-rotateX(70deg)
-translateY(180px)
-scale(1.5);
-
-animation:gridMove 18s linear infinite;
-
-opacity:0.5;
-
-z-index:-4;
-}
-
-/* =========================================================
-   FLOATING ORBS
-========================================================= */
-
-.light-orb{
-
-position:absolute;
-
-border-radius:50%;
-
-filter:blur(80px);
-
-opacity:0.5;
-
-mix-blend-mode:screen;
-
-animation:floatOrb 10s ease-in-out infinite;
-}
-
-.orb-one{
-
-width:500px;
-height:500px;
-
-background:
-rgba(0,240,255,0.20);
-
-top:10%;
-left:-10%;
-}
-
-.orb-two{
-
-width:420px;
-height:420px;
-
-background:
-rgba(122,0,255,0.18);
-
-bottom:-5%;
-right:-10%;
-
-animation-delay:3s;
-}
-
-.orb-three{
-
-width:280px;
-height:280px;
-
-background:
-rgba(255,0,229,0.18);
-
-top:45%;
-right:20%;
-
-animation-delay:6s;
-}
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-content{
-
-position:relative;
-
-max-width:1350px;
-
-text-align:center;
-
-z-index:10;
-
-transform-style:preserve-3d;
-
-animation:heroFloat 7s ease-in-out infinite;
-}
-
-/* =========================================================
-   SUBTITLE
-========================================================= */
-
-.hero-subtitle{
-
-display:inline-block;
-
-padding:14px 30px;
-
-margin-bottom:35px;
-
-border-radius:60px;
-
-background:
-rgba(255,255,255,0.06);
-
-border:1px solid rgba(255,255,255,0.10);
-
-backdrop-filter:blur(18px);
-
-font-size:14px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-color:#00f0ff;
-
-box-shadow:
-0 0 25px rgba(0,240,255,0.14);
-}
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
-.hero-content h1{
-
-font-family:'Orbitron', sans-serif;
-
-font-size:105px;
-
-line-height:1.02;
-
-margin-bottom:35px;
-
-background:
-linear-gradient(
-90deg,
-#ffffff,
-#00f0ff,
-#7a00ff,
-#ffffff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-text-shadow:
-
-0 0 30px rgba(0,240,255,0.20),
-
-0 0 70px rgba(122,0,255,0.15);
-}
-
-/* =========================================================
-   HERO TEXT
-========================================================= */
-
-.hero-content p{
-
-font-size:22px;
-
-line-height:2.1;
-
-max-width:1100px;
-
-margin:auto;
-
-color:#dce8ff;
-}
-
-/* =========================================================
-   BUTTON SYSTEM
-========================================================= */
-
-.hero-buttons{
-
-margin-top:55px;
-
-display:flex;
-justify-content:center;
-gap:24px;
-flex-wrap:wrap;
-}
-
-.hero-buttons a{
-
-padding:18px 40px;
-
-border-radius:60px;
-
-text-decoration:none;
-
-font-size:16px;
-
-font-weight:600;
-
-transition:0.4s;
-}
-
-/* PRIMARY */
-
-.btn-primary{
-
-background:
-linear-gradient(
-135deg,
-#00f0ff,
-#0077ff
-);
-
-color:white;
-
-box-shadow:
-0 0 35px rgba(0,240,255,0.22);
-}
-
-.btn-primary:hover{
-
-transform:translateY(-5px);
-}
-
-/* SECONDARY */
-
-.btn-secondary{
-
-background:
-rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.08);
-
-backdrop-filter:blur(16px);
-
-color:white;
-}
-
-.btn-secondary:hover{
-
-background:
-rgba(255,255,255,0.10);
-}
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes cinematicZoom{
-
-0%{
-
-transform:
-translate(-50%,-50%)
-scale(1.05);
-}
-
-100%{
-
-transform:
-translate(-50%,-50%)
-scale(1.15);
-}
-
-}
-
-@keyframes gridMove{
-
-0%{
-
-transform:
-rotateX(70deg)
-translateY(180px)
-translateX(0);
-}
-
-100%{
-
-transform:
-rotateX(70deg)
-translateY(180px)
-translateX(-90px);
-}
-
-}
-
-@keyframes floatOrb{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-35px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-@keyframes heroFloat{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-/* =========================================================
-   MOBILE OPTIMIZATION
-========================================================= */
-
-@media(max-width:992px){
-
-.hero-content h1{
-font-size:62px;
-}
-
-.hero-content p{
-font-size:18px;
-}
-
-}
-
-@media(max-width:768px){
-
-.research-hero{
-height:100vh;
-padding:0 20px;
-}
-
-.hero-content h1{
-font-size:44px;
-}
-
-.hero-content p{
-font-size:16px;
-}
-
-.hero-subtitle{
-font-size:12px;
-}
-
-.research-hero video{
-
-width:140%;
-height:120%;
-}
-
-}
 *{
 margin:0;
 padding:0;
@@ -528,71 +57,105 @@ overflow-x:hidden;
 
 body{
 
-font-family:'Inter', Arial, sans-serif;
+font-family:'Inter', sans-serif;
 
 background:
 linear-gradient(
 180deg,
-#02111d,
-#031726,
-#02111d
+#020814,
+#07111f,
+#020814
 );
 
-color:var(--text-soft);
-
-line-height:1.8;
+color:var(--soft);
 
 overflow-x:hidden;
 
 -webkit-font-smoothing:antialiased;
 }
 
-/* =========================
+/* =========================================================
+   GLOBAL BACKGROUND SYSTEM
+========================================================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at top left,
+rgba(0,240,255,0.10),
+transparent 35%),
+
+radial-gradient(circle at bottom right,
+rgba(122,0,255,0.12),
+transparent 35%),
+
+radial-gradient(circle at center,
+rgba(255,255,255,0.03),
+transparent 45%);
+
+z-index:-20;
+}
+
+/* =========================================================
    TYPOGRAPHY
-========================= */
+========================================================= */
 
 h1,h2,h3,h4,h5{
 
 font-family:'Orbitron', sans-serif;
 
-line-height:1.2;
-
-color:var(--text);
-
 font-weight:700;
 
+line-height:1.1;
+
+color:white;
 }
 
 p{
+
 font-size:17px;
-color:var(--text-soft);
+
+line-height:2;
+
+color:var(--soft);
 }
 
-/* =========================
-   GLOBAL CONTAINERS
-========================= */
+/* =========================================================
+   GLOBAL LAYOUT
+========================================================= */
 
 .container{
 
 width:100%;
-max-width:1280px;
+
+max-width:1450px;
 
 margin:auto;
 
-padding:0 25px;
+padding:0 30px;
 }
 
 section{
 
 position:relative;
 
-padding:100px 0;
-
+padding:120px 0;
 }
 
-/* =========================
+/* =========================================================
    NAVBAR
-========================= */
+========================================================= */
 
 .navbar{
 
@@ -607,24 +170,27 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:20px 50px;
+padding:22px 60px;
 
-background:rgba(2,17,29,0.72);
+background:
+rgba(4,8,20,0.72);
 
-backdrop-filter:blur(16px);
+backdrop-filter:blur(20px);
 
-border-bottom:1px solid var(--border);
+border-bottom:1px solid rgba(255,255,255,0.06);
 
-z-index:9999;
-
-transition:var(--transition);
+z-index:99999;
 }
+
+/* Logo */
 
 .logo{
 
-font-size:28px;
+font-family:'Orbitron', sans-serif;
 
-font-weight:700;
+font-size:30px;
+
+font-weight:800;
 
 letter-spacing:2px;
 
@@ -633,23 +199,22 @@ text-decoration:none;
 background:
 linear-gradient(
 90deg,
-#7fe7ff,
-#00cfff,
-#7fe7ff
+#00f0ff,
+#ffffff,
+#7a00ff
 );
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-
-text-shadow:
-0 0 20px rgba(0,207,255,0.25);
 }
+
+/* Navigation */
 
 .nav-links{
 
 display:flex;
 align-items:center;
-gap:28px;
+gap:32px;
 }
 
 .nav-links a{
@@ -685,785 +250,108 @@ transition:var(--transition);
 }
 
 .nav-links a:hover{
-color:#7fe7ff;
+
+color:var(--primary);
 }
 
 .nav-links a:hover::after{
+
 width:100%;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* =========================================================
+   CINEMATIC HERO SYSTEM
+========================================================= */
 
-.hero{
+.cinematic-hero{
 
 position:relative;
 
-height:100vh;
+height:115vh;
+
+overflow:hidden;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-overflow:hidden;
+padding:0 50px;
 
-padding:0 30px;
+perspective:1800px;
 }
 
-/* Background Video */
+/* =========================================================
+   VIDEO SYSTEM
+========================================================= */
 
-.hero video{
+.hero-video{
 
 position:absolute;
 
 top:50%;
 left:50%;
 
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-transform:translate(-50%,-50%);
-
-z-index:-4;
-}
-
-/* Overlay */
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-width:100%;
-height:100%;
-
-background:
-linear-gradient(
-180deg,
-rgba(0,0,0,0.58),
-rgba(2,17,29,0.88)
-);
-
-z-index:-3;
-}
-
-/* Aqua Glow */
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-width:700px;
-height:700px;
-
-border-radius:50%;
-
-background:
-radial-gradient(circle,
-rgba(0,207,255,0.18),
-transparent 70%);
-
-filter:blur(60px);
-
-animation:floatGlow 10s ease-in-out infinite;
-
-z-index:-2;
-}
-
-@keyframes floatGlow{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-30px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-/* Hero Content */
-
-.hero-content{
-
-max-width:1200px;
-
-text-align:center;
-
-z-index:10;
-
-animation:fadeUp 1.2s ease;
-}
-
-.hero-subtitle{
-
-display:inline-block;
-
-padding:12px 24px;
-
-margin-bottom:28px;
-
-border-radius:50px;
-
-background:rgba(255,255,255,0.06);
-
-border:1px solid rgba(255,255,255,0.10);
-
-backdrop-filter:blur(10px);
-
-font-size:14px;
-
-letter-spacing:1.5px;
-
-text-transform:uppercase;
-
-color:#7fe7ff;
-}
-
-/* Hero Heading */
-
-.hero-content h1{
-
-font-size:82px;
-
-margin-bottom:30px;
-
-background:
-linear-gradient(
-90deg,
-#ffffff,
-#8befff,
-#00cfff,
-#ffffff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-text-shadow:
-0 0 25px rgba(0,207,255,0.22);
-}
-
-/* Hero Paragraph */
-
-.hero-content p{
-
-font-size:22px;
-
-line-height:2;
-
-max-width:980px;
-
-margin:auto;
-
-color:#d9edf5;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.hero-buttons,
-.button-group{
-
-margin-top:45px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
-
-gap:20px;
-}
-
-.btn-primary,
-.btn-secondary,
-.btn-monthly{
-
-display:inline-flex;
-
-align-items:center;
-justify-content:center;
-
-padding:16px 34px;
-
-border-radius:60px;
-
-font-size:16px;
-font-weight:600;
-
-text-decoration:none;
-
-transition:var(--transition);
-
-cursor:pointer;
-}
-
-.btn-primary{
-
-background:
-linear-gradient(
-135deg,
-#00cfff,
-#0077ff
-);
-
-color:white;
-
-box-shadow:
-0 0 25px rgba(0,207,255,0.25);
-}
-
-.btn-primary:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-0 0 35px rgba(0,207,255,0.35);
-}
-
-.btn-secondary{
-
-background:rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.12);
-
-backdrop-filter:blur(12px);
-
-color:white;
-}
-
-.btn-secondary:hover{
-
-background:rgba(255,255,255,0.10);
-
-transform:translateY(-4px);
-}
-
-.btn-monthly{
-
-background:var(--success);
-
-color:white;
-}
-
-.btn-monthly:hover{
-background:#21a95c;
-}
-
-/* =========================
-   DONATION BOX
-========================= */
-
-.donation-box{
-
-position:relative;
-
-max-width:850px;
-
-margin:90px auto;
-
-padding:55px 40px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.06),
-rgba(255,255,255,0.03)
-);
-
-border:1px solid rgba(255,255,255,0.10);
-
-backdrop-filter:blur(16px);
-
-border-radius:28px;
-
-text-align:center;
-
-box-shadow:
-var(--shadow),
-var(--shadow-glow);
-}
-
-.donation-box h2{
-
-font-size:42px;
-
-margin-bottom:22px;
-
-color:#7fe7ff;
-}
-
-.donation-box p{
-
-font-size:18px;
-
-line-height:1.9;
-
-max-width:760px;
-
-margin:auto;
-
-color:#d7e8f2;
-}
-
-.small-text{
-
-margin-top:18px;
-
-font-size:13px;
-
-opacity:0.75;
-}
-
-/* =========================
-   PROGRAM GRID
-========================= */
-
-.programs{
-
-background:
-linear-gradient(
-180deg,
-rgba(255,255,255,0.02),
-rgba(255,255,255,0.01)
-);
-
-text-align:center;
-}
-
-.program-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
-
-gap:35px;
-
-margin-top:60px;
-}
-
-.program-card{
-
-position:relative;
-
-padding:30px;
-
-border-radius:26px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.05),
-rgba(255,255,255,0.02)
-);
-
-border:1px solid rgba(255,255,255,0.08);
-
-overflow:hidden;
-
-transition:var(--transition);
-
-backdrop-filter:blur(16px);
-
-box-shadow:var(--shadow);
-}
-
-.program-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:
-0 0 30px rgba(0,207,255,0.15);
-}
-
-.program-card img{
-
-width:100%;
-
-height:240px;
-
-object-fit:cover;
-
-border-radius:18px;
-
-margin-bottom:24px;
-}
-
-.program-card h3{
-
-font-size:30px;
-
-margin-bottom:18px;
-
-color:#7fe7ff;
-}
-
-.program-card p{
-
-font-size:16px;
-
-line-height:1.9;
-}
-
-/* =========================
-   GLOBAL OUTREACH
-========================= */
-
-.global-outreach{
-
-text-align:center;
-}
-
-.global-outreach img{
-
-width:100%;
-
-max-width:950px;
-
-border-radius:24px;
-
-margin-top:40px;
-
-box-shadow:
-0 0 35px rgba(0,0,0,0.35);
-}
-
-/* =========================
-   RESEARCH SECTION
-========================= */
-
-.research{
-
-text-align:center;
-
-background:
-linear-gradient(
-180deg,
-rgba(255,255,255,0.01),
-rgba(255,255,255,0.03)
-);
-}
-
-/* =========================
-   MEMBERSHIP CARD
-========================= */
-
-.card{
-
-width:380px;
-
-padding:35px;
-
-border-radius:24px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.08),
-rgba(255,255,255,0.03)
-);
-
-border:1px solid rgba(255,255,255,0.10);
-
-backdrop-filter:blur(18px);
-
-box-shadow:
-0 0 40px rgba(0,207,255,0.12);
-
-text-align:center;
-
-color:white;
-}
-
-.card h2{
-
-font-size:30px;
-
-margin-bottom:25px;
-
-color:#7fe7ff;
-}
-
-.card p{
-
-margin:12px 0;
-
-font-size:16px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer,
-footer{
-
-background:
-linear-gradient(
-180deg,
-#031726,
-#02111d
-);
-
-border-top:1px solid rgba(255,255,255,0.08);
-
-padding:70px 30px;
-
-text-align:center;
-}
-
-.footer-content{
-
-max-width:950px;
-
-margin:auto;
-}
-
-.footer h3,
-footer h3{
-
-font-size:42px;
-
-margin-bottom:20px;
-
-color:#7fe7ff;
-}
-
-.footer p,
-footer p{
-
-font-size:17px;
-
-line-height:1.9;
-
-color:#d7e8f2;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
-@media(max-width:992px){
-
-.hero-content h1{
-font-size:58px;
-}
-
-.hero-content p{
-font-size:18px;
-}
-
-.navbar{
-padding:18px 25px;
-}
-
-.program-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:768px){
-
-.navbar{
-
-flex-direction:column;
-
-gap:18px;
-
-padding:18px;
-}
-
-.nav-links{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:18px;
-}
-
-.hero{
-
-padding:0 20px;
-}
-
-.hero-content h1{
-font-size:46px;
-}
-
-.hero-content p{
-font-size:17px;
-}
-
-.section-title{
-font-size:38px;
-}
-
-.program-card img{
-height:220px;
-}
-
-.card{
-width:100%;
-}
-
-.donation-box{
-padding:40px 25px;
-}
-
-}
-
-@media(max-width:480px){
-
-.hero-content h1{
-font-size:38px;
-}
-
-.hero-subtitle{
-font-size:12px;
-}
-
-.btn-primary,
-.btn-secondary,
-.btn-monthly{
-
-width:100%;
-}
-
-}
-/* =========================================================
-   4K CINEMATIC IMAGE SYSTEM
-   ULTRA HD • 3D DEPTH • PARALLAX EFFECT
-========================================================= */
-
-/* =========================================
-   HERO IMAGE CONTAINER
-========================================= */
-
-.research-hero{
-
-position:relative;
-
-height:120vh;
-
-overflow:hidden;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-perspective:1800px;
-}
-
-/* =========================================
-   MAIN 4K IMAGE
-========================================= */
-
-.research-hero img{
-
-position:absolute;
-
-width:110%;
-height:110%;
+width:115%;
+height:115%;
 
 object-fit:cover;
 
 transform:
-scale(1.08)
-translateZ(0);
+translate(-50%,-50%)
+scale(1.08);
 
 animation:
 cinematicZoom 18s ease-in-out infinite alternate;
 
 filter:
-brightness(0.38)
-contrast(1.2)
-saturate(1.3)
-sharpness(1.2);
+brightness(0.32)
+contrast(1.25)
+saturate(1.3);
 
-z-index:-6;
+z-index:-7;
 }
 
-/* =========================================
-   CINEMATIC DEPTH OVERLAY
-========================================= */
+/* =========================================================
+   OVERLAY SYSTEM
+========================================================= */
 
-.research-hero::before{
+.cinematic-hero::before{
 
 content:"";
 
 position:absolute;
 
-width:100%;
-height:100%;
+inset:0;
 
 background:
 
 linear-gradient(
 180deg,
-rgba(0,0,0,0.72),
-rgba(4,8,20,0.88)
+rgba(0,0,0,0.74),
+rgba(2,11,20,0.94)
 ),
 
-radial-gradient(circle at center,
+radial-gradient(circle at top left,
 rgba(0,240,255,0.08),
-transparent 60%),
+transparent 35%),
 
-radial-gradient(circle at top right,
+radial-gradient(circle at bottom right,
 rgba(122,0,255,0.12),
-transparent 40%);
+transparent 35%);
 
-backdrop-filter:blur(1px);
-
-z-index:-5;
+z-index:-6;
 }
 
-/* =========================================
-   3D GRID MOTION SYSTEM
-========================================= */
+/* =========================================================
+   GRID SYSTEM
+========================================================= */
 
-.research-hero::after{
-
-content:"";
+.hero-grid{
 
 position:absolute;
 
-width:140%;
-height:140%;
-
-top:-20%;
-left:-20%;
+width:160%;
+height:160%;
 
 background-image:
 
@@ -1481,59 +369,55 @@ transparent 1px
 background-size:90px 90px;
 
 transform:
-rotateX(70deg)
-translateY(180px)
-scale(1.5);
+rotateX(72deg)
+translateY(260px)
+translateX(-120px);
 
-animation:gridMove 16s linear infinite;
+animation:gridMotion 18s linear infinite;
 
-opacity:0.5;
+opacity:0.45;
 
-z-index:-4;
+z-index:-5;
 }
 
-/* =========================================
-   FLOATING LIGHT ORBS
-========================================= */
+/* =========================================================
+   AURA SYSTEM
+========================================================= */
 
-.light-orb{
+.hero-aura{
 
 position:absolute;
 
 border-radius:50%;
 
-filter:blur(70px);
+filter:blur(90px);
 
-opacity:0.55;
+opacity:0.45;
 
 mix-blend-mode:screen;
 
-animation:floatOrb 10s ease-in-out infinite;
+animation:floatAura 10s ease-in-out infinite;
 }
 
-/* Orb 1 */
+.aura-one{
 
-.orb-one{
-
-width:500px;
-height:500px;
+width:550px;
+height:550px;
 
 background:
-rgba(0,240,255,0.20);
+rgba(0,240,255,0.18);
 
-top:10%;
+top:5%;
 left:-10%;
 }
 
-/* Orb 2 */
-
-.orb-two{
+.aura-two{
 
 width:450px;
 height:450px;
 
 background:
-rgba(122,0,255,0.20);
+rgba(122,0,255,0.18);
 
 bottom:-5%;
 right:-10%;
@@ -1541,48 +425,75 @@ right:-10%;
 animation-delay:3s;
 }
 
-/* Orb 3 */
-
-.orb-three{
+.aura-three{
 
 width:300px;
 height:300px;
 
 background:
-rgba(255,0,229,0.18);
+rgba(255,0,200,0.14);
 
-top:40%;
+top:45%;
 right:20%;
 
 animation-delay:6s;
 }
 
-/* =========================================
-   HERO CONTENT DEPTH
-========================================= */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
-.hero-content{
+.hero-container{
 
 position:relative;
 
-z-index:10;
+max-width:1400px;
 
-transform-style:preserve-3d;
+text-align:center;
+
+z-index:10;
 
 animation:heroFloat 7s ease-in-out infinite;
 }
 
-/* =========================================
-   HERO TITLE
-========================================= */
+/* Tag */
 
-.hero-content h1{
+.hero-tag{
 
-font-size:110px;
+display:inline-block;
+
+padding:14px 32px;
+
+margin-bottom:35px;
+
+border-radius:60px;
+
+background:
+rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.10);
+
+backdrop-filter:blur(20px);
+
+font-size:14px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:var(--primary);
+
+box-shadow:
+0 0 25px rgba(0,240,255,0.14);
+}
+
+/* Heading */
+
+.hero-container h1{
+
+font-size:108px;
 
 line-height:1;
-
-font-family:'Orbitron', sans-serif;
 
 margin-bottom:35px;
 
@@ -1600,227 +511,352 @@ linear-gradient(
 
 text-shadow:
 
-0 0 30px rgba(0,240,255,0.22),
+0 0 35px rgba(0,240,255,0.20),
 
-0 0 60px rgba(122,0,255,0.16),
-
-0 0 120px rgba(255,255,255,0.08);
-
-transform:
-translateZ(80px);
+0 0 80px rgba(122,0,255,0.15);
 }
 
-/* =========================================
-   HERO PARAGRAPH
-========================================= */
+/* Paragraph */
 
-.hero-content p{
+.hero-container p{
 
-font-size:23px;
+font-size:22px;
 
-line-height:2.2;
+line-height:2.1;
 
 max-width:1150px;
 
 margin:auto;
 
 color:#dce8ff;
-
-transform:
-translateZ(50px);
 }
 
-/* =========================================
-   HERO SUBTITLE
-========================================= */
+/* =========================================================
+   BUTTONS
+========================================================= */
 
-.hero-subtitle{
+.hero-actions{
 
-display:inline-block;
+margin-top:55px;
 
-padding:14px 30px;
+display:flex;
+justify-content:center;
+gap:24px;
+flex-wrap:wrap;
+}
 
-margin-bottom:35px;
+.primary-btn,
+.secondary-btn{
+
+display:inline-flex;
+
+align-items:center;
+justify-content:center;
+
+padding:18px 40px;
 
 border-radius:60px;
 
-background:
-rgba(255,255,255,0.06);
+font-size:16px;
+font-weight:600;
 
-border:1px solid rgba(255,255,255,0.10);
+text-decoration:none;
+
+transition:var(--transition);
+}
+
+/* Primary */
+
+.primary-btn{
+
+background:
+linear-gradient(
+135deg,
+#00f0ff,
+#0077ff
+);
+
+color:white;
+
+box-shadow:
+0 0 35px rgba(0,240,255,0.22);
+}
+
+.primary-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 45px rgba(0,240,255,0.30);
+}
+
+/* Secondary */
+
+.secondary-btn{
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
 
 backdrop-filter:blur(18px);
 
-font-size:14px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-color:#00f0ff;
-
-transform:
-translateZ(90px);
-
-box-shadow:
-0 0 25px rgba(0,240,255,0.14);
+color:white;
 }
 
-/* =========================================
-   3D IMAGE CARDS
-========================================= */
+.secondary-btn:hover{
 
-.bento-card{
+background:
+rgba(255,255,255,0.10);
+
+transform:translateY(-5px);
+}
+
+/* =========================================================
+   STATISTICS BAR
+========================================================= */
+
+.stats-bar{
 
 position:relative;
 
-transform-style:preserve-3d;
+max-width:1350px;
 
-perspective:1500px;
+margin:-90px auto 120px auto;
+
+padding:45px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+border-radius:34px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+box-shadow:var(--shadow);
+
+z-index:50;
+}
+
+/* Stat Card */
+
+.stat-card{
+
+text-align:center;
+
+padding:25px;
+}
+
+.stat-card h2{
+
+font-size:58px;
+
+margin-bottom:12px;
+
+color:var(--primary);
+
+font-family:'Orbitron', sans-serif;
+}
+
+.stat-card p{
+
+font-size:16px;
+
+line-height:1.9;
+}
+
+/* =========================================================
+   FOUNDATION GRID
+========================================================= */
+
+.foundation-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(360px,1fr));
+
+gap:40px;
+
+margin-top:90px;
+}
+
+/* Cards */
+
+.foundation-card{
+
+position:relative;
+
+padding:45px;
+
+border-radius:34px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
 
 overflow:hidden;
 
-border-radius:36px;
+transition:var(--transition);
 
-transition:0.6s ease;
+backdrop-filter:blur(20px);
+
+box-shadow:var(--shadow);
 }
 
-.bento-card:hover{
+.foundation-card::before{
 
-transform:
-rotateX(6deg)
-rotateY(-6deg)
-translateY(-10px)
-scale(1.02);
-}
-
-/* =========================================
-   CARD IMAGE
-========================================= */
-
-.bento-card img{
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-transition:0.8s ease;
-
-filter:
-brightness(0.48)
-contrast(1.15)
-saturate(1.2);
-}
-
-/* Hover Zoom */
-
-.bento-card:hover img{
-
-transform:
-scale(1.08);
-}
-
-/* =========================================
-   GLASS OVERLAY
-========================================= */
-
-.bento-overlay{
+content:"";
 
 position:absolute;
 
 inset:0;
 
 background:
-
 linear-gradient(
-180deg,
+135deg,
 transparent,
-rgba(4,8,20,0.92)
+rgba(0,240,255,0.10),
+transparent
 );
 
-padding:40px;
+opacity:0;
 
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-
-backdrop-filter:blur(1px);
-
-transform:
-translateZ(50px);
+transition:var(--transition);
 }
 
-/* =========================================
-   CARD TITLES
-========================================= */
+.foundation-card:hover::before{
 
-.bento-overlay h3{
-
-font-size:38px;
-
-margin-bottom:20px;
-
-color:white;
-
-text-shadow:
-0 0 20px rgba(0,240,255,0.15);
+opacity:1;
 }
 
-/* =========================================
-   CARD TEXT
-========================================= */
+.foundation-card:hover{
 
-.bento-overlay p{
+transform:translateY(-10px);
+
+box-shadow:
+0 0 40px rgba(0,240,255,0.18);
+}
+
+.foundation-card h3{
+
+font-size:34px;
+
+margin-bottom:24px;
+
+color:var(--primary);
+}
+
+.foundation-card p{
 
 font-size:17px;
 
 line-height:2;
-
-color:#dce8ff;
 }
 
-/* =========================================
-   CINEMATIC ANIMATIONS
-========================================= */
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+margin-top:120px;
+
+padding:100px 50px;
+
+text-align:center;
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,0.03),
+rgba(255,255,255,0.01)
+);
+
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer h2{
+
+font-size:46px;
+
+margin-bottom:24px;
+
+color:var(--primary);
+}
+
+footer p{
+
+font-size:18px;
+
+line-height:2;
+
+max-width:1000px;
+
+margin:auto;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 @keyframes cinematicZoom{
 
 0%{
 
 transform:
-scale(1.05)
-translateY(0px);
+translate(-50%,-50%)
+scale(1.05);
 }
 
 100%{
 
 transform:
-scale(1.15)
-translateY(-15px);
+translate(-50%,-50%)
+scale(1.16);
 }
 
 }
 
-@keyframes gridMove{
+@keyframes gridMotion{
 
 0%{
+
 transform:
-rotateX(70deg)
-translateY(180px)
+rotateX(72deg)
+translateY(260px)
 translateX(0);
 }
 
 100%{
+
 transform:
-rotateX(70deg)
-translateY(180px)
+rotateX(72deg)
+translateY(260px)
 translateX(-90px);
 }
 
 }
 
-@keyframes floatOrb{
+@keyframes floatAura{
 
 0%{
 transform:translateY(0px);
@@ -1843,7 +879,7 @@ transform:translateY(0px);
 }
 
 50%{
-transform:translateY(-12px);
+transform:translateY(-10px);
 }
 
 100%{
@@ -1852,44 +888,122 @@ transform:translateY(0px);
 
 }
 
-/* =========================================
-   RESPONSIVE SYSTEM
-========================================= */
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media(max-width:1200px){
+
+.hero-container h1{
+font-size:82px;
+}
+
+}
 
 @media(max-width:992px){
 
-.hero-content h1{
-font-size:68px;
+.navbar{
+
+padding:20px 30px;
 }
 
-.hero-content p{
+.hero-container h1{
+font-size:62px;
+}
+
+.hero-container p{
 font-size:18px;
 }
 
-.research-hero{
-height:100vh;
+.stats-bar{
+
+grid-template-columns:
+1fr 1fr;
 }
 
 }
 
 @media(max-width:768px){
 
-.hero-content h1{
-font-size:48px;
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
 }
 
-.hero-content p{
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+}
+
+.cinematic-hero{
+
+height:100vh;
+
+padding:0 20px;
+}
+
+.hero-container h1{
+
+font-size:46px;
+}
+
+.hero-container p{
+
 font-size:16px;
 }
 
-.hero-subtitle{
+.hero-tag{
+
 font-size:12px;
 }
 
-.research-hero img{
+.hero-video{
 
 width:140%;
 height:120%;
+}
+
+.stats-bar{
+
+grid-template-columns:1fr;
+
+padding:30px;
+}
+
+.foundation-grid{
+
+grid-template-columns:1fr;
+}
+
+.foundation-card{
+
+padding:35px;
+}
+
+footer{
+
+padding:80px 25px;
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-container h1{
+
+font-size:38px;
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
 }
 
 }
