@@ -3,211 +3,775 @@
 
 <head>
 
-  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SovereignAqua Foundation Membership Identification Card</title>
+<title>SovereignAqua Dynamic Membership Registration System</title>
 
 <link rel="stylesheet" href="assets/css/style.css">
 
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<body style="
+<style>
+
+/* =========================================================
+   GLOBAL FOUNDATION MEMBERSHIP SYSTEM
+========================================================= */
+
+*{
 margin:0;
 padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Inter', sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#02111d,
+#041b2d,
+#02111d
+);
+
+min-height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
-background:#eef3f8;
-font-family:Arial, sans-serif;
-">
 
-<div style="
-width:420px;
-background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 0 30px rgba(0,0,0,0.15);
-border:1px solid #d9e2ec;
-">
+padding:40px;
 
-<!-- Header Section -->
+overflow-x:hidden;
 
-<div style="
-background:linear-gradient(135deg,#0f4c75,#0b1c2c);
-padding:35px 25px;
-text-align:center;
 color:white;
-">
+}
 
-<h1 style="
-margin:0;
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.membership-system{
+
+width:100%;
+max-width:1450px;
+
+display:grid;
+
+grid-template-columns:1.2fr 420px;
+
+gap:40px;
+}
+
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.registration-panel{
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:30px;
+
+padding:60px;
+
+box-shadow:
+0 0 45px rgba(0,0,0,0.35),
+0 0 25px rgba(0,207,255,0.08);
+}
+
+/* =========================================================
+   TITLES
+========================================================= */
+
+.registration-panel h1{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:58px;
+
+line-height:1.2;
+
+margin-bottom:25px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#7fe7ff,
+#00cfff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.registration-panel p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#d6e7f1;
+
+margin-bottom:20px;
+}
+
+/* =========================================================
+   NOTICE BOX
+========================================================= */
+
+.notice-box{
+
+margin-top:35px;
+
+padding:28px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.notice-box h3{
+
+color:#7fe7ff;
+
+margin-bottom:15px;
+
+font-size:24px;
+}
+
+.notice-box ul{
+
+padding-left:20px;
+}
+
+.notice-box li{
+
+margin-bottom:12px;
+
+line-height:1.8;
+
+color:#d6e7f1;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+}
+
+.form-group{
+
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+
+margin-bottom:10px;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#7fe7ff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+padding:16px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+background:rgba(255,255,255,0.05);
+
+color:white;
+
+font-size:15px;
+
+outline:none;
+
+transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+border:1px solid #00cfff;
+
+box-shadow:
+0 0 18px rgba(0,207,255,0.20);
+}
+
+textarea{
+resize:vertical;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-btn{
+
+width:100%;
+
+margin-top:35px;
+
+padding:20px;
+
+border:none;
+
+border-radius:60px;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+135deg,
+#00cfff,
+#0077ff
+);
+
+color:white;
+
+transition:0.4s;
+
+box-shadow:
+0 0 30px rgba(0,207,255,0.25);
+}
+
+.submit-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 40px rgba(0,207,255,0.40);
+}
+
+/* =========================================================
+   MEMBERSHIP CARD
+========================================================= */
+
+.card-preview{
+
+position:sticky;
+top:40px;
+
+height:fit-content;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.07),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:
+0 0 45px rgba(0,0,0,0.35),
+0 0 25px rgba(0,207,255,0.08);
+}
+
+/* Card Header */
+
+.card-header{
+
+padding:40px 30px;
+
+background:
+linear-gradient(
+135deg,
+#00cfff,
+#003f73
+);
+
+text-align:center;
+}
+
+.card-header h2{
+
+font-family:'Orbitron', sans-serif;
+
 font-size:30px;
-letter-spacing:1px;
-">
-SovereignAqua Foundation
+
+margin-bottom:12px;
+}
+
+.card-header p{
+
+font-size:14px;
+
+line-height:1.7;
+
+opacity:0.95;
+}
+
+/* Avatar */
+
+.avatar{
+
+width:110px;
+height:110px;
+
+margin:35px auto 25px auto;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,0.08);
+
+border:3px solid #7fe7ff;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:40px;
+font-weight:700;
+
+color:#7fe7ff;
+}
+
+/* Member Info */
+
+.member-name{
+
+text-align:center;
+
+font-size:32px;
+
+font-weight:700;
+
+margin-bottom:10px;
+}
+
+.member-role{
+
+text-align:center;
+
+font-size:15px;
+
+color:#d7e8f2;
+
+margin-bottom:30px;
+}
+
+/* Card Details */
+
+.card-details{
+
+margin:0 30px 30px 30px;
+
+padding:25px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,0.05);
+}
+
+.detail-row{
+
+display:flex;
+justify-content:space-between;
+
+padding:14px 0;
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.detail-row:last-child{
+border-bottom:none;
+}
+
+.detail-title{
+
+font-weight:600;
+
+color:#7fe7ff;
+}
+
+.detail-value{
+
+color:white;
+}
+
+/* Footer */
+
+.card-footer{
+
+padding:30px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,0.03);
+
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.card-footer p{
+
+font-size:13px;
+
+line-height:1.9;
+
+color:#d7e8f2;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+.membership-system{
+grid-template-columns:1fr;
+}
+
+.card-preview{
+position:relative;
+top:0;
+}
+
+}
+
+@media(max-width:768px){
+
+.registration-panel{
+padding:35px;
+}
+
+.registration-panel h1{
+font-size:40px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="membership-system">
+
+<!-- =========================================================
+     MEMBERSHIP REGISTRATION PANEL
+========================================================= -->
+
+<div class="registration-panel">
+
+<h1>
+International Membership Registration Portal
 </h1>
 
-<p style="
-margin-top:12px;
-font-size:15px;
-line-height:1.7;
-opacity:0.92;
-">
+<p>
+The SovereignAqua Research & Development Foundation maintains
+a global membership network designed for individuals,
+researchers, sustainability advocates, institutional partners,
+humanitarian contributors, environmental professionals,
+and strategic collaborators committed to advancing sustainable
+water infrastructure, environmental stewardship,
+humanitarian logistics, and long-term international development initiatives.
+</p>
+
+<p>
+Applicants may complete the official digital registration form below.
+Once submitted and approved, the system generates an individualized
+digital membership identification profile reflecting the member’s
+personal registration details, institutional category,
+membership classification, and participation status within
+the Foundation’s international development network.
+</p>
+
+<div class="notice-box">
+
+<h3>
+Membership Registration Benefits
+</h3>
+
+<ul>
+
+<li>
+Official SovereignAqua Foundation Digital Membership Identification Card
+</li>
+
+<li>
+Participation within the Foundation’s global sustainability and humanitarian outreach network
+</li>
+
+<li>
+Access to collaborative research, environmental, and development initiatives
+</li>
+
+<li>
+Institutional recognition within approved partnership and outreach programs
+</li>
+
+<li>
+Participation eligibility for selected international development activities
+</li>
+
+</ul>
+
+</div>
+
+<form action="https://formsubmit.co/Info@sovereignaquaresearchanddevelopmentfoundation.org"
+method="POST">
+
+<input type="hidden"
+name="_subject"
+value="New SovereignAqua Membership Registration">
+
+<input type="hidden"
+name="_captcha"
+value="false">
+
+<!-- =========================================================
+     FORM GRID
+========================================================= -->
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>
+Full Legal Name
+</label>
+
+<input type="text"
+id="fullname"
+name="fullname"
+placeholder="Enter full legal name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Email Address
+</label>
+
+<input type="email"
+id="email"
+name="email"
+placeholder="Enter official email address"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Country / Region
+</label>
+
+<input type="text"
+id="country"
+name="country"
+placeholder="Country or operational region">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Membership Category
+</label>
+
+<select id="membership">
+
+<option>Global Outreach Member</option>
+
+<option>Research Collaboration Member</option>
+
+<option>Environmental Sustainability Member</option>
+
+<option>Humanitarian Support Member</option>
+
+<option>Strategic Partnership Member</option>
+
+<option>Institutional Development Member</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="form-group" style="margin-top:30px;">
+
+<label>
+Professional Background / Institutional Affiliation
+</label>
+
+<textarea
+rows="5"
+name="background"
+placeholder="Provide a brief overview regarding your professional background, institutional affiliation, organizational role, or sustainability interests."></textarea>
+
+</div>
+
+
+<div class="form-group" style="margin-top:30px;">
+
+<label>
+Purpose of Membership Interest
+</label>
+
+<textarea
+rows="6"
+name="purpose"
+placeholder="Describe your interest in joining the SovereignAqua Foundation network and explain how your objectives align with the Foundation’s mission and global initiatives."></textarea>
+
+</div>
+
+<button type="submit" class="submit-btn">
+
+Submit Membership Registration
+
+</button>
+
+</form>
+
+</div>
+
+
+<!-- =========================================================
+     LIVE MEMBERSHIP CARD PREVIEW
+========================================================= -->
+
+<div class="card-preview">
+
+<div class="card-header">
+
+<h2>
+SovereignAqua Foundation
+</h2>
+
+<p>
 Research • Sustainability • Humanitarian Development
 </p>
 
 </div>
 
+<div class="avatar" id="avatar">
 
-<!-- Body Section -->
+SA
 
-<div style="
-padding:35px 30px;
-">
+</div>
 
-<div style="
-display:flex;
-align-items:center;
-gap:20px;
-margin-bottom:30px;
-">
+<div class="member-name" id="cardName">
 
-<div style="
-width:90px;
-height:90px;
-border-radius:50%;
-background:#dce8f2;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:34px;
-color:#0f4c75;
-font-weight:bold;
-border:3px solid #0f4c75;
-">
+Applicant Name
 
-JD
+</div>
+
+<div class="member-role">
+
+Pending Membership Verification
 
 </div>
 
 
-<div>
+<div class="card-details">
 
-<h2 style="
-margin:0;
-font-size:28px;
-color:#0f4c75;
-">
-John Doe
-</h2>
+<div class="detail-row">
 
-<p style="
-margin-top:8px;
-font-size:15px;
-color:#666;
-line-height:1.7;
-">
-Registered Foundation Member
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Membership Details -->
-
-<div style="
-background:#f4f7fa;
-padding:25px;
-border-radius:12px;
-">
-
-<div style="
-display:flex;
-justify-content:space-between;
-padding:12px 0;
-border-bottom:1px solid #d9e2ec;
-">
-
-<span style="
-font-weight:bold;
-color:#0f4c75;
-">
+<span class="detail-title">
 Member ID
 </span>
 
-<span style="color:#333;">
-SAF-2026-0001
+<span class="detail-value">
+SAF-2026-001
 </span>
 
 </div>
 
 
-<div style="
-display:flex;
-justify-content:space-between;
-padding:12px 0;
-border-bottom:1px solid #d9e2ec;
-">
+<div class="detail-row">
 
-<span style="
-font-weight:bold;
-color:#0f4c75;
-">
+<span class="detail-title">
 Membership Status
 </span>
 
-<span style="
-color:#28a745;
-font-weight:bold;
-">
-Active Member
+<span class="detail-value">
+Application Pending
 </span>
 
 </div>
 
 
-<div style="
-display:flex;
-justify-content:space-between;
-padding:12px 0;
-border-bottom:1px solid #d9e2ec;
-">
+<div class="detail-row">
 
-<span style="
-font-weight:bold;
-color:#0f4c75;
-">
+<span class="detail-title">
 Membership Category
 </span>
 
-<span style="color:#333;">
-Global Outreach Network
+<span class="detail-value" id="cardMembership">
+Global Outreach Member
 </span>
 
 </div>
 
 
-<div style="
-display:flex;
-justify-content:space-between;
-padding:12px 0;
-">
+<div class="detail-row">
 
-<span style="
-font-weight:bold;
-color:#0f4c75;
-">
-Issued Date
+<span class="detail-title">
+Region
 </span>
 
-<span style="color:#333;">
-January 2026
+<span class="detail-value" id="cardCountry">
+International
 </span>
 
 </div>
@@ -215,90 +779,73 @@ January 2026
 </div>
 
 
-<!-- Mission Statement -->
+<div class="card-footer">
 
-<div style="
-margin-top:30px;
-padding:22px;
-background:#eef5fb;
-border-left:5px solid #0f4c75;
-border-radius:10px;
-">
-
-<p style="
-font-size:15px;
-line-height:1.8;
-color:#444;
-margin:0;
-">
-This membership identification card certifies participation within the
-SovereignAqua Foundation’s international sustainability and humanitarian
-development network supporting water infrastructure advancement,
-environmental stewardship, research collaboration, and global outreach
-initiatives.
-</p>
-
-</div>
-
-
-<!-- Verification & Footer -->
-
-<div style="
-margin-top:30px;
-text-align:center;
-">
-
-<div style="
-display:inline-block;
-padding:10px 22px;
-background:#0f4c75;
-color:white;
-border-radius:30px;
-font-size:14px;
-letter-spacing:0.5px;
-">
-
-Verified Institutional Membership
-
-</div>
-
-<p style="
-margin-top:22px;
-font-size:12px;
-line-height:1.8;
-color:#777;
-">
-This card remains the official property of the SovereignAqua
-Research & Development Foundation and is issued for institutional
-membership identification and authorized organizational engagement.
+<p>
+This digital identification card preview dynamically updates
+based on the information provided by the applicant during
+the registration process. Approved members receive an official
+institutional membership identification record recognizing
+their participation within the SovereignAqua Foundation’s
+global sustainability and humanitarian development network.
 </p>
 
 </div>
 
 </div>
 
-
-<!-- Bottom Footer -->
-
-<div style="
-background:#f4f7fa;
-padding:18px;
-text-align:center;
-border-top:1px solid #d9e2ec;
-">
-
-<p style="
-margin:0;
-font-size:12px;
-letter-spacing:0.4px;
-color:#666;
-">
-© 2026 SovereignAqua Research & Development Foundation
-</p>
-
 </div>
 
-</div>
+
+<!-- =========================================================
+     DYNAMIC CARD UPDATE SCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================
+   LIVE NAME UPDATE
+========================================= */
+
+document.getElementById("fullname").addEventListener("input", function(){
+
+document.getElementById("cardName").innerText =
+this.value || "Applicant Name";
+
+/* Avatar Initials */
+
+let names = this.value.trim().split(" ");
+
+let initials = names.map(word => word.charAt(0)).join("");
+
+document.getElementById("avatar").innerText =
+initials || "SA";
+
+});
+
+/* =========================================
+   MEMBERSHIP CATEGORY UPDATE
+========================================= */
+
+document.getElementById("membership").addEventListener("change", function(){
+
+document.getElementById("cardMembership").innerText =
+this.value;
+
+});
+
+/* =========================================
+   COUNTRY UPDATE
+========================================= */
+
+document.getElementById("country").addEventListener("input", function(){
+
+document.getElementById("cardCountry").innerText =
+this.value || "International";
+
+});
+
+</script>
 
 </body>
 
