@@ -428,3 +428,212 @@ transform:translateY(0px);
 }
 
 }
+/* =========================================================
+   ASSET ENROLMENT PAGE
+========================================================= */
+
+.page-hero{
+
+position:relative;
+
+height:70vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+text-align:center;
+}
+
+.hero-image{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+filter:
+brightness(0.35)
+contrast(1.2);
+
+z-index:-3;
+}
+
+.hero-overlay{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,0.72),
+rgba(2,11,20,0.92)
+);
+
+z-index:-2;
+}
+
+.page-hero-content{
+
+max-width:1100px;
+
+padding:0 25px;
+
+z-index:10;
+}
+
+.page-hero-content h1{
+
+font-size:72px;
+
+margin-bottom:30px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00f0ff,
+#7a00ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.page-hero-content p{
+
+font-size:20px;
+
+line-height:2;
+}
+
+/* =========================================================
+   ENROLMENT SECTION
+========================================================= */
+
+.enrolment-section{
+
+padding:120px 0;
+}
+
+.enrolment-card{
+
+max-width:950px;
+
+margin:auto;
+
+padding:55px;
+
+border-radius:34px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.06),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 45px rgba(0,0,0,0.35);
+}
+
+.enrolment-card h2{
+
+font-size:48px;
+
+margin-bottom:22px;
+
+color:#00f0ff;
+}
+
+.enrolment-card p{
+
+margin-bottom:40px;
+
+line-height:2;
+}
+
+/* =========================================================
+   FORM SYSTEM
+========================================================= */
+
+.form-group{
+
+margin-bottom:30px;
+}
+
+.form-group label{
+
+display:block;
+
+margin-bottom:12px;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#dce8ff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+width:100%;
+
+padding:18px 20px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+background:
+rgba(255,255,255,0.04);
+
+color:white;
+
+font-size:16px;
+
+outline:none;
+
+transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+border-color:#00f0ff;
+
+box-shadow:
+0 0 25px rgba(0,240,255,0.14);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+.page-hero-content h1{
+
+font-size:42px;
+}
+
+.enrolment-card{
+
+padding:35px 25px;
+}
+
+}
