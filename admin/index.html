@@ -1,4 +1,891 @@
-<!DOCTYPE html>
+<!DOCTYPE<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="X-UA-Compatible"
+content="IE=edge">
+
+<title>
+SovereignAqua Quantum Administration Portal
+</title>
+
+<meta name="description"
+content="SovereignAqua Research & Development Foundation advanced administration and institutional management portal.">
+
+<meta name="theme-color"
+content="#020814">
+
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- =========================================================
+     FAVICON
+========================================================= -->
+
+<link rel="icon"
+type="image/png"
+href="../assets/images/favicon.png">
+
+<!-- =========================================================
+     DECAP CMS
+========================================================= -->
+
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+<style>
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root{
+
+--primary:#00f0ff;
+--secondary:#0077ff;
+--accent:#7a00ff;
+--highlight:#ff00cc;
+
+--dark:#01040d;
+--dark-alt:#07111f;
+
+--text:#ffffff;
+--soft:#dce8ff;
+--muted:#8aa7d0;
+
+--glass:
+rgba(255,255,255,0.05);
+
+--border:
+rgba(255,255,255,0.08);
+
+--shadow:
+0 0 50px rgba(0,0,0,0.40);
+
+}
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+
+font-family:'Inter', sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#01040d,
+#07111f,
+#01040d
+);
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+color:white;
+}
+
+/* =========================================================
+   ULTRA HD BACKGROUND SYSTEM
+========================================================= */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at top left,
+rgba(0,240,255,0.12),
+transparent 30%),
+
+radial-gradient(circle at top right,
+rgba(122,0,255,0.14),
+transparent 35%),
+
+radial-gradient(circle at bottom center,
+rgba(255,0,204,0.10),
+transparent 35%);
+
+z-index:-5;
+}
+
+/* =========================================================
+   FUTURISTIC GRID SYSTEM
+========================================================= */
+
+body::after{
+
+content:"";
+
+position:absolute;
+
+width:180%;
+height:180%;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+);
+
+background-size:90px 90px;
+
+transform:
+rotateX(72deg)
+translateY(280px);
+
+animation:gridMotion 18s linear infinite;
+
+opacity:0.40;
+
+z-index:-4;
+}
+
+/* =========================================================
+   FLOATING AURA SYSTEM
+========================================================= */
+
+.aura{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+opacity:0.45;
+
+mix-blend-mode:screen;
+
+animation:floatAura 10s ease-in-out infinite;
+}
+
+/* Aura One */
+
+.aura-one{
+
+width:600px;
+height:600px;
+
+background:
+rgba(0,240,255,0.18);
+
+top:-10%;
+left:-10%;
+}
+
+/* Aura Two */
+
+.aura-two{
+
+width:500px;
+height:500px;
+
+background:
+rgba(122,0,255,0.18);
+
+bottom:-10%;
+right:-10%;
+
+animation-delay:3s;
+}
+
+/* Aura Three */
+
+.aura-three{
+
+width:320px;
+height:320px;
+
+background:
+rgba(255,0,204,0.14);
+
+top:40%;
+right:20%;
+
+animation-delay:6s;
+}
+
+/* =========================================================
+   ADMIN CONTAINER
+========================================================= */
+
+.admin-container{
+
+position:relative;
+
+width:100%;
+
+max-width:980px;
+
+padding:80px 70px;
+
+border-radius:40px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.07),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(24px);
+
+box-shadow:
+0 0 60px rgba(0,0,0,0.45);
+
+overflow:hidden;
+
+text-align:center;
+
+z-index:20;
+}
+
+/* =========================================================
+   GLOW ROTATION EFFECT
+========================================================= */
+
+.admin-container::before{
+
+content:"";
+
+position:absolute;
+
+top:-50%;
+left:-50%;
+
+width:200%;
+height:200%;
+
+background:
+conic-gradient(
+from 0deg,
+transparent,
+rgba(0,240,255,0.08),
+transparent,
+rgba(122,0,255,0.08),
+transparent
+);
+
+animation:rotateGlow 18s linear infinite;
+
+z-index:-2;
+}
+
+/* =========================================================
+   INNER GLASS PANEL
+========================================================= */
+
+.admin-inner{
+
+position:relative;
+
+padding:50px;
+
+border-radius:34px;
+
+background:
+rgba(255,255,255,0.03);
+
+border:1px solid rgba(255,255,255,0.06);
+
+backdrop-filter:blur(18px);
+
+z-index:5;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.admin-logo{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:64px;
+
+font-weight:900;
+
+letter-spacing:3px;
+
+margin-bottom:24px;
+
+background:
+linear-gradient(
+90deg,
+#00f0ff,
+#ffffff,
+#7a00ff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 35px rgba(0,240,255,0.20);
+}
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.admin-subtitle{
+
+display:inline-block;
+
+padding:14px 32px;
+
+border-radius:60px;
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(18px);
+
+font-size:13px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#00f0ff;
+
+margin-bottom:35px;
+
+box-shadow:
+0 0 25px rgba(0,240,255,0.14);
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.admin-title{
+
+font-size:64px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+font-family:'Orbitron', sans-serif;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00f0ff,
+#7a00ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.admin-description{
+
+font-size:20px;
+
+line-height:2.1;
+
+max-width:760px;
+
+margin:auto;
+
+color:#dce8ff;
+
+margin-bottom:45px;
+}
+
+/* =========================================================
+   STATUS PANEL
+========================================================= */
+
+.status-panel{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:50px;
+}
+
+/* Status Card */
+
+.status-card{
+
+padding:30px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.05),
+rgba(255,255,255,0.02)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+transition:0.4s;
+
+backdrop-filter:blur(16px);
+}
+
+.status-card:hover{
+
+transform:
+translateY(-8px);
+
+box-shadow:
+0 0 40px rgba(0,240,255,0.18);
+}
+
+/* Status Number */
+
+.status-card h2{
+
+font-size:54px;
+
+margin-bottom:16px;
+
+font-family:'Orbitron', sans-serif;
+
+color:#00f0ff;
+}
+
+/* Status Text */
+
+.status-card p{
+
+font-size:15px;
+
+line-height:1.9;
+
+color:#dce8ff;
+}
+
+/* =========================================================
+   SECURITY PANEL
+========================================================= */
+
+.security-panel{
+
+margin-top:55px;
+
+padding:28px;
+
+border-radius:24px;
+
+background:
+rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.06);
+
+backdrop-filter:blur(16px);
+}
+
+.security-panel h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+color:#00f0ff;
+}
+
+.security-panel p{
+
+font-size:16px;
+
+line-height:2;
+}
+
+/* =========================================================
+   LOADING SYSTEM
+========================================================= */
+
+.loading-system{
+
+margin-top:50px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:14px;
+}
+
+/* Loader */
+
+.loader-dot{
+
+width:14px;
+height:14px;
+
+border-radius:50%;
+
+background:#00f0ff;
+
+animation:loaderPulse 1.5s infinite;
+}
+
+.loader-dot:nth-child(2){
+
+animation-delay:0.2s;
+}
+
+.loader-dot:nth-child(3){
+
+animation-delay:0.4s;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.admin-footer{
+
+margin-top:55px;
+
+font-size:14px;
+
+line-height:2;
+
+color:#8aa7d0;
+
+opacity:0.85;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes gridMotion{
+
+0%{
+
+transform:
+rotateX(72deg)
+translateY(280px)
+translateX(0);
+}
+
+100%{
+
+transform:
+rotateX(72deg)
+translateY(280px)
+translateX(-90px);
+}
+
+}
+
+@keyframes floatAura{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-35px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes rotateGlow{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes loaderPulse{
+
+0%{
+transform:scale(1);
+opacity:0.4;
+}
+
+50%{
+transform:scale(1.5);
+opacity:1;
+}
+
+100%{
+transform:scale(1);
+opacity:0.4;
+}
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+.admin-logo{
+font-size:48px;
+}
+
+.admin-title{
+font-size:48px;
+}
+
+.admin-description{
+font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+.admin-container{
+
+padding:40px 25px;
+}
+
+.admin-inner{
+
+padding:30px 20px;
+}
+
+.admin-logo{
+font-size:38px;
+}
+
+.admin-title{
+font-size:36px;
+}
+
+.admin-description{
+font-size:16px;
+}
+
+.status-panel{
+
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     FLOATING AURAS
+========================================================= -->
+
+<div class="aura aura-one"></div>
+<div class="aura aura-two"></div>
+<div class="aura aura-three"></div>
+
+<!-- =========================================================
+     ADMIN CONTAINER
+========================================================= -->
+
+<div class="admin-container">
+
+<div class="admin-inner">
+
+<!-- LOGO -->
+
+<div class="admin-logo">
+
+SOVEREIGNAQUA
+
+</div>
+
+<!-- SUBTITLE -->
+
+<div class="admin-subtitle">
+
+Quantum Administration • Institutional Management • Secure CMS Architecture
+
+</div>
+
+<!-- TITLE -->
+
+<h1 class="admin-title">
+
+Advanced Foundation Administration Portal
+
+</h1>
+
+<!-- DESCRIPTION -->
+
+<p class="admin-description">
+
+The SovereignAqua Research & Development Foundation Administration Portal operates as a centralized institutional management architecture supporting advanced content administration, sustainability intelligence coordination, infrastructure deployment systems, research publication management, humanitarian operational frameworks, strategic communications, and enterprise-level governance oversight operations.
+
+</p>
+
+<!-- STATUS PANEL -->
+
+<div class="status-panel">
+
+<div class="status-card">
+
+<h2>
+24/7
+</h2>
+
+<p>
+
+Real-time institutional administration and strategic operational management systems.
+
+</p>
+
+</div>
+
+<div class="status-card">
+
+<h2>
+AI
+</h2>
+
+<p>
+
+Integrated digital management architecture supporting advanced organizational coordination systems.
+
+</p>
+
+</div>
+
+<div class="status-card">
+
+<h2>
+Global
+</h2>
+
+<p>
+
+International sustainability and infrastructure coordination management frameworks.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- SECURITY -->
+
+<div class="security-panel">
+
+<h3>
+
+Secure Administrative Infrastructure
+
+</h3>
+
+<p>
+
+Protected enterprise administration architecture supporting institutional governance, content management systems, sustainability deployment operations, strategic communications, infrastructure intelligence management, and multidisciplinary organizational coordination frameworks.
+
+</p>
+
+</div>
+
+<!-- LOADING -->
+
+<div class="loading-system">
+
+<div class="loader-dot"></div>
+<div class="loader-dot"></div>
+<div class="loader-dot"></div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="admin-footer">
+
+© 2026 SovereignAqua Research & Development Foundation  
+Advanced Quantum Administration & Institutional Management System
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html> html>
 <html>
 <head>
   <meta charset="utf-8" />
