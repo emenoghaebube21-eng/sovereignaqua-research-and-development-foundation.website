@@ -443,28 +443,41 @@ box-shadow:
 
 /* Heading */
 
-.hero-container h1{
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
 
-font-family:'Orbitron', sans-serif;
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+}
 
-font-size:108px;
+.logo{
+    position:relative;
+    z-index:2;
 
-line-height:1;
+    font-family:'Orbitron',sans-serif;
+    font-size:32px;
+    font-weight:800;
+    letter-spacing:2px;
 
-margin-bottom:35px;
+    background:linear-gradient(
+        90deg,
+        #00f0ff,
+        #ffffff,
+        #7a00ff
+    );
 
-background:
-linear-gradient(
-90deg,
-#ffffff,
-#00f0ff,
-#7a00ff,
-#ffffff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 text-shadow:
 
 0 0 35px rgba(0,240,255,0.20),
@@ -1040,14 +1053,25 @@ Asset Enrolment
      HERO SECTION
 ========================================================= -->
 
-<section class="cinematic-hero">
+<section class="hero">
 
-<video autoplay muted loop playsinline class="hero-video">
+    <video class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
 
-<source src="assets/videos/sovereignaqua-bg.mp4"
-type="video/mp4">
+        <source src="videos/sovereignaqua.mp4"
+                type="video/mp4">
 
-</video>
+    </video>
+
+    <div class="logo">
+        SovereignAqua
+    </div>
+
+</section>
+
 
 <div class="hero-aura aura-one"></div>
 <div class="hero-aura aura-two"></div>
