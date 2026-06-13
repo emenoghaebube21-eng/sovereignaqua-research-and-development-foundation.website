@@ -1,0 +1,18 @@
+Images Directory
+
+This directory contains all project images including:
+- water.jpg - Water infrastructure images
+- environment.jpg - Environmental sustainability images
+- humanitarian.jpg - Humanitarian initiative images
+- asset-management-4k.jpg - Asset management hero image
+- favicon.png - Website favicon
+
+To add actual images:
+1. Replace these placeholder references with real image files
+2. Ensure images are optimized for web (JPEG, PNG, WebP formats)
+3. Recommended sizes:
+   - Hero images: 1920x1080px or larger
+   - Project cards: 600x400px
+   - Favicon: 32x32px or 64x64px
+
+SVG alternatives available in the CSS files for background elements.
