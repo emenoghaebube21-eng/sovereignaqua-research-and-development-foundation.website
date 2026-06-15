@@ -47,27 +47,52 @@ SOVEREIGNAQUA
 <div class="hero-overlay"></div>
 
 <img src="assets/images/asset-management-4k.jpg"
-class="hero-image">
+class="hero-image"
+alt="SovereignAqua Asset Registry">
 
 <div class="page-hero-content">
 
 <div class="hero-tag">
 
-Institutional Asset Registration System
+Global Institutional Registry Platform
 
 </div>
 
 <h1>
 
-Global Asset Enrolment & Infrastructure Registration
+Asset Intelligence, Registration & Stewardship Portal
 
 </h1>
 
 <p>
 
-The SovereignAqua Research & Development Foundation Asset Enrolment Portal provides a centralized institutional framework supporting infrastructure registration, sustainability asset documentation, humanitarian equipment tracking, research asset enrollment, and strategic operational inventory coordination.
+The SovereignAqua Research & Development Foundation Asset Enrolment Portal serves as a centralized institutional registry supporting the enrollment, documentation, verification, stewardship, and strategic management of infrastructure systems, environmental assets, humanitarian resources, scientific equipment, renewable energy installations, and mission-critical operational assets across local, national, and international jurisdictions.
 
 </p>
+
+<div class="hero-stats">
+
+<div class="stat-box">
+<h3>Infrastructure</h3>
+<span>Registry</span>
+</div>
+
+<div class="stat-box">
+<h3>Research</h3>
+<span>Assets</span>
+</div>
+
+<div class="stat-box">
+<h3>Humanitarian</h3>
+<span>Operations</span>
+</div>
+
+<div class="stat-box">
+<h3>Global</h3>
+<span>Coordination</span>
+</div>
+
+</div>
 
 </div>
 
@@ -83,154 +108,322 @@ The SovereignAqua Research & Development Foundation Asset Enrolment Portal provi
 
 <h2>
 
-Asset Registration Application
+Institutional Asset Registration Application
 
 </h2>
 
 <p>
 
-Submit institutional infrastructure, sustainability systems, operational equipment, humanitarian deployment assets, or research-related resource documentation for internal registration and coordinated operational review.
+Complete the registration process below to enroll infrastructure, research systems, environmental resources, humanitarian equipment, renewable energy installations, strategic operational assets, intellectual property holdings, or institutional development projects into the SovereignAqua Registry Framework.
 
 </p>
 
 <form
 action="https://formsubmit.co/Info@sovereignaquaresearchanddevelopmentfoundation.org"
-method="POST">
+method="POST"
+enctype="multipart/form-data">
 
 <input type="hidden"
 name="_subject"
-value="New Asset Enrolment Submission">
+value="New SovereignAqua Asset Registration">
 
 <input type="hidden"
 name="_captcha"
 value="false">
 
-<!-- ORGANIZATION -->
+<!-- SECTION 1 -->
+
+<h3>Institution Information</h3>
+
+<div class="form-grid">
 
 <div class="form-group">
 
-<label>
+<label>Organization Name *</label>
 
-Organization / Institution Name
-
-</label>
-
-<input type="text"
+<input
+type="text"
 name="organization"
 required>
 
 </div>
 
-<!-- CONTACT -->
-
 <div class="form-group">
 
-<label>
+<label>Institution Type *</label>
 
-Primary Contact Name
+<select name="institution_type">
 
-</label>
-
-<input type="text"
-name="contact_name"
-required>
-
-</div>
-
-<!-- EMAIL -->
-
-<div class="form-group">
-
-<label>
-
-Email Address
-
-</label>
-
-<input type="email"
-name="email"
-required>
-
-</div>
-
-<!-- CATEGORY -->
-
-<div class="form-group">
-
-<label>
-
-Asset Classification
-
-</label>
-
-<select name="asset_type">
-
-<option>
-Water Infrastructure
-</option>
-
-<option>
-Research Equipment
-</option>
-
-<option>
-Environmental Systems
-</option>
-
-<option>
-Humanitarian Logistics
-</option>
-
-<option>
-Renewable Infrastructure
-</option>
-
-<option>
-Strategic Operational Assets
-</option>
+<option>Government Agency</option>
+<option>Private Organization</option>
+<option>Nonprofit Foundation</option>
+<option>Educational Institution</option>
+<option>Research Institution</option>
+<option>Community Organization</option>
+<option>International Entity</option>
 
 </select>
 
 </div>
 
-<!-- LOCATION -->
+</div>
 
 <div class="form-group">
 
-<label>
+<label>Primary Contact Person *</label>
 
-Operational Region / Location
-
-</label>
-
-<input type="text"
-name="location">
+<input
+type="text"
+name="contact_name"
+required>
 
 </div>
 
-<!-- DESCRIPTION -->
+<div class="form-grid">
 
 <div class="form-group">
 
-<label>
+<label>Email Address *</label>
 
-Asset Description
+<input
+type="email"
+name="email"
+required>
 
-</label>
+</div>
+
+<div class="form-group">
+
+<label>Telephone Number</label>
+
+<input
+type="tel"
+name="phone">
+
+</div>
+
+</div>
+
+<hr>
+
+<h3>Asset Classification</h3>
+
+<div class="form-group">
+
+<label>Asset Category *</label>
+
+<select name="asset_type" required>
+
+<optgroup label="Infrastructure">
+
+<option>Water Infrastructure</option>
+<option>Energy Infrastructure</option>
+<option>Transportation Infrastructure</option>
+<option>Utility Infrastructure</option>
+
+</optgroup>
+
+<optgroup label="Environmental">
+
+<option>Environmental Systems</option>
+<option>Conservation Assets</option>
+<option>Carbon Assets</option>
+
+</optgroup>
+
+<optgroup label="Research">
+
+<option>Scientific Equipment</option>
+<option>Research Assets</option>
+<option>Intellectual Property</option>
+
+</optgroup>
+
+<optgroup label="Humanitarian">
+
+<option>Medical Equipment</option>
+<option>Emergency Response Systems</option>
+<option>Humanitarian Logistics</option>
+
+</optgroup>
+
+<optgroup label="Strategic">
+
+<option>Strategic Operational Assets</option>
+<option>Renewable Energy Assets</option>
+<option>Mission-Critical Systems</option>
+
+</optgroup>
+
+</select>
+
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Asset Value (USD)</label>
+
+<input
+type="number"
+name="asset_value">
+
+</div>
+
+<div class="form-group">
+
+<label>Ownership Status</label>
+
+<select name="ownership">
+
+<option>Privately Owned</option>
+<option>Government Owned</option>
+<option>Trust Held</option>
+<option>Foundation Managed</option>
+<option>Community Managed</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Operational Status</label>
+
+<select name="status">
+
+<option>Active</option>
+<option>Operational</option>
+<option>Under Development</option>
+<option>Under Construction</option>
+<option>Inactive</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Estimated Commission Date</label>
+
+<input
+type="date"
+name="commission_date">
+
+</div>
+
+</div>
+
+<hr>
+
+<h3>Location Information</h3>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Country</label>
+
+<input
+type="text"
+name="country">
+
+</div>
+
+<div class="form-group">
+
+<label>Region / State</label>
+
+<input
+type="text"
+name="state">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Physical Address</label>
+
+<input
+type="text"
+name="address">
+
+</div>
+
+<div class="form-group">
+
+<label>GPS Coordinates</label>
+
+<input
+type="text"
+name="gps">
+
+</div>
+
+<hr>
+
+<h3>Asset Description</h3>
+
+<div class="form-group">
+
+<label>Detailed Asset Summary *</label>
 
 <textarea
+rows="10"
 name="description"
-rows="8"
 required></textarea>
 
 </div>
 
-<!-- SUBMIT -->
+<div class="form-group">
 
-<button type="submit"
-class="primary-btn">
+<label>Strategic Importance</label>
 
-Submit Asset Registration
+<textarea
+rows="5"
+name="importance"></textarea>
+
+</div>
+
+<hr>
+
+<h3>Supporting Documentation</h3>
+
+<div class="form-group">
+
+<label>Upload Supporting Documents</label>
+
+<input
+type="file"
+name="attachment"
+accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+
+</div>
+
+<div class="compliance-notice">
+
+<h4>Declaration & Certification</h4>
+
+<p>
+
+By submitting this application, the applicant certifies that all information provided is accurate and complete. Submission does not constitute ownership recognition, certification, valuation, or regulatory approval. Assets are subject to review and verification by the SovereignAqua Foundation Registry Administration.
+
+</p>
+
+</div>
+
+<button
+type="submit"
+class="asset-submit-btn">
+
+Submit Institutional Asset Registration
 
 </button>
 
@@ -241,25 +434,3 @@ Submit Asset Registration
 </div>
 
 </section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<h2>
-
-SovereignAqua Research & Development Foundation
-
-</h2>
-
-<p>
-
-Advancing infrastructure intelligence, sustainability systems, scientific innovation, humanitarian coordination, and global development initiatives through strategic institutional collaboration.
-
-</p>
-
-</footer>
-
-</body>
-
-</html>
