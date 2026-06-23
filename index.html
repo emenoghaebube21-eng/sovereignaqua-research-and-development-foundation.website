@@ -1053,33 +1053,52 @@ Asset Enrolment
      HERO SECTION
 ========================================================= -->
 
-<section class="hero">
+<body>
 
-    <video class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline>
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="assets/video/background.mp4" type="video/mp4">
+</video>
 
-      
+<div class="overlay"></div>
 
-    </video>
+<div class="hero-content">
+    <h1>SovereignAqua Foundation</h1>
+    <p>Building Sustainable Water Solutions Worldwide</p>
+</div>
 
-    <source src="videos/sovereignaqua.mp4"
-                type="video/mp4">
-
-</section>
-
+</body>
 
 <div class="hero-aura aura-one"></div>
 <div class="hero-aura aura-two"></div>
 <div class="hero-aura aura-three"></div>
 
-<div class="hero-grid"></div>
+<div class="hero-grid#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}"></div>
 
-<div class="hero-container">
+<div class="hero-container.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}">
 
-<div class="hero-tag">
+<div class="hero-tag.hero-content{
+    position:relative;
+    z-index:1;
+    color:white;
+    text-align:center;
+    padding-top:250px;
+}">
 
 Global Sustainability • Infrastructure Intelligence • Humanitarian Innovation
 
