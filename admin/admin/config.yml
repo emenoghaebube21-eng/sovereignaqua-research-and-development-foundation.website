@@ -1,43 +1,500 @@
+```yaml
 backend:
   name: github
   repo: emenoghaebube21-eng/sovereignaqua-research-development-foundation
   branch: main
 
+local_backend: true
+
+publish_mode: editorial_workflow
+
+site_url: https://www.sovereignaquaresearchanddevelopmentfoundation.org
+
+display_url: https://www.sovereignaquaresearchanddevelopmentfoundation.org
+
+logo_url: /assets/images/logo.png
+
 media_folder: "assets/images/uploads"
+
 public_folder: "/assets/images/uploads"
 
 collections:
 
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "index.html"
-        label: "Homepage"
-        name: "home"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+###############################################################
+# GLOBAL SITE SETTINGS
+###############################################################
 
-      - file: "projects.html"
-        label: "Projects"
-        name: "projects"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+- name: "settings"
 
-      - file: "research.html"
-        label: "Research"
-        name: "research"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+  label: "Site Settings"
 
-  - name: "media"
-    label: "Press / Media"
-    folder: "posts"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  files:
+
+    - label: "Foundation Settings"
+
+      name: "foundation"
+
+      file: "data/settings.yml"
+
+      fields:
+
+        - {label: Foundation Name, name: foundation_name, widget: string}
+
+        - {label: Tagline, name: tagline, widget: string}
+
+        - {label: Primary Email, name: email, widget: string}
+
+        - {label: Telephone, name: telephone, widget: string}
+
+        - {label: Address, name: address, widget: text}
+
+        - {label: Hero Background Video, name: hero_video, widget: file}
+
+        - {label: Foundation Logo, name: logo, widget: image}
+
+        - {label: Primary Colour, name: primary_colour, widget: color}
+
+        - {label: Secondary Colour, name: secondary_colour, widget: color}
+
+###############################################################
+# HOMEPAGE
+###############################################################
+
+- name: "homepage"
+
+  label: "Homepage"
+
+  files:
+
+    - label: "Homepage"
+
+      name: "homepage"
+
+      file: "content/homepage.md"
+
+      fields:
+
+        - {label: Hero Tag, name: hero_tag, widget: string}
+
+        - {label: Hero Heading, name: hero_heading, widget: string}
+
+        - {label: Hero Description, name: hero_description, widget: text}
+
+        - {label: Primary Button Text, name: primary_button_text, widget: string}
+
+        - {label: Primary Button Link, name: primary_button_link, widget: string}
+
+        - {label: Secondary Button Text, name: secondary_button_text, widget: string}
+
+        - {label: Secondary Button Link, name: secondary_button_link, widget: string}
+
+        - label: Statistics
+
+          name: statistics
+
+          widget: list
+
+          fields:
+
+            - {label: Title, name: title, widget: string}
+
+            - {label: Value, name: value, widget: number}
+
+###############################################################
+# ABOUT PAGE
+###############################################################
+
+- name: "about"
+
+  label: "About Foundation"
+
+  files:
+
+    - label: "About"
+
+      name: "about"
+
+      file: "content/about.md"
+
+      fields:
+
+        - {label: Page Title, name: title, widget: string}
+
+        - {label: Featured Image, name: image, widget: image}
+
+        - {label: Introduction, name: introduction, widget: markdown}
+
+        - {label: Body, name: body, widget: markdown}
+```
+```yaml
+###############################################################
+# RESEARCH
+###############################################################
+
+- name: "research"
+
+  label: "Research"
+
+  folder: "content/research"
+
+  create: true
+
+  slug: "{{slug}}"
+
+  summary: "{{title}}"
+
+  fields:
+
+    - {label: Research Title, name: title, widget: string}
+
+    - {label: Featured Image, name: featured_image, widget: image}
+
+    - {label: Research Category, name: category, widget: select,
+       options: [
+         "Water Security",
+         "Environmental Sustainability",
+         "Renewable Energy",
+         "Agriculture",
+         "Climate",
+         "Technology",
+         "Education",
+         "Humanitarian"
+       ]}
+
+    - {label: Lead Researcher, name: lead_researcher, widget: string}
+
+    - {label: Status, name: status, widget: select,
+       options: [
+         "Planning",
+         "Active",
+         "Completed",
+         "Archived"
+       ]}
+
+    - {label: Publication Date, name: publication_date, widget: datetime}
+
+    - {label: Summary, name: summary, widget: text}
+
+    - {label: Research Paper (PDF), name: document, widget: file, required: false}
+
+    - {label: Body, name: body, widget: markdown}
+
+###############################################################
+# PROJECTS
+###############################################################
+
+- name: "projects"
+
+  label: "Projects"
+
+  folder: "content/projects"
+
+  create: true
+
+  slug: "{{slug}}"
+
+  fields:
+
+    - {label: Project Name, name: title, widget: string}
+
+    - {label: Featured Image, name: featured_image, widget: image}
+
+    - {label: Country, name: country, widget: string}
+
+    - {label: Region, name: region, widget: string}
+
+    - {label: Project Status, name: status, widget: select,
+       options: [
+         "Planning",
+         "In Progress",
+         "Completed",
+         "On Hold"
+       ]}
+
+    - {label: Start Date, name: start_date, widget: datetime}
+
+    - {label: Completion Date, name: completion_date, widget: datetime, required: false}
+
+    - {label: Funding Source, name: funding_source, widget: string}
+
+    - {label: Project Summary, name: summary, widget: text}
+
+    - {label: Description, name: body, widget: markdown}
+
+###############################################################
+# PARTNERSHIPS
+###############################################################
+
+- name: "partners"
+
+  label: "Strategic Partnerships"
+
+  folder: "content/partners"
+
+  create: true
+
+  slug: "{{slug}}"
+
+  fields:
+
+    - {label: Organization Name, name: title, widget: string}
+
+    - {label: Organization Logo, name: logo, widget: image}
+
+    - {label: Website, name: website, widget: string, required: false}
+
+    - {label: Country, name: country, widget: string}
+
+    - {label: Partnership Type, name: type, widget: select,
+       options: [
+         "Government",
+         "Academic",
+         "Corporate",
+         "Foundation",
+         "NGO",
+         "International Organization"
+       ]}
+
+    - {label: Description, name: body, widget: markdown}
+
+###############################################################
+# LEADERSHIP
+###############################################################
+
+- name: "leadership"
+
+  label: "Leadership Team"
+
+  folder: "content/leadership"
+
+  create: true
+
+  slug: "{{slug}}"
+
+  fields:
+
+    - {label: Full Name, name: title, widget: string}
+
+    - {label: Position, name: position, widget: string}
+
+    - {label: Photograph, name: photo, widget: image}
+
+    - {label: Biography, name: body, widget: markdown}
+
+    - {label: Email, name: email, widget: string, required: false}
+
+    - {label: LinkedIn, name: linkedin, widget: string, required: false}
+
+###############################################################
+# NEWS & PRESS
+###############################################################
+
+- name: "news"
+
+  label: "News & Press"
+
+  folder: "content/news"
+
+  create: true
+
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+  fields:
+
+    - {label: Headline, name: title, widget: string}
+
+    - {label: Featured Image, name: featured_image, widget: image}
+
+    - {label: Publication Date, name: date, widget: datetime}
+
+    - {label: Author, name: author, widget: string}
+
+    - {label: Summary, name: summary, widget: text}
+
+    - {label: Article, name: body, widget: markdown}
+```
+```yaml
+###############################################################
+# ASSET CATEGORIES
+###############################################################
+
+- name: "asset_categories"
+
+  label: "Asset Categories"
+
+  file: "data/asset-categories.yml"
+
+  fields:
+
+    - label: Categories
+
+      name: categories
+
+      widget: list
+
+      fields:
+
+        - {label: Category Name, name: title, widget: string}
+
+        - {label: Description, name: description, widget: text}
+
+        - {label: Icon, name: icon, widget: string}
+
+###############################################################
+# GALLERY
+###############################################################
+
+- name: "gallery"
+
+  label: "Image Gallery"
+
+  folder: "content/gallery"
+
+  create: true
+
+  slug: "{{slug}}"
+
+  fields:
+
+    - {label: Title, name: title, widget: string}
+
+    - {label: Image, name: image, widget: image}
+
+    - {label: Caption, name: caption, widget: text}
+
+    - {label: Category, name: category, widget: string}
+
+###############################################################
+# DOCUMENT LIBRARY
+###############################################################
+
+- name: "documents"
+
+  label: "Document Library"
+
+  folder: "content/documents"
+
+  create: true
+
+  slug: "{{slug}}"
+
+  fields:
+
+    - {label: Title, name: title, widget: string}
+
+    - {label: Category, name: category, widget: string}
+
+    - {label: PDF File, name: file, widget: file}
+
+    - {label: Description, name: description, widget: text}
+
+###############################################################
+# EVENTS
+###############################################################
+
+- name: "events"
+
+  label: "Events"
+
+  folder: "content/events"
+
+  create: true
+
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+  fields:
+
+    - {label: Event Title, name: title, widget: string}
+
+    - {label: Event Date, name: date, widget: datetime}
+
+    - {label: Venue, name: venue, widget: string}
+
+    - {label: Featured Image, name: image, widget: image}
+
+    - {label: Description, name: body, widget: markdown}
+
+###############################################################
+# NAVIGATION
+###############################################################
+
+- name: "navigation"
+
+  label: "Navigation"
+
+  file: "data/navigation.yml"
+
+  fields:
+
+    - label: Menu
+
+      name: menu
+
+      widget: list
+
+      fields:
+
+        - {label: Title, name: title, widget: string}
+
+        - {label: URL, name: url, widget: string}
+
+###############################################################
+# FOOTER
+###############################################################
+
+- name: "footer"
+
+  label: "Footer"
+
+  file: "data/footer.yml"
+
+  fields:
+
+    - {label: Foundation Name, name: foundation_name, widget: string}
+
+    - {label: Footer Description, name: description, widget: markdown}
+
+    - {label: Copyright, name: copyright, widget: string}
+
+###############################################################
+# SEO
+###############################################################
+
+- name: "seo"
+
+  label: "SEO"
+
+  file: "data/seo.yml"
+
+  fields:
+
+    - {label: Site Title, name: site_title, widget: string}
+
+    - {label: Meta Description, name: meta_description, widget: text}
+
+    - {label: Keywords, name: keywords, widget: list}
+
+    - {label: Open Graph Image, name: og_image, widget: image}
+
+###############################################################
+# SOCIAL MEDIA
+###############################################################
+
+- name: "social"
+
+  label: "Social Media"
+
+  file: "data/social.yml"
+
+  fields:
+
+    - {label: Facebook, name: facebook, widget: string, required: false}
+
+    - {label: LinkedIn, name: linkedin, widget: string, required: false}
+
+    - {label: YouTube, name: youtube, widget: string, required: false}
+
+    - {label: X (Twitter), name: twitter, widget: string, required: false}
+
+    - {label: Instagram, name: instagram, widget: string, required: false}
+```
