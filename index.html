@@ -1,22 +1,57 @@
-<!DOCTYPE html>
+<!DOCTYPE<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    
+     <section class="banner">
+    <h1>Welcome to SovereignAqua</h1>
+</section>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="X-UA-Compatible"
+content="IE=edge">
 
 <title>
-SovereignAqua Research & Development Foundation
+SovereignAqua Quantum Administration Portal
 </title>
 
 <meta name="description"
-content="SovereignAqua Research & Development Foundation advances sustainable infrastructure systems, environmental intelligence, scientific innovation, humanitarian logistics, and global sustainability development initiatives.">
+content="SovereignAqua Research & Development Foundation advanced administration and institutional management portal.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color"
+content="#020814">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- =========================================================
+     FAVICON
+========================================================= -->
+
+<link rel="icon"
+type="vidieo/mp4"
+href="../assets/video/sovereignaqua-bg.mp4.jpg">
+
+<!-- =========================================================
+     DECAP CMS
+========================================================= -->
+
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
 <style>
 
@@ -29,13 +64,14 @@ content="SovereignAqua Research & Development Foundation advances sustainable in
 --primary:#00f0ff;
 --secondary:#0077ff;
 --accent:#7a00ff;
+--highlight:#ff00cc;
 
---dark:#030712;
+--dark:#01040d;
 --dark-alt:#07111f;
 
 --text:#ffffff;
 --soft:#dce8ff;
---muted:#9bb4d1;
+--muted:#8aa7d0;
 
 --glass:
 rgba(255,255,255,0.05);
@@ -43,419 +79,823 @@ rgba(255,255,255,0.05);
 --border:
 rgba(255,255,255,0.08);
 
+--shadow:
+0 0 50px rgba(0,0,0,0.40);
+
 }
 
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
 
-<!-- ===================================================== -->
-<!-- SOVEREIGNAQUA NEXT-GEN SOVEREIGNAQUA FOUNDATION -->
-<!-- 3D BIOTECH + AI + GLOBAL REGISTRY EXPERIENCE -->
-<!-- ===================================================== -->
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<section class="hero-3d">
+/* =========================================================
+   BODY
+========================================================= */
 
-<video autoplay muted loop playsinline id="dna-video">
-<source src="assets/video/dna-background.mp4" type="video/mp4">
-</video>
+body{
 
-<div class="hero-overlay"></div>
+.banner{
+    background-image:url('assets/sovereignaqua-bg.mp4(1)');
+    background-size:cover;
+    background-position:center;
+    height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-<div id="particles-js"></div>
+height:100vh;
 
-<nav class="glass-nav">
+overflow:hidden;
 
-<div class="logo">
+display:flex;
+justify-content:center;
+align-items:center;
 
-<div class="logo-icon">💧</div>
+position:relative;
 
-<div class="logo-text">
-SOVEREIGNAQUA FOUNDATION
-<span>
-Research & Development Foundation
-</span>
+color:white;
+}
+
+/* =========================================================
+   ULTRA HD BACKGROUND SYSTEM
+========================================================= */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at top left,
+rgba(0,240,255,0.12),
+transparent 30%),
+
+radial-gradient(circle at top right,
+rgba(122,0,255,0.14),
+transparent 35%),
+
+radial-gradient(circle at bottom center,
+rgba(255,0,204,0.10),
+transparent 35%);
+
+z-index:-5;
+}
+
+/* =========================================================
+   FUTURISTIC GRID SYSTEM
+========================================================= */
+
+body::after{
+
+content:"";
+
+position:absolute;
+
+width:180%;
+height:180%;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,0.03) 1px,
+transparent 1px
+);
+
+background-size:90px 90px;
+
+transform:
+rotateX(72deg)
+translateY(280px);
+
+animation:gridMotion 18s linear infinite;
+
+opacity:0.40;
+
+z-index:-4;
+}
+
+/* =========================================================
+   FLOATING AURA SYSTEM
+========================================================= */
+
+.aura{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+opacity:0.45;
+
+mix-blend-mode:screen;
+
+animation:floatAura 10s ease-in-out infinite;
+}
+
+/* Aura One */
+
+.aura-one{
+
+width:600px;
+height:600px;
+
+background:
+rgba(0,240,255,0.18);
+
+top:-10%;
+left:-10%;
+}
+
+/* Aura Two */
+
+.aura-two{
+
+width:500px;
+height:500px;
+
+background:
+rgba(122,0,255,0.18);
+
+bottom:-10%;
+right:-10%;
+
+animation-delay:3s;
+}
+
+/* Aura Three */
+
+.aura-three{
+
+width:320px;
+height:320px;
+
+background:
+rgba(255,0,204,0.14);
+
+top:40%;
+right:20%;
+
+animation-delay:6s;
+}
+
+/* =========================================================
+   ADMIN CONTAINER
+========================================================= */
+
+.admin-container{
+
+position:relative;
+
+width:100%;
+
+max-width:980px;
+
+padding:80px 70px;
+
+border-radius:40px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.07),
+rgba(255,255,255,0.03)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(24px);
+
+box-shadow:
+0 0 60px rgba(0,0,0,0.45);
+
+overflow:hidden;
+
+text-align:center;
+
+z-index:20;
+}
+
+/* =========================================================
+   GLOW ROTATION EFFECT
+========================================================= */
+
+.admin-container::before{
+
+content:"";
+
+position:absolute;
+
+top:-50%;
+left:-50%;
+
+width:200%;
+height:200%;
+
+background:
+conic-gradient(
+from 0deg,
+transparent,
+rgba(0,240,255,0.08),
+transparent,
+rgba(122,0,255,0.08),
+transparent
+);
+
+animation:rotateGlow 18s linear infinite;
+
+z-index:-2;
+}
+
+/* =========================================================
+   INNER GLASS PANEL
+========================================================= */
+
+.admin-inner{
+
+position:relative;
+
+padding:50px;
+
+border-radius:34px;
+
+background:
+rgba(255,255,255,0.03);
+
+border:1px solid rgba(255,255,255,0.06);
+
+backdrop-filter:blur(18px);
+
+z-index:5;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.admin-logo{
+
+font-family:'Orbitron', sans-serif;
+
+font-size:64px;
+
+font-weight:900;
+
+letter-spacing:3px;
+
+margin-bottom:24px;
+
+background:
+linear-gradient(
+90deg,
+#00f0ff,
+#ffffff,
+#7a00ff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 35px rgba(0,240,255,0.20);
+}
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.admin-subtitle{
+
+display:inline-block;
+
+padding:14px 32px;
+
+border-radius:60px;
+
+background:
+rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(18px);
+
+font-size:13px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#00f0ff;
+
+margin-bottom:35px;
+
+box-shadow:
+0 0 25px rgba(0,240,255,0.14);
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.admin-title{
+
+font-size:64px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+font-family:'Orbitron', sans-serif;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00f0ff,
+#7a00ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.admin-description{
+
+font-size:20px;
+
+line-height:2.1;
+
+max-width:760px;
+
+margin:auto;
+
+color:#dce8ff;
+
+margin-bottom:45px;
+}
+
+/* =========================================================
+   STATUS PANEL
+========================================================= */
+
+.status-panel{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:50px;
+}
+
+/* Status Card */
+
+.status-card{
+
+padding:30px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.05),
+rgba(255,255,255,0.02)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+transition:0.4s;
+
+backdrop-filter:blur(16px);
+}
+
+.status-card:hover{
+
+transform:
+translateY(-8px);
+
+box-shadow:
+0 0 40px rgba(0,240,255,0.18);
+}
+
+/* Status Number */
+
+.status-card h2{
+
+font-size:54px;
+
+margin-bottom:16px;
+
+font-family:'Orbitron', sans-serif;
+
+color:#00f0ff;
+}
+
+/* Status Text */
+
+.status-card p{
+
+font-size:15px;
+
+line-height:1.9;
+
+color:#dce8ff;
+}
+
+/* =========================================================
+   SECURITY PANEL
+========================================================= */
+
+.security-panel{
+
+margin-top:55px;
+
+padding:28px;
+
+border-radius:24px;
+
+background:
+rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.06);
+
+backdrop-filter:blur(16px);
+}
+
+.security-panel h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+color:#00f0ff;
+}
+
+.security-panel p{
+
+font-size:16px;
+
+line-height:2;
+}
+
+/* =========================================================
+   LOADING SYSTEM
+========================================================= */
+
+.loading-system{
+
+margin-top:50px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:14px;
+}
+
+/* Loader */
+
+.loader-dot{
+
+width:14px;
+height:14px;
+
+border-radius:50%;
+
+background:#00f0ff;
+
+animation:loaderPulse 1.5s infinite;
+}
+
+.loader-dot:nth-child(2){
+
+animation-delay:0.2s;
+}
+
+.loader-dot:nth-child(3){
+
+animation-delay:0.4s;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.admin-footer{
+
+margin-top:55px;
+
+font-size:14px;
+
+line-height:2;
+
+color:#8aa7d0;
+
+opacity:0.85;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes gridMotion{
+
+0%{
+
+transform:
+rotateX(72deg)
+translateY(280px)
+translateX(0);
+}
+
+100%{
+
+transform:
+rotateX(72deg)
+translateY(280px)
+translateX(-90px);
+}
+
+}
+
+@keyframes floatAura{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-35px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes rotateGlow{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes loaderPulse{
+
+0%{
+transform:scale(1);
+opacity:0.4;
+}
+
+50%{
+transform:scale(1.5);
+opacity:1;
+}
+
+100%{
+transform:scale(1);
+opacity:0.4;
+}
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+.admin-logo{
+font-size:48px;
+}
+
+.admin-title{
+font-size:48px;
+}
+
+.admin-description{
+font-size:18px;
+}
+
+}
+
+@media(max-width:768px){
+
+.admin-container{
+
+padding:40px 25px;
+}
+
+.admin-inner{
+
+padding:30px 20px;
+}
+
+.admin-logo{
+font-size:38px;
+}
+
+.admin-title{
+font-size:36px;
+}
+
+.admin-description{
+font-size:16px;
+}
+
+.status-panel{
+
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     FLOATING AURAS
+========================================================= -->
+
+<div class="aura aura-one"></div>
+<div class="aura aura-two"></div>
+<div class="aura aura-three"></div>
+
+<!-- =========================================================
+     ADMIN CONTAINER
+========================================================= -->
+
+<div class="admin-container">
+
+<div class="admin-inner">
+
+<!-- LOGO -->
+
+<div class="admin-logo">
+
+SOVEREIGNAQUA
+
 </div>
 
-</div>
+<!-- SUBTITLE -->
 
-<ul>
+<div class="admin-subtitle">
 
-<li><a href="index.html">Home</a></li>
-
-<li><a href="mission.html">Mission</a></li>
-
-<li><a href="projects.html">Projects</a></li>
-
-<li><a href="research.html">Research</a></li>
-
-<li><a href="governance.html">Governance</a></li>
-
-<li><a href="partnership.html">Partnerships</a></li>
-
-<li><a href="contact.html">Contact</a></li>
-
-<li><a href="asset-enrolment.html">Asset Enrolment</a></li>
-
-</ul>
-
-
-</nav>
-
-<div class="hero-container">
-
-<div class="hero-left">
-
-<div class="hero-badge">
-
-GLOBAL ASSET INTELLIGENCE PLATFORM
+Quantum Administration • Institutional Management • Secure CMS Architecture
 
 </div>
 
-<h1>
+<!-- TITLE -->
 
-Register.
-Protect.
-Steward.
+<h1 class="admin-title">
 
-<span>
-
-Create Global Impact.
-
-</span>
+Advanced Foundation Administration Portal
 
 </h1>
 
-<p>
+<!-- DESCRIPTION -->
 
-The SovereignAqua Asset Enrollment Platform provides
-a next-generation institutional framework for
-global asset registration, scientific stewardship,
-sustainability deployment, humanitarian development,
-renewable infrastructure initiatives, and research
-asset management across international jurisdictions.
+<p class="admin-description">
+
+The SovereignAqua Research & Development Foundation Administration Portal operates as a centralized institutional management architecture supporting advanced content administration, sustainability intelligence coordination, infrastructure deployment systems, research publication management, humanitarian operational frameworks, strategic communications, and enterprise-level governance oversight operations.
 
 </p>
 
-<div class="hero-buttons">
+<!-- STATUS PANEL -->
 
-<a href="#enrollment-form"
-class="btn-primary">
+<div class="status-panel">
 
-Enroll Asset
-
-</a>
-
-<a href="contact.html"
-class="btn-secondary">
-
-Request Consultation
-
-</a>
-
-</div>
-
-<div class="counter-grid">
-
-<div class="counter-card">
-
-<h2 class="counter"
-data-target="190">
-
-0
-
-</h2>
-
-<span>
-Countries Supported
-</span>
-
-</div>
-
-<div class="counter-card">
-
-<h2 class="counter"
-data-target="25000">
-
-0
-
-</h2>
-
-<span>
-Assets Registered
-</span>
-
-</div>
-
-<div class="counter-card">
-
-<h2 class="counter"
-data-target="1200">
-
-0
-
-</h2>
-
-<span>
-Research Programs
-</span>
-
-</div>
-
-<div class="counter-card">
-
-<h2 class="counter"
-data-target="500">
-
-0
-
-</h2>
-
-<span>
-Strategic Partners
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="floating-card">
-
-<h3>
-Global Registry Network
-</h3>
-
-<p>
-Secure Institutional Documentation
-</p>
-
-</div>
-
-<div class="floating-card">
-
-<h3>
-AI Asset Intelligence
-</h3>
-
-<p>
-Advanced Verification & Analytics
-</p>
-
-</div>
-
-<div class="floating-card">
-
-<h3>
-Research Stewardship
-</h3>
-
-<p>
-Scientific & Humanitarian Deployment
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section
-id="enrollment-form"
-class="glass-enrollment">
-
-<div class="enrollment-wrapper">
-
-<div class="enrollment-left">
+<div class="status-card">
 
 <h2>
-
-Asset Enrollment Request
-
+24/7
 </h2>
 
 <p>
 
-Submit information regarding assets,
-facilities, technologies, intellectual property,
-renewable projects, infrastructure systems,
-equipment, or charitable contributions.
+Real-time institutional administration and strategic operational management systems.
 
 </p>
 
-<ul>
-
-<li>✓ Global Registry Framework</li>
-
-<li>✓ Institutional Verification</li>
-
-<li>✓ Secure Documentation</li>
-
-<li>✓ Strategic Asset Stewardship</li>
-
-<li>✓ Humanitarian Deployment Programs</li>
-
-<li>✓ Research Development Initiatives</li>
-
-</ul>
-
 </div>
 
-<div class="enrollment-right">
-
-<form>
-
-<input
-type="text"
-placeholder="Asset Name">
-
-<select>
-<option>
-Select Asset Category
-</option>
-<option>
-Real Estate
-</option>
-<option>
-Land
-</option>
-<option>
-Infrastructure
-</option>
-<option>
-Equipment
-</option>
-<option>
-Research Assets
-</option>
-<option>
-Renewable Energy
-</option>
-<option>
-Business Interests
-</option>
-<option>
-Intellectual Property
-</option>
-</select>
-
-<input
-type="text"
-placeholder="Asset Location">
-
-<input
-type="text"
-placeholder="Estimated Value">
-
-<input
-type="email"
-placeholder="Email Address">
-
-<input
-type="tel"
-placeholder="Telephone Number">
-
-<textarea
-placeholder="Asset Description"
-rows="6">
-</textarea>
-
-<input type="file">
-
-<button
-type="submit">
-
-SUBMIT ENROLLMENT
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
+<div class="status-card">
 
 <h2>
-
-SovereignAqua Research & Development Foundation
-
+AI
 </h2>
 
 <p>
 
-Advancing sustainable infrastructure systems, environmental stewardship, scientific innovation, humanitarian development, and global sustainability transformation through collaborative research ecosystems and strategic international partnerships.
+Integrated digital management architecture supporting advanced organizational coordination systems.
 
 </p>
 
-<p style="margin-top:30px;">
+</div>
 
-Info@sovereignaquaresearchanddevelopmentfoundation.org
+<div class="status-card">
 
-</p>
+<h2>
+Global
+</h2>
 
-<p style="
-margin-top:30px;
-font-size:14px;
-opacity:0.75;
-">
+<p>
 
-© 2026 SovereignAqua Research & Development Foundation.
-All Rights Reserved.
+International sustainability and infrastructure coordination management frameworks.
 
 </p>
 
-</footer>
+</div>
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</div>
 
-<script src="assets/js/particles-config.js"></script>
+<!-- SECURITY -->
 
-<script src="assets/js/counter.js"></script>
+<div class="security-panel">
+
+<h3>
+
+Secure Administrative Infrastructure
+
+</h3>
+
+<p>
+
+Protected enterprise administration architecture supporting institutional governance, content management systems, sustainability deployment operations, strategic communications, infrastructure intelligence management, and multidisciplinary organizational coordination frameworks.
+
+</p>
+
+</div>
+
+<!-- LOADING -->
+
+<div class="loading-system">
+
+<div class="loader-dot"></div>
+<div class="loader-dot"></div>
+<div class="loader-dot"></div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="admin-footer">
+
+© 2026 SovereignAqua Research & Development Foundation  
+Advanced Quantum Administration & Institutional Management System
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 
-const counters =
-document.querySelectorAll('.counter');
-
-counters.forEach(counter=>{
-
-const updateCounter=()=>{
-
-const target=
-+counter.getAttribute('data-target');
-
-const count=
-+counter.innerText;
-
-const increment=
-target/200;
-
-if(count<target){
-
-counter.innerText=
-Math.ceil(count+increment);
-
-setTimeout(updateCounter,10);
-
-}else{
-
-counter.innerText=
-target.toLocaleString();
-
-}
-
-};
-
-updateCounter();
-
-});
+</html> html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>SovereignAqua Admin</title>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+</body>
+</html>
