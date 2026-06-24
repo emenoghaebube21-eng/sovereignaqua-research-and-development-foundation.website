@@ -1,4 +1,51 @@
-```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+SovereignAqua Research & Development Foundation
+</title>
+
+<meta name="description"
+content="SovereignAqua Research & Development Foundation advances sustainable infrastructure systems, environmental intelligence, scientific innovation, humanitarian logistics, and global sustainability development initiatives.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root{
+
+--primary:#00f0ff;
+--secondary:#0077ff;
+--accent:#7a00ff;
+
+--dark:#030712;
+--dark-alt:#07111f;
+
+--text:#ffffff;
+--soft:#dce8ff;
+--muted:#9bb4d1;
+
+--glass:
+rgba(255,255,255,0.05);
+
+--border:
+rgba(255,255,255,0.08);
+
+}
+
+
 <!-- ===================================================== -->
 <!-- SOVEREIGNAQUA NEXT-GEN SOVEREIGNAQUA FOUNDATION -->
 <!-- 3D BIOTECH + AI + GLOBAL REGISTRY EXPERIENCE -->
@@ -369,6 +416,46 @@ All Rights Reserved.
 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script src="assets/js/particles-config.js"></script>
+
+<script src="assets/js/counter.js"></script>
+
 </body>
 
-```
+const counters =
+document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+const updateCounter=()=>{
+
+const target=
++counter.getAttribute('data-target');
+
+const count=
++counter.innerText;
+
+const increment=
+target/200;
+
+if(count<target){
+
+counter.innerText=
+Math.ceil(count+increment);
+
+setTimeout(updateCounter,10);
+
+}else{
+
+counter.innerText=
+target.toLocaleString();
+
+}
+
+};
+
+updateCounter();
+
+});
