@@ -1,62 +1,341 @@
 <div class="page-hero-content">
-
-<div class="hero-tag">
-Global Institutional Registry Platform
+...
 </div>
+```
+html
+<!-- ========================================= -->
+<!-- SOVEREIGNAQUA PREMIUM HERO SECTION -->
+<!-- ========================================= -->
 
-<h1 class="hero-title">
-Asset Intelligence,
-<br>
-Registration &
-<br>
-Stewardship Portal
-</h1>
+<video autoplay muted loop playsinline id="hero-video">
+    <source src="assets/video/ocean-global.mp4" type="video/mp4">
+</video>
 
-<p class="hero-description">
+<div class="hero-overlay"></div>
 
-The SovereignAqua Research & Development Foundation Asset Enrolment Portal
-provides a secure and centralized institutional framework for the registration,
-documentation, stewardship, verification, and strategic management of
-infrastructure systems, environmental assets, humanitarian resources,
-scientific equipment, renewable energy projects, and mission-critical
-operational assets across regional, national, and international jurisdictions.
+<section class="premium-hero">
 
-</p>
+    <div class="hero-content">
 
-<div class="hero-action-buttons">
+        <div class="hero-badge">
+            GLOBAL ASSET STEWARDSHIP & SUSTAINABILITY PLATFORM
+        </div>
 
-<a href="#registration-form" class="hero-btn-primary">
-Register Asset
-</a>
+        <h1 class="hero-title">
 
-<a href="contact.html" class="hero-btn-secondary">
-Request Consultation
-</a>
+            Building Sustainable
+            <br>
+            Assets For
+            <br>
 
-</div>
+            <span>
+                Global Impact
+            </span>
 
-<div class="hero-stats">
+        </h1>
 
-<div class="stat-box">
-<h3>Global</h3>
-<span>Registry Network</span>
-</div>
+        <p class="hero-description">
 
-<div class="stat-box">
-<h3>Asset</h3>
-<span>Intelligence</span>
-</div>
+            The SovereignAqua Research & Development Foundation
+            provides a secure international framework for asset
+            enrollment, stewardship, documentation, research
+            collaboration, environmental sustainability,
+            humanitarian advancement, water security initiatives,
+            renewable infrastructure projects, and community
+            development programs worldwide.
 
-<div class="stat-box">
-<h3>Research</h3>
-<span>Stewardship</span>
-</div>
+        </p>
 
-<div class="stat-box">
-<h3>Institutional</h3>
-<span>Compliance</span>
-</div>
+        <div class="hero-action-buttons">
 
-</div>
+            <a href="#registration-form"
+               class="hero-btn-primary">
 
-</div>
+               Begin Asset Enrollment
+
+            </a>
+
+            <a href="contact.html"
+               class="hero-btn-secondary">
+
+               Schedule Consultation
+
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div class="stat-box">
+
+                <h3 class="counter"
+                    data-target="75">
+
+                    0
+
+                </h3>
+
+                <span>
+                    Countries Engaged
+                </span>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3 class="counter"
+                    data-target="1200">
+
+                    0
+
+                </h3>
+
+                <span>
+                    Research Projects
+                </span>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3 class="counter"
+                    data-target="500">
+
+                    0
+
+                </h3>
+
+                <span>
+                    Strategic Partners
+                </span>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3 class="counter"
+                    data-target="25000">
+
+                    0
+
+                </h3>
+
+                <span>
+                    Assets Stewarded
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const counters =
+document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+const updateCounter=()=>{
+
+const target =
++counter.getAttribute('data-target');
+
+const count =
++counter.innerText;
+
+const increment =
+target/150;
+
+if(count < target){
+
+counter.innerText =
+Math.ceil(count + increment);
+
+setTimeout(updateCounter,10);
+
+}else{
+
+counter.innerText =
+target.toLocaleString();
+
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+```
+/* ========================================= */
+/* PREMIUM HERO */
+/* ========================================= */
+
+#hero-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
+}
+
+.hero-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+135deg,
+rgba(2,12,27,.90),
+rgba(0,75,140,.55)
+);
+z-index:-2;
+}
+
+.premium-hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8%;
+position:relative;
+}
+
+.hero-content{
+max-width:950px;
+text-align:center;
+}
+
+.hero-badge{
+display:inline-block;
+padding:12px 24px;
+border-radius:50px;
+background:rgba(0,255,179,.10);
+border:1px solid rgba(0,255,179,.35);
+color:#00ffb3;
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+margin-bottom:30px;
+}
+
+.hero-title{
+font-size:78px;
+font-weight:800;
+line-height:1.05;
+margin-bottom:30px;
+color:#ffffff;
+}
+
+.hero-title span{
+background:
+linear-gradient(
+90deg,
+#00d9ff,
+#00ffb3
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-description{
+font-size:22px;
+line-height:1.8;
+color:#d7e7f8;
+max-width:850px;
+margin:auto;
+margin-bottom:40px;
+}
+
+.hero-action-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:60px;
+}
+
+.hero-btn-primary{
+background:
+linear-gradient(
+90deg,
+#00ffb3,
+#00d9ff
+);
+color:#04111f;
+padding:18px 40px;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+}
+
+.hero-btn-secondary{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.15);
+color:white;
+padding:18px 40px;
+border-radius:12px;
+text-decoration:none;
+}
+
+.hero-stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.stat-box{
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(20px);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.stat-box h3{
+font-size:38px;
+color:#00ffb3;
+margin-bottom:10px;
+}
+
+.stat-box span{
+color:#d7e7f8;
+}
+
+@media(max-width:900px){
+
+.hero-title{
+font-size:52px;
+}
+
+.hero-stats{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-title{
+font-size:42px;
+}
+
+.hero-stats{
+grid-template-columns:1fr;
+}
+
+.hero-description{
+font-size:18px;
+}
+
+}
