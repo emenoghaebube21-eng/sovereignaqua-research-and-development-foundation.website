@@ -1,1028 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+```html
+<!-- ===================================================== -->
+<!-- SOVEREIGNAQUA NEXT-GEN SOVEREIGNAQUA FOUNDATION -->
+<!-- 3D BIOTECH + AI + GLOBAL REGISTRY EXPERIENCE -->
+<!-- ===================================================== -->
 
-<head>
+<section class="hero-3d">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<video autoplay muted loop playsinline id="dna-video">
+<source src="assets/video/dna-background.mp4" type="video/mp4">
+</video>
 
-<title>
-SovereignAqua Research & Development Foundation
-</title>
+<div class="hero-overlay"></div>
 
-<meta name="description"
-content="SovereignAqua Research & Development Foundation advances sustainable infrastructure systems, environmental intelligence, scientific innovation, humanitarian logistics, and global sustainability development initiatives.">
+<div id="particles-js"></div>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================================================
-   ROOT VARIABLES
-========================================================= */
-
-:root{
-
---primary:#00f0ff;
---secondary:#0077ff;
---accent:#7a00ff;
-
---dark:#030712;
---dark-alt:#07111f;
-
---text:#ffffff;
---soft:#dce8ff;
---muted:#9bb4d1;
-
---glass:
-rgba(255,255,255,0.05);
-
---border:
-rgba(255,255,255,0.08);
-
-}
-
-/* =========================================================
-   GLOBAL RESET
-========================================================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-
-font-family:'Inter', sans-serif;
-
-background:
-linear-gradient(
-180deg,
-#02050d,
-#07111f,
-#02050d
-);
-
-color:white;
-
-overflow-x:hidden;
-
--webkit-font-smoothing:antialiased;
-}
-
-/* =========================================================
-   GLOBAL BACKGROUND SYSTEM
-========================================================= */
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:
-
-radial-gradient(circle at top left,
-rgba(0,240,255,0.10),
-transparent 35%),
-
-radial-gradient(circle at bottom right,
-rgba(122,0,255,0.12),
-transparent 35%),
-
-radial-gradient(circle at center,
-rgba(255,255,255,0.03),
-transparent 45%);
-
-z-index:-20;
-}
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-nav{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-
-padding:24px 70px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-background:
-rgba(4,8,20,0.72);
-
-backdrop-filter:blur(20px);
-
-border-bottom:1px solid rgba(255,255,255,0.06);
-
-z-index:99999;
-}
-
-/* Logo */
-
-.logo{
-
-font-family:'Orbitron', sans-serif;
-
-font-size:32px;
-
-font-weight:800;
-
-letter-spacing:2px;
-
-background:
-linear-gradient(
-90deg,
-#00f0ff,
-#ffffff,
-#7a00ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* Menu */
-
-nav ul{
-
-display:flex;
-gap:34px;
-
-list-style:none;
-}
-
-nav ul li a{
-
-text-decoration:none;
-
-font-size:15px;
-
-font-weight:500;
-
-color:white;
-
-position:relative;
-
-transition:0.3s;
-}
-
-nav ul li a::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-bottom:-6px;
-
-width:0;
-height:2px;
-
-background:#00f0ff;
-
-transition:0.4s;
-}
-
-nav ul li a:hover{
-
-color:#00f0ff;
-}
-
-nav ul li a:hover::after{
-
-width:100%;
-}
-
-/* =========================================================
-   CINEMATIC HERO SECTION
-========================================================= */
-
-.cinematic-hero{
-
-position:relative;
-
-height:115vh;
-
-overflow:hidden;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:0 50px;
-
-perspective:1800px;
-}
-
-/* =========================================================
-   VIDEO SYSTEM
-========================================================= */
-
-.hero-video{
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-width:115%;
-height:115%;
-
-object-fit:cover;
-
-transform:
-translate(-50%,-50%)
-scale(1.08);
-
-animation:
-cinematicZoom 18s ease-in-out infinite alternate;
-
-filter:
-brightness(0.32)
-contrast(1.25)
-saturate(1.3);
-
-z-index:-7;
-}
-
-/* =========================================================
-   OVERLAY
-========================================================= */
-
-.cinematic-hero::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-linear-gradient(
-180deg,
-rgba(0,0,0,0.72),
-rgba(2,11,20,0.94)
-),
-
-radial-gradient(circle at top left,
-rgba(0,240,255,0.08),
-transparent 35%),
-
-radial-gradient(circle at bottom right,
-rgba(122,0,255,0.12),
-transparent 35%);
-
-z-index:-6;
-}
-
-/* =========================================================
-   FUTURE GRID SYSTEM
-========================================================= */
-
-.hero-grid{
-
-position:absolute;
-
-width:160%;
-height:160%;
-
-background-image:
-
-linear-gradient(
-rgba(255,255,255,0.03) 1px,
-transparent 1px
-),
-
-linear-gradient(
-90deg,
-rgba(255,255,255,0.03) 1px,
-transparent 1px
-);
-
-background-size:90px 90px;
-
-transform:
-rotateX(72deg)
-translateY(260px)
-translateX(-120px);
-
-animation:gridMotion 18s linear infinite;
-
-opacity:0.45;
-
-z-index:-5;
-}
-
-/* =========================================================
-   LIGHT AURAS
-========================================================= */
-
-.hero-aura{
-
-position:absolute;
-
-border-radius:50%;
-
-filter:blur(90px);
-
-opacity:0.45;
-
-mix-blend-mode:screen;
-
-animation:floatAura 10s ease-in-out infinite;
-}
-
-.aura-one{
-
-width:550px;
-height:550px;
-
-background:
-rgba(0,240,255,0.18);
-
-top:5%;
-left:-10%;
-}
-
-.aura-two{
-
-width:450px;
-height:450px;
-
-background:
-rgba(122,0,255,0.18);
-
-bottom:-5%;
-right:-10%;
-
-animation-delay:3s;
-}
-
-.aura-three{
-
-width:300px;
-height:300px;
-
-background:
-rgba(255,0,200,0.14);
-
-top:45%;
-right:20%;
-
-animation-delay:6s;
-}
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-container{
-
-position:relative;
-
-max-width:1400px;
-
-text-align:center;
-
-z-index:10;
-
-animation:heroFloat 7s ease-in-out infinite;
-}
-
-/* Hero Tag */
-
-.hero-tag{
-
-display:inline-block;
-
-padding:14px 32px;
-
-margin-bottom:35px;
-
-border-radius:60px;
-
-background:
-rgba(255,255,255,0.06);
-
-border:1px solid rgba(255,255,255,0.10);
-
-backdrop-filter:blur(20px);
-
-font-size:14px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-color:#00f0ff;
-
-box-shadow:
-0 0 25px rgba(0,240,255,0.14);
-}
-
-/* Heading */
-
-.hero{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
-}
-
-.hero-video{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:1;
-}
-
-.logo{
-    position:relative;
-    z-index:2;
-
-    font-family:'Orbitron',sans-serif;
-    font-size:32px;
-    font-weight:800;
-    letter-spacing:2px;
-
-    background:linear-gradient(
-        90deg,
-        #00f0ff,
-        #ffffff,
-        #7a00ff
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-text-shadow:
-
-0 0 35px rgba(0,240,255,0.20),
-
-0 0 80px rgba(122,0,255,0.15);
-}
-
-/* Paragraph */
-
-.hero-container p{
-
-font-size:22px;
-
-line-height:2.1;
-
-max-width:1150px;
-
-margin:auto;
-
-color:#dce8ff;
-}
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.hero-actions{
-
-margin-top:55px;
-
-display:flex;
-justify-content:center;
-gap:24px;
-flex-wrap:wrap;
-}
-
-.hero-actions a{
-
-padding:18px 40px;
-
-border-radius:60px;
-
-text-decoration:none;
-
-font-size:16px;
-
-font-weight:600;
-
-transition:0.4s;
-}
-
-/* Primary */
-
-.primary-btn{
-
-background:
-linear-gradient(
-135deg,
-#00f0ff,
-#0077ff
-);
-
-color:white;
-
-box-shadow:
-0 0 35px rgba(0,240,255,0.22);
-}
-
-.primary-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-0 0 45px rgba(0,240,255,0.30);
-}
-
-/* Secondary */
-
-.secondary-btn{
-
-background:
-rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.08);
-
-backdrop-filter:blur(18px);
-
-color:white;
-}
-
-.secondary-btn:hover{
-
-background:
-rgba(255,255,255,0.10);
-
-transform:translateY(-5px);
-}
-
-/* =========================================================
-   STATS SECTION
-========================================================= */
-
-.stats-bar{
-
-position:relative;
-
-max-width:1350px;
-
-margin:-100px auto 120px auto;
-
-padding:40px;
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-border-radius:34px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.06),
-rgba(255,255,255,0.03)
-);
-
-border:1px solid rgba(255,255,255,0.08);
-
-backdrop-filter:blur(20px);
-
-box-shadow:
-0 0 50px rgba(0,0,0,0.35);
-
-z-index:50;
-}
-
-/* Stat */
-
-.stat-card{
-
-text-align:center;
-
-padding:20px;
-}
-
-.stat-card h2{
-
-font-size:58px;
-
-margin-bottom:12px;
-
-color:#00f0ff;
-
-font-family:'Orbitron', sans-serif;
-}
-
-.stat-card p{
-
-font-size:16px;
-
-line-height:1.8;
-
-color:#dce8ff;
-}
-
-/* =========================================================
-   FOUNDATION SECTION
-========================================================= */
-
-.foundation-section{
-
-padding:120px 50px;
-}
-
-.container{
-
-max-width:1450px;
-
-margin:auto;
-}
-
-/* Titles */
-
-.section-title{
-
-font-family:'Orbitron', sans-serif;
-
-font-size:68px;
-
-text-align:center;
-
-margin-bottom:32px;
-
-background:
-linear-gradient(
-90deg,
-#00f0ff,
-#ffffff,
-#7a00ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.section-description{
-
-font-size:21px;
-
-line-height:2.1;
-
-max-width:1200px;
-
-margin:auto;
-
-text-align:center;
-
-color:#dce8ff;
-}
-
-/* =========================================================
-   FOUNDATION GRID
-========================================================= */
-
-.foundation-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(360px,1fr));
-
-gap:40px;
-
-margin-top:90px;
-}
-
-/* Card */
-
-.foundation-card{
-
-position:relative;
-
-padding:45px;
-
-border-radius:34px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.06),
-rgba(255,255,255,0.03)
-);
-
-border:1px solid rgba(255,255,255,0.08);
-
-overflow:hidden;
-
-transition:0.5s;
-
-backdrop-filter:blur(20px);
-
-box-shadow:
-0 0 45px rgba(0,0,0,0.30);
-}
-
-/* Glow */
-
-.foundation-card::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-linear-gradient(
-135deg,
-transparent,
-rgba(0,240,255,0.10),
-transparent
-);
-
-opacity:0;
-
-transition:0.5s;
-}
-
-.foundation-card:hover::before{
-
-opacity:1;
-}
-
-.foundation-card:hover{
-
-transform:
-translateY(-10px);
-
-box-shadow:
-0 0 40px rgba(0,240,255,0.18);
-}
-
-/* Card Heading */
-
-.foundation-card h3{
-
-font-size:36px;
-
-margin-bottom:24px;
-
-color:#00f0ff;
-}
-
-/* Card Text */
-
-.foundation-card p{
-
-font-size:17px;
-
-line-height:2;
-
-color:#dce8ff;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-
-margin-top:120px;
-
-padding:100px 50px;
-
-text-align:center;
-
-background:
-linear-gradient(
-180deg,
-rgba(255,255,255,0.03),
-rgba(255,255,255,0.01)
-);
-
-border-top:1px solid rgba(255,255,255,0.08);
-}
-
-footer h2{
-
-font-size:46px;
-
-margin-bottom:24px;
-
-color:#00f0ff;
-}
-
-footer p{
-
-font-size:18px;
-
-line-height:2;
-
-max-width:1000px;
-
-margin:auto;
-
-color:#dce8ff;
-}
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes cinematicZoom{
-
-0%{
-
-transform:
-translate(-50%,-50%)
-scale(1.05);
-}
-
-100%{
-
-transform:
-translate(-50%,-50%)
-scale(1.16);
-}
-
-}
-
-@keyframes gridMotion{
-
-0%{
-
-transform:
-rotateX(72deg)
-translateY(260px)
-translateX(0);
-}
-
-100%{
-
-transform:
-rotateX(72deg)
-translateY(260px)
-translateX(-90px);
-}
-
-}
-
-@keyframes floatAura{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-35px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-@keyframes heroFloat{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:992px){
-
-.hero-container h1{
-font-size:68px;
-}
-
-.hero-container p{
-font-size:18px;
-}
-
-.section-title{
-font-size:50px;
-}
-
-}
-
-@media(max-width:768px){
-
-nav{
-
-padding:20px;
-
-flex-direction:column;
-
-gap:20px;
-}
-
-nav ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:20px;
-}
-
-.cinematic-hero{
-
-height:100vh;
-
-padding:0 20px;
-}
-
-.hero-container h1{
-
-font-size:46px;
-}
-
-.hero-container p{
-
-font-size:16px;
-}
-
-.hero-tag{
-
-font-size:12px;
-}
-
-.hero-video{
-
-width:140%;
-height:120%;
-}
-
-.stats-bar{
-
-margin-top:-60px;
-
-padding:25px;
-}
-
-.section-title{
-
-font-size:42px;
-}
-
-.foundation-card{
-
-padding:35px;
-}
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
-
-<nav>
+<nav class="glass-nav">
 
 <div class="logo">
+
+<div class="logo-icon">💧</div>
+
+<div class="logo-text">
 SOVEREIGNAQUA FOUNDATION
+<span>
+Research & Development Foundation
+</span>
+</div>
+
 </div>
 
 <ul>
@@ -1040,281 +44,287 @@ SOVEREIGNAQUA FOUNDATION
 <li><a href="partnership.html">Partnerships</a></li>
 
 <li><a href="contact.html">Contact</a></li>
-<li>
-<a href="asset-enrolment.html">
-Asset Enrolment
-</a>
-</li>
+
+<li><a href="asset-enrolment.html">Asset Enrolment</a></li>
+
 </ul>
+
 
 </nav>
 
-<!-- =========================================================
-     HERO SECTION
-========================================================= -->
+<div class="hero-container">
 
-<body>
+<div class="hero-left">
 
-<video autoplay muted loop playsinline id="bg-video">
-    <source src="assets/video/sovereignaqua-bg.mp4(1).mp4" type="video/mp4">
-</video>
+<div class="hero-badge">
 
-<div class="overlay"></div>
+GLOBAL ASSET INTELLIGENCE PLATFORM
 
-<div class="hero-content">
-    <h1>SovereignAqua Foundation</h1>
-    <p>Building Sustainable Water Solutions Worldwide</p>
 </div>
 
-</body>
+<h1>
 
-<div class="hero-aura aura-one"></div>
-<div class="hero-aura aura-two"></div>
-<div class="hero-aura aura-three"></div>
+Register.
+Protect.
+Steward.
 
-<div class="hero-grid#bg-video{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-2;
-}"></div>
+<span>
 
-<div class="hero-container.overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.45);
-    z-index:-1;
-}">
+Create Global Impact.
 
-<div class="hero-tag.hero-content{
-    position:relative;
-    z-index:1;
-    color:white;
-    text-align:center;
-    padding-top:250px;
-}">
+</span>
 
-<video autoplay muted loop playsinline id="bg-video">
-    <source src="assets/video/logo-bgy.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <h1>SovereignAqua Foundation</h1>
-
-        <p>Research • Education • Humanitarian Impact</p>
-
-        <div class="hero-actions">
-
-            <a href="mission.html" class="primary-btn">
-                Explore Mission Framework
-            </a>
-
-            <a href="projects.html" class="secondary-btn">
-                Global Development Initiatives
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================================================
-     STATISTICS
-========================================================= -->
-
-<section class="stats-bar">
-
-<div class="stat-card">
-
-<h2>50+</h2>
+</h1>
 
 <p>
 
-International sustainability and infrastructure development initiatives coordinated through multidisciplinary operational frameworks.
+The SovereignAqua Asset Enrollment Platform provides
+a next-generation institutional framework for
+global asset registration, scientific stewardship,
+sustainability deployment, humanitarian development,
+renewable infrastructure initiatives, and research
+asset management across international jurisdictions.
 
 </p>
 
-</div>
+<div class="hero-buttons">
 
-<div class="stat-card">
+<a href="#enrollment-form"
+class="btn-primary">
 
-<h2>25+</h2>
+Enroll Asset
 
-<p>
+</a>
 
-Research collaborations and humanitarian coordination systems supporting long-term development initiatives.
+<a href="contact.html"
+class="btn-secondary">
 
-</p>
+Request Consultation
 
-</div>
-
-<div class="stat-card">
-
-<h2>100%</h2>
-
-<p>
-
-Mission-driven governance commitment emphasizing transparency, accountability, and institutional integrity.
-
-</p>
+</a>
 
 </div>
 
-<div class="stat-card">
+<div class="counter-grid">
 
-<h2>Global</h2>
+<div class="counter-card">
 
-<p>
+<h2 class="counter"
+data-target="190">
 
-Cross-regional outreach systems integrating sustainability, environmental, and humanitarian development partnerships.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FOUNDATION SECTION
-========================================================= -->
-
-<section class="foundation-section">
-
-<div class="container">
-
-<h2 class="section-title">
-
-Global Research & Development Platform
+0
 
 </h2>
 
-<p class="section-description">
+<span>
+Countries Supported
+</span>
 
-SovereignAqua Research & Development Foundation integrates scientific innovation, sustainability engineering, environmental intelligence systems, humanitarian coordination frameworks, renewable infrastructure research, and international strategic partnerships through a centralized operational architecture designed to advance scalable long-term global sustainability solutions.
+</div>
 
-</p>
+<div class="counter-card">
 
-<div class="foundation-grid">
+<h2 class="counter"
+data-target="25000">
 
-<!-- CARD 1 -->
+0
 
-<div class="foundation-card">
+</h2>
+
+<span>
+Assets Registered
+</span>
+
+</div>
+
+<div class="counter-card">
+
+<h2 class="counter"
+data-target="1200">
+
+0
+
+</h2>
+
+<span>
+Research Programs
+</span>
+
+</div>
+
+<div class="counter-card">
+
+<h2 class="counter"
+data-target="500">
+
+0
+
+</h2>
+
+<span>
+Strategic Partners
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="floating-card">
 
 <h3>
-
-Water Infrastructure Research
-
+Global Registry Network
 </h3>
 
 <p>
-
-Supporting advanced engineering research, sustainable water purification innovation, hydrological infrastructure modernization, resource optimization systems, and scalable water security frameworks designed to strengthen long-term sustainability development initiatives worldwide.
-
+Secure Institutional Documentation
 </p>
 
 </div>
 
-<!-- CARD 2 -->
-
-<div class="foundation-card">
+<div class="floating-card">
 
 <h3>
-
-Environmental Stewardship Systems
-
+AI Asset Intelligence
 </h3>
 
 <p>
-
-Coordinating ecological sustainability initiatives, climate resilience systems, environmental intelligence frameworks, ecosystem restoration operations, and long-term environmental preservation strategies supporting responsible global resource stewardship.
-
+Advanced Verification & Analytics
 </p>
 
 </div>
 
-<!-- CARD 3 -->
-
-<div class="foundation-card">
+<div class="floating-card">
 
 <h3>
-
-Humanitarian Logistics Coordination
-
+Research Stewardship
 </h3>
 
 <p>
-
-Developing humanitarian deployment systems, emergency logistics coordination frameworks, infrastructure support operations, strategic outreach systems, and collaborative international development initiatives supporting underserved populations.
-
+Scientific & Humanitarian Deployment
 </p>
 
 </div>
 
-<!-- CARD 4 -->
-
-<div class="foundation-card">
-
-<h3>
-
-Scientific Innovation & Research
-
-</h3>
-
-<p>
-
-Advancing multidisciplinary scientific studies, sustainability analytics systems, renewable infrastructure experimentation, engineering intelligence frameworks, and collaborative research initiatives supporting future-ready development systems.
-
-</p>
+</div>
 
 </div>
 
-<!-- CARD 5 -->
+</section>
 
-<div class="foundation-card">
+<section
+id="enrollment-form"
+class="glass-enrollment">
 
-<h3>
+<div class="enrollment-wrapper">
 
-Strategic Global Partnerships
+<div class="enrollment-left">
 
-</h3>
+<h2>
 
-<p>
+Asset Enrollment Request
 
-Building collaborative institutional relationships with research organizations, universities, governmental agencies, sustainability programs, humanitarian networks, and international development entities supporting global operational expansion.
-
-</p>
-
-</div>
-
-<!-- CARD 6 -->
-
-<div class="foundation-card">
-
-<h3>
-
-Governance & Institutional Integrity
-
-</h3>
+</h2>
 
 <p>
 
-Maintaining ethical governance systems, operational accountability structures, institutional oversight frameworks, financial stewardship systems, and transparent administrative coordination supporting responsible organizational leadership.
+Submit information regarding assets,
+facilities, technologies, intellectual property,
+renewable projects, infrastructure systems,
+equipment, or charitable contributions.
 
 </p>
 
+<ul>
+
+<li>✓ Global Registry Framework</li>
+
+<li>✓ Institutional Verification</li>
+
+<li>✓ Secure Documentation</li>
+
+<li>✓ Strategic Asset Stewardship</li>
+
+<li>✓ Humanitarian Deployment Programs</li>
+
+<li>✓ Research Development Initiatives</li>
+
+</ul>
+
 </div>
+
+<div class="enrollment-right">
+
+<form>
+
+<input
+type="text"
+placeholder="Asset Name">
+
+<select>
+<option>
+Select Asset Category
+</option>
+<option>
+Real Estate
+</option>
+<option>
+Land
+</option>
+<option>
+Infrastructure
+</option>
+<option>
+Equipment
+</option>
+<option>
+Research Assets
+</option>
+<option>
+Renewable Energy
+</option>
+<option>
+Business Interests
+</option>
+<option>
+Intellectual Property
+</option>
+</select>
+
+<input
+type="text"
+placeholder="Asset Location">
+
+<input
+type="text"
+placeholder="Estimated Value">
+
+<input
+type="email"
+placeholder="Email Address">
+
+<input
+type="tel"
+placeholder="Telephone Number">
+
+<textarea
+placeholder="Asset Description"
+rows="6">
+</textarea>
+
+<input type="file">
+
+<button
+type="submit">
+
+SUBMIT ENROLLMENT
+
+</button>
+
+</form>
 
 </div>
 
@@ -1361,4 +371,4 @@ All Rights Reserved.
 
 </body>
 
-</html>
+```
