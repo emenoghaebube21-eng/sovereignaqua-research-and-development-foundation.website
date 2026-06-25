@@ -1,17 +1,65 @@
+```css
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
 body{
 
-background:#020814;
+    margin:0;
 
-color:white;
+    font-family:Arial, sans-serif;
 
-font-family:Arial, sans-serif;
+    background:#02111F;
 
-margin:0;
+    color:white;
+
+}
+
+/* HEADER */
+
+header{
+
+    background:#03304d;
+
+    padding:20px;
 
 }
 
-.title{
+/* HERO */
 
-color:#00E7FF;
+section{
+
+    padding:80px 20px;
+
+    text-align:center;
 
 }
+
+h1{
+
+    font-size:48px;
+
+    color:#00E7FF;
+
+}
+
+p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#01111d;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+```
