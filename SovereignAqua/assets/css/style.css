@@ -1,65 +1,43 @@
 ```css
-/* ===========================
-   GLOBAL STYLES
-=========================== */
+/* ==========================================
 
-body{
+SOVEREIGNAQUA FOUNDATION
 
-    margin:0;
+MASTER STYLESHEET
 
-    font-family:Arial, sans-serif;
+Version 1.0
 
-    background:#02111F;
+========================================== */
 
-    color:white;
+/* FOUNDATION */
 
-}
+@import url("variables.css");
 
-/* HEADER */
+@import url("reset.css");
 
-header{
+@import url("typography.css");
 
-    background:#03304d;
+@import url("layout.css");
 
-    padding:20px;
+/* COMPONENTS */
 
-}
+@import url("navigation.css");
 
-/* HERO */
+@import url("hero.css");
 
-section{
+@import url("buttons.css");
 
-    padding:80px 20px;
+@import url("cards.css");
 
-    text-align:center;
+@import url("forms.css");
 
-}
+@import url("footer.css");
 
-h1{
+/* EFFECTS */
 
-    font-size:48px;
+@import url("animations.css");
 
-    color:#00E7FF;
+/* RESPONSIVE */
 
-}
-
-p{
-
-    font-size:20px;
-
-    line-height:1.7;
-
-}
-
-/* FOOTER */
-
-footer{
-
-    background:#01111d;
-
-    text-align:center;
-
-    padding:20px;
-
-}
+@import url("responsive.css");
 ```
