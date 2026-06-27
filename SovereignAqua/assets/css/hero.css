@@ -242,7 +242,7 @@ linear-gradient(
 
 #00E7FF,
 
-#0066FF
+#0077FF
 
 );
 
@@ -250,8 +250,22 @@ color:white;
 
 font-weight:700;
 
-}
+transition:.35s;
 
+animation:
+
+glow 3s infinite;
+
+}
+.hero-primary:hover{
+
+transform:
+
+translateY(-5px)
+
+scale(1.05);
+
+}
 
 /*============================
 
@@ -305,16 +319,36 @@ CARD
 
 padding:30px;
 
-background:rgba(255,255,255,.06);
+background:rgba(255,255,255,.05);
 
 backdrop-filter:blur(20px);
 
-border:1px solid rgba(255,255,255,.10);
+border:1px solid rgba(255,255,255,.12);
 
 border-radius:24px;
 
-}
+transition:.4s;
 
+animation:
+
+floating 6s ease-in-out infinite;
+
+}
+.stat-card:hover{
+
+transform:
+
+translateY(-12px)
+
+scale(1.04);
+
+box-shadow:
+
+0 25px 60px
+
+rgba(0,231,255,.25);
+
+}
 
 .stat-card h3{
 
@@ -332,5 +366,52 @@ color:var(--primary);
 margin:0;
 
 font-size:.95rem;
+
+}
+/*================================
+
+SCROLL INDICATOR
+
+================================*/
+
+.scroll-indicator{
+
+position:absolute;
+
+bottom:35px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:34px;
+
+height:58px;
+
+border:2px solid white;
+
+border-radius:30px;
+
+display:flex;
+
+justify-content:center;
+
+padding-top:10px;
+
+z-index:4;
+
+}
+
+.scroll-indicator span{
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:white;
+
+animation:scroll 1.5s infinite;
 
 }
