@@ -415,3 +415,54 @@ background:white;
 animation:scroll 1.5s infinite;
 
 }
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:#00E7FF;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+top:-180px;
+
+right:-120px;
+
+opacity:.18;
+
+animation:floating 10s infinite;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:320px;
+
+height:320px;
+
+background:#0077FF;
+
+border-radius:50%;
+
+filter:blur(140px);
+
+bottom:-120px;
+
+left:-120px;
+
+opacity:.15;
+
+animation:floating 8s infinite reverse;
+
+}
