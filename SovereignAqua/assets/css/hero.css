@@ -146,9 +146,9 @@ font-weight:900;
 
 line-height:1.05;
 
-max-width:900px;
-
 margin-bottom:30px;
+
+max-width:900px;
 
 background:
 
@@ -156,20 +156,31 @@ linear-gradient(
 
 90deg,
 
-white,
+#ffffff,
 
 #00E7FF,
 
-white
+#ffffff,
+
+#66FFFF,
+
+#ffffff
 
 );
+
+background-size:400%;
 
 -webkit-background-clip:text;
 
 -webkit-text-fill-color:transparent;
 
-}
+animation:
 
+gradientMove 8s infinite linear,
+
+fadeUp 1s ease;
+
+}
 
 /*============================
 
