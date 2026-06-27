@@ -1,1 +1,178 @@
+/*==============================================
 
+SOVEREIGNAQUA
+
+NAVIGATION SYSTEM
+
+Version 1.0
+
+==============================================*/
+
+
+/* NAVIGATION */
+
+.navbar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:9999;
+
+background:rgba(2,8,20,.72);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+
+/* CONTAINER */
+
+.nav-container{
+
+max-width:1400px;
+
+margin:auto;
+
+padding:18px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+font-size:2rem;
+
+font-weight:900;
+
+text-transform:uppercase;
+
+letter-spacing:2px;
+
+color:white;
+
+}
+
+
+.logo span{
+
+color:var(--primary);
+
+}
+
+
+/* MENU */
+
+.nav-menu{
+
+display:flex;
+
+gap:40px;
+
+align-items:center;
+
+}
+
+
+/* LINKS */
+
+.nav-menu a{
+
+color:white;
+
+font-weight:600;
+
+font-size:.95rem;
+
+position:relative;
+
+transition:.3s;
+
+}
+
+
+/* HOVER LINE */
+
+.nav-menu a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-8px;
+
+left:0;
+
+width:0;
+
+height:2px;
+
+background:var(--primary);
+
+transition:.35s;
+
+}
+
+
+.nav-menu a:hover::after{
+
+width:100%;
+
+}
+
+
+.nav-menu a:hover{
+
+color:var(--primary);
+
+}
+
+
+/* CTA BUTTON */
+
+.nav-button{
+
+padding:14px 28px;
+
+background:linear-gradient(
+90deg,
+#00E7FF,
+#0066FF
+);
+
+border-radius:50px;
+
+font-weight:700;
+
+color:white;
+
+transition:.35s;
+
+box-shadow:0 15px 35px rgba(0,231,255,.25);
+
+}
+
+
+.nav-button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 25px 45px rgba(0,231,255,.40);
+
+}
