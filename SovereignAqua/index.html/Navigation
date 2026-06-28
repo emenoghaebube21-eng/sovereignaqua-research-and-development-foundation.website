@@ -1,1 +1,49 @@
+<body>
 
+<!-- =========================================
+     NAVIGATION
+========================================== -->
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+
+Sovereign<span>Aqua</span>
+
+</a>
+
+<ul class="nav-menu">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="mission.html">Mission</a></li>
+
+<li><a href="research.html">Research</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="governance.html">Governance</a></li>
+
+<li><a href="asset-enrolment.html">Asset Registry</a></li>
+
+<li><a href="membership-application.html">Membership</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="membership-application.html"
+
+class="nav-button">
+
+Join Mission
+
+</a>
+
+</div>
+
+</nav>
+
+</body>
