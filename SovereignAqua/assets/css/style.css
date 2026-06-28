@@ -41,3 +41,57 @@ Version 1.0
 
 @import url("responsive.css");
 ```
+/* ==========================================
+   HOMEPAGE V2 STYLES
+========================================== */
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#061421;
+    color:white;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#021526,#063970,#0B6FA4);
+    padding:60px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.button{
+    display:inline-block;
+    padding:16px 36px;
+    background:#00B8FF;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.button:hover{
+    background:#0099DD;
+    transform:translateY(-3px);
+}
