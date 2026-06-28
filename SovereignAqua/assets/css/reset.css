@@ -11,13 +11,15 @@ box-sizing:border-box;
 
 body{
 
+margin:0;
+
+padding-top:95px;
+
 background:var(--background);
 
 color:var(--text);
 
 font-family:'Inter',sans-serif;
-
-padding-top:95px;
 
 overflow-x:hidden;
 
