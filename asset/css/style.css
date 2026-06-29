@@ -773,3 +773,28 @@ grid-template-columns:1fr;
     margin-top:40px;
     flex-wrap:wrap;
 }
+.scroll-indicator{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    font-size:14px;
+    letter-spacing:2px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+0%,20%,50%,80%,100%{
+transform:translate(-50%,0);
+}
+
+40%{
+transform:translate(-50%,-10px);
+}
+
+60%{
+transform:translate(-50%,-5px);
+}
+}
