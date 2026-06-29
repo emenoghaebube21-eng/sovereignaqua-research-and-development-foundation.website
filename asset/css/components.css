@@ -1,0 +1,27 @@
+.button{
+
+display:inline-block;
+
+padding:18px 40px;
+
+background:var(--primary);
+
+color:white;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.button:hover{
+
+transform:translateY(-4px);
+
+background:var(--primary-dark);
+
+}
