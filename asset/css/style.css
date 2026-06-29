@@ -70,14 +70,25 @@ body{
 }
 
 .hero h1{
-    font-size:3.8rem;
-    margin-bottom:20px;
+
+font-size:4.5rem;
+
+line-height:1.15;
+
+font-weight:800;
+
 }
 
 .hero p{
-    font-size:1.2rem;
-    line-height:1.8;
-    margin-bottom:40px;
+
+font-size:1.3rem;
+
+max-width:850px;
+
+margin:auto;
+
+line-height:1.8;
+
 }
 
 /* Button */
