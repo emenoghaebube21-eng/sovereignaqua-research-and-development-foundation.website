@@ -247,3 +247,37 @@ align-items:center;
     object-fit:cover;
 
                                }
+/* ==========================================
+   HERO LOGO VIDEO
+========================================== */
+
+.hero-logo{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:35px;
+
+}
+
+.hero-logo video{
+
+width:220px;
+
+max-width:90%;
+
+border-radius:20px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+transition:.4s;
+
+}
+
+.hero-logo video:hover{
+
+transform:scale(1.05);
+
+}
+
