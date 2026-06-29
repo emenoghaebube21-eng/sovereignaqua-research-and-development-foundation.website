@@ -603,3 +603,98 @@ transition:.3s;
 background:#00CFFF;
 
 }
+/* ======================================
+   ABOUT SECTION
+====================================== */
+
+.about-section{
+
+padding:120px 0;
+
+background:#071c2b;
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.about-media img{
+
+width:100%;
+
+border-radius:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+}
+
+.section-tag{
+
+display:inline-block;
+
+background:#00CFFF;
+
+padding:8px 20px;
+
+border-radius:30px;
+
+font-size:.85rem;
+
+font-weight:bold;
+
+margin-bottom:20px;
+
+}
+
+.about-content h2{
+
+font-size:3rem;
+
+margin-bottom:25px;
+
+}
+
+.about-content p{
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+.about-list{
+
+list-style:none;
+
+padding:0;
+
+margin-bottom:35px;
+
+}
+
+.about-list li{
+
+margin-bottom:15px;
+
+font-size:1.05rem;
+
+}
+
+@media(max-width:900px){
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
