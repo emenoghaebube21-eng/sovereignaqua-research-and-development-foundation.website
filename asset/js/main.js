@@ -19,3 +19,4 @@ sections.forEach(section=>{
 observer.observe(section);
 
 });
+console.log("SovereignAqua Website Loaded");
