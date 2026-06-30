@@ -1,7 +1,11 @@
 /* ==========================================
    HOMEPAGE V2 STYLES
 ========================================== */
+html{
 
+scroll-behavior:smooth;
+
+}
 /* General */
 
 body{padding-top:90px;
