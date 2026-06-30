@@ -1114,3 +1114,70 @@ order:unset;
 }
 
 }
+/* ======================================
+   IMPACT SECTION
+====================================== */
+
+.impact-section{
+
+padding:120px 0;
+
+background:#021526;
+
+}
+
+.impact-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+margin-top:70px;
+
+}
+
+.impact-card{
+
+background:#0b2d45;
+
+padding:45px 30px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+.impact-card:hover{
+
+transform:translateY(-8px);
+
+background:#11405f;
+
+}
+
+.counter{
+
+font-size:3.5rem;
+
+color:#00CFFF;
+
+margin-bottom:15px;
+
+font-weight:800;
+
+}
+
+.impact-card p{
+
+font-size:1.1rem;
+
+letter-spacing:1px;
+
+}
