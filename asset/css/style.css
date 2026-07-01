@@ -8,26 +8,34 @@ padding:110px 0;
 
 }
 
-.section-heading{
+h1{
 
-text-align:center;
+font-size:clamp(
 
-max-width:850px;
+2.8rem,
 
-margin:0 auto 70px;
+6vw,
 
-}
+5rem
 
-.section-heading h2{
+);
 
-font-size:3rem;
-
-margin:20px 0;
-
-color:white;
+line-height:1.1;
 
 }
 
+h2{
+
+font-size:clamp(
+
+2rem,
+
+5vw,
+
+3.2rem
+
+);
+   
 .section-heading p{
 
 font-size:1.15rem;
@@ -492,11 +500,18 @@ transition:.3s;
 
 }
 
-.card:hover{
+a{
 
-transform:translateY(-8px);
+transition:.3s;
 
 }
+
+a:hover{
+
+opacity:.9;
+
+}
+   
 
 .card h3{
 
@@ -2303,6 +2318,24 @@ height:75px;
 background:rgba(2,21,38,.96);
 
 box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+#progressBar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:#00CFFF;
+
+z-index:999999;
 
 }
 
