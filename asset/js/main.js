@@ -93,3 +93,39 @@ topBtn.addEventListener("click", () => {
     });
 
 });
+
+// =====================================
+// Animated Counters
+// =====================================
+
+document.querySelectorAll(".impact-card h3").forEach(counter => {
+
+    const text = counter.textContent;
+
+    const target = parseInt(text.replace(/\D/g,""),10);
+
+    if (isNaN(target)) return;
+
+    let current = 0;
+
+    const step = Math.max(1, Math.ceil(target / 60));
+
+    const timer = setInterval(() => {
+
+        current += step;
+
+        if (current >= target) {
+
+            current = target;
+
+            clearInterval(timer);
+
+        }
+
+        counter.textContent = text.includes("+")
+            ? `${current}+`
+            : `${current}`;
+
+    }, 25);
+
+});
