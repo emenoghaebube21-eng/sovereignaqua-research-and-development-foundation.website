@@ -2108,4 +2108,14 @@ transform:scale(1.06);
 
 }
 
+.nav-links a.active{
 
+color:#00CFFF;
+
+}
+
+.nav-links a.active::after{
+
+width:100%;
+
+}
