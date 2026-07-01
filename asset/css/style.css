@@ -2305,3 +2305,21 @@ background:rgba(2,21,38,.96);
 box-shadow:0 20px 50px rgba(0,0,0,.25);
 
 }
+
+#progressBar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:#00CFFF;
+
+z-index:999999;
+
+}
