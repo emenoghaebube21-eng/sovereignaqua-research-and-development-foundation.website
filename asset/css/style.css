@@ -1642,3 +1642,29 @@ font-size:2rem;
 }
 
 }
+
+section{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:all .8s ease;
+
+}
+
+section.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.navbar.scrolled{
+
+background:rgba(2,21,38,.95);
+
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
