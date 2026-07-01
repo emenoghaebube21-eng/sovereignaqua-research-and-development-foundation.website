@@ -2,6 +2,39 @@
    SOVEREIGNAQUA FOUNDATION
    GLOBAL STYLES
 ===================================================== */
+section{
+
+padding:110px 0;
+
+}
+
+.section-heading{
+
+max-width:850px;
+
+margin:0 auto 70px;
+
+text-align:center;
+
+}
+
+.section-title{
+
+display:inline-block;
+
+color:var(--primary);
+
+font-size:.9rem;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+margin-bottom:18px;
+
+}
 
 :root{
 
@@ -423,20 +456,21 @@ left:0;
 
 width:100%;
 
-background:rgba(2,21,38,.75);
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+background:rgba(2,21,38,.8);
+
+backdrop-filter:blur(16px);
+
+-webkit-backdrop-filter:blur(16px);
+
+z-index:999;
+
+padding:18px 0;
+
 border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
-.container{
-
-width:90%;
-
-max-width:1300px;
-
-margin:auto;
+.navbar .container{
 
 display:flex;
 
@@ -444,31 +478,15 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:18px 0;
-
 }
 
 .logo{
 
-display:flex;
+font-size:1.5rem;
 
-align-items:center;
-
-gap:10px;
-
-font-size:1.7rem;
-
-font-weight:bold;
-
-text-decoration:none;
+font-weight:700;
 
 color:white;
-
-}
-
-.logo-icon{
-
-font-size:2rem;
 
 }
 
@@ -476,31 +494,21 @@ font-size:2rem;
 
 display:flex;
 
-list-style:none;
-
 gap:30px;
 
-margin:0;
-
-padding:0;
+align-items:center;
 
 }
 
 .nav-links a{
 
-text-decoration:none;
-
-color:white;
-
-font-weight:500;
-
-transition:.3s;
+transition:var(--transition);
 
 }
 
 .nav-links a:hover{
 
-color:#00CFFF;
+color:var(--primary);
 
 }
 
