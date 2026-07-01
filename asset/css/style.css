@@ -2409,4 +2409,24 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
 gap:30px;
 
+}.breadcrumb{
+
+margin-top:25px;
+
+font-size:.95rem;
+
+opacity:.8;
+
+}
+
+.breadcrumb a{
+
+color:var(--primary);
+
+}
+
+.breadcrumb span{
+
+margin:0 6px;
+
 }
