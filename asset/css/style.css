@@ -10,14 +10,31 @@ padding:110px 0;
 
 .section-heading{
 
+text-align:center;
+
 max-width:850px;
 
 margin:0 auto 70px;
 
-text-align:center;
+}
+
+.section-heading h2{
+
+font-size:3rem;
+
+margin:20px 0;
+
+color:white;
 
 }
 
+.section-heading p{
+
+font-size:1.15rem;
+
+opacity:.85;
+
+}
 .section-title{
 
 display:inline-block;
@@ -183,10 +200,23 @@ transition:.3s;
 
 }
 
+.nav-links a{
+
+padding:10px 16px;
+
+border-radius:40px;
+
+transition:.35s;
+
+}
+
 .nav-links a:hover{
+
+background:rgba(255,255,255,.08);
 
 color:#00CFFF;
 
+}
 }
 
 .nav-links a::after{
@@ -323,6 +353,32 @@ gap:20px;
 justify-content:center;
 
 flex-wrap:wrap;
+
+}
+
+.hero-content{
+
+animation:heroFade 1.5s ease;
+
+}
+
+@keyframes heroFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
 /* Hero Badge */
@@ -818,13 +874,15 @@ align-items:center;
 
 }
 
-.about-media img{
+img{
+
+display:block;
 
 width:100%;
 
-border-radius:20px;
+height:auto;
 
-box-shadow:0 20px 40px rgba(0,0,0,.3);
+border-radius:18px;
 
 }
 
@@ -1214,6 +1272,30 @@ color:#00CFFF;
 text-decoration:none;
 
 font-weight:bold;
+
+}
+
+.research-card,
+.program-card,
+.news-card,
+.partner-card,
+.impact-card{
+
+border:1px solid rgba(255,255,255,.05);
+
+overflow:hidden;
+
+}
+
+.research-card:hover,
+.program-card:hover,
+.news-card:hover,
+.partner-card:hover,
+.impact-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 30px 70px rgba(0,0,0,.35);
 
 }
 /* ======================================
@@ -2117,5 +2199,41 @@ color:#00CFFF;
 .nav-links a.active::after{
 
 width:100%;
+
+}
+
+.brand{
+
+display:flex;
+
+flex-direction:column;
+
+line-height:1.2;
+
+}
+
+.brand-name{
+
+font-size:1.35rem;
+
+font-weight:700;
+
+margin:0;
+
+color:white;
+
+}
+
+.brand-tagline{
+
+font-size:.75rem;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+opacity:.75;
+
+margin-top:3px;
 
 }
