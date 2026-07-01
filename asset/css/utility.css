@@ -1,0 +1,45 @@
+/* ===========================================================
+   UTILITIES
+=========================================================== */
+
+.text-center{
+
+text-align:center;
+
+}
+
+.mt-2{
+
+margin-top:20px;
+
+}
+
+.mt-4{
+
+margin-top:40px;
+
+}
+
+.mb-2{
+
+margin-bottom:20px;
+
+}
+
+.mb-4{
+
+margin-bottom:40px;
+
+}
+
+.rounded{
+
+border-radius:20px;
+
+}
+
+.shadow{
+
+box-shadow:var(--shadow);
+
+}
