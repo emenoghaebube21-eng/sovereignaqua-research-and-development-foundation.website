@@ -258,3 +258,9 @@ document.getElementById("progressBar")
 .style.width=progress+"%";
 
 });
+
+document.querySelectorAll(".fade-in").forEach(el=>{
+
+observer.observe(el);
+
+});
