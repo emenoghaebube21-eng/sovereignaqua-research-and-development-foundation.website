@@ -1914,3 +1914,24 @@ top:28px;
 }
 
 }
+
+.divider{
+
+border:none;
+
+height:1px;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.18),
+
+transparent
+
+);
+
+}
+
