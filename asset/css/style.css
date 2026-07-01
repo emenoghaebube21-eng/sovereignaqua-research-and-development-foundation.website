@@ -2295,3 +2295,25 @@ transition:.3s;
 color:#00CFFF;
 
 }
+
+.navbar{
+
+height:90px;
+
+display:flex;
+
+align-items:center;
+
+transition:.4s;
+
+}
+
+.navbar.scrolled{
+
+height:75px;
+
+background:rgba(2,21,38,.96);
+
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
