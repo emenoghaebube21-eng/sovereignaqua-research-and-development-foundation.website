@@ -129,3 +129,21 @@ document.querySelectorAll(".impact-card h3").forEach(counter => {
     }, 25);
 
 });
+
+// =====================================
+// MOBILE MENU
+// =====================================
+
+const menuBtn=document.querySelector(".menu-toggle");
+
+const navLinks=document.querySelector(".nav-links");
+
+if(menuBtn && navLinks){
+
+menuBtn.addEventListener("click",()=>{
+
+navLinks.classList.toggle("active");
+
+});
+
+}
