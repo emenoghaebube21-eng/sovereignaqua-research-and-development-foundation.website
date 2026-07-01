@@ -1,3 +1,7 @@
+/* ===========================================================
+   RESET
+=========================================================== */
+
 *{
 
 margin:0;
@@ -18,7 +22,7 @@ body{
 
 font-family:"Poppins",sans-serif;
 
-background:var(--dark);
+background:var(--bg);
 
 color:var(--text);
 
@@ -38,6 +42,12 @@ height:auto;
 
 }
 
+ul{
+
+list-style:none;
+
+}
+
 a{
 
 text-decoration:none;
@@ -46,8 +56,10 @@ color:inherit;
 
 }
 
-ul{
+button{
 
-list-style:none;
+font-family:inherit;
+
+cursor:pointer;
 
 }
