@@ -1,9 +1,45 @@
+/* ===========================================================
+   LAYOUT
+=========================================================== */
+
 .container{
 
-width:90%;
-
-max-width:1280px;
+width:min(1200px,92%);
 
 margin:auto;
+
+}
+
+section{
+
+padding:110px 0;
+
+}
+
+.section-heading{
+
+max-width:850px;
+
+margin:0 auto 70px;
+
+text-align:center;
+
+}
+
+.section-title{
+
+display:inline-block;
+
+font-size:.85rem;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:var(--primary);
+
+margin-bottom:20px;
 
 }
