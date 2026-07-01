@@ -130,23 +130,14 @@ document.querySelectorAll(".impact-card h3").forEach(counter => {
 
 });
 
-// =====================================
-// MOBILE MENU
-// =====================================
-
-const menuBtn=document.querySelector(".menu-toggle");
-
+const menuToggle=document.querySelector(".menu-toggle");
 const navLinks=document.querySelector(".nav-links");
 
-if(menuBtn && navLinks){
+menuToggle.addEventListener("click",()=>{
 
-menuBtn.addEventListener("click",()=>{
-
-navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
 
 });
-
-}
 // =====================================
 // CURRENT YEAR
 // =====================================
