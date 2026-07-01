@@ -1,3 +1,32 @@
+/* =====================================================
+   SOVEREIGNAQUA FOUNDATION
+   GLOBAL STYLES
+===================================================== */
+
+:root{
+
+--primary:#00CFFF;
+
+--secondary:#0077B6;
+
+--dark:#021526;
+
+--dark2:#0B2D45;
+
+--light:#F8FAFC;
+
+--text:#EAF4F8;
+
+--accent:#38BDF8;
+
+--radius:18px;
+
+--shadow:0 20px 40px rgba(0,0,0,.25);
+
+--transition:.35s ease;
+
+}
+
 /* ==========================================
    HOMEPAGE V2 STYLES
 ========================================== */
