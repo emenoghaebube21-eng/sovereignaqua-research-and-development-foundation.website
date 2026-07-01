@@ -1761,3 +1761,76 @@ display:flex;
 
 }
 
+/* ==============================
+   LOADER
+================================= */
+
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#021526;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:.6s;
+
+}
+
+.loader-content{
+
+text-align:center;
+
+}
+
+.loader-logo{
+
+width:120px;
+
+margin:auto;
+
+margin-bottom:25px;
+
+}
+
+.loader-spinner{
+
+width:60px;
+
+height:60px;
+
+border:5px solid rgba(255,255,255,.15);
+
+border-top:5px solid var(--primary);
+
+border-radius:50%;
+
+margin:25px auto;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
