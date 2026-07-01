@@ -157,7 +157,15 @@ position:absolute;
 
 inset:0;
 
-background:rgba(2,21,38,.55);
+background:linear-gradient(
+
+180deg,
+
+rgba(2,21,38,.55),
+
+rgba(2,21,38,.82)
+
+);
 
 }
 
@@ -1934,4 +1942,51 @@ transparent
 );
 
 }
+
+.navbar{
+
+animation:navFade 1s ease;
+
+}
+
+@keyframes navFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(-30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.program-card img,
+
+.news-card img,
+
+.about-image img{
+
+transition:.5s;
+
+}
+
+.program-card:hover img,
+
+.news-card:hover img,
+
+.about-image:hover img{
+
+transform:scale(1.06);
+
+}
+
 
