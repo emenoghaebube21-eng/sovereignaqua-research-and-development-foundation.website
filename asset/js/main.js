@@ -240,3 +240,21 @@ nav.classList.remove("scrolled");
 }
 
 });
+
+window.addEventListener("scroll",()=>{
+
+const total=
+
+document.documentElement.scrollHeight-
+
+window.innerHeight;
+
+const progress=
+
+(window.scrollY/total)*100;
+
+document.getElementById("progressBar")
+
+.style.width=progress+"%";
+
+});
