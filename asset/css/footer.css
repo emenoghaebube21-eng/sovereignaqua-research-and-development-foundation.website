@@ -1,0 +1,120 @@
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+<img src="assets/images/logo.png"
+alt="SovereignAqua Logo"
+class="footer-logo">
+
+<h3>SovereignAqua Foundation</h3>
+
+<p>
+
+Advancing scientific research,
+environmental stewardship,
+innovation and humanitarian
+development through global
+collaboration.
+
+</p>
+
+<div class="footer-social">
+
+<a href="#" aria-label="Facebook">F</a>
+
+<a href="#" aria-label="LinkedIn">in</a>
+
+<a href="#" aria-label="YouTube">▶</a>
+
+<a href="#" aria-label="Telegram">✈</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h4>Foundation</h4>
+
+<ul>
+
+<li><a href="mission.html">Mission</a></li>
+
+<li><a href="research.html">Research</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="governance.html">Governance</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Membership</h4>
+
+<ul>
+
+<li><a href="membership-application.html">Apply</a></li>
+
+<li><a href="asset-enrolment.html">Asset Enrolment</a></li>
+
+<li><a href="#">Partners</a></li>
+
+<li><a href="#">Donate</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-contact">
+
+<h4>Contact</h4>
+
+<p>📧 info@sovereignaqua.org</p>
+
+<p>🌍 International Research Network</p>
+
+<p>🕘 Monday – Friday</p>
+
+<p>09:00 AM – 05:00 PM</p>
+
+</div>
+
+</div>
+
+<hr class="footer-divider">
+
+<div class="footer-bottom">
+
+<p>
+
+© <span id="year"></span>
+
+SovereignAqua Research &
+Development Foundation.
+
+All Rights Reserved.
+
+</p>
+
+<div class="footer-legal">
+
+<a href="#">Privacy Policy</a>
+
+<a href="#">Terms of Use</a>
+
+<a href="#">Accessibility</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
