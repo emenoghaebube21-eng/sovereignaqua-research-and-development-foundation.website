@@ -2386,3 +2386,27 @@ gap:40px;
 align-items:start;
 
 }
+
+.page-hero{
+
+padding:180px 20px 120px;
+
+text-align:center;
+
+background:linear-gradient(
+180deg,
+#021526,
+#0B2D45
+);
+
+}
+
+.values-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
