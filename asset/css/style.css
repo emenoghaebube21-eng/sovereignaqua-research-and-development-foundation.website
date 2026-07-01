@@ -1644,27 +1644,22 @@ gap:20px;
 .contact-form input,
 .contact-form textarea{
 
-padding:18px;
+width:100%;
 
-border:none;
+font-size:1rem;
 
-border-radius:15px;
-
-background:#0b2d45;
-
-color:white;
-
-font-size:16px;
+transition:border-color .3s, box-shadow .3s;
 
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
+.contact-form input:focus,
+.contact-form textarea:focus{
 
-color:#bcd2df;
+border:1px solid var(--primary);
+
+box-shadow:0 0 0 3px rgba(0,207,255,.2);
 
 }
-
 .contact-info{
 
 background:#10283b;
@@ -2348,5 +2343,46 @@ width:0;
 background:#00CFFF;
 
 z-index:999999;
+
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus{
+
+outline:3px solid var(--primary);
+
+outline-offset:3px;
+
+}
+
+.fade-in{
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:all .8s ease;
+
+}
+
+.fade-in.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:40px;
+
+align-items:start;
 
 }
