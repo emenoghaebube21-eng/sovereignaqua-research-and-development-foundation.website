@@ -1,10 +1,69 @@
 <footer class="footer">
 
 <div class="container">
+/* ==========================================================
+   FOOTER
+   SovereignAqua Research & Development Foundation
+========================================================== */
+
+.footer{
+
+background:linear-gradient(
+180deg,
+#01111d,
+#00070d
+);
+
+padding:90px 0 30px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
 
 <div class="footer-grid">
+.footer-grid{
 
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1.5fr;
+
+gap:50px;
+
+align-items:flex-start;
+
+}
 <div class="footer-brand">
+.footer-brand{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.footer-logo{
+
+width:90px;
+
+margin-bottom:20px;
+
+}
+
+.footer-brand h3{
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+.footer-brand p{
+
+color:var(--text-light);
+
+line-height:1.8;
+
+}
 
 <img src="assets/images/logo.png"
 alt="SovereignAqua Logo"
