@@ -65,115 +65,187 @@ line-height:1.8;
 
 }
 
-<img src="assets/images/logo.png"
-alt="SovereignAqua Logo"
-class="footer-logo">
+.footer h4{
 
-<h3>SovereignAqua Foundation</h3>
+color:var(--primary);
 
-<p>
+margin-bottom:20px;
 
-Advancing scientific research,
-environmental stewardship,
-innovation and humanitarian
-development through global
-collaboration.
+font-size:1.15rem;
 
-</p>
+}
 
-<div class="footer-social">
 
-<a href="#" aria-label="Facebook">F</a>
+.footer ul{
 
-<a href="#" aria-label="LinkedIn">in</a>
+padding:0;
 
-<a href="#" aria-label="YouTube">▶</a>
+margin:0;
 
-<a href="#" aria-label="Telegram">✈</a>
+list-style:none;
 
-</div>
+}
 
-</div>
+.footer li{
 
-<div>
+margin-bottom:14px;
 
-<h4>Foundation</h4>
+}
 
-<ul>
+.footer a{
 
-<li><a href="mission.html">Mission</a></li>
+color:var(--text-light);
 
-<li><a href="research.html">Research</a></li>
+transition:.3s;
 
-<li><a href="projects.html">Projects</a></li>
+}
 
-<li><a href="governance.html">Governance</a></li>
+.footer a:hover{
 
-</ul>
+color:var(--primary);
 
-</div>
+padding-left:6px;
 
-<div>
+.footer-contact p
+   {
 
-<h4>Membership</h4>
+margin-bottom:14px;
 
-<ul>
+display:flex;
 
-<li><a href="membership-application.html">Apply</a></li>
+align-items:center;
 
-<li><a href="asset-enrolment.html">Asset Enrolment</a></li>
+gap:10px;
 
-<li><a href="#">Partners</a></li>
+}
 
-<li><a href="#">Donate</a></li>
+.footer-social{
 
-</ul>
+display:flex;
 
-</div>
+gap:18px;
 
-<div class="footer-contact">
+margin-top:25px;
 
-<h4>Contact</h4>
+}
 
-<p>📧 info@sovereignaqua.org</p>
+.footer-social a{
 
-<p>🌍 International Research Network</p>
+width:42px;
 
-<p>🕘 Monday – Friday</p>
+height:42px;
 
-<p>09:00 AM – 05:00 PM</p>
+display:flex;
 
-</div>
+justify-content:center;
 
-</div>
+align-items:center;
 
-<hr class="footer-divider">
+border-radius:50%;
 
-<div class="footer-bottom">
+background:#0B2D45;
 
-<p>
+transition:.35s;
 
-© <span id="year"></span>
+}
 
-SovereignAqua Research &
-Development Foundation.
+.footer-social a:hover{
 
-All Rights Reserved.
+background:var(--primary);
 
-</p>
+color:white;
 
-<div class="footer-legal">
+transform:translateY(-5px);
 
-<a href="#">Privacy Policy</a>
+}
 
-<a href="#">Terms of Use</a>
+.footer-divider{
 
-<a href="#">Accessibility</a>
+margin:50px 0 25px;
 
-</div>
+height:1px;
 
-</div>
+background:rgba(255,255,255,.08);
 
-</div>
+border:none;
 
-</footer>
+}
+
+.footer-bottom{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+font-size:.95rem;
+
+color:var(--text-muted);
+
+}
+
+.footer-legal{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-legal a{
+
+color:var(--text-muted);
+
+}
+
+.footer-legal a:hover{
+
+color:var(--primary);
+
+}
+
+@media(max-width:992px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.footer-brand{
+
+align-items:center;
+
+}
+
+.footer-contact p{
+
+justify-content:center;
+
+}
+
+.footer-social{
+
+justify-content:center;
+
+}
+
+.footer-bottom{
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+}
+   
