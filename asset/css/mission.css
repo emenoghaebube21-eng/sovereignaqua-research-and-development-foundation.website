@@ -1,71 +1,25 @@
-.page-hero{
+/* ==========================================================
+   MISSION PAGE
+   mission.css
+========================================================== */
 
-padding:180px 20px 120px;
+/* ======================================
+   PAGE HERO
+====================================== */
 
-text-align:center;
-
-background:linear-gradient(
-180deg,
-#021526,
-#0B2D45
-);
-
-}
-
-.values-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:30px;
-
-}
-.breadcrumb{
-
-margin-top:25px;
-
-font-size:.95rem;
-
-opacity:.8;
-
-}
-
-.breadcrumb a{
-
-color:var(--primary);
-
-}
-
-.breadcrumb span{
-
-margin:0 6px;
-
-}
-.section{
-
-padding:100px 0;
-
-}
-
-.section .container{
-
-max-width:1200px;
-
-margin:auto;
-
-}
 .page-hero{
 
 position:relative;
 
-height:420px;
+height:500px;
 
 display:flex;
 
 align-items:center;
 
 justify-content:center;
+
+text-align:center;
 
 overflow:hidden;
 
@@ -75,11 +29,17 @@ overflow:hidden;
 
 position:absolute;
 
+top:0;
+
+left:0;
+
 width:100%;
 
 height:100%;
 
 object-fit:cover;
+
+z-index:-2;
 
 }
 
@@ -89,39 +49,209 @@ position:absolute;
 
 inset:0;
 
-background:rgba(2,21,38,.65);
+background:linear-gradient(
+
+180deg,
+
+rgba(2,21,38,.45),
+
+rgba(2,21,38,.85)
+
+);
+
+z-index:-1;
 
 }
 
 .page-hero-content{
 
-position:relative;
-
-z-index:2;
-
-text-align:center;
+max-width:850px;
 
 color:white;
 
 }
-.info-card{
 
-background:#0B2D45;
+.page-hero h1{
 
-padding:35px;
-
-border-radius:20px;
-
-border:1px solid rgba(255,255,255,.05);
-
-box-shadow:var(--shadow);
-
-transition:.35s;
+margin-bottom:20px;
 
 }
 
-.info-card:hover{
+.page-hero p{
 
-transform:translateY(-8px);
+font-size:1.2rem;
+
+}
+/* ======================================
+   BREADCRUMB
+====================================== */
+
+.breadcrumb-section{
+
+padding:25px 0;
+
+background:#071b2c;
+
+}
+
+.breadcrumb{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:.95rem;
+
+}
+
+.breadcrumb a{
+
+color:var(--primary);
+
+font-weight:600;
+
+}
+
+.breadcrumb span{
+
+color:var(--text-muted);
+
+}
+/* ======================================
+   MISSION & VISION
+====================================== */
+
+.mission-section{
+
+background:#021526;
+
+}
+
+.vision-section{
+
+background:#081b2b;
+
+}
+
+.mission-section p,
+
+.vision-section p{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:1.1rem;
+
+line-height:1.9;
+
+}
+/* ======================================
+   VALUES
+====================================== */
+
+.values-section{
+
+background:#021526;
+
+}
+
+.values-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:35px;
+
+}
+
+.values-grid .card{
+
+text-align:center;
+
+padding:40px 30px;
+
+}
+
+.values-grid h3{
+
+color:var(--primary);
+
+margin-bottom:15px;
+
+}
+/* ======================================
+   TIMELINE
+====================================== */
+
+.timeline{
+
+max-width:900px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:40px;
+
+}
+
+.timeline-item{
+
+padding:30px;
+
+background:var(--bg-card);
+
+border-left:5px solid var(--primary);
+
+border-radius:15px;
+
+box-shadow:var(--shadow);
+
+}
+/* ======================================
+   CTA
+====================================== */
+
+.cta-section{
+
+padding:100px 0;
+
+text-align:center;
+
+background:linear-gradient(
+
+135deg,
+
+var(--secondary),
+
+var(--primary)
+
+);
+
+}
+
+.cta-section h2{
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.cta-section p{
+
+max-width:700px;
+
+margin:0 auto 40px;
+
+color:white;
 
 }
