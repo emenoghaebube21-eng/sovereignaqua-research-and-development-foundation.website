@@ -1,36 +1,89 @@
-<html>
-<body> 
-    <div id="progressBar"></div>
-
-<div id="loader">
-
-    <div class="loader-spinner"></div>
-
-</div>
-    
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-    
+
+    <!-- ===================================================
+         BASIC META
+    ==================================================== -->
+
     <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>SovereignAqua Research & Development Foundation</title>
+    <!-- ===================================================
+         SEO
+    ==================================================== -->
+
+    <title>
+        SovereignAqua Research & Development Foundation |
+        Research • Innovation • Sustainability
+    </title>
 
     <meta name="description"
-          content="Official website of the SovereignAqua Research & Development Foundation">
+          content="Official website of the SovereignAqua Research & Development Foundation advancing scientific research, environmental stewardship, sustainable development, education, innovation and humanitarian initiatives.">
 
     <meta name="keywords"
-          content="Research Foundation, Water Research, Sustainability, Innovation">
+          content="Research Foundation, Sustainability, Innovation, Water Research, Environmental Science, Renewable Energy, Education, Scientific Research">
 
     <meta name="author"
           content="SovereignAqua Research & Development Foundation">
 
-    <link rel="stylesheet"
-          href="assets/css/style.css">
+    <meta name="robots"
+          content="index, follow">
+
+    <link rel="canonical"
+          href="https://www.sovereignaqua.org/">
+
+    <!-- ===================================================
+         OPEN GRAPH
+    ==================================================== -->
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:title"
+          content="SovereignAqua Research & Development Foundation">
+
+    <meta property="og:description"
+          content="Advancing Research, Innovation and Sustainable Development.">
+
+    <meta property="og:image"
+          content="assets/images/social-preview.jpg">
+
+    <meta property="og:url"
+          content="https://www.sovereignaqua.org">
+
+    <!-- ===================================================
+         TWITTER
+    ==================================================== -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="SovereignAqua Foundation">
+
+    <meta name="twitter:description"
+          content="Research • Innovation • Sustainability">
+
+    <!-- ===================================================
+         FAVICON
+    ==================================================== -->
+
+    <link rel="icon"
+          href="favicon.ico">
+
+    <link rel="manifest"
+          href="manifest.json">
+
+    <!-- ===================================================
+         GOOGLE FONTS
+    ==================================================== -->
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -39,50 +92,93 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet">
-  
+
+    <!-- ===================================================
+         CSS
+    ==================================================== -->
+
+    <link rel="stylesheet"
+          href="assets/css/base/variables.css">
+
+    <link rel="stylesheet"
+          href="assets/css/base/reset.css">
+
+    <link rel="stylesheet"
+          href="assets/css/base/typography.css">
+
+    <link rel="stylesheet"
+          href="assets/css/base/global.css">
+
+    <link rel="stylesheet"
+          href="assets/css/layout/navigation.css">
+
+    <link rel="stylesheet"
+          href="assets/css/layout/hero.css">
+
+    <link rel="stylesheet"
+          href="assets/css/layout/footer.css">
+
+    <link rel="stylesheet"
+          href="assets/css/components/buttons.css">
+
+    <link rel="stylesheet"
+          href="assets/css/components/cards.css">
+
+    <link rel="stylesheet"
+          href="assets/css/components/forms.css">
+
+    <link rel="stylesheet"
+          href="assets/css/components/statistics.css">
+
+    <link rel="stylesheet"
+          href="assets/css/pages/index.css">
+
+    <link rel="stylesheet"
+          href="assets/css/animations.css">
+
+    <link rel="stylesheet"
+          href="assets/css/layout/responsive.css">
+
+</head>
+
+<body>
+
+<!-- Progress Bar -->
+
+<div id="progressBar"></div>
+
+<!-- Loader -->
+
 <div id="loader">
- <div class="loader-content">
 
-     <h1>💧 SovereignAqua</h1>
-
-            <p>
-
-                Advancing scientific research,
-                environmental stewardship,
-                innovation and humanitarian
-                development through global
-                collaboration.
-
-            </p>
-    
-    </div>
+    <div class="loader-spinner"></div>
 
 </div>
-</head>
-    <hr class="divider">
+
+    
 <!-- ==========================================
      NAVIGATION
 ========================================== -->
 
 <nav class="navbar">
 
-    <div class="container">
+<div class="container">
 
-        <!-- Logo -->
+<a href="index.html"
+class="logo">
 
-        <a href="index.html" class="logo">
+<img
+src="assets/images/logos/logo.png"
+alt="SovereignAqua Foundation"
+class="logo-image">
 
-            <img src="assets/images/logo.png"
-                 alt="SovereignAqua Foundation Logo"
-                 class="logo-image">
-
-          <div class="brand">
+<div class="brand">
 
 <h1 class="brand-name">
 
-SovereignAqua
+💧SovereignAqua
 
 </h1>
 
@@ -93,49 +189,43 @@ Research • Innovation • Sustainability
 </p>
 
 </div>
-        </a>
 
-        <!-- Mobile Menu -->
+</a>
 
-        <button class="menu-toggle"
-                aria-label="Toggle Navigation">
+<button
+class="menu-toggle"
+aria-label="Toggle Navigation">
 
-            ☰
+☰
 
-        </button>
+</button>
 
-        <!-- Navigation -->
+<ul class="nav-links">
 
-        <ul class="nav-links">
+<li><a href="index.html">Home</a></li>
 
-            <li><a href="#hero">Home</a></li>
+<li><a href="mission.html">Mission</a></li>
 
-            <li><a href="#about">About</a></li>
+<li><a href="research.html">Research</a></li>
 
-            <li><a href="#research">Research</a></li>
+<li><a href="projects.html">Projects</a></li>
 
-            <li><a href="#programs">Programs</a></li>
+<li><a href="publications.html">Publications</a></li>
 
-            <li><a href="#impact">Impact</a></li>
+<li><a href="governance.html">Governance</a></li>
 
-            <li><a href="#news">News</a></li>
+<li><a href="contact.html">Contact</a></li>
 
-            <li><a href="#partners">Partners</a></li>
+</ul>
 
-            <li><a href="#contact">Contact</a></li>
+<a href="membership-application.html"
+class="button nav-cta">
 
-        </ul>
+Become a Member
 
-        <!-- CTA -->
+</a>
 
-        <a href="membership-application.html"
-           class="button nav-cta">
-
-            Become a Member
-
-        </a>
-
-    </div>
+</div>
 
 </nav>
 <!-- ===========================
