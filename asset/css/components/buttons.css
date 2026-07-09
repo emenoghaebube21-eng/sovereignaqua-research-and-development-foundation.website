@@ -1,0 +1,161 @@
+/* ==========================================================
+   BUTTONS
+   SovereignAqua Research & Development Foundation
+========================================================== */
+
+/* Base Button */
+
+.button,
+.button-outline,
+.button-ghost{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:14px 30px;
+
+border-radius:50px;
+
+font-size:1rem;
+font-weight:600;
+
+text-decoration:none;
+
+cursor:pointer;
+
+transition:
+all .3s ease;
+
+border:2px solid transparent;
+
+min-height:50px;
+
+}
+
+/* Primary Button */
+
+.button{
+
+background:var(--primary);
+color:#ffffff;
+
+}
+
+.button:hover{
+
+background:#00b6e6;
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 30px rgba(0,207,255,.35);
+
+}
+
+/* Outline Button */
+
+.button-outline{
+
+background:transparent;
+
+color:#ffffff;
+
+border-color:var(--primary);
+
+}
+
+.button-outline:hover{
+
+background:var(--primary);
+
+color:#ffffff;
+
+transform:translateY(-3px);
+
+}
+
+/* Ghost Button */
+
+.button-ghost{
+
+background:transparent;
+
+color:var(--primary);
+
+}
+
+.button-ghost:hover{
+
+background:rgba(0,207,255,.12);
+
+}
+
+/* Large Button */
+
+.button-lg{
+
+padding:18px 40px;
+
+font-size:1.1rem;
+
+}
+
+/* Small Button */
+
+.button-sm{
+
+padding:10px 22px;
+
+font-size:.9rem;
+
+}
+
+/* Full Width */
+
+.button-block{
+
+display:flex;
+
+width:100%;
+
+}
+
+/* Disabled */
+
+.button:disabled,
+.button-outline:disabled,
+.button-ghost:disabled{
+
+opacity:.55;
+
+cursor:not-allowed;
+
+pointer-events:none;
+
+}
+
+/* Keyboard Focus */
+
+.button:focus-visible,
+.button-outline:focus-visible,
+.button-ghost:focus-visible{
+
+outline:3px solid rgba(0,207,255,.45);
+
+outline-offset:3px;
+
+}
+
+@media(max-width:768px){
+
+.button,
+.button-outline,
+.button-ghost{
+
+width:100%;
+
+margin-bottom:15px;
+
+}
+
+}
