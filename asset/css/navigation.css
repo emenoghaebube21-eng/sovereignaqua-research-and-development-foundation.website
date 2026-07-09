@@ -1,3 +1,207 @@
+/* ==========================================================
+   NAVIGATION
+   SovereignAqua Research & Development Foundation
+   File: navigation.css
+========================================================== */
+
+/* ===========================
+   Navigation Bar
+=========================== */
+
+.navbar{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:1000;
+
+padding:20px 0;
+
+transition:all .35s ease;
+
+}
+
+/* ===========================
+   Navigation Container
+=========================== */
+
+.navbar .container{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:30px;
+
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+text-decoration:none;
+
+}
+
+.logo-image{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+.brand{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.brand-name{
+
+font-size:1.5rem;
+
+font-weight:700;
+
+color:#ffffff;
+
+margin:0;
+
+}
+
+.brand-tagline{
+
+font-size:.85rem;
+
+color:rgba(255,255,255,.75);
+
+margin-top:4px;
+
+}
+
+/* ===========================
+   Navigation Links
+=========================== */
+
+.nav-links{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+list-style:none;
+
+margin:0;
+
+padding:0;
+
+}
+
+.nav-links li{
+
+list-style:none;
+
+}
+
+.nav-links a{
+
+color:#ffffff;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:color .3s ease;
+
+position:relative;
+
+padding:8px 0;
+
+}
+
+.nav-links a:hover,
+
+.nav-links a.active{
+
+color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-4px;
+
+width:0;
+
+height:2px;
+
+background:var(--primary);
+
+transition:width .3s ease;
+
+}
+
+.nav-links a:hover::after,
+
+.nav-links a.active::after{
+
+width:100%;
+
+}
+
+/* ===========================
+   Navigation CTA
+=========================== */
+
+.nav-cta{
+
+margin-left:20px;
+
+}
+
+/* ===========================
+   Mobile Menu Button
+=========================== */
+
+.menu-toggle{
+
+display:none;
+
+background:none;
+
+border:none;
+
+color:#ffffff;
+
+font
+   
 /* ==========================================
    Sticky Navigation
 ========================================== */
