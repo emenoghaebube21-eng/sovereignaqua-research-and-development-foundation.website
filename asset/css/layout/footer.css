@@ -1,1 +1,260 @@
+/* ==========================================================
+   FOOTER
+   SovereignAqua Research & Development Foundation
+========================================================== */
 
+.footer{
+
+background:#021526;
+
+color:#ffffff;
+
+padding:80px 0 0;
+
+margin-top:100px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ===========================
+   Footer Grid
+=========================== */
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1.2fr;
+
+gap:50px;
+
+margin-bottom:50px;
+
+}
+
+/* ===========================
+   Footer Logo
+=========================== */
+
+.footer-logo{
+
+width:90px;
+
+margin-bottom:20px;
+
+}
+
+.footer-column p{
+
+line-height:1.8;
+
+color:rgba(255,255,255,.75);
+
+}
+
+/* ===========================
+   Footer Headings
+=========================== */
+
+.footer-column h3{
+
+margin-bottom:20px;
+
+font-size:1.2rem;
+
+color:var(--primary);
+
+}
+
+/* ===========================
+   Footer Links
+=========================== */
+
+.footer-column ul{
+
+list-style:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+.footer-column li{
+
+margin-bottom:12px;
+
+}
+
+.footer-column a{
+
+text-decoration:none;
+
+color:rgba(255,255,255,.75);
+
+transition:all .3s ease;
+
+}
+
+.footer-column a:hover{
+
+color:var(--primary);
+
+padding-left:6px;
+
+}
+
+/* ===========================
+   Contact Details
+=========================== */
+
+.footer-column p{
+
+margin-bottom:12px;
+
+}
+
+
+/* ===========================
+   Footer Bottom
+=========================== */
+
+.footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.08);
+
+padding:25px 0;
+
+}
+
+.footer-bottom .container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+/* ===========================
+   Legal Links
+=========================== */
+
+.footer-legal{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-legal a{
+
+text-decoration:none;
+
+color:rgba(255,255,255,.65);
+
+transition:.3s;
+
+}
+
+.footer-legal a:hover{
+
+color:var(--primary);
+
+}
+
+
+/* ===========================
+   Social Icons
+=========================== */
+
+.footer-social{
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.footer-social a{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+color:#ffffff;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+background:var(--primary);
+
+transform:translateY(-4px);
+
+}
+
+/* ===========================
+   Responsive Footer
+=========================== */
+
+@media(max-width:992px){
+
+.footer-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.footer-bottom .container{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.footer-legal{
+
+justify-content:center;
+
+}
+
+}
