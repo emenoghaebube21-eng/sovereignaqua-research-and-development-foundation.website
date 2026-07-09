@@ -292,3 +292,166 @@ display:flex;
 
 }
 
+   /* ===========================
+   Active Navigation Link
+=========================== */
+
+.nav-links a.active{
+
+color:var(--primary);
+
+font-weight:600;
+
+}
+
+   /* ===========================
+   Sticky Navigation
+=========================== */
+
+.navbar.sticky{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+background:rgba(2,21,38,.95);
+
+backdrop-filter:blur(12px);
+
+-webkit-backdrop-filter:blur(12px);
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+animation:slideDown .35s ease;
+
+}
+
+@keyframes slideDown{
+
+from{
+
+transform:translateY(-100%);
+
+opacity:0;
+
+}
+
+to{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+}
+
+   /* ===========================
+   Mobile Navigation
+=========================== */
+
+@media screen and (max-width:992px){
+
+.menu-toggle{
+
+display:block;
+
+z-index:1001;
+
+}
+
+.brand-tagline{
+
+display:none;
+
+}
+
+.nav-links{
+
+position:absolute;
+
+top:100%;
+
+left:0;
+
+width:100%;
+
+background:#021526;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+padding:30px;
+
+display:none;
+
+gap:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.nav-links.active{
+
+display:flex;
+
+}
+
+.nav-links li{
+
+width:100%;
+
+}
+
+.nav-links a{
+
+display:block;
+
+width:100%;
+
+padding:12px 0;
+
+}
+
+.nav-cta{
+
+display:none;
+
+}
+
+}
+
+   /* ===========================
+   Small Devices
+=========================== */
+
+@media screen and (max-width:576px){
+
+.logo-image{
+
+width:50px;
+
+height:50px;
+
+}
+
+.brand-name{
+
+font-size:1.2rem;
+
+}
+
+.navbar{
+
+padding:15px 0;
+
+}
+
+}
+
+   
