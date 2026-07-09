@@ -1,0 +1,138 @@
+/* ==========================================================
+   STATISTICS
+   SovereignAqua Research & Development Foundation
+========================================================== */
+
+/* Statistics Section */
+
+.statistics-section{
+
+padding:100px 0;
+
+background:linear-gradient(180deg,#021526,#08263d);
+
+}
+
+/* Statistics Grid */
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+}
+
+/* Statistic Card */
+
+.stat-card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:40px 25px;
+
+text-align:center;
+
+transition:all .35s ease;
+
+backdrop-filter:blur(8px);
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.30);
+
+}
+
+/* Counter */
+
+.counter{
+
+display:block;
+
+font-size:3rem;
+
+font-weight:700;
+
+color:var(--primary);
+
+margin-bottom:12px;
+
+line-height:1;
+
+}
+
+/* Title */
+
+.stat-card p{
+
+margin:0;
+
+font-size:1rem;
+
+font-weight:500;
+
+color:var(--text-light);
+
+}
+
+/* Optional Icon */
+
+.stat-icon{
+
+font-size:2.5rem;
+
+margin-bottom:15px;
+
+color:var(--primary);
+
+}
+
+.stat-card::before{
+
+content:"";
+
+display:block;
+
+width:60px;
+
+height:4px;
+
+background:var(--primary);
+
+margin:0 auto 20px;
+
+border-radius:5px;
+
+}
+
+@media(max-width:768px){
+
+.statistics-section{
+
+padding:70px 0;
+
+}
+
+.counter{
+
+font-size:2.3rem;
+
+}
+
+.stat-card{
+
+padding:30px 20px;
+
+}
+
+}
