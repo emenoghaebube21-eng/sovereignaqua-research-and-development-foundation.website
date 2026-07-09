@@ -1,0 +1,174 @@
+/* ==========================================================
+   CONTACT PAGE
+   SovereignAqua Research & Development Foundation
+========================================================== */
+
+/* Contact Information */
+
+.contact-info{
+
+padding:100px 0;
+
+background:#021526;
+
+}
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.info-grid .card{
+
+text-align:center;
+
+}
+
+.info-grid h3{
+
+color:var(--primary);
+
+margin-bottom:15px;
+
+}
+
+/* Contact Form */
+
+.contact-form-section{
+
+padding:100px 0;
+
+background:#08263d;
+
+}
+
+.contact-form-section form{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+/* Office Hours */
+
+.office-hours{
+
+padding:80px 0;
+
+background:#021526;
+
+}
+
+.office-hours .card{
+
+max-width:500px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+/* Map */
+
+.map-section{
+
+padding:100px 0;
+
+background:#08263d;
+
+}
+
+.map-placeholder{
+
+height:450px;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(255,255,255,.05);
+
+border:2px dashed rgba(255,255,255,.15);
+
+font-size:1.3rem;
+
+color:var(--primary);
+
+}
+
+/* Call To Action */
+
+.contact-cta{
+
+padding:100px 0;
+
+text-align:center;
+
+background:linear-gradient(
+135deg,
+#0077B6,
+#00CFFF
+);
+
+}
+
+.contact-cta h2{
+
+color:#ffffff;
+
+margin-bottom:20px;
+
+}
+
+.contact-cta p{
+
+max-width:700px;
+
+margin:0 auto 35px;
+
+color:#ffffff;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.contact-info,
+
+.contact-form-section,
+
+.office-hours,
+
+.map-section,
+
+.contact-cta{
+
+padding:70px 0;
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.map-placeholder{
+
+height:300px;
+
+}
+
+}
