@@ -1,0 +1,59 @@
+/* ==========================================================
+   GLOBAL IMPACT PAGE
+========================================================== */
+
+.global-vision,
+.impact-areas,
+.sdg-section{
+
+padding:100px 0;
+
+}
+
+.cards-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+.impact-cta{
+
+padding:100px 0;
+
+text-align:center;
+
+background:linear-gradient(135deg,#0077B6,#00CFFF);
+
+}
+
+.impact-cta h2,
+.impact-cta p{
+
+color:#ffffff;
+
+}
+
+.impact-cta p{
+
+max-width:700px;
+
+margin:20px auto 35px;
+
+}
+
+@media(max-width:768px){
+
+.global-vision,
+.impact-areas,
+.sdg-section,
+.impact-cta{
+
+padding:70px 0;
+
+}
+
+}
