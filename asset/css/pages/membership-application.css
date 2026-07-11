@@ -1,0 +1,71 @@
+/* ==========================================================
+   MEMBERSHIP PAGE
+========================================================== */
+
+.membership-overview,
+.membership-benefits,
+.membership-types,
+.membership-form,
+.membership-code{
+
+padding:100px 0;
+
+}
+
+.cards-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+.membership-form form{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.membership-cta{
+
+padding:100px 0;
+
+text-align:center;
+
+background:linear-gradient(135deg,#0077B6,#00CFFF);
+
+}
+
+.membership-cta h2,
+.membership-cta p{
+
+color:#ffffff;
+
+}
+
+.membership-cta p{
+
+max-width:700px;
+
+margin:20px auto 35px;
+
+}
+
+@media(max-width:768px){
+
+.membership-overview,
+.membership-benefits,
+.membership-types,
+.membership-form,
+.membership-code,
+.membership-cta{
+
+padding:70px 0;
+
+}
+
+}
