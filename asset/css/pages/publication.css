@@ -1,0 +1,78 @@
+/* ==========================================================
+   PUBLICATIONS PAGE
+========================================================== */
+
+.publications-intro,
+.featured-publications,
+.publication-categories{
+
+padding:100px 0;
+
+}
+
+.publication-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+}
+
+.cards-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.cards-grid .card{
+
+text-align:center;
+
+font-weight:600;
+
+}
+
+.publication-submit{
+
+padding:100px 0;
+
+text-align:center;
+
+background:linear-gradient(135deg,#0077B6,#00CFFF);
+
+}
+
+.publication-submit h2,
+
+.publication-submit p{
+
+color:#ffffff;
+
+}
+
+.publication-submit p{
+
+max-width:700px;
+
+margin:20px auto 35px;
+
+}
+
+@media(max-width:768px){
+
+.publications-intro,
+.featured-publications,
+.publication-categories,
+.publication-submit{
+
+padding:70px 0;
+
+}
+
+}
