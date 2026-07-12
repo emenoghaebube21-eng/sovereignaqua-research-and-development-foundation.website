@@ -73,3 +73,125 @@ height:180px;
 }
 
 }
+
+/* ==========================================================
+   FINAL HOME SECTIONS
+========================================================== */
+
+.publications-section,
+.partners-section,
+.news-section,
+.newsletter-section,
+.contact-preview{
+
+padding:100px 0;
+
+}
+
+.partners-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+gap:40px;
+
+align-items:center;
+
+margin-top:50px;
+
+}
+
+.partners-grid img{
+
+width:100%;
+
+max-width:160px;
+
+margin:auto;
+
+filter:grayscale(100%);
+
+opacity:.75;
+
+transition:.3s;
+
+}
+
+.partners-grid img:hover{
+
+filter:none;
+
+opacity:1;
+
+transform:scale(1.05);
+
+}
+
+.newsletter-section{
+
+background:linear-gradient(135deg,#0077B6,#00CFFF);
+
+text-align:center;
+
+}
+
+.newsletter-section h2,
+
+.newsletter-section p{
+
+color:#fff;
+
+}
+
+.newsletter-form{
+
+max-width:700px;
+
+margin:40px auto 0;
+
+display:flex;
+
+gap:20px;
+
+}
+
+.newsletter-form input{
+
+flex:1;
+
+}
+
+.contact-preview{
+
+text-align:center;
+
+}
+
+.contact-preview p{
+
+max-width:700px;
+
+margin:20px auto 35px;
+
+}
+
+@media(max-width:768px){
+
+.publications-section,
+.partners-section,
+.news-section,
+.newsletter-section,
+.contact-preview{
+
+padding:70px 0;
+
+}
+
+.newsletter-form{
+
+flex-direction:column;
+
+}
+
+}
