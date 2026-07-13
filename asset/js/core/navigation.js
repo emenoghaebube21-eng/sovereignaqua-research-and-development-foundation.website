@@ -1,101 +1,54 @@
-/* ==========================================================
-   NAVIGATION
-   SovereignAqua Research & Development Foundation
-========================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    const navbar = document.querySelector(".navbar");
     const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    const links = document.querySelectorAll(".nav-links a");
+    const navMenu = document.querySelector("#navigation-menu");
 
-    /* ==========================================
-       Sticky Navigation
-    ========================================== */
+    if (!menuToggle || !navMenu) {
+        return;
+    }
 
-    window.addEventListener("scroll", () => {
+    menuToggle.addEventListener("click", () => {
 
-        if (window.scrollY > 80) {
-            navbar.classList.add("sticky");
-        } else {
-            navbar.classList.remove("sticky");
-        }
+        const isExpanded =
+            menuToggle.getAttribute("aria-expanded") === "true";
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(!isExpanded)
+        );
+
+        navMenu.classList.toggle("active");
 
     });
 
-    /* ==========================================
-       Mobile Menu
-    ========================================== */
-
-    if (menuToggle && navLinks) {
-
-        menuToggle.addEventListener("click", () => {
-
-            navLinks.classList.toggle("active");
-            menuToggle.classList.toggle("active");
-
-        });
-
-    }
-
-    /* ==========================================
-       Close Menu After Click
-    ========================================== */
-
-    links.forEach(link => {
+    navMenu.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
+            navMenu.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         });
 
     });
 
-    /* ==========================================
-       Close Menu With Escape
-    ========================================== */
-
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", event => {
 
         if (event.key === "Escape") {
 
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
+            navMenu.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         }
 
     });
 
-    /* ==========================================
-       Click Outside Menu
-    ========================================== */
-
-    document.addEventListener("click", (event) => {
-
-        if (
-            navLinks.classList.contains("active") &&
-            !navLinks.contains(event.target) &&
-            !menuToggle.contains(event.target)
-        ) {
-
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
-
-        }
-
-    });
-
-});document.querySelectorAll(".nav-links a").forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-navLinks.classList.remove("active");
-
 });
-
-});
-
-
