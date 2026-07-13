@@ -102,10 +102,13 @@ margin-top:4px;
    Navigation Links
 =========================== */
 
-.nav-links{
+.nav-links {
+    display: none;
+}
 
-display:flex;
-
+.nav-links.active {
+    display: flex;
+}
 align-items:center;
 
 gap:30px;
