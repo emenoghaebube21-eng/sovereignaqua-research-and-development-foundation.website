@@ -37,7 +37,7 @@
           content="index,follow">
 
     <link rel="canonical"
-          href="https://www.sovereignaqua.org/">
+          href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/">
 
     <!-- ==========================================
          Open Graph
@@ -53,10 +53,10 @@
           content="Advancing Research, Innovation and Sustainable Development.">
 
     <meta property="og:image"
-          content="assets/images/social/social-preview.jpg">
+          content="https://www.sovereignaquaresearchanddevelopmentfoundation.org/assets/images/social/social-preview.jpg">
 
     <meta property="og:url"
-          content="https://www.sovereignaqua.org">
+          content="https://www.sovereignaquaresearchanddevelopmentfoundation.org/">
 
     <!-- ==========================================
          Twitter
@@ -190,17 +190,26 @@ Research • Innovation • Sustainability
 </a>
 
 <button
-class="menu-toggle"
-aria-label="Toggle Navigation">
+    class="menu-toggle"
+    aria-label="Toggle Navigation"
+    aria-expanded="false"
+    aria-controls="navigation-menu">
 
-☰
+    ☰
 
 </button>
 
-<ul class="nav-links">
+<ul
+    id="navigation-menu"
+    class="nav-links">
 
-<li><a href="index.html">Home</a></li>
-
+<li>
+    <a
+        href="index.html"
+        aria-current="page">
+        Home
+    </a>
+</li>
 <li><a href="#about">About</a></li>
 
 <li><a href="research.html">Research</a></li>
@@ -1717,7 +1726,7 @@ Contact Us
 
                 <p>
 
-                    🌐 www.sovereignaqua.org
+                    🌐 https://www.sovereignaquaresearchanddevelopmentfoundation.org/
 
                 </p>
 
