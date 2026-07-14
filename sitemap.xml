@@ -1,93 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-
-
-
 <loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/</loc>
-
-
-
+<priority>1.0</priority>
 </url>
 
-
-
 <url>
-
-
-
-<loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/mission.html</loc>
-
-
-
+<loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/about.html</loc>
+<priority>0.9</priority>
 </url>
 
-
-
 <url>
-
-
-
 <loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/research.html</loc>
-
-
-
+<priority>0.9</priority>
 </url>
 
-
-
 <url>
-
-
-
 <loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/projects.html</loc>
-
-
-
+<priority>0.9</priority>
 </url>
 
-
-
 <url>
-
-
-
 <loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/publications.html</loc>
-
-
-
+<priority>0.9</priority>
 </url>
 
-
-
 <url>
-
-
-
-<loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/governance.html</loc>
-
-
-
+<loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/news.html</loc>
+<priority>0.8</priority>
 </url>
 
-
-
 <url>
-
-
-
 <loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/contact.html</loc>
-
-
-
+<priority>0.8</priority>
 </url>
 
-
+<url>
+<loc>https://www.sovereignaquaresearchanddevelopmentfoundation.org/membership-application.html</loc>
+<priority>0.8</priority>
+</url>
 
 </urlset>
