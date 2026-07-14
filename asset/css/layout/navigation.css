@@ -1,6 +1,6 @@
-/* ===============================
-   Navigation Bar
-================================= */
+/* =====================================================
+   NAVIGATION BAR
+===================================================== */
 
 .navbar{
 
@@ -18,6 +18,8 @@
 
     backdrop-filter:blur(12px);
 
+    -webkit-backdrop-filter:blur(12px);
+
     box-shadow:0 4px 20px rgba(0,0,0,.15);
 
 }
@@ -32,13 +34,21 @@
 
     padding:18px 30px;
 
+    position:relative;
+
 }
+
+/* =====================================================
+   NAVIGATION LINKS (Desktop)
+===================================================== */
 
 .nav-links{
 
     display:flex;
 
     align-items:center;
+
+    justify-content:center;
 
     gap:30px;
 
@@ -50,7 +60,15 @@
 
 }
 
+.nav-links li{
+
+    list-style:none;
+
+}
+
 .nav-links a{
+
+    display:block;
 
     color:#ffffff;
 
@@ -58,7 +76,10 @@
 
     font-weight:500;
 
-    transition:.3s;
+    padding:8px 12px;
+
+    transition:color .3s ease,
+               background-color .3s ease;
 
 }
 
@@ -76,6 +97,20 @@
 
 }
 
+/* =====================================================
+   CTA BUTTON
+===================================================== */
+
+.nav-cta{
+
+    margin-left:20px;
+
+}
+
+/* =====================================================
+   HAMBURGER BUTTON
+===================================================== */
+
 .menu-toggle{
 
     display:none;
@@ -90,9 +125,21 @@
 
     cursor:pointer;
 
+    padding:6px;
+
 }
 
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
 @media (max-width:768px){
+
+    .navbar .container{
+
+        flex-wrap:wrap;
+
+    }
 
     .menu-toggle{
 
@@ -106,6 +153,30 @@
 
     }
 
+    .nav-links.active{
+
+        display:flex;
+
+        flex-direction:column;
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:#081424;
+
+        padding:20px 0;
+
+        z-index:999;
+
+        box-shadow:0 10px 30px rgba(0,0,0,.30);
+
+    }
+
     .nav-links li{
 
         width:100%;
@@ -116,37 +187,28 @@
 
     }
 
-   .nav-links a{
+    .nav-links a{
 
-    display:block;
+        display:block;
 
-    width:100%;
-      
-    padding:8px 12px;
-}
+        width:100%;
 
-}
+        padding:12px 20px;
 
-.nav-links.active{
+    }
 
-    display:flex;
+    .nav-links a:hover{
 
-    flex-direction:column;
+        background:rgba(255,255,255,.08);
 
-    position:absolute;
+        color:#4fd1c5;
 
-    top:100%;
+    }
 
-    left:0;
+    .nav-cta{
 
-    width:100%;
+        margin:20px auto;
 
-    background:#081424;
-
-    padding:20px 0;
-
-    z-index:999;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    }
 
 }
