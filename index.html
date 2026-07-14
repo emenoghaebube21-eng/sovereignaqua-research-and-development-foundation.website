@@ -128,7 +128,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 <body>
-
+<a class="skip-link" href="#main-content">
+    Skip to main content
+</a>
 <!-- Progress Bar -->
 
 <div id="progressBar"></div>
@@ -194,10 +196,8 @@ Research • Innovation • Sustainability
     class="menu-toggle"
     aria-label="Toggle Navigation"
     aria-expanded="false"
-    aria-controls="navigation-menu"
-
+    aria-controls="navigation-menu">
     ☰
-
 </button>
 
 <ul id="navigation-menu" class="nav-links">
@@ -233,15 +233,15 @@ Research • Innovation • Sustainability
      HERO SECTION
 ========================================================== -->
 
-<header class="hero">
-
 <video
-autoplay
-muted
-loop
-playsinline
-preload="none"
-disablepictureinpicture>
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="assets/images/hero/hero-poster.webp"
+    disablepictureinpicture>
 
 <source
 
