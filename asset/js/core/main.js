@@ -1,22 +1,62 @@
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
+   Application Entry Point
 ========================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    console.log("SovereignAqua Website Initialized");
+/* ==========================================================
+   APPLICATION STARTUP
+========================================================== */
 
-    initBackToTop();
+document.addEventListener("DOMContentLoaded", initializeApp);
+
+function initializeApp(){
 
     highlightCurrentPage();
 
+    initBackToTop();
+
     initLazyLoading();
+
+}
+
+/* ==========================================================
+   WINDOW LOADED
+   (Images, Video, Fonts Complete)
+========================================================== */
+
+window.addEventListener("load", () => {
+
+    hideLoader();
 
 });
 
 /* ==========================================================
-   Highlight Current Navigation Link
+   HIDE LOADER
+========================================================== */
+
+function hideLoader(){
+
+    const loader = document.getElementById("loader");
+
+    if(!loader) return;
+
+    loader.style.opacity = "0";
+
+    loader.style.visibility = "hidden";
+
+    setTimeout(()=>{
+
+        loader.remove();
+
+    },500);
+
+}
+
+/* ==========================================================
+   HIGHLIGHT CURRENT PAGE
 ========================================================== */
 
 function highlightCurrentPage(){
@@ -24,22 +64,35 @@ function highlightCurrentPage(){
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link=>{
 
-        const href = link.getAttribute("href");
+            const href = link.getAttribute("href");
 
-        if(href === currentPage){
+            if(!href) return;
 
-            link.classList.add("active");
+            if(
+                href.includes("#")
+            ) return;
 
-        }
+            if(href===currentPage){
 
-    });
+                link.classList.add("active");
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            }
+
+        });
 
 }
 
 /* ==========================================================
-   Back To Top
+   BACK TO TOP BUTTON
 ========================================================== */
 
 function initBackToTop(){
@@ -51,15 +104,10 @@ function initBackToTop(){
 
     window.addEventListener("scroll",()=>{
 
-        if(window.scrollY>400){
-
-            button.classList.add("show");
-
-        }else{
-
-            button.classList.remove("show");
-
-        }
+        button.classList.toggle(
+            "show",
+            window.scrollY>400
+        );
 
     });
 
@@ -78,7 +126,7 @@ function initBackToTop(){
 }
 
 /* ==========================================================
-   Lazy Loading Images
+   LAZY LOAD IMAGES
 ========================================================== */
 
 function initLazyLoading(){
@@ -88,38 +136,83 @@ function initLazyLoading(){
 
     if(images.length===0) return;
 
+    if(!("IntersectionObserver" in window)){
+
+        images.forEach(img=>{
+
+            img.src = img.dataset.src;
+
+            img.removeAttribute("data-src");
+
+        });
+
+        return;
+
+    }
+
     const observer =
         new IntersectionObserver((entries,obs)=>{
 
-        entries.forEach(entry=>{
+            entries.forEach(entry=>{
 
-            if(entry.isIntersecting){
+                if(!entry.isIntersecting){
 
-                const img=entry.target;
+                    return;
 
-                img.src=img.dataset.src;
+                }
+
+                const img = entry.target;
+
+                img.src = img.dataset.src;
+
+                img.onload = ()=>{
+
+                    img.classList.add("loaded");
+
+                };
 
                 img.removeAttribute("data-src");
 
                 obs.unobserve(img);
 
-            }
+            });
+
+        },{
+
+            rootMargin:"100px"
 
         });
 
-    });
+    images.forEach(img=>{
 
-    images.forEach(img=>observer.observe(img));
+        observer.observe(img);
+
+    });
 
 }
 
 /* ==========================================================
-   Future Modules
-
-   Theme Switcher
-   Search
-   Newsletter
-   Gallery
-   Events
-   Publications
+   FUTURE MODULES
 ========================================================== */
+
+/*
+
+Future initialization examples:
+
+initNavigation();
+
+initProgressBar();
+
+initCounters();
+
+initScrollReveal();
+
+initHeroVideo();
+
+initThemeSwitcher();
+
+initNewsletter();
+
+initSearch();
+
+*/
