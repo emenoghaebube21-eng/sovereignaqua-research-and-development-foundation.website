@@ -1,3 +1,7 @@
+/* =====================================================
+   Mobile Navigation
+===================================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const menuToggle = document.querySelector(".menu-toggle");
