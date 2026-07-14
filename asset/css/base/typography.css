@@ -1,0 +1,251 @@
+/* ==========================================================
+   TYPOGRAPHY.CSS
+   SovereignAqua Research & Development Foundation
+========================================================== */
+
+/* ==========================================================
+   BODY TEXT
+========================================================== */
+
+body{
+
+    font-family:var(--font-primary);
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    color:var(--text-primary);
+
+}
+
+/* ==========================================================
+   HEADINGS
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:var(--font-heading);
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+h1{
+
+    font-size:clamp(2.8rem,5vw,4.5rem);
+
+}
+
+h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+}
+
+h3{
+
+    font-size:clamp(1.5rem,3vw,2rem);
+
+}
+
+h4{
+
+    font-size:1.4rem;
+
+}
+
+h5{
+
+    font-size:1.2rem;
+
+}
+
+h6{
+
+    font-size:1rem;
+
+}
+
+/* ==========================================================
+   PARAGRAPHS
+========================================================== */
+
+p{
+
+    color:var(--text-secondary);
+
+    margin-bottom:20px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   SMALL TEXT
+========================================================== */
+
+small{
+
+    font-size:.875rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   STRONG / EMPHASIS
+========================================================== */
+
+strong{
+
+    font-weight:700;
+
+}
+
+em{
+
+    font-style:italic;
+
+}
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.section-title{
+
+    display:inline-block;
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.section-heading{
+
+    max-width:800px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+/* ==========================================================
+   LEAD TEXT
+========================================================== */
+
+.lead{
+
+    font-size:1.2rem;
+
+    color:var(--text-secondary);
+
+    max-width:800px;
+
+}
+
+/* ==========================================================
+   TEXT ALIGNMENT
+========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+/* ==========================================================
+   TEXT UTILITIES
+========================================================== */
+
+.text-primary{
+
+    color:var(--primary);
+
+}
+
+.text-secondary{
+
+    color:var(--text-secondary);
+
+}
+
+.text-muted{
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a{
+
+    transition:color .3s ease;
+
+}
+
+a:hover{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   RESPONSIVE TYPOGRAPHY
+========================================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    .section-heading{
+
+        margin-bottom:40px;
+
+    }
+
+}
