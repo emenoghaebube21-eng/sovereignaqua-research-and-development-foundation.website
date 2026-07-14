@@ -12,15 +12,6 @@
 
 document.addEventListener("DOMContentLoaded", initializeApp);
 
-function initializeApp(){
-
-    highlightCurrentPage();
-
-    initBackToTop();
-
-    initLazyLoading();
-
-}
 
 /* ==========================================================
    WINDOW LOADED
