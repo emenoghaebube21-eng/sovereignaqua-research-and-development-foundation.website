@@ -1,0 +1,23 @@
+{
+    "name":"SovereignAqua Research & Development Foundation",
+
+    "short_name":"SovereignAqua",
+
+    "start_url":"/",
+
+    "display":"standalone",
+
+    "background_color":"#021526",
+
+    "theme_color":"#00CFFF",
+
+    "orientation":"portrait",
+
+    "icons":[
+        {
+            "src":"assets/images/logos/favicon.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        }
+    ]
+}
