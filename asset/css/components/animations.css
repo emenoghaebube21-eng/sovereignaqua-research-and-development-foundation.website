@@ -1,0 +1,372 @@
+/* ==========================================================
+   ANIMATIONS.CSS
+   SovereignAqua Research & Development Foundation
+========================================================== */
+
+/* ==========================================================
+   FADE IN ANIMATION
+========================================================== */
+
+.fade-in{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.fade-in.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================================
+   FADE SCALE
+========================================================== */
+
+.fade-scale{
+
+    opacity:0;
+
+    transform:scale(.95);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.fade-scale.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.hero-content{
+
+    animation:heroFade 1.2s ease-out;
+
+}
+
+@keyframes heroFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   FLOATING FOUNDATION LOGO
+========================================================== */
+
+.hero-logo{
+
+    animation:floatLogo 5s ease-in-out infinite;
+
+}
+
+@keyframes floatLogo{
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+.navbar{
+
+    animation:navFade .8s ease-out;
+
+}
+
+@keyframes navFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.button{
+
+    transition:all var(--transition);
+
+}
+
+.button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.card{
+
+    transition:all var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================================================
+   IMAGE HOVER EFFECTS
+========================================================== */
+
+.program-card img,
+.news-card img,
+.about-image img,
+.card img{
+
+    transition:transform .4s ease;
+
+}
+
+.program-card:hover img,
+.news-card:hover img,
+.about-image:hover img,
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   SCROLL INDICATOR
+========================================================== */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.scroll-indicator span{
+
+    display:block;
+
+    width:28px;
+
+    height:48px;
+
+    border:2px solid #ffffff;
+
+    border-radius:25px;
+
+    position:relative;
+
+}
+
+.scroll-indicator span::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:8px;
+
+    width:6px;
+
+    height:6px;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    transform:translateX(-50%);
+
+    animation:scrollMove 2s infinite;
+
+}
+
+@keyframes scrollMove{
+
+    0%{
+
+        opacity:0;
+
+        top:8px;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        top:28px;
+
+    }
+
+}
+
+/* ==========================================================
+   LOADER
+========================================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--background);
+
+    z-index:99999;
+
+    transition:opacity .5s ease,
+               visibility .5s ease;
+
+}
+
+.loader-spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:5px solid rgba(255,255,255,.15);
+
+    border-top:5px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================================
+   PROGRESS BAR
+========================================================== */
+
+#progressBar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--primary);
+
+    z-index:100000;
+
+    transition:width .15s linear;
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
