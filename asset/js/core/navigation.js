@@ -6,7 +6,7 @@
 "use strict";
 
 /* ==========================================================
-   INITIALIZE
+   INITIALIZE NAVIGATION
 ========================================================== */
 
 document.addEventListener("DOMContentLoaded", initNavigation);
@@ -22,7 +22,7 @@ function initNavigation() {
     navMenu.setAttribute("aria-hidden", "true");
 
     /* ==========================================
-       Mobile Menu Toggle
+       TOGGLE MOBILE MENU
     ========================================== */
 
     menuToggle.addEventListener("click", toggleMenu);
@@ -44,69 +44,18 @@ function initNavigation() {
 
         navMenu.classList.toggle("active");
 
+        /* Prevent page scrolling while menu is open */
+
+        document.body.classList.toggle(
+            "menu-open",
+            !isOpen
+        );
+
     }
 
     /* ==========================================
-       Close After Clicking Link
+       CLOSE MENU
     ========================================== */
-
-    navMenu.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", closeMenu);
-
-    });
-
-    /* ==========================================
-       Escape Key
-    ========================================== */
-
-    document.addEventListener("keydown", event => {
-
-        if (event.key === "Escape") {
-
-            closeMenu();
-
-            menuToggle.focus();
-
-        }
-
-    });
-
-    /* ==========================================
-       Click Outside Navigation
-    ========================================== */
-
-    document.addEventListener("click", event => {
-
-        const insideMenu =
-            navMenu.contains(event.target);
-
-        const clickedButton =
-            menuToggle.contains(event.target);
-
-        if (!insideMenu &&
-            !clickedButton &&
-            navMenu.classList.contains("active")) {
-
-            closeMenu();
-
-        }
-
-    });
-
-    /* ==========================================
-       Desktop Resize
-    ========================================== */
-
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 768) {
-
-            closeMenu();
-
-        }
-
-    });
 
     function closeMenu() {
 
@@ -122,10 +71,78 @@ function initNavigation() {
             "true"
         );
 
+        document.body.classList.remove(
+            "menu-open"
+        );
+
     }
 
     /* ==========================================
-       Active Section Highlight
+       CLOSE AFTER LINK CLICK
+    ========================================== */
+
+    navMenu.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", closeMenu);
+
+    });
+
+    /* ==========================================
+       ESC KEY SUPPORT
+    ========================================== */
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+            closeMenu();
+
+            menuToggle.focus();
+
+        }
+
+    });
+
+    /* ==========================================
+       CLICK OUTSIDE MENU
+    ========================================== */
+
+    document.addEventListener("click", event => {
+
+        const insideMenu =
+            navMenu.contains(event.target);
+
+        const clickedButton =
+            menuToggle.contains(event.target);
+
+        if (
+            !insideMenu &&
+            !clickedButton &&
+            navMenu.classList.contains("active")
+        ) {
+
+            closeMenu();
+
+        }
+
+    });
+
+    /* ==========================================
+       RESET ON DESKTOP
+    ========================================== */
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 768) {
+
+            closeMenu();
+
+        }
+
+    });
+
+    /* ==========================================
+       ACTIVE SECTION HIGHLIGHT
     ========================================== */
 
     const sections =
@@ -154,7 +171,7 @@ function initNavigation() {
             ) {
 
                 current =
-                    section.getAttribute("id");
+                    section.id;
 
             }
 
