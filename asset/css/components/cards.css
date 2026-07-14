@@ -1,214 +1,383 @@
 /* ==========================================================
-   CARDS
+   CARDS.CSS
    SovereignAqua Research & Development Foundation
 ========================================================== */
 
-/* Base Card */
+/* ==========================================================
+   BASE CARD
+========================================================== */
 
 .card{
 
-background:var(--bg-card);
+    position:relative;
 
-border-radius:20px;
+    display:flex;
 
-padding:30px;
+    flex-direction:column;
 
-overflow:hidden;
+    height:100%;
 
-box-shadow:var(--shadow);
+    overflow:hidden;
 
-transition:
-transform .35s ease,
-box-shadow .35s ease;
+    padding:30px;
 
-height:100%;
+    background:var(--card);
 
-display:flex;
+    border:1px solid var(--border);
 
-flex-direction:column;
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
 
 }
 
-/* Hover */
+/* ==========================================================
+   CARD HOVER
+========================================================== */
 
 .card:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-8px);
 
-box-shadow:0 25px 50px rgba(0,0,0,.30);
+    box-shadow:var(--shadow-lg);
+
+    border-color:var(--primary);
 
 }
 
-/* Card Image */
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.card:focus-within{
+
+    outline:2px solid var(--primary);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================
+   CARD IMAGE
+========================================================== */
 
 .card img{
 
-width:100%;
+    width:100%;
 
-height:220px;
+    height:220px;
 
-object-fit:cover;
+    object-fit:cover;
 
-border-radius:15px;
+    border-radius:var(--radius-md);
 
-margin-bottom:20px;
+    margin-bottom:20px;
+
+    transition:transform .4s ease;
 
 }
 
-/* Card Heading */
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
 
 .card h3{
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
-color:var(--primary);
+    color:var(--primary);
 
-font-size:1.35rem;
+    font-size:1.35rem;
+
+    line-height:1.3;
 
 }
 
-/* Card Paragraph */
+/* ==========================================================
+   CARD TEXT
+========================================================== */
 
 .card p{
 
-flex:1;
+    flex:1;
 
-line-height:1.8;
+    color:var(--text-secondary);
 
-margin-bottom:20px;
+    line-height:1.8;
+
+    margin-bottom:20px;
 
 }
 
-/* Card Footer */
+/* ==========================================================
+   CARD FOOTER
+========================================================== */
 
 .card-footer{
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-align-items:center;
+    align-items:center;
 
-margin-top:auto;
+    gap:20px;
 
-padding-top:20px;
+    margin-top:auto;
 
-border-top:1px solid rgba(255,255,255,.08);
+    padding-top:20px;
+
+    border-top:1px solid var(--border);
 
 }
 
+/* ==========================================================
+   BUTTONS INSIDE CARDS
+========================================================== */
+
+.card .button{
+
+    align-self:flex-start;
+
+}
+
+/* ==========================================================
+   RESEARCH CARD
+========================================================== */
+
 .research-card{
 
-text-align:center;
+    text-align:center;
 
 }
 
 .research-card img{
 
-height:180px;
+    height:180px;
 
 }
 
+/* ==========================================================
+   PROJECT CARD
+========================================================== */
+
 .project-card{
 
-overflow:hidden;
+    overflow:hidden;
 
 }
 
 .project-card h3{
 
-margin-top:10px;
+    margin-top:10px;
 
 }
+
+/* ==========================================================
+   PUBLICATION CARD
+========================================================== */
 
 .publication-card .button{
 
-margin-top:auto;
+    margin-top:auto;
 
 }
 
+/* ==========================================================
+   TEAM CARD
+========================================================== */
+
 .team-card{
 
-text-align:center;
+    text-align:center;
 
 }
 
 .team-card img{
 
-width:180px;
+    width:180px;
 
-height:180px;
+    height:180px;
 
-border-radius:50%;
+    margin:0 auto 20px;
 
-margin:0 auto 20px;
+    border-radius:50%;
 
-object-fit:cover;
+    object-fit:cover;
+
+    border:4px solid var(--primary);
 
 }
 
+/* ==========================================================
+   PARTNER CARD
+========================================================== */
+
 .partner-card{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    justify-content:center;
 
-justify-content:center;
+    align-items:center;
 
-padding:30px;
+    min-height:160px;
 
-min-height:160px;
+    padding:30px;
 
 }
 
 .partner-card img{
 
-max-width:180px;
+    width:auto;
 
-max-height:80px;
+    height:auto;
 
-width:auto;
+    max-width:180px;
 
-height:auto;
+    max-height:80px;
 
-margin:0;
+    margin:0;
 
-object-fit:contain;
+    object-fit:contain;
 
 }
+
+/* ==========================================================
+   NEWS CARD
+========================================================== */
 
 .news-card time{
 
-display:block;
+    display:block;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
-font-size:.9rem;
+    font-size:.9rem;
 
-opacity:.7;
-
-}
-
-@media(max-width:768px){
-
-.card{
-
-padding:20px;
+    color:var(--text-muted);
 
 }
 
-.card img{
+/* ==========================================================
+   STATISTICS CARD
+========================================================== */
 
-height:200px;
+.stat-card{
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+.stat-card h3{
+
+    margin:15px 0 10px;
+
+    font-size:2.2rem;
+
+    color:var(--primary);
 
 }
 
-.team-card img{
+.stat-card p{
 
-width:140px;
-
-height:140px;
+    margin:0;
 
 }
+
+/* ==========================================================
+   QUICK ACTION CARD
+========================================================== */
+
+.quick-actions .card{
+
+    text-align:center;
+
+}
+
+.quick-actions .card a{
+
+    margin-top:auto;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .card{
+
+        padding:25px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .card img{
+
+        height:200px;
+
+    }
+
+    .card h3{
+
+        font-size:1.2rem;
+
+    }
+
+    .team-card img{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+    .card-footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .card{
+
+        padding:18px;
+
+    }
+
+    .card img{
+
+        height:180px;
+
+    }
 
 }
