@@ -1,101 +1,191 @@
 /* ==========================================================
-   ANIMATIONS
+   ANIMATIONS.JS
    SovereignAqua Research & Development Foundation
 ========================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    /* ==========================================
-       Scroll Reveal
-    ========================================== */
+document.addEventListener("DOMContentLoaded", initAnimations);
 
-    const revealItems = document.querySelectorAll(".fade-in");
+/* ==========================================================
+   INITIALIZE
+========================================================== */
 
-    const revealObserver = new IntersectionObserver((entries) => {
+function initAnimations() {
 
-        entries.forEach(entry => {
+    initScrollReveal();
 
-            if (entry.isIntersecting) {
+    initProgressBar();
 
-                entry.target.classList.add("show");
+    initSmoothScroll();
 
-            }
+    initLoader();
+
+}
+
+/* ==========================================================
+   SCROLL REVEAL
+========================================================== */
+
+function initScrollReveal() {
+
+    const elements = document.querySelectorAll(
+        ".fade-in, .fade-scale"
+    );
+
+    if (!elements.length) return;
+
+    /* Browser fallback */
+
+    if (!("IntersectionObserver" in window)) {
+
+        elements.forEach(element => {
+
+            element.classList.add("show");
 
         });
 
-    }, {
+        return;
 
-        threshold: 0.15
+    }
 
-    });
+    const observer = new IntersectionObserver(
 
-    revealItems.forEach(item => {
+        (entries, obs) => {
 
-        revealObserver.observe(item);
+            entries.forEach(entry => {
 
-    });
+                if (!entry.isIntersecting) return;
 
-    /* ==========================================
-       Loader
-    ========================================== */
+                entry.target.classList.add("show");
 
-    window.addEventListener("load", () => {
+                obs.unobserve(entry.target);
 
-        const loader = document.getElementById("loader");
+            });
 
-        if (loader) {
+        },
 
-            loader.style.opacity = "0";
+        {
 
-            setTimeout(() => {
+            threshold:0.15,
 
-                loader.style.display = "none";
-
-            }, 500);
+            rootMargin:"0px 0px -50px 0px"
 
         }
 
+    );
+
+    elements.forEach(element => {
+
+        observer.observe(element);
+
     });
 
-    /* ==========================================
-       Scroll Progress Bar
-    ========================================== */
+}
 
-    const progressBar = document.getElementById("progressBar");
+/* ==========================================================
+   PAGE LOADER
+========================================================== */
 
-    window.addEventListener("scroll", () => {
+function initLoader() {
 
-        if (!progressBar) return;
+    window.addEventListener("load", () => {
 
-        const scrollTop = window.scrollY;
+        const loader =
+            document.getElementById("loader");
+
+        if (!loader) return;
+
+        loader.style.opacity = "0";
+
+        loader.style.visibility = "hidden";
+
+        setTimeout(() => {
+
+            loader.remove();
+
+        },500);
+
+    });
+
+}
+
+/* ==========================================================
+   SCROLL PROGRESS BAR
+========================================================== */
+
+function initProgressBar() {
+
+    const progressBar =
+        document.getElementById("progressBar");
+
+    if (!progressBar) return;
+
+    function updateProgress() {
+
+        const scrollTop =
+            window.scrollY;
 
         const pageHeight =
             document.documentElement.scrollHeight -
             window.innerHeight;
 
-        const progress = (scrollTop / pageHeight) * 100;
+        if (pageHeight <= 0) {
 
-        progressBar.style.width = progress + "%";
+            progressBar.style.width = "0%";
 
-    });
+            return;
 
-    /* ==========================================
-       Smooth Scroll
-    ========================================== */
+        }
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        const progress =
+            (scrollTop / pageHeight) * 100;
 
-        anchor.addEventListener("click", function(e) {
+        progressBar.style.width =
+            progress + "%";
 
-            const target = document.querySelector(this.getAttribute("href"));
+    }
+
+    window.addEventListener(
+
+        "scroll",
+
+        updateProgress,
+
+        { passive:true }
+
+    );
+
+    updateProgress();
+
+}
+
+/* ==========================================================
+   SMOOTH SCROLL
+========================================================== */
+
+function initSmoothScroll() {
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            const target =
+                document.querySelector(
+
+                    link.getAttribute("href")
+
+                );
 
             if (!target) return;
 
-            e.preventDefault();
+            event.preventDefault();
 
             target.scrollIntoView({
 
-                behavior: "smooth"
+                behavior:"smooth",
+
+                block:"start"
 
             });
 
@@ -103,4 +193,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-});
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+if (
+
+    window.matchMedia(
+
+        "(prefers-reduced-motion: reduce)"
+
+    ).matches
+
+) {
+
+    document.documentElement.style.scrollBehavior = "auto";
+
+}
