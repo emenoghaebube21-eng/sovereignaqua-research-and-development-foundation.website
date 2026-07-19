@@ -1,7 +1,7 @@
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
-   Application Entry Point
+   Core Application
 ========================================================== */
 
 "use strict";
@@ -11,6 +11,8 @@
 ========================================================== */
 
 document.addEventListener("DOMContentLoaded", initializeApp);
+
+window.addEventListener("load", hideLoader);
 
 /* ==========================================================
    INITIALIZE APPLICATION
@@ -24,22 +26,10 @@ function initializeApp() {
 
     initBackToTop();
 
-    initLazyLoading();
-
 }
 
 /* ==========================================================
-   WINDOW LOADED
-========================================================== */
-
-window.addEventListener("load", () => {
-
-    hideLoader();
-
-});
-
-/* ==========================================================
-   HIDE LOADER
+   HIDE PAGE LOADER
 ========================================================== */
 
 function hideLoader() {
@@ -60,7 +50,7 @@ function hideLoader() {
 }
 
 /* ==========================================================
-   HIGHLIGHT CURRENT PAGE
+   HIGHLIGHT ACTIVE NAVIGATION PAGE
 ========================================================== */
 
 function highlightCurrentPage() {
@@ -68,7 +58,10 @@ function highlightCurrentPage() {
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    const links =
+        document.querySelectorAll(".nav-links a");
+
+    links.forEach(link => {
 
         const href = link.getAttribute("href");
 
@@ -114,7 +107,7 @@ function initBackToTop() {
 
         }
 
-    });
+    }, { passive: true });
 
     button.addEventListener("click", () => {
 
@@ -131,85 +124,23 @@ function initBackToTop() {
 }
 
 /* ==========================================================
-   LAZY LOAD IMAGES
+   GLOBAL ERROR LOGGER
 ========================================================== */
 
-function initLazyLoading() {
+window.addEventListener("error", event => {
 
-    const images =
-        document.querySelectorAll("img[data-src]");
+    console.error(
 
-    if (!images.length) return;
+        "Application Error:",
 
-    if (!("IntersectionObserver" in window)) {
-
-        images.forEach(loadImage);
-
-        return;
-
-    }
-
-    const observer = new IntersectionObserver(
-
-        (entries, obs) => {
-
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting) return;
-
-                loadImage(entry.target);
-
-                obs.unobserve(entry.target);
-
-            });
-
-        },
-
-        {
-
-            rootMargin: "100px",
-
-            threshold: 0.1
-
-        }
+        event.message
 
     );
 
-    images.forEach(image => {
-
-        observer.observe(image);
-
-    });
-
-}
+});
 
 /* ==========================================================
-   LOAD IMAGE
+   APPLICATION READY
 ========================================================== */
 
-function loadImage(image) {
-
-    if (!image.dataset.src) return;
-
-    image.src = image.dataset.src;
-
-    image.onload = () => {
-
-        image.classList.add("loaded");
-
-    };
-
-    image.removeAttribute("data-src");
-
-}
-
-/* ==========================================================
-   FUTURE MODULES
-
-   Navigation
-   Counters
-   Hero Video
-   Theme Switcher
-   Newsletter
-   Search
-========================================================== */
+console.log("Core Application Loaded");
