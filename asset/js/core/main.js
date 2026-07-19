@@ -12,10 +12,24 @@
 
 document.addEventListener("DOMContentLoaded", initializeApp);
 
+/* ==========================================================
+   INITIALIZE APPLICATION
+========================================================== */
+
+function initializeApp() {
+
+    console.log("SovereignAqua Website Initialized");
+
+    highlightCurrentPage();
+
+    initBackToTop();
+
+    initLazyLoading();
+
+}
 
 /* ==========================================================
    WINDOW LOADED
-   (Images, Video, Fonts Complete)
 ========================================================== */
 
 window.addEventListener("load", () => {
@@ -28,21 +42,20 @@ window.addEventListener("load", () => {
    HIDE LOADER
 ========================================================== */
 
-function hideLoader(){
+function hideLoader() {
 
     const loader = document.getElementById("loader");
 
-    if(!loader) return;
+    if (!loader) return;
 
     loader.style.opacity = "0";
-
     loader.style.visibility = "hidden";
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         loader.remove();
 
-    },500);
+    }, 500);
 
 }
 
@@ -50,35 +63,31 @@ function hideLoader(){
    HIGHLIGHT CURRENT PAGE
 ========================================================== */
 
-function highlightCurrentPage(){
+function highlightCurrentPage() {
 
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(link=>{
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-            const href = link.getAttribute("href");
+        const href = link.getAttribute("href");
 
-            if(!href) return;
+        if (!href) return;
 
-            if(
-                href.includes("#")
-            ) return;
+        if (href.startsWith("#")) return;
 
-            if(href===currentPage){
+        if (href === currentPage) {
 
-                link.classList.add("active");
+            link.classList.add("active");
 
-                link.setAttribute(
-                    "aria-current",
-                    "page"
-                );
+            link.setAttribute(
+                "aria-current",
+                "page"
+            );
 
-            }
+        }
 
-        });
+    });
 
 }
 
@@ -86,29 +95,34 @@ function highlightCurrentPage(){
    BACK TO TOP BUTTON
 ========================================================== */
 
-function initBackToTop(){
+function initBackToTop() {
 
     const button =
         document.getElementById("backToTop");
 
-    if(!button) return;
+    if (!button) return;
 
-    window.addEventListener("scroll",()=>{
+    window.addEventListener("scroll", () => {
 
-        button.classList.toggle(
-            "show",
-            window.scrollY>400
-        );
+        if (window.scrollY > 400) {
+
+            button.classList.add("show");
+
+        } else {
+
+            button.classList.remove("show");
+
+        }
 
     });
 
-    button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
         window.scrollTo({
 
-            top:0,
+            top: 0,
 
-            behavior:"smooth"
+            behavior: "smooth"
 
         });
 
@@ -120,90 +134,82 @@ function initBackToTop(){
    LAZY LOAD IMAGES
 ========================================================== */
 
-function initLazyLoading(){
+function initLazyLoading() {
 
     const images =
         document.querySelectorAll("img[data-src]");
 
-    if(images.length===0) return;
+    if (!images.length) return;
 
-    if(!("IntersectionObserver" in window)){
+    if (!("IntersectionObserver" in window)) {
 
-        images.forEach(img=>{
-
-            img.src = img.dataset.src;
-
-            img.removeAttribute("data-src");
-
-        });
+        images.forEach(loadImage);
 
         return;
 
     }
 
-    const observer =
-        new IntersectionObserver((entries,obs)=>{
+    const observer = new IntersectionObserver(
 
-            entries.forEach(entry=>{
+        (entries, obs) => {
 
-                if(!entry.isIntersecting){
+            entries.forEach(entry => {
 
-                    return;
+                if (!entry.isIntersecting) return;
 
-                }
+                loadImage(entry.target);
 
-                const img = entry.target;
-
-                img.src = img.dataset.src;
-
-                img.onload = ()=>{
-
-                    img.classList.add("loaded");
-
-                };
-
-                img.removeAttribute("data-src");
-
-                obs.unobserve(img);
+                obs.unobserve(entry.target);
 
             });
 
-        },{
+        },
 
-            rootMargin:"100px"
+        {
 
-        });
+            rootMargin: "100px",
 
-    images.forEach(img=>{
+            threshold: 0.1
 
-        observer.observe(img);
+        }
+
+    );
+
+    images.forEach(image => {
+
+        observer.observe(image);
 
     });
 
 }
 
 /* ==========================================================
-   FUTURE MODULES
+   LOAD IMAGE
 ========================================================== */
 
-/*
+function loadImage(image) {
 
-Future initialization examples:
+    if (!image.dataset.src) return;
 
-initNavigation();
+    image.src = image.dataset.src;
 
-initProgressBar();
+    image.onload = () => {
 
-initCounters();
+        image.classList.add("loaded");
 
-initScrollReveal();
+    };
 
-initHeroVideo();
+    image.removeAttribute("data-src");
 
-initThemeSwitcher();
+}
 
-initNewsletter();
+/* ==========================================================
+   FUTURE MODULES
 
-initSearch();
-
-*/
+   Navigation
+   Counters
+   Hero Video
+   Theme Switcher
+   Newsletter
+   Search
+========================================================== */
