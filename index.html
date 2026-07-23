@@ -166,71 +166,49 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </div>
 
-<nav class="navbar">
+<nav class="navbar" aria-label="Primary Navigation">
 
     <div class="container">
 
-    
+        <a href="index.html" class="logo">
+            <img src="asset/Images/logo/logo-white.png"
+                 alt="SovereignAqua Logo"
+                 width="60"
+                 height="60">
+        </a>
 
-<button
-    type="button"
-    class="menu-toggle"
-    aria-label="Toggle Navigation"
-    aria-expanded="false"
-    aria-controls="navigation-menu">
-    ☰
-</button>
+        <button
+            type="button"
+            class="menu-toggle"
+            aria-label="Toggle Navigation"
+            aria-expanded="false"
+            aria-controls="navigation-menu">
+            <i class="fas fa-bars"></i>
+        </button>
 
-<ul
-    id="navigation-menu"
-    class="nav-links"
-    aria-hidden="true">
-<nav class="main-navigation" aria-label="Primary Navigation">
-    <ul class="nav-menu">
+        <ul id="navigation-menu" class="nav-menu">
 
-        <li>
-            <a href="index.html" aria-current="page">Home</a>
-        </li>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="global-impact.html">Global Impact</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="contact.html">Contact</a></li>
 
-        <li>
-            <a href="index.html#about">About Us</a>
-        </li>
+            <li>
+                <a href="membership-application.html"
+                   class="button nav-cta">
+                    Become a Member
+                </a>
+            </li>
 
-        <li>
-            <a href="research.html">Research</a>
-        </li>
+        </ul>
 
-        <li>
-            <a href="projects.html">Projects</a>
-        </li>
+    </div>
 
-        <li>
-            <a href="publications.html">Publications</a>
-        </li>
-
-        <li>
-            <a href="news.html">News & Updates</a>
-        </li>
-
-        <li>
-            <a href="global-impact.html">Global Impact</a>
-        </li>
-
-        <li>
-            <a href="governance.html">Governance</a>
-        </li>
-
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
-
-        <li>
-            <a href="membership-application.html" class="button nav-cta">
-                Become a Member
-            </a>
-        </li>
-
-    </ul>
 </nav>
 <!-- ==========================================================
      HERO SECTION
@@ -256,76 +234,50 @@ type="video/mp4">
 </video>
 
  <a href="index.html" class="logo">
-  
-<div class="hero-overlay"></div>
-
-<div class="container hero-content">
-
 <div class="hero-logo">
 
-<img
-src="asset/Images/logo/logo-white.png"
-alt="SovereignAqua Foundation Logo"
-class="logo-image"width="220"
+    <img
+        src="asset/Images/logo/logo-white.png"
+        alt="SovereignAqua Foundation Logo"
+        class="logo-image"
+        width="220"
+        height="220">
 
-height="220"
+    <div class="brand">
 
-decoding="async"
+        <h1 class="brand-name">
+            SovereignAqua
+        </h1>
 
-fetchpriority="high">
+        <p class="brand-tagline">
+            Research • Innovation • Sustainability
+        </p>
 
-</div>
-
-<div class="brand">
-
-<h1 class="brand-name">
-
-SovereignAqua
-
-</h1>
-
-<p class="brand-tagline">
-
-Research • Innovation • Sustainability
-
-</p>
+    </div>
 
 </div>
 
 </a>
-<p>
-
-Building a better future through scientific research,
-education,
-technology,
-environmental stewardship
-and global collaboration.
-
+<p class="hero-description">
+    Advancing scientific research, environmental stewardship, innovation,
+    and sustainable development through global collaboration, education,
+    and technology-driven solutions that create lasting impact for
+    communities worldwide.
 </p>
 
 <div class="hero-buttons">
 
-<a
+    <a href="research.html" class="button">
+        Explore Our Research
+    </a>
 
-href="research.html"
+    <a href="projects.html" class="button-outline">
+        View Projects
+    </a>
 
-class="button">
-
-Explore Research
-
-</a>
-
-<a
-
-href="membership-application.html"
-
-class="button-outline">
-
-Become a Member
-
-</a>
-
-</div>
+    <a href="membership-application.html" class="button-secondary">
+        Join the Foundation
+    </a>
 
 </div>
 
@@ -513,6 +465,176 @@ data-duration="2000">
 
 </section>
 
+ <!-- ==========================================
+     STRATEGIC PARTNERS
+========================================== -->
+
+<section class="partners-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-title">OUR PARTNERS</span>
+
+            <h2>Building Global Partnerships</h2>
+
+            <p>
+                We collaborate with universities, research institutions,
+                governments, industries, and nonprofit organizations to
+                advance scientific innovation and sustainable development.
+            </p>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="card">
+                <i class="fas fa-university fa-3x"></i>
+                <h3>Academic Institutions</h3>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-leaf fa-3x"></i>
+                <h3>Environmental Organizations</h3>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-globe fa-3x"></i>
+                <h3>International Agencies</h3>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-flask fa-3x"></i>
+                <h3>Research Laboratories</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+ <section class="cta-section">
+
+    <div class="container">
+
+        <h2>Join Our Mission</h2>
+
+        <p>
+            Together we can accelerate scientific discovery, environmental
+            stewardship, and sustainable innovation for future generations.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="membership-application.html" class="button">
+                Become a Member
+            </a>
+
+            <a href="contact.html" class="button-outline">
+                Partner With Us
+            </a>
+
+        </div>
+
+    </div>
+
+ </section>
+
+ <!-- ==========================================
+     LATEST NEWS
+========================================== -->
+
+<section class="news-preview">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-title">LATEST NEWS</span>
+
+            <h2>Research & Foundation Updates</h2>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <article class="card">
+
+                <h3>2026 Research Fellowship Opens</h3>
+
+                <p>
+                    Applications are now open for researchers interested in
+                    collaborative innovation and sustainable development.
+                </p>
+
+                <a href="news.html" class="button">Read More</a>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Global Water Sustainability Initiative</h3>
+
+                <p>
+                    New partnerships are expanding research into clean water
+                    technologies and environmental resilience.
+                </p>
+
+                <a href="news.html" class="button">Read More</a>
+
+            </article>
+
+            <article class="card">
+
+                <h3>International Collaboration Network</h3>
+
+                <p>
+                    SovereignAqua continues building strategic alliances with
+                    universities, NGOs, and research institutions worldwide.
+                </p>
+
+                <a href="news.html" class="button">Read More</a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+ <section class="newsletter-section">
+
+    <div class="container">
+
+        <h2>Stay Connected</h2>
+
+        <p>
+            Subscribe to receive updates on research, projects,
+            publications, and upcoming events.
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+                required>
+
+            <button
+                type="submit"
+                class="button">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+ </section>
+
  <hr class="divider">
 <section class="chairman-message">
 
@@ -587,7 +709,7 @@ contribute to building a more sustainable future.
 
         <div class="about-grid">
 
-            <div class="about-Image fade-in">
+            <div class="about-image fade-in">
 
                 <img
 
