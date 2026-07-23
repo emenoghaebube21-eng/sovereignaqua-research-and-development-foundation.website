@@ -1,379 +1,505 @@
-<header class="page-hero">
+        <!-- ==========================================
+             Membership Application Form
+        ========================================== -->
 
-    <img
-        src="assets/images/hero/membership-banner.jpg"
-        alt="Membership"
-        class="page-hero-image">
+        <section id="membership-form" class="section application-form">
 
-    <div class="page-hero-overlay"></div>
+            <div class="container">
 
-    <div class="page-hero-content container">
+                <div class="section-heading">
 
-        <h1>
+                    <span class="section-title">
 
-            Become a Member
+                        APPLY
 
-        </h1>
+                    </span>
 
-        <p>
+                    <h2>
 
-            Join a growing community of researchers, innovators,
-            educators, professionals, institutions, and supporters
-            working together to advance research and sustainable
-            development.
+                        Membership Application
 
-        </p>
+                    </h2>
 
-    </div>
+                    <p>
 
-</header>
+                        Complete the application below to begin your
+                        membership journey with the SovereignAqua
+                        Research & Development Foundation.
 
-<section class="membership-overview">
+                    </p>
 
-<div class="container">
+                </div>
 
-<div class="section-heading">
+                <form class="membership-form">
 
-<span class="section-title">
+                    <div class="form-grid">
 
-MEMBERSHIP
+                        <div class="form-group">
 
-</span>
+                            <label for="fullName">Full Name *</label>
 
-<h2>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                required>
 
-Join Our Global Network
+                        </div>
 
-</h2>
+                        <div class="form-group">
 
-</div>
+                            <label for="email">Email Address *</label>
 
-<p>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required>
 
-Membership provides opportunities to participate in Foundation
-initiatives, research collaborations, educational programs,
-events, publications, and professional networking.
+                        </div>
 
-</p>
+                        <div class="form-group">
 
-</div>
+                            <label for="phone">Phone Number</label>
 
-</section>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone">
 
-<section class="membership-benefits">
+                        </div>
 
-<div class="container">
+                        <div class="form-group">
 
-<div class="cards-grid">
+                            <label for="country">Country</label>
 
-<div class="card">
+                            <input
+                                type="text"
+                                id="country"
+                                name="country">
 
-<h3>
+                        </div>
 
-Research Collaboration
+                        <div class="form-group">
 
-</h3>
+                            <label for="organisation">
 
-<p>
+                                Organisation / Institution
 
-Participate in multidisciplinary research initiatives and
-collaborative projects.
+                            </label>
 
-</p>
+                            <input
+                                type="text"
+                                id="organisation"
+                                name="organisation">
 
-</div>
+                        </div>
 
-<div class="card">
+                        <div class="form-group">
 
-<h3>
+                            <label for="position">
 
-Professional Networking
+                                Position / Occupation
 
-</h3>
+                            </label>
 
-<p>
+                            <input
+                                type="text"
+                                id="position"
+                                name="position">
 
-Connect with researchers, institutions, and industry experts.
+                        </div>
 
-</p>
+                        <div class="form-group">
 
-</div>
+                            <label for="membershipType">
 
-<div class="card">
+                                Membership Category *
 
-<h3>
+                            </label>
 
-Learning Resources
+                            <select
+                                id="membershipType"
+                                name="membershipType"
+                                required>
 
-</h3>
+                                <option value="">
 
-<p>
+                                    Select Membership
 
-Access publications, webinars, workshops, and educational
-materials.
+                                </option>
 
-</p>
+                                <option>
 
-</div>
+                                    Student Member
 
-<div class="card">
+                                </option>
 
-<h3>
+                                <option>
 
-Events
+                                    Professional Member
 
-</h3>
+                                </option>
 
-<p>
+                                <option>
 
-Receive invitations to conferences, seminars, and Foundation
-activities.
+                                    Institutional Member
 
-</p>
+                                </option>
 
-</div>
+                            </select>
 
-</div>
+                        </div>
 
-</div>
+                        <div class="form-group">
 
-</section>
+                            <label for="researchInterest">
 
-<section class="membership-types">
+                                Primary Area of Interest
 
-<div class="container">
+                            </label>
 
-<div class="section-heading">
+                            <select
+                                id="researchInterest"
+                                name="researchInterest">
 
-<h2>
+                                <option>
 
-Membership Categories
+                                    Select Area
 
-</h2>
+                                </option>
 
-</div>
+                                <option>
 
-<div class="cards-grid">
+                                    Water Science
 
-<div class="card">
+                                </option>
 
-<h3>
+                                <option>
 
-Student
+                                    Environmental Sustainability
 
-</h3>
+                                </option>
 
-<p>
+                                <option>
 
-For students pursuing education and research.
+                                    Renewable Energy
 
-</p>
+                                </option>
 
-</div>
+                                <option>
 
-<div class="card">
+                                    Artificial Intelligence
 
-<h3>
+                                </option>
 
-Professional
+                                <option>
 
-</h3>
+                                    Agriculture
 
-<p>
+                                </option>
 
-Researchers, scientists, engineers, educators, and practitioners.
+                                <option>
 
-</p>
+                                    Education
 
-</div>
+                                </option>
 
-<div class="card">
+                            </select>
 
-<h3>
+                        </div>
 
-Institutional
+                    </div>
 
-</h3>
+                    <div class="form-group">
 
-<p>
+                        <label for="bio">
 
-Universities, research institutes, NGOs, and businesses.
+                            Tell Us About Yourself
 
-</p>
+                        </label>
 
-</div>
+                        <textarea
+                            id="bio"
+                            name="bio"
+                            rows="6"></textarea>
 
-<div class="card">
+                    </div>
 
-<h3>
+                    <div class="checkbox-group">
 
-Supporting Member
+                        <label>
 
-</h3>
+                            <input
+                                type="checkbox"
+                                required>
 
-<p>
+                            I agree to the Membership Policy.
 
-Individuals wishing to support the Foundation's mission.
+                        </label>
 
-</p>
+                        <label>
 
-</div>
+                            <input
+                                type="checkbox"
+                                required>
 
-</div>
+                            I agree to the Privacy Policy.
 
-</div>
+                        </label>
 
-</section>
+                        <label>
 
-<section class="membership-form">
+                            <input
+                                type="checkbox">
 
-<div class="container">
+                            I would like to receive Foundation news
+                            and updates.
 
-<div class="section-heading">
+                        </label>
 
-<h2>
+                    </div>
 
-Membership Application
+                    <button
+                        type="submit"
+                        class="button">
 
-</h2>
+                        Submit Membership Application
 
-</div>
+                    </button>
 
-<form class="form-grid">
+                </form>
 
-<div class="form-group">
+            </div>
 
-<label>Full Name</label>
+        </section>
 
-<input
-type="text"
-placeholder="Enter your full name"
-required>
+        <!-- ==========================================
+             Frequently Asked Questions
+        ========================================== -->
 
-</div>
+        <section class="section">
 
-<div class="form-group">
+            <div class="container">
 
-<label>Email Address</label>
+                <div class="section-heading">
 
-<input
-type="email"
-placeholder="Enter your email"
-required>
+                    <span class="section-title">
 
-</div>
+                        FAQ
 
-<div class="form-group">
+                    </span>
 
-<label>Membership Category</label>
+                    <h2>
 
-<select required>
+                        Frequently Asked Questions
 
-<option value="">Select a category</option>
+                    </h2>
 
-<option>Student</option>
+                </div>
 
-<option>Professional</option>
+                <div class="faq-list">
 
-<option>Institutional</option>
+                    <article class="faq-item">
 
-<option>Supporting Member</option>
+                        <h3>
 
-</select>
+                            Who can become a member?
 
-</div>
+                        </h3>
 
-<div class="form-group">
+                        <p>
 
-<label>Country</label>
+                            Membership is open to students,
+                            professionals, institutions, researchers,
+                            educators, nonprofit organisations, and
+                            individuals who support our mission.
 
-<input
-type="text"
-placeholder="Country">
+                        </p>
 
-</div>
+                    </article>
 
-<div class="form-group form-grid-full">
+                    <article class="faq-item">
 
-<label>Areas of Interest</label>
+                        <h3>
 
-<textarea
-rows="5"
-placeholder="Tell us about your interests, expertise, or how you'd like to contribute."></textarea>
+                            Is membership international?
 
-</div>
+                        </h3>
 
-<div class="form-group form-grid-full">
+                        <p>
 
-<button
-type="submit"
-class="button">
+                            Yes. We welcome members from around the world.
 
-Submit Application
+                        </p>
 
-</button>
+                    </article>
 
-</div>
+                    <article class="faq-item">
 
-</form>
+                        <h3>
 
-</div>
+                            How long does the review process take?
 
-</section>
+                        </h3>
 
-<section class="membership-code">
+                        <p>
 
-<div class="container">
+                            Applications are reviewed as promptly as
+                            possible. Applicants will receive updates by
+                            email.
 
-<div class="card">
+                        </p>
 
-<h2>
+                    </article>
 
-Member Commitment
+                </div>
 
-</h2>
+            </div>
 
-<p>
+        </section>
 
-Members are expected to conduct themselves with integrity,
-professionalism, respect for diversity, scientific honesty,
-ethical collaboration, and a commitment to advancing the
-Foundation's mission.
+        <!-- ==========================================
+             Call to Action
+        ========================================== -->
 
-</p>
+        <section class="cta-section">
 
-</div>
+            <div class="container">
 
-</div>
+                <h2>
 
-</section>
+                    Join a Global Community of Researchers and Innovators
 
-<section class="membership-cta">
+                </h2>
 
-<div class="container">
+                <p>
 
-<h2>
+                    Together we can advance scientific research,
+                    environmental stewardship, education, innovation,
+                    and sustainable development for future generations.
 
-Together We Can Create Meaningful Impact
+                </p>
 
-</h2>
+                <a
+                    href="contact.html"
+                    class="button">
 
-<p>
+                    Contact Our Team
 
-Become part of a community committed to research, education,
-innovation, and sustainable development.
+                </a>
 
-</p>
+            </div>
 
-<a
-href="contact.html"
-class="button">
+        </section>
 
-Contact Membership Services
+    </main>
 
-</a>
+    <!-- ==========================================
+         Footer
+    ========================================== -->
 
-</div>
+    <footer class="footer">
 
-</section>
+        <div class="container">
 
+            <div class="footer-grid">
+
+                <section class="footer-column">
+
+                    <h3>
+
+                        SovereignAqua Research &
+                        Development Foundation
+
+                    </h3>
+
+                    <p>
+
+                        Advancing research, innovation, sustainability,
+                        education, and global collaboration.
+
+                    </p>
+
+                </section>
+
+                <section class="footer-column">
+
+                    <h4>
+
+                        Explore
+
+                    </h4>
+
+                    <ul>
+
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+
+                    </ul>
+
+                </section>
+
+                <section class="footer-column">
+
+                    <h4>
+
+                        Contact
+
+                    </h4>
+
+                    <ul>
+
+                        <li><a href="contact.html">Contact Centre</a></li>
+                        <li><a href="membership-application.html">Membership</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+                    </ul>
+
+                </section>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 SovereignAqua Research &
+                    Development Foundation.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+         Back To Top
+    ========================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Back to top">
+
+        <i class="fas fa-arrow-up"></i>
+
+    </button>
+
+    <!-- ==========================================
+         JavaScript
+    ========================================== -->
+
+    <script defer src="assets/js/core/navigation.js"></script>
+    <script defer src="assets/js/core/animations.js"></script>
+    <script defer src="assets/js/core/accessibility.js"></script>
+    <script defer src="assets/js/core/main.js"></script>
+
+</body>
+
+                        </html>
