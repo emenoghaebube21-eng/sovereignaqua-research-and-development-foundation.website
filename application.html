@@ -3,67 +3,887 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <!-- ==========================================
+         Character Encoding & Viewport
+    ========================================== -->
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-Membership | SovereignAqua Research & Development Foundation
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge">
 
-</title>
+    <!-- ==========================================
+         Primary SEO
+    ========================================== -->
 
-<link rel="stylesheet" href="assets/css/global.css">
-<link rel="stylesheet" href="assets/css/navigation.css">
-<link rel="stylesheet" href="assets/css/membership.css">
-<link rel="stylesheet" href="assets/css/footer.css">
-<link rel="stylesheet" href="assets/css/animations.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+    <title>
+        Membership Application | SovereignAqua Research & Development Foundation
+    </title>
+
+    <meta
+        name="description"
+        content="Join the SovereignAqua Research & Development Foundation. Become part of a global community advancing scientific research, innovation, environmental stewardship, education and sustainable development.">
+
+    <meta
+        name="keywords"
+        content="Membership, Research Foundation, Sustainability, Innovation, Scientific Research, Global Collaboration">
+
+    <meta
+        name="author"
+        content="SovereignAqua Research & Development Foundation">
+
+    <meta
+        name="robots"
+        content="index,follow">
+
+    <link
+        rel="canonical"
+        href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/membership-application.html">
+
+    <!-- ==========================================
+         Open Graph
+    ========================================== -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:title"
+        content="Membership Application | SovereignAqua Research & Development Foundation">
+
+    <meta
+        property="og:description"
+        content="Become part of an international network of researchers, innovators, educators and sustainability leaders.">
+
+    <meta
+        property="og:url"
+        content="https://www.sovereignaquaresearchanddevelopmentfoundation.org/membership-application.html">
+
+    <meta
+        property="og:image"
+        content="https://www.sovereignaquaresearchanddevelopmentfoundation.org/assets/images/social/social-preview.jpg">
+
+    <!-- ==========================================
+         Twitter Card
+    ========================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <!-- ==========================================
+         Icons
+    ========================================== -->
+
+    <link
+        rel="icon"
+        href="assets/images/logos/favicon.png"
+        type="image/png">
+
+    <link
+        rel="apple-touch-icon"
+        href="assets/images/logos/apple-touch-icon.png">
+
+    <link
+        rel="manifest"
+        href="manifest.json">
+
+    <!-- ==========================================
+         Google Fonts
+    ========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================
+         Font Awesome
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- ==========================================
+         CSS Architecture
+    ========================================== -->
+
+    <link rel="stylesheet" href="assets/css/base/variables.css">
+    <link rel="stylesheet" href="assets/css/base/reset.css">
+    <link rel="stylesheet" href="assets/css/base/typography.css">
+    <link rel="stylesheet" href="assets/css/base/global.css">
+
+    <link rel="stylesheet" href="assets/css/layout/navigation.css">
+    <link rel="stylesheet" href="assets/css/layout/footer.css">
+    <link rel="stylesheet" href="assets/css/layout/responsive.css">
+
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/components/cards.css">
+    <link rel="stylesheet" href="assets/css/components/forms.css">
+    <link rel="stylesheet" href="assets/css/components/animations.css">
+
+    <link rel="stylesheet" href="assets/css/pages/membership.css">
 
 </head>
 
-<body>
+  <body>
 
-<div id="progressBar"></div>
+    <!-- ==========================================
+         Skip Link
+    ========================================== -->
 
-<div id="loader">
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
 
-<div class="loader-spinner"></div>
+    <!-- ==========================================
+         Progress Bar
+    ========================================== -->
 
-</div>
+    <div id="progressBar" aria-hidden="true"></div>
 
-<!-- Copy Navigation -->
+    <!-- ==========================================
+         Page Loader
+    ========================================== -->
 
-<main>
-<header class="page-hero">
+    <div id="loader" aria-hidden="true">
 
-<img
-src="assets/images/membership-banner.jpg"
-alt="Membership"
-class="page-hero-image">
+        <div class="loader-spinner"></div>
 
-<div class="page-hero-overlay"></div>
+    </div>
 
-<div class="page-hero-content container">
+    <!-- ==========================================
+         Header & Navigation
+    ========================================== -->
 
-<h1>
+    <header>
 
-Membership
+        <nav class="navbar" aria-label="Primary Navigation">
 
-</h1>
+            <div class="container">
 
-<p>
+                <a href="index.html"
+                   class="logo"
+                   aria-label="SovereignAqua Home">
 
-Become part of a global network advancing research,
-innovation and sustainable development.
+                    <img
+                        src="assets/images/logos/logo-white.png"
+                        alt="SovereignAqua Research & Development Foundation Logo"
+                        class="logo-image"
+                        width="60"
+                        height="60"
+                        loading="eager">
 
-</p>
+                    <div class="brand">
 
-</div>
+                        <span class="brand-name">
 
-</header>
-  <section class="membership-types">
+                            SovereignAqua
+
+                        </span>
+
+                        <span class="brand-tagline">
+
+                            Research • Innovation • Sustainability
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <a href="contact.html"
+                   class="button">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ==========================================
+         Main Content
+    ========================================== -->
+
+    <main id="main-content">
+
+        <!-- ==========================================
+             Breadcrumb
+        ========================================== -->
+
+        <section class="breadcrumb">
+
+            <div class="container">
+
+                <nav aria-label="Breadcrumb">
+
+                    <ol class="breadcrumb-list">
+
+                        <li>
+
+                            <a href="index.html">
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li aria-current="page">
+
+                            Membership Application
+
+                        </li>
+
+                    </ol>
+
+                </nav>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Hero Section
+        ========================================== -->
+
+        <section class="page-hero membership-hero">
+
+            <div class="page-hero-overlay"></div>
+
+            <img
+                src="assets/images/membership-banner.jpg"
+                alt="Members collaborating during a research initiative"
+                class="page-hero-image">
+
+            <div class="page-hero-content container">
+
+                <span class="section-title">
+
+                    MEMBERSHIP
+
+                </span>
+
+                <h1>
+
+                    Join Our Global Research Community
+
+                </h1>
+
+                <p>
+
+                    Become part of an international network of researchers,
+                    educators, innovators, institutions, and sustainability
+                    leaders working together to advance scientific knowledge,
+                    environmental stewardship, and humanitarian development.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#membership-form"
+                       class="button">
+
+                        Apply for Membership
+
+                    </a>
+
+                    <a href="#membership-types"
+                       class="button-outline">
+
+                        Explore Membership
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Membership Overview
+        ========================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-title">
+
+                        OVERVIEW
+
+                    </span>
+
+                    <h2>
+
+                        Become Part of Something Bigger
+
+                    </h2>
+
+                </div>
+
+                <p>
+
+                    Membership in the SovereignAqua Research &
+                    Development Foundation provides opportunities
+                    to collaborate with professionals, researchers,
+                    institutions, and community leaders dedicated
+                    to scientific excellence, environmental
+                    sustainability, education, and innovation.
+
+                </p>
+
+                <p>
+
+                    Whether you are an individual researcher,
+                    student, educator, nonprofit organization,
+                    business, or academic institution, membership
+                    offers meaningful opportunities to contribute
+                    to impactful initiatives and global partnerships.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Membership Statistics
+        ========================================== -->
+
+        <section class="statistics-section">
+
+            <div class="container">
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+
+                        <i class="fas fa-users"></i>
+
+                        <h3 data-target="1000">
+
+                            0
+
+                        </h3>
+
+                        <p>
+
+                            Future Members
+
+                        </p>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <i class="fas fa-globe"></i>
+
+                        <h3 data-target="50">
+
+                            0
+
+                        </h3>
+
+                        <p>
+
+                            Countries & Regions
+
+                        </p>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <i class="fas fa-handshake"></i>
+
+                        <h3 data-target="100">
+
+                            0
+
+                        </h3>
+
+                        <p>
+
+                            Strategic Partnerships
+
+                        </p>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <i class="fas fa-flask"></i>
+
+                        <h3 data-target="25">
+
+                            0
+
+                        </h3>
+
+                        <p>
+
+                            Research Programmes
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+              <!-- ==========================================
+             Membership Categories
+        ========================================== -->
+
+        <section id="membership-types" class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-title">
+
+                        MEMBERSHIP CATEGORIES
+
+                    </span>
+
+                    <h2>
+
+                        Choose the Membership That Best Fits You
+
+                    </h2>
+
+                    <p>
+
+                        We welcome individuals and organizations who share
+                        our commitment to scientific research, innovation,
+                        education, environmental stewardship, and
+                        sustainable development.
+
+                    </p>
+
+                </div>
+
+                <div class="cards-grid">
+
+                    <article class="card">
+
+                        <i class="fas fa-user-graduate fa-3x"></i>
+
+                        <h3>
+
+                            Student Member
+
+                        </h3>
+
+                        <p>
+
+                            Designed for undergraduate students,
+                            postgraduate students, and early-career
+                            researchers seeking opportunities for
+                            mentorship, learning, and collaboration.
+
+                        </p>
+
+                        <ul class="feature-list">
+
+                            <li>Research workshops</li>
+
+                            <li>Mentorship opportunities</li>
+
+                            <li>Student networking</li>
+
+                            <li>Learning resources</li>
+
+                        </ul>
+
+                    </article>
+
+                    <article class="card">
+
+                        <i class="fas fa-user-tie fa-3x"></i>
+
+                        <h3>
+
+                            Professional Member
+
+                        </h3>
+
+                        <p>
+
+                            Ideal for scientists, engineers, educators,
+                            consultants, innovators, healthcare
+                            professionals, and sustainability experts.
+
+                        </p>
+
+                        <ul class="feature-list">
+
+                            <li>Professional networking</li>
+
+                            <li>Research collaboration</li>
+
+                            <li>Conference participation</li>
+
+                            <li>Leadership opportunities</li>
+
+                        </ul>
+
+                    </article>
+
+                    <article class="card">
+
+                        <i class="fas fa-building-columns fa-3x"></i>
+
+                        <h3>
+
+                            Institutional Member
+
+                        </h3>
+
+                        <p>
+
+                            Intended for universities, research institutes,
+                            government agencies, nonprofit organizations,
+                            and corporate partners.
+
+                        </p>
+
+                        <ul class="feature-list">
+
+                            <li>Institutional partnerships</li>
+
+                            <li>Joint research initiatives</li>
+
+                            <li>Knowledge exchange</li>
+
+                            <li>Strategic collaboration</li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Why Join
+        ========================================== -->
+
+        <section class="section why-join">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-title">
+
+                        WHY JOIN
+
+                    </span>
+
+                    <h2>
+
+                        Membership Advantages
+
+                    </h2>
+
+                </div>
+
+                <div class="cards-grid">
+
+                    <article class="card">
+
+                        <i class="fas fa-handshake"></i>
+
+                        <h3>
+
+                            Global Collaboration
+
+                        </h3>
+
+                        <p>
+
+                            Connect with researchers, institutions,
+                            professionals, and organizations worldwide.
+
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <i class="fas fa-flask"></i>
+
+                        <h3>
+
+                            Research Opportunities
+
+                        </h3>
+
+                        <p>
+
+                            Participate in multidisciplinary research
+                            initiatives and collaborative projects.
+
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <i class="fas fa-book-open"></i>
+
+                        <h3>
+
+                            Knowledge Resources
+
+                        </h3>
+
+                        <p>
+
+                            Access publications, technical reports,
+                            educational resources, and research updates.
+
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <i class="fas fa-lightbulb"></i>
+
+                        <h3>
+
+                            Innovation
+
+                        </h3>
+
+                        <p>
+
+                            Contribute ideas, technologies, and solutions
+                            that address global challenges.
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Member Benefits
+        ========================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-title">
+
+                        BENEFITS
+
+                    </span>
+
+                    <h2>
+
+                        Member Benefits
+
+                    </h2>
+
+                </div>
+
+                <div class="benefits-grid">
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        Research collaboration opportunities
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        Educational workshops and seminars
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        International networking events
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        Access to publications and reports
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        Volunteer opportunities
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        Participation in Foundation projects
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        Professional development programmes
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        Strategic partnership opportunities
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Membership Process
+        ========================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-title">
+
+                        APPLICATION PROCESS
+
+                    </span>
+
+                    <h2>
+
+                        How Membership Works
+
+                    </h2>
+
+                </div>
+
+                <div class="process-grid">
+
+                    <article class="process-card">
+
+                        <span class="process-number">1</span>
+
+                        <h3>
+
+                            Submit Application
+
+                        </h3>
+
+                        <p>
+
+                            Complete the online membership application
+                            with accurate information.
+
+                        </p>
+
+                    </article>
+
+                    <article class="process-card">
+
+                        <span class="process-number">2</span>
+
+                        <h3>
+
+                            Application Review
+
+                        </h3>
+
+                        <p>
+
+                            Our Membership Committee reviews your
+                            submission.
+
+                        </p>
+
+                    </article>
+
+                    <article class="process-card">
+
+                        <span class="process-number">3</span>
+
+                        <h3>
+
+                            Membership Decision
+
+                        </h3>
+
+                        <p>
+
+                            Applicants are notified once the review
+                            process has been completed.
+
+                        </p>
+
+                    </article>
+
+                    <article class="process-card">
+
+                        <span class="process-number">4</span>
+
+                        <h3>
+
+                            Welcome to the Foundation
+
+                        </h3>
+
+                        <p>
+
+                            Approved members receive onboarding
+                            information and access to member resources.
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+      <section class="eligibility">
 
 <div class="container">
 
@@ -71,70 +891,52 @@ innovation and sustainable development.
 
 <span class="section-title">
 
-MEMBERSHIP
+ELIGIBILITY
 
 </span>
 
 <h2>
 
-Membership Categories
+Who Can Apply?
 
 </h2>
 
 </div>
 
-<div class="membership-grid">
+<div class="cards-grid">
 
 <div class="card">
 
-<h3>
+<i class="fas fa-user-graduate"></i>
 
-Student Member
-
-</h3>
+<h3>Students</h3>
 
 <p>
-
-For students interested in research,
-innovation and sustainability.
-
+Undergraduate, postgraduate, doctoral candidates and research assistants.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>
+<i class="fas fa-microscope"></i>
 
-Professional Member
-
-</h3>
+<h3>Researchers</h3>
 
 <p>
-
-Researchers,
-scientists,
-engineers,
-educators and practitioners.
-
+Scientists and innovators contributing to research and development.
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>
+<i class="fas fa-building"></i>
 
-Institutional Member
-
-</h3>
+<h3>Organizations</h3>
 
 <p>
-
-Universities,
-organizations,
-corporations and research centres.
-
+Universities, NGOs, corporations, government agencies and institutions.
 </p>
 
 </div>
@@ -143,151 +945,668 @@ corporations and research centres.
 
 </div>
 
-</section>
-  <section class="benefits">
+      </section>
+
+      <section class="membership-fees">
 
 <div class="container">
 
-<div class="section-heading">
-
 <h2>
 
-Member Benefits
+Membership Fees
 
 </h2>
 
-</div>
+<table>
 
-<ul class="benefit-list">
+<tr>
 
-<li>✔ Research collaboration opportunities</li>
+<th>
 
-<li>✔ Educational workshops and seminars</li>
+Category
 
-<li>✔ Networking events</li>
+</th>
 
-<li>✔ Publications and reports</li>
+<th>
 
-<li>✔ Volunteer opportunities</li>
+Annual Fee
 
-<li>✔ Project participation</li>
+</th>
 
-</ul>
+</tr>
 
-</div>
+<tr>
 
-</section>
-  <section class="application-form">
-
-<div class="container">
-
-<div class="section-heading">
-
-<h2>
-
-Membership Application
-
-</h2>
-
-</div>
-
-<form>
-
-<input
-type="text"
-placeholder="Full Name"
-required>
-
-<input
-type="email"
-placeholder="Email Address"
-required>
-
-<input
-type="text"
-placeholder="Country">
-
-<select>
-
-<option>
-
-Membership Type
-
-</option>
-
-<option>
+<td>
 
 Student
 
-</option>
+</td>
 
-<option>
+<td>
+
+To Be Announced
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
 
 Professional
 
-</option>
+</td>
 
-<option>
+<td>
+
+To Be Announced
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
 
 Institutional
 
-</option>
+</td>
 
-</select>
+<td>
 
-<textarea
-rows="6"
-placeholder="Tell us about yourself"></textarea>
+Contact Foundation
 
-<button
-class="button">
+</td>
 
-Submit Application
+</tr>
 
-</button>
-
-</form>
+</table>
 
 </div>
 
-</section>
-  <section class="cta-section">
+      </section>
 
-<div class="container">
+      <section>
 
 <h2>
 
-Shape the Future With Us
+Required Documents
 
 </h2>
 
-<p>
+<ul>
 
-Join a growing international network dedicated to research,
-education and environmental stewardship.
+<li>Curriculum Vitae (CV) or Résumé</li>
 
-</p>
+<li>Professional Biography</li>
 
-<a href="contact.html"
+<li>Institutional Affiliation (if applicable)</li>
 
-class="button">
+<li>Research Interests Statement</li>
 
-Contact Our Team
+<li>Proof of Student Status (Student Members)</li>
 
-</a>
+</ul>
+
+      </section>
+
+      <label>
+
+<input type="checkbox" required>
+
+I certify that all information provided in this application is accurate and complete.
+
+</label>
+
+<label>
+
+<input type="checkbox" required>
+
+I agree to uphold the mission, values, policies, and Code of Conduct of the SovereignAqua Research & Development Foundation.
+
+</label>
+
+<label>
+
+<input type="checkbox">
+
+I consent to receive newsletters, event announcements, and research updates.
+
+</label>
+
+      <div class="form-group">
+
+<label>
+
+Curriculum Vitae (PDF)
+
+</label>
+
+<input
+type="file"
+accept=".pdf,.doc,.docx">
 
 </div>
 
-</section>
-  
-</main>
+<div class="form-group">
 
-<!-- Copy Footer -->
+<label>
 
-<script src="assets/js/navigation.js"></script>
-<script src="assets/js/animations.js"></script>
-<script src="assets/js/main.js"></script>
+Cover Letter
+
+</label>
+
+<input
+type="file"
+accept=".pdf,.doc,.docx">
+
+</div>
+
+              <!-- ==========================================
+             Membership Application Form
+        ========================================== -->
+
+        <section id="membership-form" class="section application-form">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-title">
+
+                        APPLY
+
+                    </span>
+
+                    <h2>
+
+                        Membership Application
+
+                    </h2>
+
+                    <p>
+
+                        Complete the application below to begin your
+                        membership journey with the SovereignAqua
+                        Research & Development Foundation.
+
+                    </p>
+
+                </div>
+
+                <form class="membership-form">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="fullName">Full Name *</label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="email">Email Address *</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="phone">Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="country">Country</label>
+
+                            <input
+                                type="text"
+                                id="country"
+                                name="country">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="organisation">
+
+                                Organisation / Institution
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="organisation"
+                                name="organisation">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="position">
+
+                                Position / Occupation
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="position"
+                                name="position">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="membershipType">
+
+                                Membership Category *
+
+                            </label>
+
+                            <select
+                                id="membershipType"
+                                name="membershipType"
+                                required>
+
+                                <option value="">
+
+                                    Select Membership
+
+                                </option>
+
+                                <option>
+
+                                    Student Member
+
+                                </option>
+
+                                <option>
+
+                                    Professional Member
+
+                                </option>
+
+                                <option>
+
+                                    Institutional Member
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="researchInterest">
+
+                                Primary Area of Interest
+
+                            </label>
+
+                            <select
+                                id="researchInterest"
+                                name="researchInterest">
+
+                                <option>
+
+                                    Select Area
+
+                                </option>
+
+                                <option>
+
+                                    Water Science
+
+                                </option>
+
+                                <option>
+
+                                    Environmental Sustainability
+
+                                </option>
+
+                                <option>
+
+                                    Renewable Energy
+
+                                </option>
+
+                                <option>
+
+                                    Artificial Intelligence
+
+                                </option>
+
+                                <option>
+
+                                    Agriculture
+
+                                </option>
+
+                                <option>
+
+                                    Education
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="bio">
+
+                            Tell Us About Yourself
+
+                        </label>
+
+                        <textarea
+                            id="bio"
+                            name="bio"
+                            rows="6"></textarea>
+
+                    </div>
+
+                    <div class="checkbox-group">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                required>
+
+                            I agree to the Membership Policy.
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                required>
+
+                            I agree to the Privacy Policy.
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox">
+
+                            I would like to receive Foundation news
+                            and updates.
+
+                        </label>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="button">
+
+                        Submit Membership Application
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Frequently Asked Questions
+        ========================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-title">
+
+                        FAQ
+
+                    </span>
+
+                    <h2>
+
+                        Frequently Asked Questions
+
+                    </h2>
+
+                </div>
+
+                <div class="faq-list">
+
+                    <article class="faq-item">
+
+                        <h3>
+
+                            Who can become a member?
+
+                        </h3>
+
+                        <p>
+
+                            Membership is open to students,
+                            professionals, institutions, researchers,
+                            educators, nonprofit organisations, and
+                            individuals who support our mission.
+
+                        </p>
+
+                    </article>
+
+                    <article class="faq-item">
+
+                        <h3>
+
+                            Is membership international?
+
+                        </h3>
+
+                        <p>
+
+                            Yes. We welcome members from around the world.
+
+                        </p>
+
+                    </article>
+
+                    <article class="faq-item">
+
+                        <h3>
+
+                            How long does the review process take?
+
+                        </h3>
+
+                        <p>
+
+                            Applications are reviewed as promptly as
+                            possible. Applicants will receive updates by
+                            email.
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Call to Action
+        ========================================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <h2>
+
+                    Join a Global Community of Researchers and Innovators
+
+                </h2>
+
+                <p>
+
+                    Together we can advance scientific research,
+                    environmental stewardship, education, innovation,
+                    and sustainable development for future generations.
+
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="button">
+
+                    Contact Our Team
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         Footer
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <section class="footer-column">
+
+                    <h3>
+
+                        SovereignAqua Research &
+                        Development Foundation
+
+                    </h3>
+
+                    <p>
+
+                        Advancing research, innovation, sustainability,
+                        education, and global collaboration.
+
+                    </p>
+
+                </section>
+
+                <section class="footer-column">
+
+                    <h4>
+
+                        Explore
+
+                    </h4>
+
+                    <ul>
+
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+
+                    </ul>
+
+                </section>
+
+                <section class="footer-column">
+
+                    <h4>
+
+                        Contact
+
+                    </h4>
+
+                    <ul>
+
+                        <li><a href="contact.html">Contact Centre</a></li>
+                        <li><a href="membership-application.html">Membership</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+                    </ul>
+
+                </section>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 SovereignAqua Research &
+                    Development Foundation.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+         Back To Top
+    ========================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Back to top">
+
+        <i class="fas fa-arrow-up"></i>
+
+    </button>
+
+    <!-- ==========================================
+         JavaScript
+    ========================================== -->
+
+    <script defer src="assets/js/core/navigation.js"></script>
+    <script defer src="assets/js/core/animations.js"></script>
+    <script defer src="assets/js/core/accessibility.js"></script>
+    <script defer src="assets/js/core/main.js"></script>
 
 </body>
 
-</html>
+                          </html>
