@@ -217,6 +217,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </div>
 
 </nav>
+ <main id="main-content">
 <!-- ==========================================================
      HERO SECTION
 ========================================================== -->
@@ -229,20 +230,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     loop
     playsinline
     preload="metadata"
-    poster="asset/Images/hero/hero-poster.jpg"
-    disablepictureinpicture>
+    poster="asset/Images/hero/hero-poster.jpg">
 
-<source
+    <source
+        src="asset/videos/foundation-hero.mp4"
+        type="video/mp4">
 
-src="asset/videos/foundation-hero.mp4"
-
-type="video/mp4">
+    Your browser does not support HTML5 video.
 
 </video>
 
  <div class="hero-overlay"></div>
 
 <div class="container hero-content">
+
+ <div class="hero-badge">
+    <span>
+        <i class="fas fa-flask"></i>
+        Advancing Scientific Research • Sustainable Development • Global Innovation
+    </span>
+ </div>
 
     <div class="hero-logo">
 
@@ -274,12 +281,8 @@ type="video/mp4">
     </div>
 
 <p class="hero-description">
-    Advancing scientific research, environmental stewardship, innovation,
-    and sustainable development through global collaboration, education,
-    and technology-driven solutions that create lasting impact for
-    communities worldwide.
+    SovereignAqua Research & Development Foundation is an independent international research organization committed to advancing scientific discovery, environmental sustainability, technological innovation, and humanitarian development through collaborative research, education, and strategic global partnerships.
 </p>
-
 <div class="hero-buttons">
 
     <a href="research.html" class="button">
@@ -422,59 +425,29 @@ Apply
 
         </div>
 
-        <div class="stats-grid">
+        <div class="stat-card fade-in">
+    <div class="stat-icon">🌍</div>
+    <h3 class="counter" data-target="25">0</h3>
+    <p>Countries & Regions</p>
+</div>
 
-            <div class="stat-card fade-in">
+<div class="stat-card fade-in">
+    <div class="stat-icon">👨‍🔬</div>
+    <h3 class="counter" data-target="150">0</h3>
+    <p>Researchers & Experts</p>
+</div>
 
-                <div class="stat-icon">🌍</div>
+<div class="stat-card fade-in">
+    <div class="stat-icon">📚</div>
+    <h3 class="counter" data-target="40">0</h3>
+    <p>Research Projects</p>
+</div>
 
-               <h3
-
-class="counter"
-
-data-target="18"
-
-data-duration="2000">
-
-0
-
-</h3>
-
-                <p>Countries Engaged</p>
-
-            </div>
-
-            <div class="stat-card fade-in">
-
-                <div class="stat-icon">👨‍🔬</div>
-
-                <h3 class="counter" data-target="120">0</h3>
-
-                <p>Research Members</p>
-
-            </div>
-
-            <div class="stat-card fade-in">
-
-                <div class="stat-icon">📚</div>
-
-                <h3 class="counter" data-target="35">0</h3>
-
-                <p>Research Projects</p>
-
-            </div>
-
-            <div class="stat-card fade-in">
-
-                <div class="stat-icon">🤝</div>
-
-                <h3 class="counter" data-target="22">0</h3>
-
-                <p>Strategic Partners</p>
-
-            </div>
-
-        </div>
+<div class="stat-card fade-in">
+    <div class="stat-icon">🤝</div>
+    <h3 class="counter" data-target="30">0</h3>
+    <p>Strategic Partnerships</p>
+</div>
 
     </div>
 
@@ -1020,6 +993,34 @@ height="400">
 
  <hr class="divider">
 
+  <section class="featured-research">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-title">
+                FEATURED INITIATIVE
+            </span>
+
+            <h2>
+                Clean Water & Climate Resilience
+            </h2>
+
+            <p>
+                Our flagship multidisciplinary programme brings together environmental scientists, engineers, policymakers, and community partners to develop practical, evidence-based solutions for water security and climate resilience.
+            </p>
+
+            <a href="research.html" class="button">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+  </section>
+  
   <!-- ==========================================================
      FEATURED PROJECTS
 ========================================================== -->
@@ -1859,6 +1860,7 @@ Contact Us
 </section>
 
   <hr class="divider">
+ </main>
  <!-- ==========================================================
      FOOTER
 ========================================================== -->
