@@ -1863,133 +1863,68 @@ Contact Us
      FOOTER
 ========================================================== -->
 
-<footer class="footer">
+<footer class="site-footer">
 
     <div class="container">
 
         <div class="footer-grid">
 
-            <!-- Foundation -->
+            <!-- Foundation Information -->
 
             <div class="footer-column">
 
                 <img
-                    src="asset/Images/logos/logo-footer.jpg"
-                    alt="SovereignAqua Foundation"
-                   
-loading="lazy"
+                    src="asset/Images/logo/logo-white.png"
+                    alt="SovereignAqua Research & Development Foundation Logo"
+                    class="footer-logo"
+                    width="80"
+                    height="80"
+                    loading="lazy">
 
-decoding="async"
-
-width="600"
-
-height="400">
-
-                <h3>
-
-                    SovereignAqua Foundation
-
-                </h3>
+                <h3>SovereignAqua Research & Development Foundation</h3>
 
                 <p>
-
                     Advancing scientific research, innovation,
-                    environmental stewardship, education,
-                    and sustainable development through
-                    collaboration and responsible leadership.
-
+                    environmental stewardship, education and
+                    sustainable development through global
+                    collaboration and strategic partnerships.
                 </p>
-
-                <div class="footer-social">
-
-                   <a
-
-href="https://facebook.com"
-
-target="_blank"
-
-rel="noopener noreferrer"
-
-aria-label="Visit our Facebook page">
-
-                        <i class="fab fa-facebook-f"></i>
-
-                    </a>
-
-                    <a href="#" aria-label="LinkedIn">
-
-                        <i class="fab fa-linkedin-in"></i>
-
-                    </a>
-
-                    <a href="#" aria-label="X">
-
-                        <i class="fab fa-x-twitter"></i>
-
-                    </a>
-
-                    <a href="#" aria-label="YouTube">
-
-                        <i class="fab fa-youtube"></i>
-
-                    </a>
-
-                </div>
 
             </div>
 
             <!-- Quick Links -->
 
-           <nav
+            <div class="footer-column">
 
-class="footer-column"
+                <h3>Quick Links</h3>
 
-aria-label="Footer Navigation">
+                <ul>
 
-<h3>
-
-Quick Links
-
-</h3>
-
-<ul>
                     <li><a href="index.html">Home</a></li>
-
-                    <li><a href="about.html">About</a></li>
-
                     <li><a href="research.html">Research</a></li>
-
                     <li><a href="projects.html">Projects</a></li>
-
                     <li><a href="publications.html">Publications</a></li>
-
                     <li><a href="news.html">News</a></li>
+                    <li><a href="membership-application.html">Membership</a></li>
 
                 </ul>
 
-            </nav>
+            </div>
 
             <!-- Resources -->
 
             <div class="footer-column">
 
-                <h3>
-
-                    Resources
-
-                </h3>
+                <h3>Resources</h3>
 
                 <ul>
 
-                    <li><a href="membership-application.html">Membership</a></li>
-
                     <li><a href="governance.html">Governance</a></li>
-
-                    <li><a href="downloads.html">Downloads</a></li>
-
-                    <li><a href="faq.html">FAQ</a></li>
-
+                    <li><a href="global-impact.html">Global Impact</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                    <li><a href="accessibility.html">Accessibility</a></li>
 
                 </ul>
 
@@ -1999,35 +1934,32 @@ Quick Links
 
             <div class="footer-column">
 
-                <h3>
-
-                    Contact
-
-                </h3>
+                <h3>Connect With Us</h3>
 
                 <p>
-
-                    📍 Global Headquarters
-
+                    Building partnerships that advance scientific
+                    discovery and sustainable innovation worldwide.
                 </p>
 
-                <p>
+                <div class="footer-social">
 
-                    🌐 https://www.sovereignaquaresearchanddevelopmentfoundation.org/
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
 
-                </p>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
 
-                <p>
+                    <a href="#" aria-label="X">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
 
-                    ✉ info@sovereignaqua.org
+                    <a href="#" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
 
-                </p>
-
-                <p>
-
-                    ☎ +1 (000) 000-0000
-
-                </p>
+                </div>
 
             </div>
 
@@ -2040,37 +1972,18 @@ Quick Links
         <div class="container">
 
             <p>
-
-                © 2026 SovereignAqua Research & Development Foundation.
-                All Rights Reserved.
-
+                © 2026 SovereignAqua Research & Development Foundation. All Rights Reserved.
             </p>
 
             <div class="footer-legal">
 
-                <a href="privacy-policy.html">
+                <a href="privacy-policy.html">Privacy Policy</a>
 
-                    Privacy Policy
+                <a href="terms.html">Terms of Use</a>
 
-                </a>
+                <a href="accessibility.html">Accessibility</a>
 
-                <a href="terms.html">
-
-                    Terms of Use
-
-                </a>
-
-                <a href="accessibility.html">
-
-                    Accessibility
-
-                </a>
-
-                <a href="cookies.html">
-
-                    Cookie Policy
-
-                </a>
+                <a href="cookies.html">Cookie Policy</a>
 
             </div>
 
@@ -2080,18 +1993,22 @@ Quick Links
 
 </footer>
 
+<!-- ==========================================
+     Back To Top Button
+========================================== -->
+
 <button
+    id="backToTop"
+    type="button"
+    aria-label="Back to Top">
 
-type="button"
-
-id="backToTop"
-
-aria-label="Back to top">
-
-↑
+    <i class="fas fa-arrow-up"></i>
 
 </button>
 
+<!-- ==========================================
+     JavaScript
+========================================== -->
 
 <script defer src="asset/js/core/navigation.js"></script>
 <script defer src="asset/js/core/animations.js"></script>
@@ -2102,7 +2019,7 @@ aria-label="Back to top">
 <script defer src="asset/js/modules/lazyLoad.js"></script>
 
 <script defer src="asset/js/core/main.js"></script>
-     
-</body>
 
-</html>
+</body>
+             </html>
+                                                
