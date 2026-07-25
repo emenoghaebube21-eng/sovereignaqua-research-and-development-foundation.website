@@ -170,122 +170,63 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
      PRIMARY NAVIGATION
 ========================================== -->
 
-<nav class="navbar" aria-label="Primary Navigation">
+<nav class="navbar" id="navbar">
 
-    <div class="container">
+    <div class="nav-container">
 
-        <!-- ==================================
-             Foundation Logo
-        =================================== -->
+        <!-- Logo -->
 
-        <a href="index.html" class="logo" aria-label="SovereignAqua Home">
+        <a href="index.html" class="logo">
 
             <img
                 src="asset/Images/logo/logo-white.jpg"
-                alt="SovereignAqua Research & Development Foundation Logo"
-                class="logo-image"
-                width="70"
-                height="70"
-                loading="eager">
+                alt="SovereignAqua Foundation Logo">
 
-            <span class="logo-text">
+            <span>
+
                 SovereignAqua
+
             </span>
 
         </a>
 
-        <!-- ==================================
-             Mobile Navigation Toggle
-        =================================== -->
+        <!-- Desktop Navigation -->
 
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open Main Navigation"
-            aria-expanded="false"
-            aria-controls="navigation-menu">
+        <ul class="nav-links" id="navigation-menu">
 
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
+            <li><a href="index.html">Home</a></li>
 
-        </button>
+            <li><a href="mission.html">Foundation</a></li>
 
-        <!-- ==================================
-             Navigation Links
-        =================================== -->
+            <li><a href="research.html">Research</a></li>
 
-        <ul
-            id="navigation-menu"
-            class="nav-menu">
+            <li><a href="projects.html">Projects</a></li>
 
-            <li>
-                <a href="index.html" aria-current="page">
-                    Home
-                </a>
-            </li>
+            <li><a href="governance.html">Governance</a></li>
 
-            <li>
-                <a href="mission.html">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="research.html">
-                    Research
-                </a>
-            </li>
-
-            <li>
-                <a href="projects.html">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="publications.html">
-                    Publications
-                </a>
-            </li>
-
-            <li>
-                <a href="news.html">
-                    News
-                </a>
-            </li>
-
-            <li>
-                <a href="global-outreach.html">
-                    Global Outreach
-                </a>
-            </li>
-
-            <li>
-                <a href="governance.html">
-                    Governance
-                </a>
-            </li>
-
-            <li>
-                <a href="contact.html">
-                    Contact
-                </a>
-            </li>
-
-            <li class="nav-cta">
-
-                <a
-                    href="membership-application.html"
-                    class="button button-primary">
-
-                    Become a Member
-
-                </a>
-
-            </li>
+            <li><a href="contact.html">Contact</a></li>
 
         </ul>
+
+        <!-- CTA -->
+
+        <div class="nav-actions">
+
+            <a href="membership-application.html" class="join-btn">
+
+                Become a Member
+
+            </a>
+
+        </div>
+
+        <!-- Mobile Toggle -->
+
+        <button class="menu-toggle" id="menuToggle">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
 
     </div>
 
