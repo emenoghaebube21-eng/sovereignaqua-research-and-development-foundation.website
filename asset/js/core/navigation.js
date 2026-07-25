@@ -9,18 +9,26 @@
    INITIALIZE NAVIGATION
 ========================================================== */
 
-document.addEventListener("DOMContentLoaded", initNavigation);
+const menuToggle = document.getElementById("menuToggle");
+const navigationMenu = document.getElementById("navigation-menu");
 
-function initNavigation() {
+if (menuToggle && navigationMenu) {
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.getElementById("navigation-menu");
+    menuToggle.addEventListener("click", () => {
 
-    if (!menuToggle || !navMenu) return;
+        navigationMenu.classList.toggle("active");
 
-    menuToggle.setAttribute("aria-expanded", "false");
-    navMenu.setAttribute("aria-hidden", "true");
+        const expanded =
+            menuToggle.getAttribute("aria-expanded") === "true";
 
+        menuToggle.setAttribute(
+            "aria-expanded",
+            !expanded
+        );
+
+    });
+
+}
     /* ==========================================
        TOGGLE MOBILE MENU
     ========================================== */
@@ -197,15 +205,20 @@ function initNavigation() {
 
         });
 
+  window.addEventListener("scroll", () => {
+
+    const navbar = document.querySelector(".navbar");
+
+    if (!navbar) return;
+
+    if (window.scrollY > 60) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
     }
 
-    window.addEventListener(
-        "scroll",
-        updateActiveSection,
-        { passive: true }
-    );
-
-    updateActiveSection();
-
-}
-
+});
