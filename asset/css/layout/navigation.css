@@ -1,131 +1,139 @@
-/* =====================================================
-   NAVIGATION BAR
-===================================================== */
+/* ==================================================
+   NAVIGATION
+================================================== */
 
 .navbar{
 
-    position:fixed;
+position:fixed;
 
-    top:0;
+top:48px;
 
-    left:0;
+left:0;
 
-    width:100%;
+width:100%;
 
-    z-index:1000;
+z-index:1000;
 
-    background:rgba(8,20,36,.92);
+background:rgba(255,255,255,.92);
 
-    backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 
-    -webkit-backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(0,0,0,.08);
 
-    box-shadow:0 4px 20px rgba(0,0,0,.15);
-
-}
-
-.navbar .container{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:18px 30px;
-
-    position:relative;
+transition:.35s ease;
 
 }
 
-/* =====================================================
-   NAVIGATION LINKS (Desktop)
-===================================================== */
+.nav-container{
+
+max-width:1400px;
+
+margin:auto;
+
+height:80px;
+
+padding:0 30px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+text-decoration:none;
+
+font-weight:700;
+
+color:#003366;
+
+}
+
+.logo img{
+
+height:58px;
+
+width:auto;
+
+}
 
 .nav-links{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+gap:35px;
 
-    justify-content:center;
+list-style:none;
 
-    gap:30px;
+margin:0;
 
-    list-style:none;
-
-    margin:0;
-
-    padding:0;
-
-}
-
-.nav-links li{
-
-    list-style:none;
+padding:0;
 
 }
 
 .nav-links a{
 
-    display:block;
+text-decoration:none;
 
-    color:#ffffff;
+font-weight:500;
 
-    text-decoration:none;
+color:#222;
 
-    font-weight:500;
-
-    padding:8px 12px;
-
-    transition:color .3s ease,
-               background-color .3s ease;
+transition:.3s;
 
 }
 
 .nav-links a:hover{
 
-    color:#4fd1c5;
+color:#0057b8;
 
 }
 
-.nav-links a[aria-current="page"]{
+.nav-actions{
 
-    color:#4fd1c5;
+display:flex;
 
-    font-weight:700;
+align-items:center;
 
-}
-
-/* =====================================================
-   CTA BUTTON
-===================================================== */
-
-.nav-cta{
-
-    margin-left:20px;
+gap:15px;
 
 }
 
-/* =====================================================
-   HAMBURGER BUTTON
-===================================================== */
+.join-btn{
+
+padding:12px 24px;
+
+border-radius:50px;
+
+background:#0057b8;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
 
 .menu-toggle{
 
-    display:none;
+display:none;
 
-    background:none;
+background:none;
 
-    border:none;
+border:none;
 
-    color:#ffffff;
+font-size:28px;
 
-    font-size:2rem;
-
-    cursor:pointer;
-
-    padding:6px;
+cursor:pointer;
 
 }
-
