@@ -159,128 +159,312 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </div>
 
 <!-- ==========================================
-     PRIMARY NAVIGATION
+     HYBRID WEB 2.0 / WEB 3.0 NAVIGATION
 ========================================== -->
+
+<header>
 
 <nav class="navbar" aria-label="Primary Navigation">
 
-    <div class="container">
+<div class="container">
 
-        <a href="index.html" class="logo">
-         
-        <button
-            type="button"
-            class="menu-toggle"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-            aria-controls="navigation-menu">
-         
-     <ul id="navigation-menu" class="nav-menu">
-      
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="global-impact.html">Global Impact</a></li>
-            <li><a href="governance.html">Governance</a></li>
-            <li><a href="contact.html">Contact</a></li>
-              
-            </li>
-         
+    <!-- Logo -->
+
+    <a href="index.html" class="logo">
+
+        <img src="assets/images/logo.png"
+             alt="SovereignAqua Foundation Logo">
+
+        <span>SovereignAqua Foundation</span>
+
+    </a>
+
+    <!-- Mobile Toggle -->
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle Navigation"
+        aria-expanded="false"
+        aria-controls="navigation-menu">
+
+        <i class="fas fa-bars"></i>
+
     </button>
-          
-            <i class="fas fa-bars"></i>
-         
-        </ul>
-         
-         </button>
-     
-    </div>
 
-</nav>
- <main id="main-content">
-<!-- ==========================================================
-     HERO SECTION
-========================================================== -->
-<header class="hero">
- 
-<video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    poster="asset/Images/hero/hero-poster.jpg">
+    <!-- Navigation -->
 
-    <source
-        src="asset/videos/foundation-hero.mp4"
-        type="video/mp4">
+    <ul id="navigation-menu" class="nav-menu">
 
-    Your browser does not support HTML5 video.
+        <li><a href="index.html" class="active">Home</a></li>
 
-</video>
+        <li><a href="about.html">About</a></li>
 
- <div class="hero-overlay"></div>
+        <li><a href="research.html">Research</a></li>
 
-<div class="container hero-content">
+        <li><a href="projects.html">Projects</a></li>
 
- <div class="hero-badge">
-    <span>
-        <i class="fas fa-flask"></i>
-        Advancing Scientific Research • Sustainable Development • Global Innovation
-    </span>
- </div>
+        <li><a href="publications.html">Publications</a></li>
 
-    <div class="hero-logo">
+        <li><a href="news.html">News</a></li>
 
-        <a href="index.html">
+        <li><a href="global-impact.html">Global Impact</a></li>
 
-            <img
-                src="asset/Images/logo/logo-white.jpg"
-                alt="SovereignAqua Foundation Logo"
-                class="logo-image"
-                width="220"
-                height="220"
-                loading="eager"
-                decoding="async">
+        <li><a href="governance.html">Governance</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+
+    <!-- Right Side Actions -->
+
+    <div class="nav-actions">
+
+        <a href="donate.html" class="btn btn-primary">
+
+            Donate
 
         </a>
 
-        <div class="brand">
+        <a href="portal.html" class="btn btn-outline">
 
-            <h1 class="brand-name">
-                SovereignAqua
-            </h1>
+            Member Portal
 
-            <p class="brand-tagline">
-                Research • Innovation • Sustainability
-            </p>
+        </a>
+
+        <button id="walletButton" class="wallet-btn">
+
+            <i class="fas fa-wallet"></i>
+
+            Connect Wallet
+
+        </button>
+
+    </div>
+
+</div>
+
+</nav>
+
+</header>
+
+<main id="main-content">
+<!-- ==========================================================
+     HYBRID HERO SECTION
+========================================================== -->
+
+<header class="hero" id="home">
+
+    <!-- Background Video -->
+
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/images/hero/hero-poster.jpg"
+        aria-hidden="true">
+
+        <source
+            src="assets/videos/foundation-hero.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <!-- Animated Gradient -->
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-particles"></div>
+
+    <div class="container hero-content">
+
+        <!-- Foundation Badge -->
+
+        <div class="hero-badge">
+
+            <i class="fas fa-globe"></i>
+
+            <span>
+
+                International Research • Innovation • Sustainability
+
+            </span>
+
+        </div>
+
+        <!-- Logo -->
+
+        <div class="hero-logo">
+
+            <img
+                src="assets/images/logo/logo-white.png"
+                alt="SovereignAqua Foundation Logo"
+                class="logo-image"
+                width="210"
+                height="210"
+                loading="eager">
+
+        </div>
+
+        <!-- Heading -->
+
+        <h1 class="hero-title">
+
+            SovereignAqua Research & Development Foundation
+
+        </h1>
+
+        <h2 class="hero-subtitle">
+
+            Advancing Science, Water Security,
+            Artificial Intelligence,
+            Environmental Sustainability,
+            and Global Humanitarian Development
+
+        </h2>
+
+        <!-- Description -->
+
+        <p class="hero-description">
+
+            An independent international foundation driving
+            multidisciplinary scientific research,
+            emerging technologies,
+            environmental stewardship,
+            sustainable development,
+            education,
+            and strategic global partnerships
+            for a resilient future.
+
+        </p>
+
+        <!-- Statistics -->
+
+        <div class="hero-stats">
+
+            <div class="stat">
+
+                <h3>40+</h3>
+
+                <p>Research Programs</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>25+</h3>
+
+                <p>Global Partnerships</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>15+</h3>
+
+                <p>Countries Served</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>100K+</h3>
+
+                <p>Lives Impacted</p>
+
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="hero-buttons">
+
+            <a href="research.html" class="btn-primary">
+
+                Explore Research
+
+            </a>
+
+            <a href="projects.html" class="btn-secondary">
+
+                View Projects
+
+            </a>
+
+            <a href="membership-application.html"
+               class="btn-outline">
+
+                Become a Member
+
+            </a>
+
+            <button
+                class="wallet-btn"
+                id="walletButton">
+
+                <i class="fas fa-wallet"></i>
+
+                Connect Wallet
+
+            </button>
+
+        </div>
+
+        <!-- Trust Indicators -->
+
+        <div class="hero-features">
+
+            <span>
+
+                <i class="fas fa-leaf"></i>
+
+                Sustainability
+
+            </span>
+
+            <span>
+
+                <i class="fas fa-microscope"></i>
+
+                Scientific Excellence
+
+            </span>
+
+            <span>
+
+                <i class="fas fa-handshake"></i>
+
+                Global Collaboration
+
+            </span>
+
+            <span>
+
+                <i class="fas fa-shield-alt"></i>
+
+                Transparency
+
+            </span>
+
+        </div>
+
+        <!-- Scroll -->
+
+        <div class="scroll-indicator">
+
+            <a href="#about">
+
+                <i class="fas fa-angle-down"></i>
+
+            </a>
 
         </div>
 
     </div>
-
-<p class="hero-description">
-    SovereignAqua Research & Development Foundation is an independent international research organization committed to advancing scientific discovery, environmental sustainability, technological innovation, and humanitarian development through collaborative research, education, and strategic global partnerships.
-</p>
-<div class="hero-buttons">
-
-    <a href="research.html" class="button">
-        Explore Our Research
-    </a>
-
-    <a href="projects.html" class="button-outline">
-        View Projects
-    </a>
-
-    <a href="membership-application.html" class="button-secondary">
-        Join the Foundation
-    </a>
-
-</div>
 
 </header>
 <!-- ==========================================
