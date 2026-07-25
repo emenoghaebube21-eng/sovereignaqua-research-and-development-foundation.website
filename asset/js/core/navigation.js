@@ -209,16 +209,3 @@ function initNavigation() {
 
 }
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navigation-menu");
-
-menuToggle.addEventListener("click", () => {
-
-    navMenu.classList.toggle("active");
-
-    const expanded =
-        menuToggle.getAttribute("aria-expanded") === "true";
-
-    menuToggle.setAttribute("aria-expanded", !expanded);
-
-});
