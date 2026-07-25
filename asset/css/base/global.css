@@ -1,17 +1,22 @@
 /* ==========================================================
    GLOBAL STYLES
    SovereignAqua Research & Development Foundation
+   Version 2.0
 ========================================================== */
 
+
 /* ==========================================================
-   HTML
+   ROOT PAGE SETTINGS
 ========================================================== */
 
 html{
 
     scroll-behavior:smooth;
 
+    scroll-padding-top:140px;
+
 }
+
 
 /* ==========================================================
    BODY
@@ -19,17 +24,60 @@ html{
 
 body{
 
+    margin:0;
+
+    padding-top:130px;
+
     font-family:var(--font-primary);
 
-    background:var(--background);
-
-    color:var(--text-primary);
+    font-size:16px;
 
     line-height:1.7;
 
+    font-weight:400;
+
+    color:var(--text-primary);
+
+    background:var(--background);
+
     overflow-x:hidden;
 
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
 }
+
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    margin:0 0 1rem;
+
+    line-height:1.2;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+p{
+
+    margin-bottom:1.2rem;
+
+}
+
 
 /* ==========================================================
    LINKS
@@ -37,13 +85,26 @@ body{
 
 a{
 
-    text-decoration:none;
-
     color:inherit;
 
-    transition:all .3s ease;
+    text-decoration:none;
+
+    transition:
+
+        color .3s ease,
+
+        transform .3s ease,
+
+        opacity .3s ease;
 
 }
+
+a:hover{
+
+    color:var(--primary);
+
+}
+
 
 /* ==========================================================
    IMAGES
@@ -51,31 +112,54 @@ a{
 
 img{
 
+    display:block;
+
     max-width:100%;
 
     height:auto;
 
-    display:block;
+    object-fit:cover;
 
 }
 
+
 /* ==========================================================
-   CONTAINER
+   VIDEO
+========================================================== */
+
+video{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+
+/* ==========================================================
+   LAYOUT CONTAINER
 ========================================================== */
 
 .container{
 
-    width:min(1200px,92%);
+    width:min(1320px,92%);
 
-    margin:auto;
+    margin-inline:auto;
+
+    position:relative;
 
 }
 
+
 /* ==========================================================
-   SECTION SPACING
+   SECTIONS
 ========================================================== */
 
 section{
+
+    position:relative;
 
     padding:100px 0;
 
@@ -83,9 +167,39 @@ section{
 
 section[id]{
 
-    scroll-margin-top:100px;
+    scroll-margin-top:140px;
 
 }
+
+
+/* ==========================================================
+   COMMON UTILITIES
+========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.flex{
+
+    display:flex;
+
+}
+
+.grid{
+
+    display:grid;
+
+}
+
 
 /* ==========================================================
    ACCESSIBILITY
@@ -113,6 +227,7 @@ section[id]{
 
 }
 
+
 /* ==========================================================
    KEYBOARD FOCUS
 ========================================================== */
@@ -121,9 +236,12 @@ section[id]{
 
     outline:3px solid var(--primary);
 
-    outline-offset:3px;
+    outline-offset:4px;
+
+    border-radius:6px;
 
 }
+
 
 /* ==========================================================
    DIVIDER
@@ -131,18 +249,21 @@ section[id]{
 
 .divider{
 
-    border:none;
+    width:100%;
 
     height:1px;
 
-    background:rgba(255,255,255,.08);
+    margin:70px auto;
 
-    margin:60px auto;
+    border:none;
+
+    background:rgba(0,0,0,.08);
 
 }
 
+
 /* ==========================================================
-   BACK TO TOP
+   BACK TO TOP BUTTON
 ========================================================== */
 
 #backToTop{
@@ -153,9 +274,9 @@ section[id]{
 
     right:30px;
 
-    width:50px;
+    width:56px;
 
-    height:50px;
+    height:56px;
 
     border:none;
 
@@ -163,17 +284,27 @@ section[id]{
 
     background:var(--primary);
 
-    color:#fff;
+    color:#ffffff;
 
-    font-size:1.3rem;
+    font-size:1.25rem;
 
     cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     opacity:0;
 
     visibility:hidden;
 
-    transition:all .3s ease;
+    transform:translateY(20px);
+
+    transition:all .35s ease;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.20);
 
     z-index:999;
 
@@ -185,18 +316,19 @@ section[id]{
 
     visibility:visible;
 
+    transform:translateY(0);
+
 }
 
 #backToTop:hover{
 
-    transform:translateY(-5px);
-
-    box-shadow:0 10px 25px rgba(0,207,255,.35);
+    transform:translateY(-6px);
 
 }
 
+
 /* ==========================================================
-   SELECTION
+   TEXT SELECTION
 ========================================================== */
 
 ::selection{
@@ -204,5 +336,133 @@ section[id]{
     background:var(--primary);
 
     color:#ffffff;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f3f3f3;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   GLASS EFFECT
+========================================================== */
+
+.glass{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.20);
+
+}
+
+
+/* ==========================================================
+   SHADOW UTILITIES
+========================================================== */
+
+.shadow-sm{
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.shadow-md{
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+.shadow-lg{
+
+    box-shadow:0 25px 70px rgba(0,0,0,.20);
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    body{
+
+        padding-top:120px;
+
+    }
+
+    section{
+
+        padding:80px 0;
+
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    body{
+
+        padding-top:110px;
+
+    }
+
+    .container{
+
+        width:min(94%,700px);
+
+    }
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
 
 }
