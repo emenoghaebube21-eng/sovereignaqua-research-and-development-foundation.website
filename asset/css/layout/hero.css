@@ -140,9 +140,6 @@
 
 @media (prefers-reduced-motion:reduce){
     .hero-scroll{animation:none;}
-}
-
-@media (prefers-reduced-motion:reduce){
     .hero-video{display:none;}
     .hero{background:#081424 url("../../Images/hero/hero-poster.jpg") center/cover no-repeat;}
 }
