@@ -11,9 +11,11 @@ window.addEventListener("load", hideLoader);
 
 function initializeApp() {
     console.log("SovereignAqua Website Initialized");
+    ensureSkipLinkTarget();
     highlightCurrentPage();
     initMobileNavigation();
     initNavbarScrollState();
+    initCounters();
     initBackToTop();
 }
 
@@ -23,6 +25,14 @@ function hideLoader() {
     loader.style.opacity = "0";
     loader.style.visibility = "hidden";
     setTimeout(() => loader.remove(), 500);
+}
+
+function ensureSkipLinkTarget() {
+    const target = document.getElementById("main-content");
+    if (target) return;
+
+    const hero = document.querySelector(".hero");
+    if (hero) hero.id = "main-content";
 }
 
 function highlightCurrentPage() {
@@ -69,9 +79,7 @@ function initMobileNavigation() {
         else openMenu();
     });
 
-    menu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", closeMenu);
-    });
+    menu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
 
     document.addEventListener("keydown", event => {
         if (event.key === "Escape") closeMenu();
@@ -92,12 +100,53 @@ function initNavbarScrollState() {
     const navbar = document.getElementById("navbar");
     if (!navbar) return;
 
-    const update = () => {
-        navbar.classList.toggle("scrolled", window.scrollY > 24);
-    };
-
+    const update = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
     update();
     window.addEventListener("scroll", update, { passive: true });
+}
+
+function initCounters() {
+    const counters = document.querySelectorAll(".counter[data-target]");
+    if (!counters.length) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const animate = counter => {
+        const target = Number(counter.dataset.target);
+        if (!Number.isFinite(target)) return;
+
+        if (reducedMotion) {
+            counter.textContent = target.toLocaleString();
+            return;
+        }
+
+        const duration = 1200;
+        const start = performance.now();
+
+        const tick = now => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = Math.round(target * eased).toLocaleString();
+            if (progress < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+        counters.forEach(animate);
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            animate(entry.target);
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.25 });
+
+    counters.forEach(counter => observer.observe(counter));
 }
 
 function initBackToTop() {
