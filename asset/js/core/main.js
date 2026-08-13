@@ -15,7 +15,6 @@ function initializeApp() {
     highlightCurrentPage();
     initMobileNavigation();
     initNavbarScrollState();
-    initCounters();
     initBackToTop();
 }
 
@@ -103,50 +102,6 @@ function initNavbarScrollState() {
     const update = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
     update();
     window.addEventListener("scroll", update, { passive: true });
-}
-
-function initCounters() {
-    const counters = document.querySelectorAll(".counter[data-target]");
-    if (!counters.length) return;
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const animate = counter => {
-        const target = Number(counter.dataset.target);
-        if (!Number.isFinite(target)) return;
-
-        if (reducedMotion) {
-            counter.textContent = target.toLocaleString();
-            return;
-        }
-
-        const duration = 1200;
-        const start = performance.now();
-
-        const tick = now => {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            counter.textContent = Math.round(target * eased).toLocaleString();
-            if (progress < 1) requestAnimationFrame(tick);
-        };
-
-        requestAnimationFrame(tick);
-    };
-
-    if (!("IntersectionObserver" in window)) {
-        counters.forEach(animate);
-        return;
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            animate(entry.target);
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.25 });
-
-    counters.forEach(counter => observer.observe(counter));
 }
 
 function initBackToTop() {
