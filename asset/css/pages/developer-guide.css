@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="asset/css/pages/developer-guide.css">
+
+.admin-guide {
+    padding: 4rem 0;
+}
+
+.guide-section {
+    margin-bottom: 4rem;
+}
+
+.guide-section h2 {
+    margin: 0.5rem 0 1.25rem;
+}
+
+.guide-section p {
+    max-width: 900px;
+    line-height: 1.8;
+}
+
+.notice-card {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 12px;
+}
+
+.notice-card strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.notice-card p {
+    margin-bottom: 0;
+}
+
+.process-list,
+.values-list {
+    max-width: 900px;
+    padding-left: 1.5rem;
+    line-height: 1.9;
+}
+
+.process-list li,
+.values-list li {
+    margin-bottom: 0.5rem;
+}
+
+.admin-guide code {
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+    .admin-guide {
+        padding: 2.5rem 0;
+    }
+
+    .guide-section {
+        margin-bottom: 3rem;
+    }
+
+    .notice-card {
+        padding: 1.25rem;
+    }
+}
