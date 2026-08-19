@@ -1,1 +1,276 @@
+<section class="page-hero">
+    <div class="container">
+        <span class="section-title">ADMINISTRATION & DEVELOPMENT</span>
+        <h1>Administrator & Developer Guide</h1>
+        <p>
+            Operational guidance for authorized administrators, developers,
+            maintainers, and technical contributors of the SovereignAqua
+            Research & Development Foundation website.
+        </p>
+    </div>
+</section>
 
+<main class="container admin-guide">
+
+    <section class="guide-section">
+        <span class="section-title">01 • PURPOSE</span>
+        <h2>About This Guide</h2>
+        <p>
+            This guide establishes the technical and administrative standards
+            for maintaining the SovereignAqua Research & Development Foundation
+            website. It is intended to support continuity, responsible
+            administration, secure development, and consistent publication of
+            Foundation information.
+        </p>
+
+        <div class="notice-card">
+            <strong>Authorized Access Only</strong>
+            <p>
+                Administrative functions, source-code repositories, deployment
+                services, domain settings, credentials, databases, payment
+                systems, and other infrastructure must only be accessed by
+                individuals expressly authorized by the Foundation.
+            </p>
+        </div>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">02 • ADMINISTRATION</span>
+        <h2>Administrative Responsibilities</h2>
+
+        <div class="cards-grid">
+            <article class="card">
+                <h3>Website Administrator</h3>
+                <p>
+                    Maintains published content, navigation, announcements,
+                    forms, media, and general website configuration.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Technical Administrator</h3>
+                <p>
+                    Oversees hosting, deployment, domains, integrations,
+                    backups, technical configuration, and system availability.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Content Administrator</h3>
+                <p>
+                    Reviews and publishes Foundation news, research,
+                    programmes, publications, events, and announcements.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Developer</h3>
+                <p>
+                    Maintains source code, resolves defects, implements
+                    approved improvements, and follows the Foundation's
+                    development standards.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">03 • DEVELOPMENT</span>
+        <h2>Development Standards</h2>
+
+        <ul class="values-list">
+            <li>Use semantic HTML5 wherever practical.</li>
+            <li>Maintain responsive layouts for desktop, tablet, and mobile.</li>
+            <li>Use accessible labels, headings, focus states, and keyboard navigation.</li>
+            <li>Keep JavaScript modules separated according to responsibility.</li>
+            <li>Avoid duplicate functions or competing initialization routines.</li>
+            <li>Use descriptive file and variable names.</li>
+            <li>Do not place passwords, API keys, private tokens, or credentials in source code.</li>
+            <li>Optimize images and media before publication.</li>
+            <li>Test changes before publishing them to the production branch.</li>
+        </ul>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">04 • GITHUB WORKFLOW</span>
+        <h2>Source-Control Procedure</h2>
+
+        <ol class="process-list">
+            <li>Create or use a dedicated development branch.</li>
+            <li>Make one logical group of changes at a time.</li>
+            <li>Review the complete file before committing.</li>
+            <li>Use descriptive commit messages.</li>
+            <li>Review the changed files before merging.</li>
+            <li>Test the deployment preview where available.</li>
+            <li>Merge approved changes into <code>main</code>.</li>
+            <li>Verify the production deployment after merging.</li>
+        </ol>
+
+        <div class="notice-card">
+            <strong>Production Protection</strong>
+            <p>
+                The <code>main</code> branch should not be force-updated or
+                rewritten unless a specific repository-maintenance procedure
+                has been authorized and the existing history has been safely
+                preserved.
+            </p>
+        </div>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">05 • CONTENT MANAGEMENT</span>
+        <h2>Publishing Foundation Information</h2>
+
+        <p>
+            Published information should be accurate, current, and capable of
+            being supported by appropriate Foundation records.
+        </p>
+
+        <div class="cards-grid">
+            <article class="card">
+                <h3>Research</h3>
+                <p>
+                    Verify research descriptions, authorship, publication
+                    information, dates, and supporting references.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Projects</h3>
+                <p>
+                    Clearly distinguish active projects, completed projects,
+                    proposed initiatives, and future programmes.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Statistics</h3>
+                <p>
+                    Maintain an internal source or record for published
+                    statistics, impact figures, partnerships, and milestones.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Partners</h3>
+                <p>
+                    Do not publish an organization's name, logo, endorsement,
+                    or partnership claim without appropriate authorization.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">06 • SECURITY</span>
+        <h2>Security Requirements</h2>
+
+        <ul class="values-list">
+            <li>Never publish passwords or private credentials.</li>
+            <li>Use strong authentication for administrative accounts.</li>
+            <li>Enable multi-factor authentication where supported.</li>
+            <li>Limit administrative access according to role.</li>
+            <li>Review third-party integrations periodically.</li>
+            <li>Remove access when an administrator or developer leaves the project.</li>
+            <li>Keep dependencies and external libraries reasonably current.</li>
+            <li>Do not expose private user information through public pages.</li>
+        </ul>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">07 • DEPLOYMENT</span>
+        <h2>Production Deployment Checklist</h2>
+
+        <ol class="process-list">
+            <li>Confirm the intended changes.</li>
+            <li>Review modified files.</li>
+            <li>Check internal links.</li>
+            <li>Check image and video paths.</li>
+            <li>Test navigation on desktop and mobile.</li>
+            <li>Test forms and interactive components.</li>
+            <li>Review browser console errors.</li>
+            <li>Verify the deployment preview.</li>
+            <li>Merge the approved change.</li>
+            <li>Verify the live website after deployment.</li>
+        </ol>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">08 • MAINTENANCE</span>
+        <h2>Routine Maintenance</h2>
+
+        <div class="cards-grid">
+            <article class="card">
+                <h3>Weekly</h3>
+                <p>
+                    Review the homepage, navigation, forms, announcements,
+                    and critical links.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Monthly</h3>
+                <p>
+                    Review content accuracy, dependencies, integrations,
+                    administrator access, and website performance.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Before Major Releases</h3>
+                <p>
+                    Perform a complete functional, responsive, accessibility,
+                    security, and content review.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">09 • INCIDENT RESPONSE</span>
+        <h2>When Something Goes Wrong</h2>
+
+        <ol class="process-list">
+            <li>Identify the affected component.</li>
+            <li>Determine whether the problem affects users or data.</li>
+            <li>Preserve relevant logs and error information.</li>
+            <li>Avoid making multiple uncontrolled changes.</li>
+            <li>Roll back the affected change when appropriate.</li>
+            <li>Document the incident and corrective action.</li>
+            <li>Verify the website after remediation.</li>
+        </ol>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">10 • GOVERNANCE</span>
+        <h2>Change Management</h2>
+
+        <p>
+            Significant changes to the website should be traceable to an
+            approved requirement, issue, project task, or administrative
+            decision. Changes should be documented through the Foundation's
+            designated project and source-control systems.
+        </p>
+
+        <div class="notice-card">
+            <strong>Principle of Least Privilege</strong>
+            <p>
+                Administrative and technical permissions should be granted only
+                to the extent necessary to perform an assigned responsibility.
+            </p>
+        </div>
+    </section>
+
+    <section class="guide-section">
+        <span class="section-title">11 • CONTACT</span>
+        <h2>Technical Support & Administration</h2>
+
+        <p>
+            Technical or administrative questions should be directed through
+            the Foundation's authorized internal communication and support
+            channels. Sensitive credentials or confidential information should
+            never be submitted through a public website form.
+        </p>
+    </section>
+
+</main>
