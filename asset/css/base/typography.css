@@ -1,23 +1,27 @@
 /* ==========================================================
    TYPOGRAPHY.CSS
    SovereignAqua Research & Development Foundation
+   Version 2.1
+   Purpose: Typography, text hierarchy, and text utilities.
 ========================================================== */
+
 
 /* ==========================================================
    BODY TEXT
 ========================================================== */
 
-body{
+body {
+    font-family: var(--font-primary);
 
-    font-family:var(--font-primary);
+    font-size: 16px;
 
-    font-size:16px;
+    font-weight: 400;
 
-    line-height:1.7;
+    line-height: 1.7;
 
-    color:var(--text-primary);
-
+    color: var(--text-primary);
 }
+
 
 /* ==========================================================
    HEADINGS
@@ -28,224 +32,365 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
+    font-family: var(--font-heading);
 
-    font-family:var(--font-heading);
+    font-weight: 700;
 
-    font-weight:700;
+    color: var(--text-primary);
 
-    color:var(--text-primary);
+    line-height: 1.2;
 
-    line-height:1.2;
+    margin-top: 0;
 
-    margin-bottom:20px;
+    margin-bottom: 20px;
 
+    letter-spacing: -0.015em;
 }
 
-h1{
 
-    font-size:clamp(2.8rem,5vw,4.5rem);
+/* ==========================================================
+   HEADING SCALE
+========================================================== */
 
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
 }
 
-h2{
-
-    font-size:clamp(2rem,4vw,3rem);
-
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
-h3{
-
-    font-size:clamp(1.5rem,3vw,2rem);
-
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
-h4{
-
-    font-size:1.4rem;
-
+h4 {
+    font-size: 1.4rem;
 }
 
-h5{
-
-    font-size:1.2rem;
-
+h5 {
+    font-size: 1.2rem;
 }
 
-h6{
-
-    font-size:1rem;
-
+h6 {
+    font-size: 1rem;
 }
+
 
 /* ==========================================================
    PARAGRAPHS
 ========================================================== */
 
-p{
+p {
+    margin-top: 0;
 
-    color:var(--text-secondary);
+    margin-bottom: 20px;
 
-    margin-bottom:20px;
+    color: var(--text-secondary);
 
-    line-height:1.8;
-
+    line-height: 1.8;
 }
+
+
+/* ==========================================================
+   LEAD PARAGRAPH
+========================================================== */
+
+.lead {
+    max-width: 800px;
+
+    margin-bottom: 24px;
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+}
+
 
 /* ==========================================================
    SMALL TEXT
 ========================================================== */
 
-small{
+small {
+    font-size: 0.875rem;
 
-    font-size:.875rem;
+    line-height: 1.5;
 
-    color:var(--text-muted);
-
+    color: var(--text-muted);
 }
+
 
 /* ==========================================================
    STRONG / EMPHASIS
 ========================================================== */
 
-strong{
-
-    font-weight:700;
-
+strong,
+b {
+    font-weight: 700;
 }
 
-em{
-
-    font-style:italic;
-
+em,
+i {
+    font-style: italic;
 }
+
 
 /* ==========================================================
    SECTION TITLE
 ========================================================== */
 
-.section-title{
+.section-title {
+    display: inline-block;
 
-    display:inline-block;
+    margin-bottom: 15px;
 
-    margin-bottom:15px;
+    color: var(--primary);
 
-    color:var(--primary);
+    font-size: 0.95rem;
 
-    font-size:.95rem;
+    font-weight: 700;
 
-    font-weight:700;
+    line-height: 1.4;
 
-    text-transform:uppercase;
+    text-transform: uppercase;
 
-    letter-spacing:2px;
-
+    letter-spacing: 2px;
 }
+
 
 /* ==========================================================
    SECTION HEADING
 ========================================================== */
 
-.section-heading{
+.section-heading {
+    max-width: 800px;
 
-    max-width:800px;
+    margin: 0 auto 60px;
 
-    margin:0 auto 60px;
-
-    text-align:center;
-
+    text-align: center;
 }
 
-/* ==========================================================
-   LEAD TEXT
-========================================================== */
-
-.lead{
-
-    font-size:1.2rem;
-
-    color:var(--text-secondary);
-
-    max-width:800px;
-
+.section-heading > :last-child {
+    margin-bottom: 0;
 }
+
 
 /* ==========================================================
    TEXT ALIGNMENT
 ========================================================== */
 
-.text-center{
-
-    text-align:center;
-
+.text-center {
+    text-align: center;
 }
 
-.text-left{
-
-    text-align:left;
-
+.text-left {
+    text-align: left;
 }
 
-.text-right{
-
-    text-align:right;
-
+.text-right {
+    text-align: right;
 }
+
 
 /* ==========================================================
-   TEXT UTILITIES
+   TEXT COLOR UTILITIES
 ========================================================== */
 
-.text-primary{
-
-    color:var(--primary);
-
+.text-primary {
+    color: var(--primary);
 }
 
-.text-secondary{
-
-    color:var(--text-secondary);
-
+.text-secondary {
+    color: var(--text-secondary);
 }
 
-.text-muted{
-
-    color:var(--text-muted);
-
+.text-muted {
+    color: var(--text-muted);
 }
+
 
 /* ==========================================================
-   LINKS
+   TEXT WIDTH UTILITIES
 ========================================================== */
 
-a{
-
-    transition:color .3s ease;
-
+.text-readable {
+    max-width: 70ch;
 }
 
-a:hover{
-
-    color:var(--primary);
-
+.text-wide {
+    max-width: 90ch;
 }
+
+
+/* ==========================================================
+   TEXT TRANSFORM UTILITIES
+========================================================== */
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+
+/* ==========================================================
+   LETTER-SPACING UTILITIES
+========================================================== */
+
+.tracking-tight {
+    letter-spacing: -0.02em;
+}
+
+.tracking-normal {
+    letter-spacing: normal;
+}
+
+.tracking-wide {
+    letter-spacing: 0.08em;
+}
+
+
+/* ==========================================================
+   LINK TYPOGRAPHY
+========================================================== */
+
+a {
+    text-decoration-thickness: 0.08em;
+
+    text-underline-offset: 0.15em;
+}
+
+
+/* ==========================================================
+   BLOCKQUOTES
+========================================================== */
+
+blockquote {
+    max-width: 800px;
+
+    margin: 2rem 0;
+
+    padding: 1rem 1.5rem;
+
+    border-left: 4px solid var(--primary);
+
+    color: var(--text-secondary);
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   CODE
+========================================================== */
+
+code {
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+
+    font-size: 0.9em;
+}
+
 
 /* ==========================================================
    RESPONSIVE TYPOGRAPHY
 ========================================================== */
 
-@media (max-width:768px){
+@media (max-width: 992px) {
 
-    body{
-
-        font-size:15px;
-
+    .section-heading {
+        margin-bottom: 50px;
     }
 
-    .section-heading{
+}
 
-        margin-bottom:40px;
 
+/* ==========================================================
+   MOBILE TYPOGRAPHY
+========================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15.5px;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 0.85rem;
+
+        letter-spacing: 1.6px;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE TYPOGRAPHY
+========================================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: clamp(2.15rem, 11vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 9vw, 2.4rem);
+    }
+
+    h3 {
+        font-size: clamp(1.35rem, 7vw, 1.8rem);
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    a {
+        transition: none;
     }
 
 }
