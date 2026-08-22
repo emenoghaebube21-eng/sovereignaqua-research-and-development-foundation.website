@@ -1,942 +1,1366 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta
-http-equiv="X-UA-Compatible"
-content="IE=edge">
+    <meta
+        name="description"
+        content="SovereignAqua Research & Development Foundation Code of Ethics."
+    >
 
-<title>
+    <meta
+        name="robots"
+        content="index,follow"
+    >
 
-Code of Ethics |
-SovereignAqua Research & Development Foundation
+    <title>
+        Code of Ethics | SovereignAqua Research & Development Foundation
+    </title>
 
-</title>
 
-<meta
-name="description"
-content="Official Code of Ethics governing members, volunteers, researchers, institutions, committees, and partners of the SovereignAqua Research & Development Foundation.">
+    <!-- ======================================================
+         BASE STYLES
+    ======================================================= -->
 
-<meta
-name="robots"
-content="index,follow">
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/reset.css"
+    >
 
-<link rel="canonical"
-href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/membership/code-of-ethics.html">
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/variables.css"
+    >
 
-<link rel="stylesheet"
-href="../assets/css/base/reset.css">
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/typography.css"
+    >
 
-<link rel="stylesheet"
-href="../assets/css/base/variables.css">
+    <link
+        rel="stylesheet"
+        href="../assets/css/global.css"
+    >
 
-<link rel="stylesheet"
-href="../assets/css/base/typography.css">
 
-<link rel="stylesheet"
-href="../assets/css/layout/navigation.css">
+    <!-- ======================================================
+         LAYOUT
+    ======================================================= -->
 
-<link rel="stylesheet"
-href="../assets/css/layout/footer.css">
+    <link
+        rel="stylesheet"
+        href="../assets/css/layout/navigation.css"
+    >
 
-<link rel="stylesheet"
-href="../assets/css/components/cards.css">
+    <link
+        rel="stylesheet"
+        href="../assets/css/layout/footer.css"
+    >
 
-<link rel="stylesheet"
-href="../assets/css/components/buttons.css">
 
-<link rel="stylesheet"
-href="../assets/css/pages/code-of-ethics.css">
+    <!-- ======================================================
+         COMPONENTS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components/cards.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components/buttons.css"
+    >
+
+
+    <!-- ======================================================
+         PAGE-SPECIFIC HYBRID 3D SYSTEM
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/pages/code-of-ethics.css"
+    >
 
 </head>
 
-<body>
 
-<a
-href="#main-content"
-class="skip-link">
+<body
+    class="page-code-of-ethics"
+>
 
-Skip to main content
 
-</a>
+    <!-- ======================================================
+         ACCESSIBILITY
+    ======================================================= -->
 
-<div id="progressBar"></div>
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Skip to main content
+    </a>
 
-<div id="loader">
 
-<div class="loader-spinner"></div>
+    <!-- ======================================================
+         GLOBAL ATMOSPHERE
+    ======================================================= -->
 
-</div>
+    <div
+        class="site-atmosphere"
+        aria-hidden="true"
+    >
 
-<!-- Shared Navigation -->
+        <div class="atmosphere-orb atmosphere-orb--one"></div>
 
-<main id="main-content">
+        <div class="atmosphere-orb atmosphere-orb--two"></div>
 
-  <section class="page-hero">
+        <div class="atmosphere-grid"></div>
 
-<div class="container">
+        <div class="atmosphere-glow atmosphere-glow--one"></div>
 
-<span class="section-title">
+        <div class="atmosphere-glow atmosphere-glow--two"></div>
 
-CODE OF ETHICS
+    </div>
 
-</span>
 
-<h1>
+    <!-- ======================================================
+         PAGE LOADER
+    ======================================================= -->
 
-Integrity in Research, Collaboration & Service
+    <div
+        id="loader"
+        class="page-loader"
+        aria-hidden="true"
+    >
 
-</h1>
+        <div
+            class="loader-core"
+            aria-hidden="true"
+        ></div>
 
-<p>
+        <span class="sr-only">
+            Loading page
+        </span>
 
-The SovereignAqua Research & Development Foundation is committed to
-maintaining the highest standards of ethical conduct, scientific
-integrity, accountability, professionalism, and respect in every
-programme, partnership, and research initiative.
+    </div>
 
-</p>
 
-<div class="hero-buttons">
+    <!-- ======================================================
+         READING PROGRESS
+    ======================================================= -->
 
-<a
-href="membership-application.html"
-class="button">
+    <div
+        id="progressBar"
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Page reading progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+    ></div>
 
-Become a Member
 
-</a>
+    <!-- ======================================================
+         NAVIGATION
+    ======================================================= -->
 
-<a
-href="membership-policies.html"
-class="button-outline">
+    <header
+        class="site-header"
+        data-site-navigation
+    >
 
-Membership Policies
+        <!--
+            Shared SovereignAqua navigation component.
 
-</a>
+            The navigation implementation uses:
+            data-mobile-toggle
+            data-mobile-drawer
+            data-dropdown-trigger
+            data-mobile-dropdown-trigger
+            data-search-toggle
+            data-search-panel
+            data-search-overlay
+            data-nav-link
+        -->
 
-</div>
+    </header>
 
-</div>
 
-  </section>
+    <!-- ======================================================
+         MAIN
+    ======================================================= -->
 
-  <section class="section">
+    <main id="main-content">
 
-<div class="container">
 
-<div class="section-heading">
+        <!-- ==================================================
+             01 — 3D HERO
+        =================================================== -->
 
-<span class="section-title">
+        <section
+            class="ethics-hero hero-3d"
+            aria-labelledby="ethics-title"
+        >
 
-INTRODUCTION
+            <!-- Background depth plane -->
 
-</span>
+            <div
+                class="hero-depth-plane"
+                aria-hidden="true"
+            ></div>
 
-<h2>
 
-Our Ethical Commitment
+            <!-- Floating atmospheric objects -->
 
-</h2>
+            <div
+                class="hero-orb hero-orb--one"
+                aria-hidden="true"
+            ></div>
 
-</div>
+            <div
+                class="hero-orb hero-orb--two"
+                aria-hidden="true"
+            ></div>
 
-<p>
 
-This Code of Ethics establishes the principles that guide the conduct of
-all members, volunteers, committee members, institutional
-representatives, researchers, staff, and partners working with the
-Foundation.
+            <div class="container">
 
-These principles promote integrity, accountability, fairness,
-professionalism, responsible research, environmental stewardship,
-respect for human dignity, and compliance with applicable laws and
-Foundation policies.
+                <div class="hero-3d-stage">
 
-</p>
 
-</div>
+                    <!-- Back plane -->
 
-  </section>
+                    <div
+                        class="hero-back-plane"
+                        aria-hidden="true"
+                    ></div>
 
-  <section class="section">
 
-<div class="container">
+                    <!-- Main content plane -->
 
-<div class="section-heading">
+                    <div class="hero-content-plane">
 
-<span class="section-title">
+                        <span class="section-title">
+                            CODE OF ETHICS
+                        </span>
 
-OUR VALUES
+                        <h1 id="ethics-title">
+                            Integrity in Research,
+                            Collaboration &amp; Service
+                        </h1>
 
-</span>
+                        <p class="lead">
+                            The SovereignAqua Research &amp;
+                            Development Foundation is committed
+                            to high standards of ethical conduct,
+                            scientific integrity, accountability,
+                            professionalism, and respect.
+                        </p>
 
-<h2>
 
-Core Ethical Values
+                        <div class="hero-actions">
 
-</h2>
+                            <a
+                                href="membership-application.html"
+                                class="button button--3d"
+                            >
+                                Become a Member
+                            </a>
 
-</div>
+                            <a
+                                href="membership-policies.html"
+                                class="button-outline button--3d"
+                            >
+                                Membership Policies
+                            </a>
 
-<div class="cards-grid">
+                        </div>
 
-<article class="card">
+                    </div>
 
-<i class="fas fa-scale-balanced"></i>
 
-<h3>
+                    <!-- Foreground visual plane -->
 
-Integrity
+                    <div
+                        class="hero-foreground-plane"
+                        aria-hidden="true"
+                    >
 
-</h3>
+                        <div class="hero-ring"></div>
 
-<p>
+                        <div class="hero-ring hero-ring--two"></div>
 
-Act honestly, ethically, and transparently in all Foundation activities.
+                        <div class="hero-core"></div>
 
-</p>
+                    </div>
 
-</article>
+                </div>
 
-<article class="card">
+            </div>
 
-<i class="fas fa-handshake"></i>
+        </section>
 
-<h3>
 
-Respect
+        <!-- ==================================================
+             02 — ETHICAL COMMITMENT
+        =================================================== -->
 
-</h3>
+        <section
+            class="ethics-section ethics-section--3d"
+            aria-labelledby="commitment-title"
+        >
 
-<p>
+            <div
+                class="section-atmosphere"
+                aria-hidden="true"
+            >
 
-Treat every individual with dignity, fairness, courtesy, and respect.
+                <div class="depth-orb depth-orb--one"></div>
 
-</p>
+                <div class="depth-orb depth-orb--two"></div>
 
-</article>
+                <div class="depth-grid"></div>
 
-<article class="card">
+            </div>
 
-<i class="fas fa-leaf"></i>
 
-<h3>
+            <div class="container">
 
-Sustainability
+                <div class="section-heading section-heading--3d">
 
-</h3>
+                    <span class="section-title">
+                        INTRODUCTION
+                    </span>
 
-<p>
+                    <h2 id="commitment-title">
+                        Our Ethical Commitment
+                    </h2>
 
-Support responsible environmental stewardship and sustainable development.
+                </div>
 
-</p>
 
-</article>
+                <div class="content-plane glass-panel">
 
-<article class="card">
+                    <p>
+                        This Code of Ethics establishes principles
+                        that guide members, volunteers, committee
+                        members, institutional representatives,
+                        researchers, staff, and partners working
+                        with the Foundation.
+                    </p>
 
-<i class="fas fa-users"></i>
+                    <p>
+                        These principles promote integrity,
+                        accountability, fairness, professionalism,
+                        responsible research, environmental
+                        stewardship, respect for human dignity,
+                        and compliance with applicable laws and
+                        Foundation policies.
+                    </p>
 
-<h3>
+                </div>
 
-Collaboration
+            </div>
 
-</h3>
+        </section>
 
-<p>
 
-Encourage teamwork, knowledge sharing, and multidisciplinary cooperation.
+        <!-- ==================================================
+             03 — CORE VALUES
+        =================================================== -->
 
-</p>
+        <section
+            class="ethics-section ethics-section--3d"
+            aria-labelledby="values-title"
+        >
 
-</article>
+            <div class="container">
 
-<article class="card">
+                <div class="section-heading section-heading--3d">
 
-<i class="fas fa-lightbulb"></i>
+                    <span class="section-title">
+                        OUR VALUES
+                    </span>
 
-<h3>
+                    <h2 id="values-title">
+                        Core Ethical Values
+                    </h2>
 
-Innovation
+                </div>
 
-</h3>
 
-<p>
+                <div class="cards-grid cards-grid--3d">
 
-Promote creativity and responsible scientific advancement.
 
-</p>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="1"
+                    >
 
-</article>
+                        <div
+                            class="card-depth"
+                            aria-hidden="true"
+                        ></div>
 
-<article class="card">
+                        <div class="card-content">
 
-<i class="fas fa-globe"></i>
+                            <span
+                                class="card-index"
+                                aria-hidden="true"
+                            >
+                                01
+                            </span>
 
-<h3>
+                            <h3>
+                                Integrity
+                            </h3>
 
-Global Responsibility
+                            <p>
+                                Act honestly, ethically, and
+                                transparently in Foundation
+                                activities.
+                            </p>
 
-</h3>
+                        </div>
 
-<p>
+                    </article>
 
-Work toward solutions that benefit communities and the environment worldwide.
 
-</p>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="2"
+                    >
 
-</article>
+                        <div
+                            class="card-depth"
+                            aria-hidden="true"
+                        ></div>
 
-</div>
+                        <div class="card-content">
 
-</div>
+                            <span
+                                class="card-index"
+                                aria-hidden="true"
+                            >
+                                02
+                            </span>
 
-  </section>
+                            <h3>
+                                Respect
+                            </h3>
 
-  <section class="section">
+                            <p>
+                                Treat every individual with
+                                dignity, fairness, courtesy,
+                                and respect.
+                            </p>
 
-<div class="container">
+                        </div>
 
-<div class="section-heading">
+                    </article>
 
-<span class="section-title">
 
-ETHICAL PRINCIPLES
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="3"
+                    >
 
-</span>
+                        <div
+                            class="card-depth"
+                            aria-hidden="true"
+                        ></div>
 
-<h2>
+                        <div class="card-content">
 
-Standards of Conduct
+                            <span
+                                class="card-index"
+                                aria-hidden="true"
+                            >
+                                03
+                            </span>
 
-</h2>
+                            <h3>
+                                Sustainability
+                            </h3>
 
-</div>
+                            <p>
+                                Support responsible environmental
+                                stewardship and sustainable
+                                development.
+                            </p>
 
-<div class="cards-grid">
+                        </div>
 
-<div class="card">
+                    </article>
 
-<h3>
 
-Professional Conduct
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="4"
+                    >
 
-</h3>
+                        <div
+                            class="card-depth"
+                            aria-hidden="true"
+                        ></div>
 
-<p>
+                        <div class="card-content">
 
-Members are expected to conduct themselves with honesty,
-professionalism, accountability, and courtesy in every Foundation
-activity.
+                            <span
+                                class="card-index"
+                                aria-hidden="true"
+                            >
+                                04
+                            </span>
 
-</p>
+                            <h3>
+                                Collaboration
+                            </h3>
 
-</div>
+                            <p>
+                                Encourage teamwork, knowledge
+                                sharing, and multidisciplinary
+                                cooperation.
+                            </p>
 
-<div class="card">
+                        </div>
 
-<h3>
+                    </article>
 
-Research Integrity
 
-</h3>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="5"
+                    >
 
-<p>
+                        <div
+                            class="card-depth"
+                            aria-hidden="true"
+                        ></div>
 
-Members should accurately present research findings, acknowledge sources,
-avoid plagiarism, and maintain scientific integrity.
+                        <div class="card-content">
 
-</p>
+                            <span
+                                class="card-index"
+                                aria-hidden="true"
+                            >
+                                05
+                            </span>
 
-</div>
+                            <h3>
+                                Innovation
+                            </h3>
 
-<div class="card">
+                            <p>
+                                Promote creativity and responsible
+                                scientific advancement.
+                            </p>
 
-<h3>
+                        </div>
 
-Conflict of Interest
+                    </article>
 
-</h3>
 
-<p>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="6"
+                    >
 
-Members should disclose actual or potential conflicts of interest that
-could affect impartial decision-making.
+                        <div
+                            class="card-depth"
+                            aria-hidden="true"
+                        ></div>
 
-</p>
+                        <div class="card-content">
 
-</div>
+                            <span
+                                class="card-index"
+                                aria-hidden="true"
+                            >
+                                06
+                            </span>
 
-<div class="card">
+                            <h3>
+                                Global Responsibility
+                            </h3>
 
-<h3>
+                            <p>
+                                Work toward solutions that benefit
+                                communities and the environment
+                                worldwide.
+                            </p>
 
-Confidentiality
+                        </div>
 
-</h3>
+                    </article>
 
-<p>
+                </div>
 
-Confidential information obtained through Foundation activities should
-be protected and used responsibly.
+            </div>
 
-</p>
+        </section>
 
-</div>
 
-<div class="card">
+        <!-- ==================================================
+             04 — STANDARDS OF CONDUCT
+        =================================================== -->
 
-<h3>
+        <section
+            class="ethics-section ethics-section--3d"
+            aria-labelledby="conduct-title"
+        >
 
-Respect & Inclusion
+            <div class="container">
 
-</h3>
+                <div class="section-heading section-heading--3d">
 
-<p>
+                    <span class="section-title">
+                        ETHICAL PRINCIPLES
+                    </span>
 
-Discrimination, harassment, intimidation, and abusive conduct are not
-consistent with the Foundation's values.
+                    <h2 id="conduct-title">
+                        Standards of Conduct
+                    </h2>
 
-</p>
+                </div>
 
-</div>
 
-<div class="card">
+                <div class="cards-grid cards-grid--3d">
 
-<h3>
 
-Responsible Resource Use
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="1"
+                    >
 
-</h3>
+                        <div class="card-content">
 
-<p>
+                            <span class="card-index">
+                                01
+                            </span>
 
-Foundation property, funding, equipment, and intellectual assets should
-be used responsibly and only for authorized purposes.
+                            <h3>
+                                Professional Conduct
+                            </h3>
 
-</p>
+                            <p>
+                                Members are expected to conduct
+                                themselves with honesty,
+                                professionalism, accountability,
+                                and courtesy.
+                            </p>
 
-</div>
+                        </div>
 
-</div>
+                    </article>
 
-</div>
 
-  </section>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="2"
+                    >
 
-  <!-- ==========================================
-     Environmental Stewardship
-========================================== -->
+                        <div class="card-content">
 
-<section class="section environmental-stewardship">
+                            <span class="card-index">
+                                02
+                            </span>
 
-<div class="container">
+                            <h3>
+                                Research Integrity
+                            </h3>
 
-<div class="section-heading">
+                            <p>
+                                Members should accurately present
+                                research findings, acknowledge
+                                sources, avoid plagiarism, and
+                                maintain scientific integrity.
+                            </p>
 
-<span class="section-title">
+                        </div>
 
-ENVIRONMENTAL STEWARDSHIP
+                    </article>
 
-</span>
 
-<h2>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="3"
+                    >
 
-Protecting Our Planet
+                        <div class="card-content">
 
-</h2>
+                            <span class="card-index">
+                                03
+                            </span>
 
-<p>
+                            <h3>
+                                Conflict of Interest
+                            </h3>
 
-Environmental responsibility is central to the Foundation's mission.
-Members are encouraged to support initiatives that conserve natural
-resources, protect biodiversity, promote responsible water management,
-and encourage sustainable innovation.
+                            <p>
+                                Members should disclose actual or
+                                potential conflicts of interest
+                                that could affect impartial
+                                decision-making.
+                            </p>
 
-</p>
+                        </div>
 
-</div>
+                    </article>
 
-<div class="cards-grid">
 
-<article class="card">
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="4"
+                    >
 
-<i class="fas fa-water"></i>
+                        <div class="card-content">
 
-<h3>
+                            <span class="card-index">
+                                04
+                            </span>
 
-Water Conservation
+                            <h3>
+                                Confidentiality
+                            </h3>
 
-</h3>
+                            <p>
+                                Confidential information obtained
+                                through Foundation activities
+                                should be protected and used
+                                responsibly.
+                            </p>
 
-<p>
+                        </div>
 
-Support responsible management and protection of freshwater and marine ecosystems.
+                    </article>
 
-</p>
 
-</article>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="5"
+                    >
 
-<article class="card">
+                        <div class="card-content">
 
-<i class="fas fa-tree"></i>
+                            <span class="card-index">
+                                05
+                            </span>
 
-<h3>
+                            <h3>
+                                Respect &amp; Inclusion
+                            </h3>
 
-Environmental Protection
+                            <p>
+                                Discrimination, harassment,
+                                intimidation, and abusive conduct
+                                are inconsistent with Foundation
+                                values.
+                            </p>
 
-</h3>
+                        </div>
 
-<p>
+                    </article>
 
-Promote conservation, habitat restoration, and responsible resource use.
 
-</p>
+                    <article
+                        class="ethics-card card--3d scroll-reveal"
+                        data-depth="6"
+                    >
 
-</article>
+                        <div class="card-content">
 
-<article class="card">
+                            <span class="card-index">
+                                06
+                            </span>
 
-<i class="fas fa-recycle"></i>
+                            <h3>
+                                Responsible Resource Use
+                            </h3>
 
-<h3>
+                            <p>
+                                Foundation property, funding,
+                                equipment, and intellectual assets
+                                should be used responsibly.
+                            </p>
 
-Sustainable Practices
+                        </div>
 
-</h3>
+                    </article>
 
-<p>
+                </div>
 
-Encourage environmentally responsible practices throughout Foundation programmes and operations.
+            </div>
 
-</p>
+        </section>
 
-</article>
 
-</div>
+        <!-- ==================================================
+             05 — ENVIRONMENTAL STEWARDSHIP
+        =================================================== -->
 
-</div>
+        <section
+            class="ethics-section ethics-section--environment"
+            aria-labelledby="environment-title"
+        >
 
-</section>
+            <div class="container">
 
-  <!-- ==========================================
-     Privacy & Confidentiality
-========================================== -->
+                <div class="section-heading section-heading--3d">
 
-<section class="section privacy">
+                    <span class="section-title">
+                        ENVIRONMENTAL STEWARDSHIP
+                    </span>
 
-<div class="container">
+                    <h2 id="environment-title">
+                        Protecting Our Planet
+                    </h2>
 
-<div class="section-heading">
+                    <p class="lead">
+                        Environmental responsibility is central
+                        to the Foundation's mission.
+                    </p>
 
-<span class="section-title">
+                </div>
 
-PRIVACY
 
-</span>
+                <div class="environment-stage">
 
-<h2>
 
-Confidentiality & Data Protection
+                    <div
+                        class="environment-core"
+                        aria-hidden="true"
+                    >
 
-</h2>
+                        <div class="environment-ring"></div>
 
-</div>
+                        <div class="environment-ring environment-ring--two"></div>
 
-<div class="cards-grid">
+                        <div class="environment-core-glow"></div>
 
-<div class="card">
+                    </div>
 
-<i class="fas fa-user-shield"></i>
 
-<h3>
+                    <div class="cards-grid cards-grid--3d">
 
-Personal Information
 
-</h3>
+                        <article class="ethics-card card--3d">
 
-<p>
+                            <div class="card-content">
 
-Protect personal information entrusted to the Foundation and handle it responsibly in accordance with applicable privacy laws and Foundation policies.
+                                <h3>
+                                    Water Conservation
+                                </h3>
 
-</p>
+                                <p>
+                                    Support responsible management
+                                    and protection of freshwater
+                                    and marine ecosystems.
+                                </p>
 
-</div>
+                            </div>
 
-<div class="card">
+                        </article>
 
-<i class="fas fa-lock"></i>
 
-<h3>
+                        <article class="ethics-card card--3d">
 
-Confidential Information
+                            <div class="card-content">
 
-</h3>
+                                <h3>
+                                    Environmental Protection
+                                </h3>
 
-<p>
+                                <p>
+                                    Promote conservation, habitat
+                                    restoration, and responsible
+                                    resource use.
+                                </p>
 
-Safeguard confidential research, organizational records, and proprietary information from unauthorized disclosure.
+                            </div>
 
-</p>
+                        </article>
 
-</div>
 
-<div class="card">
+                        <article class="ethics-card card--3d">
 
-<i class="fas fa-laptop-code"></i>
+                            <div class="card-content">
 
-<h3>
+                                <h3>
+                                    Sustainable Practices
+                                </h3>
 
-Digital Security
+                                <p>
+                                    Encourage environmentally
+                                    responsible practices throughout
+                                    Foundation programmes and
+                                    operations.
+                                </p>
 
-</h3>
+                            </div>
 
-<p>
+                        </article>
 
-Use Foundation technology, communication systems, and digital resources responsibly while following established security practices.
+                    </div>
 
-</p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </section>
 
-</div>
 
-</section>
+        <!-- ==================================================
+             06 — PRIVACY
+        =================================================== -->
 
-  <!-- ==========================================
-     Reporting Ethical Concerns
-========================================== -->
+        <section
+            class="ethics-section ethics-section--3d"
+            aria-labelledby="privacy-title"
+        >
 
-<section class="section reporting">
+            <div class="container">
 
-<div class="container">
+                <div class="section-heading section-heading--3d">
 
-<div class="section-heading">
+                    <span class="section-title">
+                        PRIVACY
+                    </span>
 
-<span class="section-title">
+                    <h2 id="privacy-title">
+                        Confidentiality &amp; Data Protection
+                    </h2>
 
-REPORTING
+                </div>
 
-</span>
 
-<h2>
+                <div class="cards-grid cards-grid--3d">
 
-Reporting Ethical Concerns
+                    <article class="ethics-card card--3d">
 
-</h2>
+                        <div class="card-content">
 
-</div>
+                            <h3>
+                                Personal Information
+                            </h3>
 
-<p>
+                            <p>
+                                Protect personal information
+                                entrusted to the Foundation and
+                                handle it responsibly.
+                            </p>
 
-Members are encouraged to report concerns involving unethical conduct,
-research misconduct, conflicts of interest, fraud, discrimination,
-harassment, misuse of Foundation resources, or other significant policy
-violations.
+                        </div>
 
-Reports should be made in good faith through the Foundation's designated
-reporting procedures.
+                    </article>
 
-</p>
 
-<div class="cards-grid">
+                    <article class="ethics-card card--3d">
 
-<div class="card">
+                        <div class="card-content">
 
-<i class="fas fa-triangle-exclamation"></i>
+                            <h3>
+                                Confidential Information
+                            </h3>
 
-<h3>
+                            <p>
+                                Safeguard confidential research,
+                                organizational records, and
+                                proprietary information.
+                            </p>
 
-Report Concerns
+                        </div>
 
-</h3>
+                    </article>
 
-<p>
 
-Prompt reporting helps protect the integrity of the Foundation and its programmes.
+                    <article class="ethics-card card--3d">
 
-</p>
+                        <div class="card-content">
 
-</div>
+                            <h3>
+                                Digital Security
+                            </h3>
 
-<div class="card">
+                            <p>
+                                Use Foundation technology,
+                                communication systems, and digital
+                                resources responsibly.
+                            </p>
 
-<i class="fas fa-search"></i>
+                        </div>
 
-<h3>
+                    </article>
 
-Review Process
+                </div>
 
-</h3>
+            </div>
 
-<p>
+        </section>
 
-Reported concerns may be reviewed according to Foundation procedures while respecting fairness and confidentiality.
 
-</p>
+        <!-- ==================================================
+             07 — REPORTING
+        =================================================== -->
 
-</div>
+        <section
+            class="ethics-section ethics-section--3d"
+            aria-labelledby="reporting-title"
+        >
 
-<div class="card">
+            <div class="container">
 
-<i class="fas fa-gavel"></i>
+                <div class="section-heading section-heading--3d">
 
-<h3>
+                    <span class="section-title">
+                        REPORTING
+                    </span>
 
-Fair Treatment
+                    <h2 id="reporting-title">
+                        Reporting Ethical Concerns
+                    </h2>
 
-</h3>
+                </div>
 
-<p>
 
-Individuals involved in a review should be treated respectfully and afforded an appropriate opportunity to respond.
+                <div class="content-plane glass-panel glass-panel--elevated">
 
-</p>
+                    <p>
+                        Members are encouraged to report concerns
+                        involving unethical conduct, research
+                        misconduct, conflicts of interest, fraud,
+                        discrimination, harassment, misuse of
+                        Foundation resources, or other significant
+                        policy violations.
+                    </p>
 
-</div>
+                    <p>
+                        Reports should be made in good faith through
+                        the Foundation's designated reporting
+                        procedures.
+                    </p>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</section>
+        </section>
 
-  <!-- ==========================================
-     Accountability
-========================================== -->
 
-<section class="section accountability">
+        <!-- ==================================================
+             08 — ACCOUNTABILITY
+        =================================================== -->
 
-<div class="container">
+        <section
+            class="ethics-section ethics-section--accountability"
+            aria-labelledby="accountability-title"
+        >
 
-<div class="section-heading">
+            <div class="container">
 
-<span class="section-title">
+                <div class="section-heading section-heading--3d">
 
-ACCOUNTABILITY
+                    <span class="section-title">
+                        ACCOUNTABILITY
+                    </span>
 
-</span>
+                    <h2 id="accountability-title">
+                        Ethical Accountability
+                    </h2>
 
-<h2>
+                </div>
 
-Consequences of Ethical Violations
 
-</h2>
+                <div class="accountability-panel glass-panel">
 
-</div>
+                    <ul class="policy-list">
 
-<ul class="policy-list">
+                        <li>
+                            Educational guidance and corrective
+                            action where appropriate.
+                        </li>
 
-<li>Educational guidance and corrective action where appropriate.</li>
+                        <li>
+                            Written warnings for policy violations.
+                        </li>
 
-<li>Written warnings for policy violations.</li>
+                        <li>
+                            Temporary suspension from Foundation
+                            activities.
+                        </li>
 
-<li>Temporary suspension from Foundation activities.</li>
+                        <li>
+                            Removal from committees or leadership
+                            positions.
+                        </li>
 
-<li>Removal from committees or leadership positions.</li>
+                        <li>
+                            Termination of membership where justified
+                            under Foundation procedures.
+                        </li>
 
-<li>Termination of membership where justified under Foundation procedures.</li>
+                        <li>
+                            Referral to relevant authorities where
+                            required by law.
+                        </li>
 
-<li>Referral to relevant authorities where required by law.</li>
+                    </ul>
 
-</ul>
+                </div>
 
-</div>
+            </div>
 
-</section>
-<!-- ==========================================
-     Ethics Commitment
-========================================== -->
+        </section>
 
-<section class="section ethics-commitment">
 
-<div class="container">
+        <!-- ==================================================
+             09 — ETHICS PLEDGE
+        =================================================== -->
 
-<div class="section-heading">
+        <section
+            class="ethics-section ethics-section--pledge"
+            aria-labelledby="pledge-title"
+        >
 
-<span class="section-title">
+            <div class="container">
 
-ETHICS COMMITMENT
+                <div class="pledge-3d-stage">
 
-</span>
+                    <div
+                        class="pledge-backdrop"
+                        aria-hidden="true"
+                    ></div>
 
-<h2>
 
-Our Shared Pledge
+                    <blockquote
+                        class="ethics-pledge glass-panel"
+                    >
 
-</h2>
+                        <span class="pledge-mark">
+                            ETHICS
+                        </span>
 
-</div>
+                        <h2 id="pledge-title">
+                            Our Shared Pledge
+                        </h2>
 
-<blockquote class="ethics-pledge">
+                        <p>
+                            I commit to upholding the values,
+                            principles, and ethical standards of
+                            the SovereignAqua Research &amp;
+                            Development Foundation.
+                        </p>
 
-"I commit to upholding the values, principles, and ethical standards of
-the SovereignAqua Research & Development Foundation. I will conduct
-myself with integrity, respect, professionalism, accountability, and a
-commitment to responsible research, collaboration, and sustainable
-development."
+                        <p>
+                            I will conduct myself with integrity,
+                            respect, professionalism, accountability,
+                            and a commitment to responsible research,
+                            collaboration, and sustainable development.
+                        </p>
 
-</blockquote>
+                    </blockquote>
 
-</div>
+                </div>
 
-</section>
+            </div>
 
-  <!-- ==========================================
-     Frequently Asked Questions
-========================================== -->
+        </section>
 
-<section class="section faq">
 
-<div class="container">
+        <!-- ==================================================
+             10 — FAQ
+        =================================================== -->
 
-<div class="section-heading">
+        <section
+            class="ethics-section ethics-section--faq"
+            aria-labelledby="faq-title"
+        >
 
-<span class="section-title">
+            <div class="container">
 
-FAQ
+                <div class="section-heading section-heading--3d">
 
-</span>
+                    <span class="section-title">
+                        FAQ
+                    </span>
 
-<h2>
+                    <h2 id="faq-title">
+                        Code of Ethics Questions
+                    </h2>
 
-Code of Ethics Questions
+                </div>
 
-</h2>
 
-</div>
+                <div class="faq-3d">
 
-<div class="faq-list">
 
-<article class="faq-item">
+                    <details class="faq-card">
 
-<h3>
+                        <summary>
+                            Who must follow this Code of Ethics?
+                        </summary>
 
-Who must follow this Code of Ethics?
+                        <div class="faq-answer">
 
-</h3>
+                            <p>
+                                The Code applies to members,
+                                volunteers, researchers, committee
+                                members, institutional representatives,
+                                staff, and partners participating in
+                                Foundation activities.
+                            </p>
 
-<p>
+                        </div>
 
-The Code applies to members, volunteers, researchers, committee members, institutional representatives, staff, and partners participating in Foundation activities.
+                    </details>
 
-</p>
 
-</article>
+                    <details class="faq-card">
 
-<article class="faq-item">
+                        <summary>
+                            What should I do if I observe unethical conduct?
+                        </summary>
 
-<h3>
+                        <div class="faq-answer">
 
-What should I do if I observe unethical conduct?
+                            <p>
+                                Report concerns through the
+                                Foundation's designated reporting
+                                procedures so they can be reviewed
+                                appropriately.
+                            </p>
 
-</h3>
+                        </div>
 
-<p>
+                    </details>
 
-Report concerns through the Foundation's designated reporting procedures so they can be reviewed appropriately.
 
-</p>
+                    <details class="faq-card">
 
-</article>
+                        <summary>
+                            Can ethical violations affect membership?
+                        </summary>
 
-<article class="faq-item">
+                        <div class="faq-answer">
 
-<h3>
+                            <p>
+                                Depending on the circumstances and
+                                applicable Foundation procedures,
+                                violations may result in corrective
+                                measures, suspension, or termination
+                                of membership.
+                            </p>
 
-Can ethical violations affect membership?
+                        </div>
 
-</h3>
+                    </details>
 
-<p>
 
-Yes. Depending on the circumstances and applicable Foundation procedures, violations may result in corrective measures, suspension, or termination of membership.
+                </div>
 
-</p>
+            </div>
 
-</article>
+        </section>
 
-</div>
 
-</div>
+        <!-- ==================================================
+             11 — MEMBERSHIP CTA
+        =================================================== -->
 
-</section>
+        <section
+            class="ethics-cta cta-3d"
+            aria-labelledby="join-title"
+        >
 
-  <!-- ==========================================
-     Call To Action
-========================================== -->
+            <div
+                class="cta-depth-layer"
+                aria-hidden="true"
+            ></div>
 
-<section class="cta-section">
 
-<div class="container">
+            <div class="container">
 
-<h2>
+                <div class="cta-3d-panel glass-panel">
 
-Join a Community Built on Integrity
+                    <span class="section-title">
+                        MEMBERSHIP
+                    </span>
 
-</h2>
+                    <h2 id="join-title">
+                        Join a Community Built on Integrity
+                    </h2>
 
-<p>
+                    <p>
+                        Become part of a community committed to
+                        ethical research, professional excellence,
+                        collaboration, and sustainable development.
+                    </p>
 
-Become part of a global network committed to ethical research,
-professional excellence, collaboration, and sustainable development.
 
-</p>
+                    <div class="hero-actions">
 
-<div class="hero-buttons">
+                        <a
+                            href="membership-application.html"
+                            class="button button--3d"
+                        >
+                            Apply for Membership
+                        </a>
 
-<a href="membership-application.html"
-class="button">
+                        <a
+                            href="membership-policies.html"
+                            class="button-outline button--3d"
+                        >
+                            View Membership Policies
+                        </a>
 
-Apply for Membership
+                    </div>
 
-</a>
+                </div>
 
-<a href="membership-policies.html"
-class="button-outline">
+            </div>
 
-View Membership Policies
+        </section>
 
-</a>
 
-</div>
+    </main>
 
-</div>
 
-</section>
+    <!-- ======================================================
+         BACK TO TOP
+    ======================================================= -->
 
-  </main>
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
 
-<!-- Shared Footer -->
+        <span aria-hidden="true">
+            ↑
+        </span>
 
-<button id="backToTop"
-class="back-to-top"
-aria-label="Back to Top">
+    </button>
 
-<i class="fas fa-arrow-up"></i>
 
-</button>
+    <!-- ======================================================
+         APPLICATION BOOTSTRAP
+    ======================================================= -->
 
-<script defer src="../assets/js/core/navigation.js"></script>
-<script defer src="../assets/js/core/accessibility.js"></script>
-<script defer src="../assets/js/core/loader.js"></script>
-<script defer src="../assets/js/core/app.js"></script>
+    <script
+        type="module"
+        src="../assets/js/core/main.js"
+    ></script>
+
 
 </body>
 
 </html>
-  
-  
-  
