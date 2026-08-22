@@ -1,7 +1,9 @@
 /* ==========================================================
    GLOBAL STYLES
    SovereignAqua Research & Development Foundation
-   Version 2.0
+   Version 2.1
+   Purpose: Site-wide layout, typography, utilities,
+            accessibility, interaction, and responsive rules.
 ========================================================== */
 
 
@@ -9,12 +11,20 @@
    ROOT PAGE SETTINGS
 ========================================================== */
 
-html{
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 140px;
+}
 
-    scroll-behavior:smooth;
 
-    scroll-padding-top:140px;
+/* ==========================================================
+   UNIVERSAL BOX MODEL
+========================================================== */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 
@@ -22,32 +32,23 @@ html{
    BODY
 ========================================================== */
 
-body{
+body {
+    margin: 0;
+    padding-top: 130px;
 
-    margin:0;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
 
-    padding-top:130px;
+    color: var(--text-primary);
+    background: var(--background);
 
-    font-family:var(--font-primary);
+    overflow-x: hidden;
 
-    font-size:16px;
-
-    line-height:1.7;
-
-    font-weight:400;
-
-    color:var(--text-primary);
-
-    background:var(--background);
-
-    overflow-x:hidden;
-
-    text-rendering:optimizeLegibility;
-
-    -webkit-font-smoothing:antialiased;
-
-    -moz-osx-font-smoothing:grayscale;
-
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -60,22 +61,44 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
+    margin: 0 0 1rem;
 
-    margin:0 0 1rem;
+    color: var(--text-primary);
 
-    line-height:1.2;
+    font-weight: 700;
+    line-height: 1.2;
 
-    font-weight:700;
-
-    color:var(--text-primary);
-
+    text-wrap: balance;
 }
 
-p{
+h1 {
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+}
 
-    margin-bottom:1.2rem;
+h2 {
+    font-size: clamp(1.85rem, 3.5vw, 3rem);
+}
 
+h3 {
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
 }
 
 
@@ -83,26 +106,46 @@ p{
    LINKS
 ========================================================== */
 
-a{
-
-    color:inherit;
-
-    text-decoration:none;
+a {
+    color: inherit;
+    text-decoration: none;
 
     transition:
-
-        color .3s ease,
-
-        transform .3s ease,
-
-        opacity .3s ease;
-
+        color 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
-a:hover{
+a:hover {
+    color: var(--primary);
+}
 
-    color:var(--primary);
+a:focus-visible {
+    color: var(--primary);
+}
 
+
+/* ==========================================================
+   BUTTONS & FORM CONTROLS
+========================================================== */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 
@@ -110,16 +153,17 @@ a:hover{
    IMAGES
 ========================================================== */
 
-img{
+img {
+    display: block;
 
-    display:block;
+    max-width: 100%;
+    height: auto;
 
-    max-width:100%;
+    object-fit: cover;
+}
 
-    height:auto;
-
-    object-fit:cover;
-
+img[width][height] {
+    height: auto;
 }
 
 
@@ -127,14 +171,12 @@ img{
    VIDEO
 ========================================================== */
 
-video{
+video {
+    display: block;
 
-    display:block;
-
-    width:100%;
-
-    height:auto;
-
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -142,14 +184,11 @@ video{
    LAYOUT CONTAINER
 ========================================================== */
 
-.container{
+.container {
+    position: relative;
 
-    width:min(1320px,92%);
-
-    margin-inline:auto;
-
-    position:relative;
-
+    width: min(1320px, 92%);
+    margin-inline: auto;
 }
 
 
@@ -157,18 +196,13 @@ video{
    SECTIONS
 ========================================================== */
 
-section{
-
-    position:relative;
-
-    padding:100px 0;
-
+section {
+    position: relative;
+    padding: 100px 0;
 }
 
-section[id]{
-
-    scroll-margin-top:140px;
-
+section[id] {
+    scroll-margin-top: 140px;
 }
 
 
@@ -176,55 +210,87 @@ section[id]{
    COMMON UTILITIES
 ========================================================== */
 
-.text-center{
-
-    text-align:center;
-
+.text-center {
+    text-align: center;
 }
 
-.hidden{
-
-    display:none !important;
-
+.text-left {
+    text-align: left;
 }
 
-.flex{
-
-    display:flex;
-
+.text-right {
+    text-align: right;
 }
 
-.grid{
+.hidden {
+    display: none !important;
+}
 
-    display:grid;
+.flex {
+    display: flex;
+}
 
+.grid {
+    display: grid;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mx-auto {
+    margin-inline: auto;
 }
 
 
 /* ==========================================================
-   ACCESSIBILITY
+   ACCESSIBILITY — SCREEN READER ONLY
 ========================================================== */
 
-.sr-only{
+.sr-only {
+    position: absolute;
 
-    position:absolute;
+    width: 1px;
+    height: 1px;
 
-    width:1px;
+    padding: 0;
+    margin: -1px;
 
-    height:1px;
+    overflow: hidden;
 
-    padding:0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
 
-    margin:-1px;
+    white-space: nowrap;
 
-    overflow:hidden;
+    border: 0;
+}
 
-    clip:rect(0,0,0,0);
 
-    white-space:nowrap;
+/* ==========================================================
+   SKIP LINK
+========================================================== */
 
-    border:0;
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
 
+    z-index: 10000;
+
+    padding: 0.75rem 1rem;
+
+    color: #ffffff;
+    background: var(--primary);
+
+    border-radius: 6px;
+
+    transform: translateY(-200%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
 }
 
 
@@ -232,14 +298,15 @@ section[id]{
    KEYBOARD FOCUS
 ========================================================== */
 
-:focus-visible{
+:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 4px;
 
-    outline:3px solid var(--primary);
+    border-radius: 6px;
+}
 
-    outline-offset:4px;
-
-    border-radius:6px;
-
+:focus:not(:focus-visible) {
+    outline: none;
 }
 
 
@@ -247,18 +314,15 @@ section[id]{
    DIVIDER
 ========================================================== */
 
-.divider{
+.divider {
+    width: 100%;
+    height: 1px;
 
-    width:100%;
+    margin: 70px auto;
 
-    height:1px;
+    border: 0;
 
-    margin:70px auto;
-
-    border:none;
-
-    background:rgba(0,0,0,.08);
-
+    background: rgba(0, 0, 0, 0.08);
 }
 
 
@@ -266,64 +330,60 @@ section[id]{
    BACK TO TOP BUTTON
 ========================================================== */
 
-#backToTop{
+#backToTop {
+    position: fixed;
 
-    position:fixed;
+    right: 30px;
+    bottom: 30px;
 
-    bottom:30px;
+    z-index: 999;
 
-    right:30px;
+    display: flex;
 
-    width:56px;
+    width: 56px;
+    height: 56px;
 
-    height:56px;
+    align-items: center;
+    justify-content: center;
 
-    border:none;
+    padding: 0;
 
-    border-radius:50%;
+    border: 0;
+    border-radius: 50%;
 
-    background:var(--primary);
+    color: #ffffff;
+    background: var(--primary);
 
-    color:#ffffff;
+    font-size: 1.25rem;
 
-    font-size:1.25rem;
+    cursor: pointer;
 
-    cursor:pointer;
+    opacity: 0;
+    visibility: hidden;
 
-    display:flex;
+    transform: translateY(20px);
 
-    justify-content:center;
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.35s ease,
+        background-color 0.3s ease;
 
-    align-items:center;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(20px);
-
-    transition:all .35s ease;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.20);
-
-    z-index:999;
-
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.20);
 }
 
-#backToTop.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-#backToTop:hover{
+#backToTop:hover {
+    transform: translateY(-6px);
+}
 
-    transform:translateY(-6px);
-
+#backToTop:focus-visible {
+    transform: translateY(0);
 }
 
 
@@ -331,12 +391,9 @@ section[id]{
    TEXT SELECTION
 ========================================================== */
 
-::selection{
-
-    background:var(--primary);
-
-    color:#ffffff;
-
+::selection {
+    color: #ffffff;
+    background: var(--primary);
 }
 
 
@@ -344,24 +401,21 @@ section[id]{
    SCROLLBAR
 ========================================================== */
 
-::-webkit-scrollbar{
-
-    width:10px;
-
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-::-webkit-scrollbar-track{
-
-    background:#f3f3f3;
-
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 20px;
+}
 
-    background:var(--primary);
-
-    border-radius:20px;
-
+::-webkit-scrollbar-thumb:hover {
+    opacity: 0.85;
 }
 
 
@@ -369,16 +423,13 @@ section[id]{
    GLASS EFFECT
 ========================================================== */
 
-.glass{
+.glass {
+    background: rgba(255, 255, 255, 0.15);
 
-    background:rgba(255,255,255,.15);
+    border: 1px solid rgba(255, 255, 255, 0.20);
 
-    backdrop-filter:blur(14px);
-
-    -webkit-backdrop-filter:blur(14px);
-
-    border:1px solid rgba(255,255,255,.20);
-
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
 
@@ -386,66 +437,108 @@ section[id]{
    SHADOW UTILITIES
 ========================================================== */
 
-.shadow-sm{
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
+.shadow-sm {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.shadow-md{
-
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-
+.shadow-md {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.shadow-lg{
-
-    box-shadow:0 25px 70px rgba(0,0,0,.20);
-
+.shadow-lg {
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.20);
 }
 
 
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE — LARGE TABLETS
 ========================================================== */
 
-@media (max-width:992px){
+@media (max-width: 992px) {
 
-    body{
-
-        padding-top:120px;
-
+    body {
+        padding-top: 120px;
     }
 
-    section{
-
-        padding:80px 0;
-
+    section {
+        padding: 80px 0;
     }
 
+    html {
+        scroll-padding-top: 125px;
+    }
+
+    section[id] {
+        scroll-margin-top: 125px;
+    }
 }
 
 
-@media (max-width:768px){
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
 
-    body{
+@media (max-width: 768px) {
 
-        padding-top:110px;
-
+    body {
+        padding-top: 110px;
+        font-size: 15.5px;
     }
 
-    .container{
-
-        width:min(94%,700px);
-
+    .container {
+        width: min(94%, 700px);
     }
 
-    section{
-
-        padding:70px 0;
-
+    section {
+        padding: 70px 0;
     }
 
+    html {
+        scroll-padding-top: 115px;
+    }
+
+    section[id] {
+        scroll-margin-top: 115px;
+    }
+
+    #backToTop {
+        right: 20px;
+        bottom: 20px;
+
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding-top: 100px;
+        font-size: 15px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    #backToTop {
+        right: 16px;
+        bottom: 16px;
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 1rem;
+    }
 }
 
 
@@ -453,17 +546,24 @@ section[id]{
    REDUCED MOTION
 ========================================================== */
 
-@media (prefers-reduced-motion:reduce){
+@media (prefers-reduced-motion: reduce) {
 
-    *{
-
-        animation:none !important;
-
-        transition:none !important;
-
-        scroll-behavior:auto !important;
-
+    html {
+        scroll-behavior: auto;
     }
 
-}
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
 
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+    #backToTop {
+        transition: none;
+    }
+}
