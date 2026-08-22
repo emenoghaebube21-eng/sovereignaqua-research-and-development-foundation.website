@@ -1,90 +1,328 @@
 /* ==========================================================
    SOVEREIGNAQUA DESIGN SYSTEM
-   Variables
+   VARIABLES
+   SovereignAqua Research & Development Foundation
+   Version 2.1
 ========================================================== */
 
-:root{
+:root {
 
     /* ======================================================
        BRAND COLORS
     ====================================================== */
 
-    --primary:#00CFFF;
+    --primary: #00CFFF;
 
-    --primary-dark:#009BC2;
+    --primary-dark: #009BC2;
 
-    --secondary:#1B365D;
+    --secondary: #1B365D;
 
-    --accent:#4FD1C5;
+    --accent: #4FD1C5;
+
+
+    /* ======================================================
+       BRAND COLOR STATES
+    ====================================================== */
+
+    --primary-hover: #00B8E6;
+
+    --primary-active: #009BC2;
+
+    --accent-hover: #3BBCAF;
+
 
     /* ======================================================
        BACKGROUNDS
     ====================================================== */
 
-    --background:#081424;
+    --background: #081424;
 
-    --background-light:#10233D;
+    --background-light: #10233D;
 
-    --surface:#132944;
+    --surface: #132944;
 
-    --card:#17324F;
+    --surface-light: #193653;
+
+    --card: #17324F;
+
+    --card-hover: #1C3B5D;
+
 
     /* ======================================================
        TEXT
     ====================================================== */
 
-    --text-primary:#FFFFFF;
+    --text-primary: #FFFFFF;
 
-    --text-secondary:#C8D6E5;
+    --text-secondary: #C8D6E5;
 
-    --text-muted:#91A7C0;
+    --text-muted: #91A7C0;
+
+    --text-inverse: #081424;
+
+    --text-link: #00CFFF;
+
 
     /* ======================================================
        BORDERS
     ====================================================== */
 
-    --border:rgba(255,255,255,.08);
+    --border: rgba(255, 255, 255, 0.08);
+
+    --border-light: rgba(255, 255, 255, 0.14);
+
+    --border-strong: rgba(255, 255, 255, 0.22);
+
+    --border-primary: rgba(0, 207, 255, 0.35);
+
+
+    /* ======================================================
+       OVERLAYS
+    ====================================================== */
+
+    --overlay-dark: rgba(8, 20, 36, 0.72);
+
+    --overlay-medium: rgba(8, 20, 36, 0.55);
+
+    --overlay-light: rgba(8, 20, 36, 0.30);
+
+    --overlay-white: rgba(255, 255, 255, 0.08);
+
 
     /* ======================================================
        SHADOWS
     ====================================================== */
 
-    --shadow-sm:0 2px 8px rgba(0,0,0,.15);
+    --shadow-sm:
+        0 2px 8px rgba(0, 0, 0, 0.15);
 
-    --shadow-md:0 8px 24px rgba(0,0,0,.25);
+    --shadow-md:
+        0 8px 24px rgba(0, 0, 0, 0.25);
 
-    --shadow-lg:0 15px 40px rgba(0,0,0,.35);
+    --shadow-lg:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    --shadow-xl:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+
 
     /* ======================================================
        TYPOGRAPHY
     ====================================================== */
 
-    --font-primary:'Poppins',sans-serif;
+    --font-primary:
+        'Poppins',
+        sans-serif;
 
-    --font-heading:'Poppins',sans-serif;
+    --font-heading:
+        'Poppins',
+        sans-serif;
+
+    --font-mono:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
+
+
+    /* ======================================================
+       FONT WEIGHTS
+    ====================================================== */
+
+    --weight-light: 300;
+
+    --weight-regular: 400;
+
+    --weight-medium: 500;
+
+    --weight-semibold: 600;
+
+    --weight-bold: 700;
+
+    --weight-extrabold: 800;
+
+
+    /* ======================================================
+       LINE HEIGHTS
+    ====================================================== */
+
+    --line-tight: 1.2;
+
+    --line-normal: 1.5;
+
+    --line-relaxed: 1.7;
+
+    --line-loose: 1.8;
+
+
+    /* ======================================================
+       BORDER RADIUS
+    ====================================================== */
+
+    --radius-sm: 8px;
+
+    --radius-md: 12px;
+
+    --radius-lg: 18px;
+
+    --radius-xl: 24px;
+
+    --radius-pill: 999px;
+
+    --radius-circle: 50%;
+
 
     /* ======================================================
        SPACING
     ====================================================== */
 
-    --radius-sm:8px;
+    --space-1: 0.25rem;
 
-    --radius-md:12px;
+    --space-2: 0.5rem;
 
-    --radius-lg:18px;
+    --space-3: 0.75rem;
 
-    --radius-xl:24px;
+    --space-4: 1rem;
+
+    --space-5: 1.25rem;
+
+    --space-6: 1.5rem;
+
+    --space-8: 2rem;
+
+    --space-10: 2.5rem;
+
+    --space-12: 3rem;
+
+    --space-16: 4rem;
+
+    --space-20: 5rem;
+
+    --space-24: 6rem;
+
+
+    /* ======================================================
+       CONTAINER
+    ====================================================== */
+
+    --container-width: 1200px;
+
+    --container-wide: 1320px;
+
+    --container-narrow: 900px;
+
 
     /* ======================================================
        TRANSITIONS
     ====================================================== */
 
-    --transition:.3s ease;
+    --transition-fast:
+        0.15s ease;
+
+    --transition:
+        0.3s ease;
+
+    --transition-slow:
+        0.5s ease;
+
 
     /* ======================================================
-       MAX WIDTH
+       EASING
     ====================================================== */
 
-    --container-width:1200px;
+    --ease-standard:
+        cubic-bezier(0.4, 0, 0.2, 1);
+
+    --ease-enter:
+        cubic-bezier(0, 0, 0.2, 1);
+
+    --ease-exit:
+        cubic-bezier(0.4, 0, 1, 1);
+
+
+    /* ======================================================
+       Z-INDEX SYSTEM
+    ====================================================== */
+
+    --z-base: 1;
+
+    --z-dropdown: 100;
+
+    --z-sticky: 500;
+
+    --z-navigation: 1000;
+
+    --z-overlay: 2000;
+
+    --z-modal: 3000;
+
+    --z-toast: 4000;
+
+    --z-loader: 5000;
+
+
+    /* ======================================================
+       ACCESSIBILITY
+    ====================================================== */
+
+    --focus-ring:
+        0 0 0 3px rgba(0, 207, 255, 0.35);
+
+    --focus-outline:
+        3px solid var(--primary);
+
+
+    /* ======================================================
+       FORM STATES
+    ====================================================== */
+
+    --input-background: #10233D;
+
+    --input-border: rgba(255, 255, 255, 0.14);
+
+    --input-border-focus: var(--primary);
+
+    --input-placeholder: var(--text-muted);
+
+
+    /* ======================================================
+       BREAKPOINT REFERENCE
+       CSS custom properties cannot be used directly inside
+       media-query conditions, so these values serve as
+       documentation/reference tokens.
+    ====================================================== */
+
+    --breakpoint-xl: 1320px;
+
+    --breakpoint-lg: 1200px;
+
+    --breakpoint-md: 992px;
+
+    --breakpoint-sm: 768px;
+
+    --breakpoint-xs: 480px;
+
+}
+
+
+/* ==========================================================
+   GLOBAL REDUCED-MOTION TOKEN
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    :root {
+
+        --transition-fast: 0s;
+
+        --transition: 0s;
+
+        --transition-slow: 0s;
+
+    }
 
 }
