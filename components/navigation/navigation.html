@@ -1,218 +1,998 @@
-<!-- SovereignAqua Enterprise Navigation System -->
-<!-- Sprint 1.1: Navigation Component -->
+/* ==========================================================
+   NAVIGATION.JS
+   SovereignAqua Research & Development Foundation
+   Version 2.2
 
-<header class="sa-header" role="banner">
-  <!-- Announcement Bar -->
-  <div class="sa-announcement-bar" role="region" aria-label="Announcements">
-    <div class="sa-announcement-content">
-      <button class="sa-announcement-close" aria-label="Close announcement" data-close-announcement>
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <span class="sa-announcement-text">Welcome to SovereignAqua Research Foundation</span>
-    </div>
-  </div>
+   Responsibilities:
+   - Desktop/mobile navigation
+   - Mobile drawer
+   - Desktop dropdown
+   - Mobile dropdown
+   - Search panel
+   - Announcement dismissal
+   - Escape-key handling
+   - Outside-click handling
+   - Responsive state management
+   - Active navigation state
+========================================================== */
 
-  <!-- Main Navigation -->
-  <nav class="sa-navigation" role="navigation" aria-label="Main">
-    <div class="sa-nav-container">
-      <!-- Brand/Logo -->
-      <div class="sa-brand">
-        <a href="/" class="sa-logo" aria-label="SovereignAqua Home">
-          <svg class="sa-logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="2"/>
-            <path d="M16 8v16M8 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <span class="sa-logo-text">SovereignAqua</span>
-        </a>
-      </div>
+"use strict";
 
-      <!-- Mobile Menu Toggle -->
-      <button class="sa-mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false" data-mobile-toggle>
-        <span class="sa-hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
 
-      <!-- Desktop Navigation Menu -->
-      <ul class="sa-menu" role="menubar" data-menu>
-        <li role="none">
-          <a href="/" class="sa-menu-link" role="menuitem" data-nav-link>Home</a>
-        </li>
-        <li role="none">
-          <a href="/about" class="sa-menu-link" role="menuitem" data-nav-link>About</a>
-        </li>
-        <li role="none">
-          <button class="sa-menu-link sa-menu-dropdown-trigger" role="menuitem" aria-expanded="false" aria-haspopup="menu" data-dropdown-trigger>
-            Research
-            <svg class="sa-dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <ul class="sa-dropdown-menu" role="menu" data-dropdown-menu>
-            <li role="none">
-              <a href="/research/divisions" class="sa-dropdown-link" role="menuitem" data-nav-link>Divisions</a>
-            </li>
-            <li role="none">
-              <a href="/research/laboratories" class="sa-dropdown-link" role="menuitem" data-nav-link>Laboratories</a>
-            </li>
-            <li role="none">
-              <a href="/research/innovation" class="sa-dropdown-link" role="menuitem" data-nav-link>Innovation</a>
-            </li>
-            <li role="none">
-              <a href="/research/fellowships" class="sa-dropdown-link" role="menuitem" data-nav-link>Fellowships</a>
-            </li>
-          </ul>
-        </li>
-        <li role="none">
-          <a href="/projects" class="sa-menu-link" role="menuitem" data-nav-link>Projects</a>
-        </li>
-        <li role="none">
-          <a href="/publications" class="sa-menu-link" role="menuitem" data-nav-link>Publications</a>
-        </li>
-        <li role="none">
-          <a href="/governance" class="sa-menu-link" role="menuitem" data-nav-link>Governance</a>
-        </li>
-        <li role="none">
-          <a href="/membership" class="sa-menu-link" role="menuitem" data-nav-link>Membership</a>
-        </li>
-        <li role="none">
-          <a href="/news" class="sa-menu-link" role="menuitem" data-nav-link>News</a>
-        </li>
-        <li role="none">
-          <a href="/contact" class="sa-menu-link" role="menuitem" data-nav-link>Contact</a>
-        </li>
-      </ul>
+/* ==========================================================
+   INITIALIZE NAVIGATION
+========================================================== */
 
-      <!-- Search -->
-      <div class="sa-search">
-        <button class="sa-search-toggle" aria-label="Open search" data-search-toggle>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/>
-            <path d="M13 13l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <div class="sa-search-panel" data-search-panel>
-          <form class="sa-search-form" role="search" data-search-form>
-            <label for="sa-search-input" class="sr-only">Search</label>
-            <input
-              type="search"
-              id="sa-search-input"
-              class="sa-search-input"
-              placeholder="Search research, publications, and more..."
-              aria-label="Search SovereignAqua"
-              data-search-input
-            />
-            <button type="submit" class="sa-search-submit" aria-label="Submit search">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/>
-                <path d="M13 13l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </button>
-            <button type="button" class="sa-search-close" aria-label="Close search" data-search-close>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </form>
-        </div>
-      </div>
+export function initNavigation() {
 
-      <!-- Action Buttons -->
-      <div class="sa-actions">
-        <a href="/membership" class="sa-btn sa-btn-secondary" aria-label="Join SovereignAqua">
-          Join
-        </a>
-        <a href="/donate" class="sa-btn sa-btn-primary" aria-label="Donate to SovereignAqua">
-          Donate
-        </a>
-      </div>
-    </div>
-  </nav>
+    const navigation =
+        document.querySelector(
+            ".sa-navigation"
+        );
 
-  <!-- Breadcrumb (Optional, for inner pages) -->
-  <nav class="sa-breadcrumb" role="navigation" aria-label="Breadcrumb" data-breadcrumb style="display: none;">
-    <ol class="sa-breadcrumb-list">
-      <li><a href="/">Home</a></li>
-      <li aria-current="page"><span data-breadcrumb-current>Page</span></li>
-    </ol>
-  </nav>
-</header>
+    if (!navigation) {
+        return;
+    }
 
-<!-- Mobile Drawer Menu -->
-<div class="sa-mobile-drawer" role="navigation" aria-label="Mobile menu" data-mobile-drawer aria-hidden="true">
-  <div class="sa-mobile-drawer-content">
-    <div class="sa-mobile-drawer-header">
-      <span class="sa-mobile-drawer-title">Menu</span>
-      <button class="sa-mobile-drawer-close" aria-label="Close menu" data-mobile-close>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
 
-    <ul class="sa-mobile-menu" role="menubar">
-      <li role="none">
-        <a href="/" class="sa-mobile-menu-link" role="menuitem" data-nav-link>Home</a>
-      </li>
-      <li role="none">
-        <a href="/about" class="sa-mobile-menu-link" role="menuitem" data-nav-link>About</a>
-      </li>
-      <li role="none">
-        <button class="sa-mobile-menu-link sa-mobile-menu-dropdown-trigger" role="menuitem" aria-expanded="false" aria-haspopup="menu" data-mobile-dropdown-trigger>
-          Research
-          <svg class="sa-mobile-dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <ul class="sa-mobile-dropdown-menu" role="menu" data-mobile-dropdown-menu style="display: none;">
-          <li role="none">
-            <a href="/research/divisions" class="sa-mobile-dropdown-link" role="menuitem" data-nav-link>Divisions</a>
-          </li>
-          <li role="none">
-            <a href="/research/laboratories" class="sa-mobile-dropdown-link" role="menuitem" data-nav-link>Laboratories</a>
-          </li>
-          <li role="none">
-            <a href="/research/innovation" class="sa-mobile-dropdown-link" role="menuitem" data-nav-link>Innovation</a>
-          </li>
-          <li role="none">
-            <a href="/research/fellowships" class="sa-mobile-dropdown-link" role="menuitem" data-nav-link>Fellowships</a>
-          </li>
-        </ul>
-      </li>
-      <li role="none">
-        <a href="/projects" class="sa-mobile-menu-link" role="menuitem" data-nav-link>Projects</a>
-      </li>
-      <li role="none">
-        <a href="/publications" class="sa-mobile-menu-link" role="menuitem" data-nav-link>Publications</a>
-      </li>
-      <li role="none">
-        <a href="/governance" class="sa-mobile-menu-link" role="menuitem" data-nav-link>Governance</a>
-      </li>
-      <li role="none">
-        <a href="/membership" class="sa-mobile-menu-link" role="menuitem" data-nav-link>Membership</a>
-      </li>
-      <li role="none">
-        <a href="/news" class="sa-mobile-menu-link" role="menuitem" data-nav-link>News</a>
-      </li>
-      <li role="none">
-        <a href="/contact" class="sa-mobile-menu-link" role="menuitem" data-nav-link>Contact</a>
-      </li>
-    </ul>
+    initAnnouncement();
 
-    <div class="sa-mobile-drawer-footer">
-      <a href="/membership" class="sa-btn sa-btn-secondary sa-btn-block" aria-label="Join SovereignAqua">
-        Become a Member
-      </a>
-      <a href="/donate" class="sa-btn sa-btn-primary sa-btn-block" aria-label="Donate to SovereignAqua">
-        Donate
-      </a>
-    </div>
-  </div>
-</div>
+    initMobileNavigation();
 
-<!-- Search Overlay -->
-<div class="sa-search-overlay" data-search-overlay aria-hidden="true"></div>
+    initDesktopDropdown();
+
+    initMobileDropdown();
+
+    initSearch();
+
+    initNavigationLinks();
+
+    initResponsiveState();
+
+}
+
+
+/* ==========================================================
+   ANNOUNCEMENT BAR
+========================================================== */
+
+function initAnnouncement() {
+
+    const announcement =
+        document.querySelector(
+            ".sa-announcement-bar"
+        );
+
+    const closeButton =
+        document.querySelector(
+            "[data-close-announcement]"
+        );
+
+
+    if (
+        !announcement ||
+        !closeButton
+    ) {
+        return;
+    }
+
+
+    closeButton.addEventListener(
+        "click",
+        () => {
+
+            announcement.classList.add(
+                "is-hidden"
+            );
+
+            announcement.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   MOBILE NAVIGATION
+========================================================== */
+
+function initMobileNavigation() {
+
+    const toggle =
+        document.querySelector(
+            "[data-mobile-toggle]"
+        );
+
+    const drawer =
+        document.querySelector(
+            "[data-mobile-drawer]"
+        );
+
+    const closeButton =
+        document.querySelector(
+            "[data-mobile-close]"
+        );
+
+
+    if (!toggle || !drawer) {
+        return;
+    }
+
+
+    const openDrawer = () => {
+
+        drawer.classList.add(
+            "is-open"
+        );
+
+        drawer.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            "Close mobile menu"
+        );
+
+        document.body.classList.add(
+            "menu-open"
+        );
+
+    };
+
+
+    const closeDrawer = () => {
+
+        drawer.classList.remove(
+            "is-open"
+        );
+
+        drawer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            "Open mobile menu"
+        );
+
+        document.body.classList.remove(
+            "menu-open"
+        );
+
+        closeMobileDropdowns();
+
+    };
+
+
+    toggle.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+            const isOpen =
+                toggle.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            if (isOpen) {
+
+                closeDrawer();
+
+            } else {
+
+                openDrawer();
+
+            }
+
+        }
+    );
+
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            closeDrawer
+        );
+
+    }
+
+
+    drawer
+        .querySelectorAll(
+            "a[data-nav-link]"
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    closeDrawer
+                );
+
+            }
+        );
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key !== "Escape"
+            ) {
+                return;
+            }
+
+
+            const isOpen =
+                toggle.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            if (!isOpen) {
+                return;
+            }
+
+
+            closeDrawer();
+
+            toggle.focus();
+
+        }
+    );
+
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            const isOpen =
+                toggle.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            if (!isOpen) {
+                return;
+            }
+
+
+            if (
+                drawer.contains(
+                    event.target
+                ) ||
+                toggle.contains(
+                    event.target
+                )
+            ) {
+                return;
+            }
+
+
+            closeDrawer();
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   DESKTOP RESEARCH DROPDOWN
+========================================================== */
+
+function initDesktopDropdown() {
+
+    const trigger =
+        document.querySelector(
+            "[data-dropdown-trigger]"
+        );
+
+    const menu =
+        document.querySelector(
+            "[data-dropdown-menu]"
+        );
+
+
+    if (!trigger || !menu) {
+        return;
+    }
+
+
+    trigger.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+            const isOpen =
+                trigger.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            closeDesktopDropdowns();
+
+
+            if (!isOpen) {
+
+                trigger.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+                menu.classList.add(
+                    "is-open"
+                );
+
+            }
+
+        }
+    );
+
+
+    trigger.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "ArrowDown"
+            ) {
+
+                event.preventDefault();
+
+                trigger.click();
+
+                const firstItem =
+                    menu.querySelector(
+                        "a[data-nav-link]"
+                    );
+
+                if (firstItem) {
+                    firstItem.focus();
+                }
+
+            }
+
+        }
+    );
+
+
+    menu
+        .querySelectorAll(
+            "a[data-nav-link]"
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "keydown",
+                    event => {
+
+                        if (
+                            event.key ===
+                            "Escape"
+                        ) {
+
+                            closeDesktopDropdowns();
+
+                            trigger.focus();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+}
+
+
+/* ==========================================================
+   CLOSE DESKTOP DROPDOWNS
+========================================================== */
+
+function closeDesktopDropdowns() {
+
+    document
+        .querySelectorAll(
+            "[data-dropdown-trigger]"
+        )
+        .forEach(
+            trigger => {
+
+                trigger.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+
+    document
+        .querySelectorAll(
+            "[data-dropdown-menu]"
+        )
+        .forEach(
+            menu => {
+
+                menu.classList.remove(
+                    "is-open"
+                );
+
+            }
+        );
+
+}
+
+
+/* ==========================================================
+   MOBILE RESEARCH DROPDOWN
+========================================================== */
+
+function initMobileDropdown() {
+
+    const triggers =
+        document.querySelectorAll(
+            "[data-mobile-dropdown-trigger]"
+        );
+
+
+    triggers.forEach(
+        trigger => {
+
+            const menu =
+                trigger.parentElement
+                    ?.querySelector(
+                        "[data-mobile-dropdown-menu]"
+                    );
+
+
+            if (!menu) {
+                return;
+            }
+
+
+            trigger.addEventListener(
+                "click",
+                event => {
+
+                    event.preventDefault();
+
+                    const isOpen =
+                        trigger.getAttribute(
+                            "aria-expanded"
+                        ) === "true";
+
+
+                    trigger.setAttribute(
+                        "aria-expanded",
+                        String(!isOpen)
+                    );
+
+
+                    menu.style.display =
+                        isOpen
+                            ? "none"
+                            : "";
+
+
+                    menu.classList.toggle(
+                        "is-open",
+                        !isOpen
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   CLOSE MOBILE DROPDOWNS
+========================================================== */
+
+function closeMobileDropdowns() {
+
+    document
+        .querySelectorAll(
+            "[data-mobile-dropdown-trigger]"
+        )
+        .forEach(
+            trigger => {
+
+                trigger.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+
+    document
+        .querySelectorAll(
+            "[data-mobile-dropdown-menu]"
+        )
+        .forEach(
+            menu => {
+
+                menu.style.display =
+                    "none";
+
+                menu.classList.remove(
+                    "is-open"
+                );
+
+            }
+        );
+
+}
+
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+function initSearch() {
+
+    const toggle =
+        document.querySelector(
+            "[data-search-toggle]"
+        );
+
+    const panel =
+        document.querySelector(
+            "[data-search-panel]"
+        );
+
+    const overlay =
+        document.querySelector(
+            "[data-search-overlay]"
+        );
+
+    const close =
+        document.querySelector(
+            "[data-search-close]"
+        );
+
+    const input =
+        document.querySelector(
+            "[data-search-input]"
+        );
+
+    const form =
+        document.querySelector(
+            "[data-search-form]"
+        );
+
+
+    if (
+        !toggle ||
+        !panel
+    ) {
+        return;
+    }
+
+
+    const openSearch = () => {
+
+        panel.classList.add(
+            "is-open"
+        );
+
+        if (overlay) {
+
+            overlay.classList.add(
+                "is-visible"
+            );
+
+            overlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+        }
+
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+
+        if (input) {
+
+            window.setTimeout(
+                () => input.focus(),
+                50
+            );
+
+        }
+
+    };
+
+
+    const closeSearch = () => {
+
+        panel.classList.remove(
+            "is-open"
+        );
+
+        if (overlay) {
+
+            overlay.classList.remove(
+                "is-visible"
+            );
+
+            overlay.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    };
+
+
+    toggle.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+
+    toggle.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+            const isOpen =
+                toggle.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            if (isOpen) {
+
+                closeSearch();
+
+            } else {
+
+                openSearch();
+
+            }
+
+        }
+    );
+
+
+    if (close) {
+
+        close.addEventListener(
+            "click",
+            closeSearch
+        );
+
+    }
+
+
+    if (overlay) {
+
+        overlay.addEventListener(
+            "click",
+            closeSearch
+        );
+
+    }
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeSearch();
+
+            }
+
+        }
+    );
+
+
+    if (form) {
+
+        form.addEventListener(
+            "submit",
+            event => {
+
+                /*
+                   Search backend is not defined by the
+                   supplied navigation markup.
+
+                   Prevent accidental page submission until
+                   the project's search endpoint is established.
+                */
+
+                event.preventDefault();
+
+                const query =
+                    input
+                        ? input.value.trim()
+                        : "";
+
+
+                if (!query) {
+
+                    if (input) {
+                        input.focus();
+                    }
+
+                    return;
+
+                }
+
+
+                /*
+                   Do not invent a search endpoint here.
+                   The query is intentionally left available
+                   for the future search implementation.
+                */
+
+                console.info(
+                    "[SovereignAqua] Search query:",
+                    query
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   NAVIGATION LINKS
+========================================================== */
+
+function initNavigationLinks() {
+
+    const links =
+        document.querySelectorAll(
+            "[data-nav-link]"
+        );
+
+
+    if (!links.length) {
+        return;
+    }
+
+
+    const currentPath =
+        normalizePath(
+            window.location.pathname
+        );
+
+
+    links.forEach(
+        link => {
+
+            const href =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            if (
+                !href ||
+                href.startsWith("#")
+            ) {
+                return;
+            }
+
+
+            const linkUrl =
+                resolveUrl(
+                    href
+                );
+
+
+            if (!linkUrl) {
+                return;
+            }
+
+
+            const linkPath =
+                normalizePath(
+                    linkUrl.pathname
+                );
+
+
+            if (
+                linkPath ===
+                currentPath
+            ) {
+
+                link.classList.add(
+                    "is-current"
+                );
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE STATE
+========================================================== */
+
+function initResponsiveState() {
+
+    const mobileToggle =
+        document.querySelector(
+            "[data-mobile-toggle]"
+        );
+
+    const mobileDrawer =
+        document.querySelector(
+            "[data-mobile-drawer]"
+        );
+
+
+    if (
+        !mobileToggle ||
+        !mobileDrawer
+    ) {
+        return;
+    }
+
+
+    const handleResize =
+        () => {
+
+            /*
+               Mobile navigation is replaced by the desktop
+               navigation at the large-screen breakpoint.
+            */
+
+            if (
+                window.innerWidth >=
+                992
+            ) {
+
+                mobileDrawer.classList.remove(
+                    "is-open"
+                );
+
+                mobileDrawer.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileToggle.setAttribute(
+                    "aria-label",
+                    "Open mobile menu"
+                );
+
+                document.body.classList.remove(
+                    "menu-open"
+                );
+
+                closeMobileDropdowns();
+
+            }
+
+        };
+
+
+    window.addEventListener(
+        "resize",
+        handleResize,
+        {
+            passive: true
+        }
+    );
+
+
+    handleResize();
+
+}
+
+
+/* ==========================================================
+   URL HELPERS
+========================================================== */
+
+function normalizePath(
+    path
+) {
+
+    if (!path) {
+        return "/";
+    }
+
+
+    const normalized =
+        path
+            .split("?")[0]
+            .split("#")[0]
+            .replace(
+                /\/+$/,
+                ""
+            );
+
+
+    return normalized || "/";
+
+}
+
+
+function resolveUrl(
+    href
+) {
+
+    try {
+
+        return new URL(
+            href,
+            window.location.origin
+        );
+
+    } catch (
+        error
+    ) {
+
+        return null;
+
+    }
+
+}
