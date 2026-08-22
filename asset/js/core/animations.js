@@ -1,15 +1,31 @@
 /* ==========================================================
    ANIMATIONS.JS
    SovereignAqua Research & Development Foundation
+   Version 2.1
+
+   Responsibilities:
+   - Scroll reveal
+   - Page loading state
+   - Reading progress indicator
+   - Anchor scrolling
+   - Reduced-motion handling
+
+   Navigation and accessibility behavior remain in their
+   respective modules.
 ========================================================== */
 
 "use strict";
 
-document.addEventListener("DOMContentLoaded", initAnimations);
 
 /* ==========================================================
-   INITIALIZE
+   INITIALIZATION
 ========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initAnimations
+);
+
 
 function initAnimations() {
 
@@ -23,65 +39,123 @@ function initAnimations() {
 
 }
 
+
+/* ==========================================================
+   REDUCED MOTION DETECTION
+========================================================== */
+
+function prefersReducedMotion() {
+
+    return window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+}
+
+
 /* ==========================================================
    SCROLL REVEAL
 ========================================================== */
 
 function initScrollReveal() {
 
-    const elements = document.querySelectorAll(
-        ".fade-in, .fade-scale"
-    );
+    const elements =
+        document.querySelectorAll(
+            ".fade-in, .fade-scale"
+        );
 
-    if (!elements.length) return;
+    if (!elements.length) {
+        return;
+    }
 
-    /* Browser fallback */
 
-    if (!("IntersectionObserver" in window)) {
+    /*
+       Users who prefer reduced motion should not have to
+       wait for reveal animations.
+    */
 
-        elements.forEach(element => {
+    if (prefersReducedMotion()) {
 
-            element.classList.add("show");
+        elements.forEach(
+            element => {
 
-        });
+                element.classList.add("show");
+
+            }
+        );
 
         return;
 
     }
 
-    const observer = new IntersectionObserver(
 
-        (entries, obs) => {
+    /*
+       Browser fallback for environments without
+       IntersectionObserver.
+    */
 
-            entries.forEach(entry => {
+    if (!("IntersectionObserver" in window)) {
 
-                if (!entry.isIntersecting) return;
+        elements.forEach(
+            element => {
 
-                entry.target.classList.add("show");
+                element.classList.add("show");
 
-                obs.unobserve(entry.target);
+            }
+        );
 
-            });
+        return;
 
-        },
+    }
 
-        {
 
-            threshold:0.15,
+    const observer =
+        new IntersectionObserver(
 
-            rootMargin:"0px 0px -50px 0px"
+            (entries, obs) => {
+
+                entries.forEach(
+                    entry => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                        obs.unobserve(
+                            entry.target
+                        );
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: 0.15,
+
+                rootMargin:
+                    "0px 0px -50px 0px"
+            }
+
+        );
+
+
+    elements.forEach(
+        element => {
+
+            observer.observe(
+                element
+            );
 
         }
-
     );
 
-    elements.forEach(element => {
-
-        observer.observe(element);
-
-    });
-
 }
+
 
 /* ==========================================================
    PAGE LOADER
@@ -89,26 +163,63 @@ function initScrollReveal() {
 
 function initLoader() {
 
-    window.addEventListener("load", () => {
+    const loader =
+        document.getElementById(
+            "loader"
+        );
 
-        const loader =
-            document.getElementById("loader");
+    if (!loader) {
+        return;
+    }
 
-        if (!loader) return;
 
-        loader.style.opacity = "0";
+    window.addEventListener(
+        "load",
+        () => {
 
-        loader.style.visibility = "hidden";
+            /*
+               Do not apply a prolonged transition when
+               reduced motion is requested.
+            */
 
-        setTimeout(() => {
+            if (prefersReducedMotion()) {
 
-            loader.remove();
+                loader.remove();
 
-        },500);
+                return;
 
-    });
+            }
+
+
+            loader.classList.add(
+                "is-hidden"
+            );
+
+
+            window.setTimeout(
+                () => {
+
+                    if (
+                        loader &&
+                        loader.isConnected
+                    ) {
+
+                        loader.remove();
+
+                    }
+
+                },
+                500
+            );
+
+        },
+        {
+            once: true
+        }
+    );
 
 }
+
 
 /* ==========================================================
    SCROLL PROGRESS BAR
@@ -117,98 +228,273 @@ function initLoader() {
 function initProgressBar() {
 
     const progressBar =
-        document.getElementById("progressBar");
+        document.getElementById(
+            "progressBar"
+        );
 
-    if (!progressBar) return;
+    if (!progressBar) {
+        return;
+    }
+
 
     function updateProgress() {
 
         const scrollTop =
-            window.scrollY;
+            window.scrollY ||
+            window.pageYOffset ||
+            0;
 
-        const pageHeight =
-            document.documentElement.scrollHeight -
+
+        const documentHeight =
+            document.documentElement
+                .scrollHeight;
+
+
+        const viewportHeight =
             window.innerHeight;
 
-        if (pageHeight <= 0) {
 
-            progressBar.style.width = "0%";
+        const scrollableHeight =
+            documentHeight -
+            viewportHeight;
+
+
+        if (scrollableHeight <= 0) {
+
+            progressBar.style.width =
+                "0%";
 
             return;
 
         }
 
+
         const progress =
-            (scrollTop / pageHeight) * 100;
+            Math.min(
+                100,
+                Math.max(
+                    0,
+                    (
+                        scrollTop /
+                        scrollableHeight
+                    ) * 100
+                )
+            );
+
 
         progressBar.style.width =
-            progress + "%";
+            `${progress}%`;
 
     }
 
+
     window.addEventListener(
-
         "scroll",
-
         updateProgress,
-
-        { passive:true }
-
+        {
+            passive: true
+        }
     );
+
+
+    window.addEventListener(
+        "resize",
+        updateProgress,
+        {
+            passive: true
+        }
+    );
+
 
     updateProgress();
 
 }
 
+
 /* ==========================================================
-   SMOOTH SCROLL
+   SMOOTH ANCHOR SCROLLING
 ========================================================== */
 
 function initSmoothScroll() {
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+    const links =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
 
-        link.addEventListener("click", event => {
+    if (!links.length) {
+        return;
+    }
 
-            const target =
-                document.querySelector(
 
-                    link.getAttribute("href")
+    links.forEach(
+        link => {
 
-                );
+            link.addEventListener(
+                "click",
+                event => {
 
-            if (!target) return;
+                    const href =
+                        link.getAttribute(
+                            "href"
+                        );
 
-            event.preventDefault();
 
-            target.scrollIntoView({
+                    /*
+                       Ignore empty hash links.
+                    */
 
-                behavior:"smooth",
+                    if (
+                        !href ||
+                        href === "#"
+                    ) {
 
-                block:"start"
+                        return;
 
-            });
+                    }
 
-        });
 
-    });
+                    let target;
+
+                    try {
+
+                        target =
+                            document.querySelector(
+                                href
+                            );
+
+                    } catch (error) {
+
+                        /*
+                           Ignore invalid selectors rather
+                           than breaking other page scripts.
+                        */
+
+                        return;
+
+                    }
+
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView(
+                        {
+                            behavior:
+                                prefersReducedMotion()
+                                    ? "auto"
+                                    : "smooth",
+
+                            block: "start"
+                        }
+                    );
+
+
+                    /*
+                       Update the URL without forcing an
+                       additional browser jump.
+                    */
+
+                    if (
+                        window.history &&
+                        typeof window.history
+                            .pushState ===
+                            "function"
+                    ) {
+
+                        window.history.pushState(
+                            null,
+                            "",
+                            href
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
 
 }
+
 
 /* ==========================================================
-   ACCESSIBILITY
+   DYNAMIC REDUCED-MOTION STATE
 ========================================================== */
 
-if (
+function initReducedMotionState() {
 
-    window.matchMedia(
+    const motionPreference =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
 
-        "(prefers-reduced-motion: reduce)"
 
-    ).matches
+    updateMotionState(
+        motionPreference.matches
+    );
 
-) {
 
-    document.documentElement.style.scrollBehavior = "auto";
+    if (
+        typeof motionPreference.addEventListener ===
+        "function"
+    ) {
+
+        motionPreference.addEventListener(
+            "change",
+            event => {
+
+                updateMotionState(
+                    event.matches
+                );
+
+            }
+        );
+
+    } else if (
+        typeof motionPreference.addListener ===
+        "function"
+    ) {
+
+        motionPreference.addListener(
+            event => {
+
+                updateMotionState(
+                    event.matches
+                );
+
+            }
+        );
+
+    }
 
 }
+
+
+/* ==========================================================
+   APPLY MOTION STATE
+========================================================== */
+
+function updateMotionState(
+    reducedMotion
+) {
+
+    document.documentElement.dataset.motion =
+        reducedMotion
+            ? "reduced"
+            : "full";
+
+}
+
+
+/* ==========================================================
+   START MOTION PREFERENCE MONITOR
+========================================================== */
+
+initReducedMotionState();
