@@ -1,224 +1,616 @@
 /* ==========================================================
    NAVIGATION.JS
    SovereignAqua Research & Development Foundation
+   Version 2.1
+
+   Responsibilities:
+   - Mobile navigation
+   - Menu open / close state
+   - Keyboard navigation
+   - Outside-click handling
+   - Responsive menu reset
+   - Navbar scroll state
+   - Current section highlighting
+
+   Accessibility-specific motion preferences remain in
+   accessibility.js.
 ========================================================== */
 
 "use strict";
+
 
 /* ==========================================================
    INITIALIZE NAVIGATION
 ========================================================== */
 
-const menuToggle = document.getElementById("menuToggle");
-const navigationMenu = document.getElementById("navigation-menu");
+export function initNavigation() {
 
-if (menuToggle && navigationMenu) {
-
-    menuToggle.addEventListener("click", () => {
-
-        navigationMenu.classList.toggle("active");
-
-        const expanded =
-            menuToggle.getAttribute("aria-expanded") === "true";
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            !expanded
+    const menuToggle =
+        document.getElementById(
+            "menuToggle"
         );
 
-    });
-
-}
-    /* ==========================================
-       TOGGLE MOBILE MENU
-    ========================================== */
-
-    menuToggle.addEventListener("click", toggleMenu);
-
-    function toggleMenu() {
-
-        const isOpen =
-            menuToggle.getAttribute("aria-expanded") === "true";
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            String(!isOpen)
+    const navigationMenu =
+        document.getElementById(
+            "navigation-menu"
         );
 
-        navMenu.setAttribute(
-            "aria-hidden",
-            String(isOpen)
+    const navbar =
+        document.getElementById(
+            "navbar"
         );
 
-        navMenu.classList.toggle("active");
 
-        /* Prevent page scrolling while menu is open */
+    /*
+       Navigation is optional on some pages.
+       Do not throw an error if the markup is absent.
+    */
 
-        document.body.classList.toggle(
-            "menu-open",
-            !isOpen
-        );
+    if (
+        !menuToggle ||
+        !navigationMenu
+    ) {
+
+        if (navbar) {
+            initNavbarScrollState(navbar);
+        }
+
+        return;
 
     }
 
-    /* ==========================================
-       CLOSE MENU
-    ========================================== */
 
-    function closeMenu() {
+    configureMenuAccessibility(
+        menuToggle,
+        navigationMenu
+    );
 
-        navMenu.classList.remove("active");
+    initMobileMenu(
+        menuToggle,
+        navigationMenu
+    );
+
+    initNavbarScrollState(
+        navbar
+    );
+
+    initActiveSectionHighlight(
+        navigationMenu
+    );
+
+}
+
+
+/* ==========================================================
+   MENU ACCESSIBILITY CONFIGURATION
+========================================================== */
+
+function configureMenuAccessibility(
+    menuToggle,
+    navigationMenu
+) {
+
+    menuToggle.setAttribute(
+        "aria-controls",
+        navigationMenu.id
+    );
+
+
+    /*
+       Preserve an explicitly supplied aria-expanded value,
+       but default to closed when one is not present.
+    */
+
+    if (
+        !menuToggle.hasAttribute(
+            "aria-expanded"
+        )
+    ) {
 
         menuToggle.setAttribute(
             "aria-expanded",
             "false"
         );
 
-        navMenu.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-        document.body.classList.remove(
-            "menu-open"
-        );
-
     }
 
-    /* ==========================================
-       CLOSE AFTER LINK CLICK
-    ========================================== */
 
-    navMenu.querySelectorAll("a").forEach(link => {
+    updateToggleLabel(
+        menuToggle,
+        false
+    );
 
-        link.addEventListener("click", closeMenu);
 
-    });
+    /*
+       We do not permanently set aria-hidden on the navigation.
+       CSS controls visual presentation at the responsive
+       breakpoint.
+    */
 
-    /* ==========================================
-       ESC KEY SUPPORT
-    ========================================== */
+}
 
-    document.addEventListener("keydown", event => {
 
-        if (event.key === "Escape") {
+/* ==========================================================
+   MOBILE MENU
+========================================================== */
+
+function initMobileMenu(
+    menuToggle,
+    navigationMenu
+) {
+
+    const closeMenu = () => {
+
+        setMenuState(
+            menuToggle,
+            navigationMenu,
+            false
+        );
+
+    };
+
+
+    const openMenu = () => {
+
+        setMenuState(
+            menuToggle,
+            navigationMenu,
+            true
+        );
+
+    };
+
+
+    const toggleMenu = () => {
+
+        const isOpen =
+            menuToggle.getAttribute(
+                "aria-expanded"
+            ) === "true";
+
+
+        if (isOpen) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+
+    };
+
+
+    /* ------------------------------------------------------
+       MENU TOGGLE
+    ------------------------------------------------------ */
+
+    menuToggle.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+            toggleMenu();
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       CLOSE AFTER NAVIGATION
+    ------------------------------------------------------ */
+
+    navigationMenu
+        .querySelectorAll(
+            "a[href]"
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        closeMenu();
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* ------------------------------------------------------
+       ESCAPE KEY
+    ------------------------------------------------------ */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key !== "Escape" &&
+                event.key !== "Esc"
+            ) {
+
+                return;
+
+            }
+
+
+            const isOpen =
+                menuToggle.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            if (!isOpen) {
+                return;
+            }
+
 
             closeMenu();
 
             menuToggle.focus();
 
         }
+    );
 
-    });
 
-    /* ==========================================
+    /* ------------------------------------------------------
        CLICK OUTSIDE MENU
-    ========================================== */
+    ------------------------------------------------------ */
 
-    document.addEventListener("click", event => {
+    document.addEventListener(
+        "click",
+        event => {
 
-        const insideMenu =
-            navMenu.contains(event.target);
+            const isOpen =
+                menuToggle.getAttribute(
+                    "aria-expanded"
+                ) === "true";
 
-        const clickedButton =
-            menuToggle.contains(event.target);
 
-        if (
-            !insideMenu &&
-            !clickedButton &&
-            navMenu.classList.contains("active")
-        ) {
-
-            closeMenu();
-
-        }
-
-    });
-
-    /* ==========================================
-       RESET ON DESKTOP
-    ========================================== */
-
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 768) {
-
-            closeMenu();
-
-        }
-
-    });
-
-    /* ==========================================
-       ACTIVE SECTION HIGHLIGHT
-    ========================================== */
-
-    const sections =
-        document.querySelectorAll("section[id]");
-
-    const navLinks =
-        document.querySelectorAll(
-            '.nav-links a[href^="#"]'
-        );
-
-    function updateActiveSection() {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const top =
-                section.offsetTop - 140;
-
-            const height =
-                section.offsetHeight;
-
-            if (
-                window.scrollY >= top &&
-                window.scrollY < top + height
-            ) {
-
-                current =
-                    section.id;
-
+            if (!isOpen) {
+                return;
             }
 
-        });
 
-        navLinks.forEach(link => {
-
-            link.removeAttribute(
-                "aria-current"
-            );
-
-            if (
-                link.getAttribute("href") ===
-                "#" + current
-            ) {
-
-                link.setAttribute(
-                    "aria-current",
-                    "page"
+            const clickedInsideMenu =
+                navigationMenu.contains(
+                    event.target
                 );
 
+
+            const clickedToggle =
+                menuToggle.contains(
+                    event.target
+                );
+
+
+            if (
+                !clickedInsideMenu &&
+                !clickedToggle
+            ) {
+
+                closeMenu();
+
             }
 
-        });
+        }
+    );
 
-  window.addEventListener("scroll", () => {
 
-    const navbar = document.querySelector(".navbar");
+    /* ------------------------------------------------------
+       RESPONSIVE RESET
+    ------------------------------------------------------ */
 
-    if (!navbar) return;
+    window.addEventListener(
+        "resize",
+        () => {
 
-    if (window.scrollY > 60) {
+            /*
+               The site's navigation switches to desktop
+               behavior at 992px.
+            */
 
-        navbar.classList.add("scrolled");
+            if (
+                window.innerWidth > 992
+            ) {
 
-    } else {
+                closeMenu();
 
-        navbar.classList.remove("scrolled");
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       INITIAL STATE
+    ------------------------------------------------------ */
+
+    setMenuState(
+        menuToggle,
+        navigationMenu,
+        false
+    );
+
+}
+
+
+/* ==========================================================
+   SET MENU STATE
+========================================================== */
+
+function setMenuState(
+    menuToggle,
+    navigationMenu,
+    isOpen
+) {
+
+    navigationMenu.classList.toggle(
+        "active",
+        isOpen
+    );
+
+
+    document.body.classList.toggle(
+        "menu-open",
+        isOpen
+    );
+
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+
+    updateToggleLabel(
+        menuToggle,
+        isOpen
+    );
+
+}
+
+
+/* ==========================================================
+   UPDATE MENU TOGGLE LABEL
+========================================================== */
+
+function updateToggleLabel(
+    menuToggle,
+    isOpen
+) {
+
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
+    );
+
+
+    /*
+       Update the icon only when the existing button
+       uses the expected icon structure.
+
+       The button remains functional if Font Awesome
+       is unavailable.
+    */
+
+    const icon =
+        menuToggle.querySelector(
+            "i"
+        );
+
+
+    if (!icon) {
+        return;
+    }
+
+
+    icon.classList.toggle(
+        "fa-bars",
+        !isOpen
+    );
+
+
+    icon.classList.toggle(
+        "fa-xmark",
+        isOpen
+    );
+
+
+    icon.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+}
+
+
+/* ==========================================================
+   NAVBAR SCROLL STATE
+========================================================== */
+
+function initNavbarScrollState(
+    navbar
+) {
+
+    if (!navbar) {
+        return;
+    }
+
+
+    const updateNavbar =
+        () => {
+
+            navbar.classList.toggle(
+                "scrolled",
+                window.scrollY > 60
+            );
+
+        };
+
+
+    updateNavbar();
+
+
+    window.addEventListener(
+        "scroll",
+        updateNavbar,
+        {
+            passive: true
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   ACTIVE SECTION HIGHLIGHT
+========================================================== */
+
+function initActiveSectionHighlight(
+    navigationMenu
+) {
+
+    if (!navigationMenu) {
+        return;
+    }
+
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
+
+
+    const navLinks =
+        navigationMenu.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    if (
+        !sections.length ||
+        !navLinks.length
+    ) {
+
+        return;
 
     }
 
-});
+
+    const updateActiveSection =
+        () => {
+
+            const scrollPosition =
+                window.scrollY + 160;
+
+
+            let currentSection = "";
+
+
+            sections.forEach(
+                section => {
+
+                    const sectionTop =
+                        section.offsetTop;
+
+
+                    const sectionBottom =
+                        sectionTop +
+                        section.offsetHeight;
+
+
+                    if (
+                        scrollPosition >=
+                        sectionTop &&
+                        scrollPosition <
+                        sectionBottom
+                    ) {
+
+                        currentSection =
+                            section.id;
+
+                    }
+
+                }
+            );
+
+
+            navLinks.forEach(
+                link => {
+
+                    const href =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    const matchesSection =
+                        href ===
+                        `#${currentSection}`;
+
+
+                    if (
+                        matchesSection &&
+                        currentSection
+                    ) {
+
+                        link.setAttribute(
+                            "aria-current",
+                            "location"
+                        );
+
+                    } else {
+
+                        /*
+                           Remove aria-current from
+                           section links when inactive.
+                        */
+
+                        link.removeAttribute(
+                            "aria-current"
+                        );
+
+                    }
+
+                }
+            );
+
+        };
+
+
+    updateActiveSection();
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveSection,
+        {
+            passive: true
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION COMPATIBILITY
+========================================================== */
+
+/*
+   Navigation itself does not impose animation behavior.
+
+   CSS and accessibility.js are responsible for respecting
+   the user's reduced-motion preference.
+*/
