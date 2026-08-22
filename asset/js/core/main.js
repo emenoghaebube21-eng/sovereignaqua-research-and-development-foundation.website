@@ -1,124 +1,274 @@
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
-   Core Application
+   Core Application Bootstrap
+   Version 2.1
+
+   Responsibilities:
+   - Start core application modules
+   - Maintain application-level initialization
+   - Highlight the current page
+   - Provide a safe module initialization boundary
+
+   Feature behavior belongs in dedicated modules.
 ========================================================== */
 
 "use strict";
 
-document.addEventListener("DOMContentLoaded", initializeApp);
-window.addEventListener("load", hideLoader);
 
-function initializeApp() {
-    console.log("SovereignAqua Website Initialized");
-    ensureSkipLinkTarget();
-    highlightCurrentPage();
-    initMobileNavigation();
-    initNavbarScrollState();
-    initBackToTop();
+/* ==========================================================
+   MODULE IMPORTS
+========================================================== */
+
+import {
+    initNavigation
+} from "../modules/navigation.js";
+
+import {
+    initHero
+} from "../modules/hero.js";
+
+
+/* ==========================================================
+   APPLICATION INITIALIZATION
+========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initializeApplication,
+    {
+        once: true
+    }
+);
+
+
+/* ==========================================================
+   INITIALIZE APPLICATION
+========================================================== */
+
+function initializeApplication() {
+
+    console.info(
+        "[SovereignAqua] Website initialization started."
+    );
+
+
+    /*
+       Initialize the navigation module.
+    */
+
+    initializeModule(
+        "navigation",
+        initNavigation
+    );
+
+
+    /*
+       Initialize the hero module.
+    */
+
+    initializeModule(
+        "hero",
+        initHero
+    );
+
+
+    /*
+       Highlight the current page after the navigation
+       has been initialized.
+    */
+
+    initializeModule(
+        "current-page",
+        highlightCurrentPage
+    );
+
+
+    console.info(
+        "[SovereignAqua] Website initialization complete."
+    );
+
 }
 
-function hideLoader() {
-    const loader = document.getElementById("loader");
-    if (!loader) return;
-    loader.style.opacity = "0";
-    loader.style.visibility = "hidden";
-    setTimeout(() => loader.remove(), 500);
+
+/* ==========================================================
+   SAFE MODULE INITIALIZATION
+========================================================== */
+
+function initializeModule(
+    moduleName,
+    initializer
+) {
+
+    if (
+        typeof initializer !==
+        "function"
+    ) {
+
+        console.warn(
+            `[SovereignAqua] ${moduleName} initializer is unavailable.`
+        );
+
+        return false;
+
+    }
+
+
+    try {
+
+        initializer();
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            `[SovereignAqua] ${moduleName} initialization failed.`,
+            error
+        );
+
+        return false;
+
+    }
+
 }
 
-function ensureSkipLinkTarget() {
-    const target = document.getElementById("main-content");
-    if (target) return;
 
-    const hero = document.querySelector(".hero");
-    if (hero) hero.id = "main-content";
-}
+/* ==========================================================
+   CURRENT PAGE HIGHLIGHT
+========================================================== */
 
 function highlightCurrentPage() {
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const links = document.querySelectorAll(".nav-links a");
 
-    links.forEach(link => {
-        const href = link.getAttribute("href");
-        if (!href || href.startsWith("#")) return;
+    const currentPath =
+        window.location.pathname;
 
-        const normalizedHref = href.split("#")[0].split("?")[0];
-        if (normalizedHref === currentPage) {
-            link.classList.add("active");
-            link.setAttribute("aria-current", "page");
+
+    let currentPage =
+        currentPath
+            .split("/")
+            .pop();
+
+
+    /*
+       Directory URLs resolve to the homepage.
+    */
+
+    if (!currentPage) {
+        currentPage = "index.html";
+    }
+
+
+    const navigationLinks =
+        document.querySelectorAll(
+            ".nav-links a[href]"
+        );
+
+
+    if (!navigationLinks.length) {
+        return;
+    }
+
+
+    navigationLinks.forEach(
+        link => {
+
+            const href =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            if (!href) {
+                return;
+            }
+
+
+            /*
+               Ignore anchor-only links.
+            */
+
+            if (
+                href.startsWith("#")
+            ) {
+                return;
+            }
+
+
+            /*
+               Remove query strings and fragments
+               before comparing page names.
+            */
+
+            const normalizedHref =
+                href
+                    .split("#")[0]
+                    .split("?")[0]
+                    .split("/")
+                    .pop();
+
+
+            const isCurrentPage =
+                normalizedHref ===
+                currentPage;
+
+
+            link.classList.toggle(
+                "active",
+                isCurrentPage
+            );
+
+
+            if (isCurrentPage) {
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            } else {
+
+                link.removeAttribute(
+                    "aria-current"
+                );
+
+            }
+
         }
-    });
+    );
+
 }
 
-function initMobileNavigation() {
-    const toggle = document.getElementById("menuToggle");
-    const menu = document.getElementById("navigation-menu");
-    if (!toggle || !menu) return;
 
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-controls", "navigation-menu");
-    toggle.setAttribute("aria-label", "Open navigation menu");
+/* ==========================================================
+   GLOBAL ERROR REPORTING
+========================================================== */
 
-    const closeMenu = () => {
-        menu.classList.remove("active");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open navigation menu");
-        toggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
-    };
+window.addEventListener(
+    "error",
+    event => {
 
-    const openMenu = () => {
-        menu.classList.add("active");
-        toggle.setAttribute("aria-expanded", "true");
-        toggle.setAttribute("aria-label", "Close navigation menu");
-        toggle.innerHTML = '<i class="fas fa-xmark" aria-hidden="true"></i>';
-    };
+        console.error(
+            "[SovereignAqua] Application error:",
+            event.error || event.message
+        );
 
-    toggle.addEventListener("click", () => {
-        if (menu.classList.contains("active")) closeMenu();
-        else openMenu();
-    });
+    }
+);
 
-    menu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
 
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape") closeMenu();
-    });
+/* ==========================================================
+   UNHANDLED PROMISE REJECTIONS
+========================================================== */
 
-    document.addEventListener("click", event => {
-        if (!menu.classList.contains("active")) return;
-        if (menu.contains(event.target) || toggle.contains(event.target)) return;
-        closeMenu();
-    });
+window.addEventListener(
+    "unhandledrejection",
+    event => {
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 992) closeMenu();
-    }, { passive: true });
-}
+        console.error(
+            "[SovereignAqua] Unhandled promise rejection:",
+            event.reason
+        );
 
-function initNavbarScrollState() {
-    const navbar = document.getElementById("navbar");
-    if (!navbar) return;
-
-    const update = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-}
-
-function initBackToTop() {
-    const button = document.getElementById("backToTop");
-    if (!button) return;
-
-    window.addEventListener("scroll", () => {
-        button.classList.toggle("show", window.scrollY > 400);
-    }, { passive: true });
-
-    button.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-}
-
-window.addEventListener("error", event => {
-    console.error("Application Error:", event.message);
-});
-
-console.log("Core Application Loaded");
+    }
+);
