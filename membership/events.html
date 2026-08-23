@@ -1,965 +1,1514 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta http-equiv="X-UA-Compatible"
-content="IE=edge">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
 
-<title>
+    <title>
+        Events |
+        SovereignAqua Research &amp; Development Foundation
+    </title>
 
-Events |
-SovereignAqua Research & Development Foundation
+    <meta
+        name="description"
+        content="Explore conferences, workshops, seminars, outreach programmes, environmental campaigns, and research events hosted by the SovereignAqua Research & Development Foundation."
+    >
 
-</title>
+    <meta
+        name="robots"
+        content="index,follow"
+    >
 
-<meta
-name="description"
-content="Explore conferences, workshops, seminars, outreach programmes, environmental campaigns, and research events hosted by the SovereignAqua Research & Development Foundation.">
+    <link
+        rel="canonical"
+        href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/events/events.html"
+    >
 
-<meta
-name="robots"
-content="index,follow">
 
-<link rel="canonical"
-href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/events/events.html">
+    <!-- ======================================================
+         BASE DESIGN SYSTEM
+    ======================================================= -->
 
-<link rel="stylesheet" href="../assets/css/base/reset.css">
-<link rel="stylesheet" href="../assets/css/base/variables.css">
-<link rel="stylesheet" href="../assets/css/base/typography.css">
-<link rel="stylesheet" href="../assets/css/layout/navigation.css">
-<link rel="stylesheet" href="../assets/css/layout/footer.css">
-<link rel="stylesheet" href="../assets/css/components/cards.css">
-<link rel="stylesheet" href="../assets/css/components/buttons.css">
-<link rel="stylesheet" href="../assets/css/pages/events.css">
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/typography.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/global.css"
+    >
+
+
+    <!-- ======================================================
+         LAYOUT
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/layout/navigation.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/layout/footer.css"
+    >
+
+
+    <!-- ======================================================
+         COMPONENTS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components/cards.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components/buttons.css"
+    >
+
+
+    <!-- ======================================================
+         PAGE-SPECIFIC HYBRID 3D SYSTEM
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/pages/events.css"
+    >
 
 </head>
 
-<body>
 
-<a href="#main-content"
-class="skip-link">
+<body class="page-events">
 
-Skip to main content
 
-</a>
+    <!-- ======================================================
+         ACCESSIBILITY
+    ======================================================= -->
 
-<div id="progressBar"></div>
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Skip to main content
+    </a>
 
-<div id="loader">
 
-<div class="loader-spinner"></div>
+    <!-- ======================================================
+         GLOBAL 3D ATMOSPHERE
+    ======================================================= -->
 
-</div>
+    <div
+        class="site-atmosphere"
+        aria-hidden="true"
+    >
 
-<!-- Shared Navigation -->
+        <div
+            class="atmosphere-orb atmosphere-orb--one"
+        ></div>
 
-<main id="main-content">
+        <div
+            class="atmosphere-orb atmosphere-orb--two"
+        ></div>
 
-<section class="page-hero">
+        <div
+            class="atmosphere-grid"
+        ></div>
 
-<div class="container">
+        <div
+            class="atmosphere-glow atmosphere-glow--one"
+        ></div>
 
-<span class="section-title">
+        <div
+            class="atmosphere-glow atmosphere-glow--two"
+        ></div>
 
-FOUNDATION EVENTS
+    </div>
 
-</span>
 
-<h1>
+    <!-- ======================================================
+         PAGE LOADER
+    ======================================================= -->
 
-Connecting People Through Knowledge, Innovation & Action
+    <div
+        id="loader"
+        class="page-loader"
+        aria-hidden="true"
+    >
 
-</h1>
+        <div
+            class="loader-spinner"
+            aria-hidden="true"
+        ></div>
 
-<p>
+        <span class="sr-only">
+            Loading page
+        </span>
 
-Our events bring together researchers, educators, students, professionals, policymakers, volunteers, and community leaders to exchange ideas, build partnerships, and advance sustainable development.
+    </div>
 
-</p>
 
-<div class="hero-buttons">
+    <!-- ======================================================
+         READING PROGRESS
+    ======================================================= -->
 
-<a href="#upcoming-events"
-class="button">
+    <div
+        id="progressBar"
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Page reading progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+    ></div>
 
-View Upcoming Events
 
-</a>
+    <!-- ======================================================
+         SHARED NAVIGATION
+    ======================================================= -->
 
-<a href="#newsletter"
-class="button-outline">
+    <header
+        class="site-header"
+        data-site-navigation
+    >
 
-Subscribe for Updates
+        <!-- Shared SovereignAqua navigation -->
 
-</a>
+    </header>
 
-</div>
 
-</div>
+    <!-- ======================================================
+         MAIN CONTENT
+    ======================================================= -->
 
-</section>
+    <main id="main-content">
 
-  <section class="section">
 
-<div class="container">
+        <!-- ==================================================
+             HERO — EVENT NETWORK
+        =================================================== -->
 
-<div class="section-heading">
+        <section
+            class="events-hero hero-3d"
+            aria-labelledby="events-title"
+        >
 
-<span class="section-title">
+            <div
+                class="hero-depth-plane"
+                aria-hidden="true"
+            ></div>
 
-EVENT IMPACT
+            <div
+                class="hero-orb hero-orb--one"
+                aria-hidden="true"
+            ></div>
 
-</span>
+            <div
+                class="hero-orb hero-orb--two"
+                aria-hidden="true"
+            ></div>
 
-<h2>
 
-Growing Together
+            <div class="container">
 
-</h2>
+                <div class="hero-3d-stage">
 
-</div>
 
-<div class="stats-grid">
+                    <!-- Back depth plane -->
 
-<div class="stat-card">
+                    <div
+                        class="hero-back-plane"
+                        aria-hidden="true"
+                    ></div>
 
-<h3>50+</h3>
 
-<p>Educational Events Planned</p>
+                    <!-- Main content -->
 
-</div>
+                    <div class="hero-content-plane">
 
-<div class="stat-card">
+                        <span class="section-title">
+                            FOUNDATION EVENTS
+                        </span>
 
-<h3>25+</h3>
+                        <h1 id="events-title">
+                            Connecting People Through
+                            Knowledge, Innovation &amp; Action
+                        </h1>
 
-<p>Research Workshops</p>
+                        <p class="lead">
+                            Our events bring together researchers,
+                            educators, students, professionals,
+                            policymakers, volunteers, and community
+                            leaders to exchange ideas, build
+                            partnerships, and advance sustainable
+                            development.
+                        </p>
 
-</div>
 
-<div class="stat-card">
+                        <div class="hero-buttons">
 
-<h3>Global</h3>
+                            <a
+                                href="#upcoming-events"
+                                class="button button--3d"
+                            >
+                                View Upcoming Events
+                            </a>
 
-<p>Participation Opportunities</p>
+                            <a
+                                href="#newsletter"
+                                class="button-outline button--3d"
+                            >
+                                Subscribe for Updates
+                            </a>
 
-</div>
+                        </div>
 
-<div class="stat-card">
+                    </div>
 
-<h3>Year-Round</h3>
 
-<p>Community Programmes</p>
+                    <!-- Event network visualization -->
 
-</div>
+                    <div
+                        class="event-orbit"
+                        aria-hidden="true"
+                    >
 
-</div>
+                        <div class="event-orbit__ring event-orbit__ring--one"></div>
 
-</div>
+                        <div class="event-orbit__ring event-orbit__ring--two"></div>
 
-  </section>
+                        <div class="event-orbit__ring event-orbit__ring--three"></div>
 
-  <section class="section featured-event">
+                        <div class="event-orbit__node event-orbit__node--one"></div>
 
-<div class="container">
+                        <div class="event-orbit__node event-orbit__node--two"></div>
 
-<div class="section-heading">
+                        <div class="event-orbit__node event-orbit__node--three"></div>
 
-<span class="section-title">
+                        <div class="event-orbit__core"></div>
 
-FEATURED EVENT
+                    </div>
 
-</span>
+                </div>
 
-<h2>
+            </div>
 
-Annual Sustainability & Innovation Summit
+        </section>
 
-</h2>
 
-</div>
+        <!-- ==================================================
+             EVENT IMPACT
+        =================================================== -->
 
-<div class="featured-card">
+        <section
+            class="events-section events-section--3d"
+            aria-labelledby="impact-title"
+        >
 
-<h3>
+            <div class="container">
 
-Coming Soon
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-</h3>
+                    <span class="section-title">
+                        EVENT IMPACT
+                    </span>
 
-<p>
+                    <h2 id="impact-title">
+                        Growing Together
+                    </h2>
 
-The Foundation plans to host an annual summit featuring keynote speakers, scientific presentations, research showcases, panel discussions, networking opportunities, and community engagement activities.
+                </div>
 
-</p>
 
-<a href="#newsletter"
-class="button">
+                <div class="stats-grid stats-grid--3d">
 
-Receive Event Notifications
 
-</a>
+                    <article
+                        class="stat-card card--3d scroll-reveal"
+                    >
 
-</div>
+                        <div class="card-content">
 
-</div>
+                            <span class="stat-value">
+                                50+
+                            </span>
 
-  </section>
+                            <h3>
+                                Educational Events Planned
+                            </h3>
 
-  <section
-id="upcoming-events"
-class="section">
+                        </div>
 
-<div class="container">
+                    </article>
 
-<div class="section-heading">
 
-<span class="section-title">
+                    <article
+                        class="stat-card card--3d scroll-reveal"
+                    >
 
-UPCOMING EVENTS
+                        <div class="card-content">
 
-</span>
+                            <span class="stat-value">
+                                25+
+                            </span>
 
-<h2>
+                            <h3>
+                                Research Workshops
+                            </h3>
 
-Scheduled Activities
+                        </div>
 
-</h2>
+                    </article>
 
-</div>
 
-<div class="cards-grid">
+                    <article
+                        class="stat-card card--3d scroll-reveal"
+                    >
 
-<div class="card">
+                        <div class="card-content">
 
-<h3>
+                            <span class="stat-value">
+                                Global
+                            </span>
 
-Research Seminar Series
+                            <h3>
+                                Participation Opportunities
+                            </h3>
 
-</h3>
+                        </div>
 
-<p>
+                    </article>
 
-Expert presentations covering current scientific and environmental research.
 
-</p>
+                    <article
+                        class="stat-card card--3d scroll-reveal"
+                    >
 
-<span>
+                        <div class="card-content">
 
-Status:
-Coming Soon
+                            <span class="stat-value">
+                                Year-Round
+                            </span>
 
-</span>
+                            <h3>
+                                Community Programmes
+                            </h3>
 
-</div>
+                        </div>
 
-<div class="card">
+                    </article>
 
-<h3>
+                </div>
 
-Environmental Awareness Campaign
+            </div>
 
-</h3>
+        </section>
 
-<p>
 
-Community-based activities promoting conservation and sustainability.
+        <!-- ==================================================
+             FEATURED EVENT
+        =================================================== -->
 
-</p>
+        <section
+            class="events-section featured-event featured-event--3d"
+            aria-labelledby="featured-title"
+        >
 
-<span>
+            <div class="container">
 
-Status:
-Coming Soon
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-</span>
+                    <span class="section-title">
+                        FEATURED EVENT
+                    </span>
 
-</div>
+                    <h2 id="featured-title">
+                        Annual Sustainability &amp;
+                        Innovation Summit
+                    </h2>
 
-<div class="card">
+                </div>
 
-<h3>
 
-Professional Development Workshop
+                <article class="featured-card card--3d">
 
-</h3>
+                    <div
+                        class="featured-card__depth"
+                        aria-hidden="true"
+                    ></div>
 
-<p>
+                    <div class="card-content">
 
-Training sessions focused on research methods, leadership, and innovation.
+                        <span class="event-status">
+                            Coming Soon
+                        </span>
 
-</p>
+                        <h3>
+                            Annual Sustainability &amp;
+                            Innovation Summit
+                        </h3>
 
-<span>
+                        <p>
+                            The Foundation plans to host an
+                            annual summit featuring keynote
+                            speakers, scientific presentations,
+                            research showcases, panel discussions,
+                            networking opportunities, and
+                            community engagement activities.
+                        </p>
 
-Status:
-Coming Soon
+                        <a
+                            href="#newsletter"
+                            class="button button--3d"
+                        >
+                            Receive Event Notifications
+                        </a>
 
-</span>
+                    </div>
 
-</div>
+                </article>
 
-</div>
+            </div>
 
-</div>
+        </section>
 
-  </section>
 
-  <section class="section">
+        <!-- ==================================================
+             UPCOMING EVENTS
+        =================================================== -->
 
-<div class="container">
+        <section
+            id="upcoming-events"
+            class="events-section events-section--3d"
+            aria-labelledby="upcoming-title"
+        >
 
-<div class="section-heading">
+            <div class="container">
 
-<span class="section-title">
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-CONFERENCES
+                    <span class="section-title">
+                        UPCOMING EVENTS
+                    </span>
 
-</span>
+                    <h2 id="upcoming-title">
+                        Scheduled Activities
+                    </h2>
 
-<h2>
+                </div>
 
-Flagship Conferences
 
-</h2>
+                <div class="cards-grid cards-grid--3d">
 
-</div>
 
-<div class="cards-grid">
+                    <article class="event-card card--3d">
 
-<div class="card">
+                        <div class="card-content">
 
-<i class="fas fa-microphone"></i>
+                            <span class="card-index">
+                                01
+                            </span>
 
-<h3>
+                            <h3>
+                                Research Seminar Series
+                            </h3>
 
-Annual Research Conference
+                            <p>
+                                Expert presentations covering
+                                current scientific and environmental
+                                research.
+                            </p>
 
-</h3>
+                            <span class="event-status">
+                                Status: Coming Soon
+                            </span>
 
-<p>
+                        </div>
 
-A forum for presenting scientific discoveries, research findings, and collaborative projects.
+                    </article>
 
-</p>
 
-</div>
+                    <article class="event-card card--3d">
 
-<div class="card">
+                        <div class="card-content">
 
-<i class="fas fa-globe"></i>
+                            <span class="card-index">
+                                02
+                            </span>
 
-<h3>
+                            <h3>
+                                Environmental Awareness Campaign
+                            </h3>
 
-Global Sustainability Forum
+                            <p>
+                                Community-based activities promoting
+                                conservation and sustainability.
+                            </p>
 
-</h3>
+                            <span class="event-status">
+                                Status: Coming Soon
+                            </span>
 
-<p>
+                        </div>
 
-Bringing together leaders and practitioners to discuss environmental challenges and practical solutions.
+                    </article>
 
-</p>
 
-</div>
+                    <article class="event-card card--3d">
 
-<div class="card">
+                        <div class="card-content">
 
-<i class="fas fa-users"></i>
+                            <span class="card-index">
+                                03
+                            </span>
 
-<h3>
+                            <h3>
+                                Professional Development Workshop
+                            </h3>
 
-Youth Innovation Summit
+                            <p>
+                                Training sessions focused on
+                                research methods, leadership,
+                                and innovation.
+                            </p>
 
-</h3>
+                            <span class="event-status">
+                                Status: Coming Soon
+                            </span>
 
-<p>
+                        </div>
 
-Encouraging students and emerging professionals to showcase innovative ideas and research.
+                    </article>
 
-</p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </section>
 
-</div>
 
-  </section>
+        <!-- ==================================================
+             CONFERENCES
+        =================================================== -->
 
-  <!-- ==========================================
-     Research Seminars
-========================================== -->
+        <section
+            class="events-section events-section--3d"
+            aria-labelledby="conferences-title"
+        >
 
-<section class="section seminars">
+            <div class="container">
 
-<div class="container">
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-<div class="section-heading">
+                    <span class="section-title">
+                        CONFERENCES
+                    </span>
 
-<span class="section-title">
+                    <h2 id="conferences-title">
+                        Flagship Conferences
+                    </h2>
 
-RESEARCH SEMINARS
+                </div>
 
-</span>
 
-<h2>
+                <div class="cards-grid cards-grid--3d">
 
-Knowledge Exchange Sessions
 
-</h2>
+                    <article class="event-card card--3d">
 
-<p>
+                        <div class="card-content">
 
-Our seminar series provides a platform for researchers, professionals, students, and invited experts to share scientific discoveries, discuss emerging trends, and promote interdisciplinary collaboration.
+                            <i
+                                class="fas fa-microphone"
+                                aria-hidden="true"
+                            ></i>
 
-</p>
+                            <h3>
+                                Annual Research Conference
+                            </h3>
 
-</div>
+                            <p>
+                                A forum for presenting scientific
+                                discoveries, research findings,
+                                and collaborative projects.
+                            </p>
 
-<div class="cards-grid">
+                        </div>
 
-<div class="card">
+                    </article>
 
-<i class="fas fa-flask"></i>
 
-<h3>
+                    <article class="event-card card--3d">
 
-Scientific Presentations
+                        <div class="card-content">
 
-</h3>
+                            <i
+                                class="fas fa-globe"
+                                aria-hidden="true"
+                            ></i>
 
-<p>
+                            <h3>
+                                Global Sustainability Forum
+                            </h3>
 
-Research findings presented by Foundation researchers and invited experts.
+                            <p>
+                                Bringing together leaders and
+                                practitioners to discuss environmental
+                                challenges and practical solutions.
+                            </p>
 
-</p>
+                        </div>
 
-</div>
+                    </article>
 
-<div class="card">
 
-<i class="fas fa-comments"></i>
+                    <article class="event-card card--3d">
 
-<h3>
+                        <div class="card-content">
 
-Panel Discussions
+                            <i
+                                class="fas fa-users"
+                                aria-hidden="true"
+                            ></i>
 
-</h3>
+                            <h3>
+                                Youth Innovation Summit
+                            </h3>
 
-<p>
+                            <p>
+                                Encouraging students and emerging
+                                professionals to showcase innovative
+                                ideas and research.
+                            </p>
 
-Interactive discussions on environmental sustainability, innovation, and policy.
+                        </div>
 
-</p>
+                    </article>
 
-</div>
+                </div>
 
-<div class="card">
+            </div>
 
-<i class="fas fa-video"></i>
+        </section>
 
-<h3>
 
-Virtual Webinars
+        <!-- ==================================================
+             RESEARCH SEMINARS
+        =================================================== -->
 
-</h3>
+        <section
+            class="events-section seminars seminars--3d"
+            aria-labelledby="seminars-title"
+        >
 
-<p>
+            <div class="container">
 
-Online seminars designed to reach participants globally.
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-</p>
+                    <span class="section-title">
+                        RESEARCH SEMINARS
+                    </span>
 
-</div>
+                    <h2 id="seminars-title">
+                        Knowledge Exchange Sessions
+                    </h2>
 
-</div>
+                    <p class="lead">
+                        Our seminar series provides a platform
+                        for researchers, professionals, students,
+                        and invited experts to share scientific
+                        discoveries, discuss emerging trends,
+                        and promote interdisciplinary collaboration.
+                    </p>
 
-</div>
+                </div>
 
-</section>
 
-  <section class="section workshops">
+                <div class="cards-grid cards-grid--3d">
 
-<div class="container">
 
-<div class="section-heading">
+                    <article class="event-card card--3d">
 
-<span class="section-title">
+                        <div class="card-content">
 
-TRAINING
+                            <i
+                                class="fas fa-flask"
+                                aria-hidden="true"
+                            ></i>
 
-</span>
+                            <h3>
+                                Scientific Presentations
+                            </h3>
 
-<h2>
+                            <p>
+                                Research findings presented by
+                                Foundation researchers and invited
+                                experts.
+                            </p>
 
-Professional Development
+                        </div>
 
-</h2>
+                    </article>
 
-</div>
 
-<ul class="policy-list">
+                    <article class="event-card card--3d">
 
-<li>Research methodology workshops.</li>
+                        <div class="card-content">
 
-<li>Scientific writing and publication training.</li>
+                            <i
+                                class="fas fa-comments"
+                                aria-hidden="true"
+                            ></i>
 
-<li>Grant proposal development.</li>
+                            <h3>
+                                Panel Discussions
+                            </h3>
 
-<li>Environmental monitoring techniques.</li>
+                            <p>
+                                Interactive discussions on
+                                environmental sustainability,
+                                innovation, and policy.
+                            </p>
 
-<li>Leadership and governance training.</li>
+                        </div>
 
-<li>Innovation and entrepreneurship programmes.</li>
+                    </article>
 
-<li>Digital technology and data analysis workshops.</li>
 
-</ul>
+                    <article class="event-card card--3d">
 
-</div>
+                        <div class="card-content">
 
-  </section>
+                            <i
+                                class="fas fa-video"
+                                aria-hidden="true"
+                            ></i>
 
-  <section class="section outreach">
+                            <h3>
+                                Virtual Webinars
+                            </h3>
 
-<div class="container">
+                            <p>
+                                Online seminars designed to reach
+                                participants globally.
+                            </p>
 
-<div class="section-heading">
+                        </div>
 
-<span class="section-title">
+                    </article>
 
-COMMUNITY OUTREACH
+                </div>
 
-</span>
+            </div>
 
-<h2>
+        </section>
 
-Serving Communities
 
-</h2>
+        <!-- ==================================================
+             PROFESSIONAL DEVELOPMENT
+        =================================================== -->
 
-</div>
+        <section
+            class="events-section workshops workshops--3d"
+            aria-labelledby="training-title"
+        >
 
-<div class="cards-grid">
+            <div class="container">
 
-<div class="card">
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-<i class="fas fa-school"></i>
+                    <span class="section-title">
+                        TRAINING
+                    </span>
 
-<h3>
+                    <h2 id="training-title">
+                        Professional Development
+                    </h2>
 
-School Engagement
+                </div>
 
-</h3>
 
-<p>
+                <div class="glass-panel content-plane">
 
-Educational programmes that introduce students to science, environmental stewardship, and sustainable development.
+                    <ul class="policy-list">
 
-</p>
+                        <li>
+                            Research methodology workshops.
+                        </li>
 
-</div>
+                        <li>
+                            Scientific writing and publication training.
+                        </li>
 
-<div class="card">
+                        <li>
+                            Grant proposal development.
+                        </li>
 
-<i class="fas fa-tree"></i>
+                        <li>
+                            Environmental monitoring techniques.
+                        </li>
 
-<h3>
+                        <li>
+                            Leadership and governance training.
+                        </li>
 
-Community Projects
+                        <li>
+                            Innovation and entrepreneurship programmes.
+                        </li>
 
-</h3>
+                        <li>
+                            Digital technology and data analysis
+                            workshops.
+                        </li>
 
-<p>
+                    </ul>
 
-Volunteer-led environmental initiatives supporting conservation and public awareness.
+                </div>
 
-</p>
+            </div>
 
-</div>
+        </section>
 
-<div class="card">
 
-<i class="fas fa-hands-helping"></i>
+        <!-- ==================================================
+             COMMUNITY OUTREACH
+        =================================================== -->
 
-<h3>
+        <section
+            class="events-section outreach outreach--3d"
+            aria-labelledby="outreach-title"
+        >
 
-Public Education
+            <div class="container">
 
-</h3>
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-<p>
+                    <span class="section-title">
+                        COMMUNITY OUTREACH
+                    </span>
 
-Workshops, awareness campaigns, and educational events designed for local communities.
+                    <h2 id="outreach-title">
+                        Serving Communities
+                    </h2>
 
-</p>
+                </div>
 
-</div>
 
-</div>
+                <div class="cards-grid cards-grid--3d">
 
-</div>
 
-  </section>
+                    <article class="event-card card--3d">
 
-  <section class="section calendar">
+                        <div class="card-content">
 
-<div class="container">
+                            <i
+                                class="fas fa-school"
+                                aria-hidden="true"
+                            ></i>
 
-<div class="section-heading">
+                            <h3>
+                                School Engagement
+                            </h3>
 
-<span class="section-title">
+                            <p>
+                                Educational programmes that
+                                introduce students to science,
+                                environmental stewardship,
+                                and sustainable development.
+                            </p>
 
-EVENT CALENDAR
+                        </div>
 
-</span>
+                    </article>
 
-<h2>
 
-Annual Schedule
+                    <article class="event-card card--3d">
 
-</h2>
+                        <div class="card-content">
 
-</div>
+                            <i
+                                class="fas fa-tree"
+                                aria-hidden="true"
+                            ></i>
 
-<table class="event-table">
+                            <h3>
+                                Community Projects
+                            </h3>
 
-<thead>
+                            <p>
+                                Volunteer-led environmental
+                                initiatives supporting conservation
+                                and public awareness.
+                            </p>
 
-<tr>
+                        </div>
 
-<th>Quarter</th>
+                    </article>
 
-<th>Programme Focus</th>
 
-<th>Status</th>
+                    <article class="event-card card--3d">
 
-</tr>
+                        <div class="card-content">
 
-</thead>
+                            <i
+                                class="fas fa-hands-helping"
+                                aria-hidden="true"
+                            ></i>
 
-<tbody>
+                            <h3>
+                                Public Education
+                            </h3>
 
-<tr>
+                            <p>
+                                Workshops, awareness campaigns,
+                                and educational events designed
+                                for local communities.
+                            </p>
 
-<td>Q1</td>
+                        </div>
 
-<td>Research Symposium</td>
+                    </article>
 
-<td>Planning</td>
+                </div>
 
-</tr>
+            </div>
 
-<tr>
+        </section>
 
-<td>Q2</td>
 
-<td>Environmental Campaigns</td>
+        <!-- ==================================================
+             EVENT CALENDAR
+        =================================================== -->
 
-<td>Planning</td>
+        <section
+            class="events-section calendar calendar--3d"
+            aria-labelledby="calendar-title"
+        >
 
-</tr>
+            <div class="container">
 
-<tr>
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-<td>Q3</td>
+                    <span class="section-title">
+                        EVENT CALENDAR
+                    </span>
 
-<td>Training Workshops</td>
+                    <h2 id="calendar-title">
+                        Annual Schedule
+                    </h2>
 
-<td>Planning</td>
+                </div>
 
-</tr>
 
-<tr>
+                <div class="table-3d-wrapper">
 
-<td>Q4</td>
+                    <div class="table-depth" aria-hidden="true"></div>
 
-<td>Annual Sustainability Conference</td>
+                    <table class="event-table">
 
-<td>Planning</td>
+                        <caption class="sr-only">
+                            Annual Foundation event schedule
+                        </caption>
 
-</tr>
+                        <thead>
 
-</tbody>
+                            <tr>
 
-</table>
+                                <th scope="col">
+                                    Quarter
+                                </th>
 
-</div>
+                                <th scope="col">
+                                    Programme Focus
+                                </th>
 
-  </section>
+                                <th scope="col">
+                                    Status
+                                </th>
 
-  <section class="section speakers">
+                            </tr>
 
-<div class="container">
+                        </thead>
 
-<div class="section-heading">
 
-<span class="section-title">
+                        <tbody>
 
-PARTICIPATE
+                            <tr>
 
-</span>
+                                <td>
+                                    Q1
+                                </td>
 
-<h2>
+                                <td>
+                                    Research Symposium
+                                </td>
 
-Speakers & Sponsors
+                                <td>
+                                    Planning
+                                </td>
 
-</h2>
+                            </tr>
 
-</div>
 
-<div class="cards-grid">
+                            <tr>
 
-<div class="card">
+                                <td>
+                                    Q2
+                                </td>
 
-<i class="fas fa-microphone-alt"></i>
+                                <td>
+                                    Environmental Campaigns
+                                </td>
 
-<h3>
+                                <td>
+                                    Planning
+                                </td>
 
-Become a Speaker
+                            </tr>
 
-</h3>
 
-<p>
+                            <tr>
 
-Researchers, educators, policymakers, and professionals are invited to submit proposals for presentations and panel discussions.
+                                <td>
+                                    Q3
+                                </td>
 
-</p>
+                                <td>
+                                    Training Workshops
+                                </td>
 
-</div>
+                                <td>
+                                    Planning
+                                </td>
 
-<div class="card">
+                            </tr>
 
-<i class="fas fa-handshake"></i>
 
-<h3>
+                            <tr>
 
-Become a Sponsor
+                                <td>
+                                    Q4
+                                </td>
 
-</h3>
+                                <td>
+                                    Annual Sustainability Conference
+                                </td>
 
-<p>
+                                <td>
+                                    Planning
+                                </td>
 
-Organizations can support Foundation events through sponsorships that promote education, research, and community engagement.
+                            </tr>
 
-</p>
+                        </tbody>
 
-</div>
+                    </table>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-  </section>
+        </section>
 
-  <section id="newsletter" class="section newsletter">
 
-<div class="container">
+        <!-- ==================================================
+             SPEAKERS & SPONSORS
+        =================================================== -->
 
-<div class="section-heading">
+        <section
+            class="events-section speakers speakers--3d"
+            aria-labelledby="participate-title"
+        >
 
-<span class="section-title">
+            <div class="container">
 
-NEWSLETTER
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-</span>
+                    <span class="section-title">
+                        PARTICIPATE
+                    </span>
 
-<h2>
+                    <h2 id="participate-title">
+                        Speakers &amp; Sponsors
+                    </h2>
 
-Stay Informed
+                </div>
 
-</h2>
 
-</div>
+                <div class="cards-grid cards-grid--3d">
 
-<p>
 
-Subscribe to receive updates about conferences, seminars, workshops, volunteer opportunities, publications, and Foundation news.
+                    <article class="event-card card--3d">
 
-</p>
+                        <div class="card-content">
 
-<form class="newsletter-form">
+                            <i
+                                class="fas fa-microphone-alt"
+                                aria-hidden="true"
+                            ></i>
 
-<input
-type="email"
-placeholder="Enter your email address"
-required>
+                            <h3>
+                                Become a Speaker
+                            </h3>
 
-<button
-type="submit"
-class="button">
+                            <p>
+                                Researchers, educators,
+                                policymakers, and professionals
+                                are invited to submit proposals
+                                for presentations and panel
+                                discussions.
+                            </p>
 
-Subscribe
+                        </div>
 
-</button>
+                    </article>
 
-</form>
 
-</div>
+                    <article class="event-card card--3d">
 
-  </section>
+                        <div class="card-content">
 
-  <section class="section faq">
+                            <i
+                                class="fas fa-handshake"
+                                aria-hidden="true"
+                            ></i>
 
-<div class="container">
+                            <h3>
+                                Become a Sponsor
+                            </h3>
 
-<div class="section-heading">
+                            <p>
+                                Organizations can support
+                                Foundation events through
+                                sponsorships that promote
+                                education, research, and
+                                community engagement.
+                            </p>
 
-<span class="section-title">
+                        </div>
 
-FAQ
+                    </article>
 
-</span>
+                </div>
 
-<h2>
+            </div>
 
-Event Questions
+        </section>
 
-</h2>
 
-</div>
+        <!-- ==================================================
+             NEWSLETTER
+        =================================================== -->
 
-<div class="faq-list">
+        <section
+            id="newsletter"
+            class="events-section newsletter newsletter--3d"
+            aria-labelledby="newsletter-title"
+        >
 
-<article class="faq-item">
+            <div class="container">
 
-<h3>
+                <div class="newsletter-3d-panel glass-panel">
 
-Are Foundation events open to the public?
+                    <span class="section-title">
+                        NEWSLETTER
+                    </span>
 
-</h3>
+                    <h2 id="newsletter-title">
+                        Stay Informed
+                    </h2>
 
-<p>
+                    <p>
+                        Subscribe to receive updates about
+                        conferences, seminars, workshops,
+                        volunteer opportunities, publications,
+                        and Foundation news.
+                    </p>
 
-Some events are open to the public, while others may require registration or Foundation membership.
 
-</p>
+                    <form
+                        class="newsletter-form"
+                        action="#"
+                        method="post"
+                    >
 
-</article>
+                        <label
+                            for="event-email"
+                            class="sr-only"
+                        >
+                            Email address
+                        </label>
 
-<article class="faq-item">
+                        <input
+                            id="event-email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
 
-<h3>
+                        <button
+                            type="submit"
+                            class="button button--3d"
+                        >
+                            Subscribe
+                        </button>
 
-Will virtual attendance be available?
+                    </form>
 
-</h3>
+                </div>
 
-<p>
+            </div>
 
-Selected events may include online participation options where appropriate.
+        </section>
 
-</p>
 
-</article>
+        <!-- ==================================================
+             FAQ
+        =================================================== -->
 
-<article class="faq-item">
+        <section
+            class="events-section faq faq--3d"
+            aria-labelledby="faq-title"
+        >
 
-<h3>
+            <div class="container">
 
-How can I present at an event?
+                <div
+                    class="section-heading section-heading--3d"
+                >
 
-</h3>
+                    <span class="section-title">
+                        FAQ
+                    </span>
 
-<p>
+                    <h2 id="faq-title">
+                        Event Questions
+                    </h2>
 
-Calls for speakers and presentation proposals will be announced through the Foundation's official communication channels.
+                </div>
 
-</p>
 
-</article>
+                <div class="faq-list faq-list--3d">
 
-<article class="faq-item">
 
-<h3>
+                    <details class="faq-card">
 
-How will I know about upcoming events?
+                        <summary>
+                            Are Foundation events open to the public?
+                        </summary>
 
-</h3>
+                        <div class="faq-answer">
 
-<p>
+                            <p>
+                                Some events are open to the public,
+                                while others may require registration
+                                or Foundation membership.
+                            </p>
 
-Subscribe to our newsletter or follow our official announcements for the latest updates.
+                        </div>
 
-</p>
+                    </details>
 
-</article>
 
-</div>
+                    <details class="faq-card">
 
-</div>
+                        <summary>
+                            Will virtual attendance be available?
+                        </summary>
 
-  </section>
+                        <div class="faq-answer">
 
-  <section class="cta-section">
+                            <p>
+                                Selected events may include online
+                                participation options where appropriate.
+                            </p>
 
-<div class="container">
+                        </div>
 
-<span class="section-title">
+                    </details>
 
-JOIN THE CONVERSATION
 
-</span>
+                    <details class="faq-card">
 
-<h2>
+                        <summary>
+                            How can I present at an event?
+                        </summary>
 
-Participate in Our Events
+                        <div class="faq-answer">
 
-</h2>
+                            <p>
+                                Calls for speakers and presentation
+                                proposals will be announced through
+                                the Foundation's official communication
+                                channels.
+                            </p>
 
-<p>
+                        </div>
 
-Be part of a growing network of researchers, educators, students, professionals, volunteers, and community leaders working together to advance science, sustainability, and innovation.
+                    </details>
 
-</p>
 
-<div class="hero-buttons">
+                    <details class="faq-card">
 
-<a href="../membership/membership-application.html"
-class="button">
+                        <summary>
+                            How will I know about upcoming events?
+                        </summary>
 
-Become a Member
+                        <div class="faq-answer">
 
-</a>
+                            <p>
+                                Subscribe to our newsletter or follow
+                                our official announcements for the
+                                latest updates.
+                            </p>
 
-<a href="../contact.html"
-class="button-outline">
+                        </div>
 
-Contact the Events Team
+                    </details>
 
-</a>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-  </section>
+        </section>
 
-  </main>
 
-<!-- Shared Footer -->
+        <!-- ==================================================
+             CTA
+        =================================================== -->
 
-<button
-id="backToTop"
-class="back-to-top"
-aria-label="Back to Top">
+        <section
+            class="events-cta cta-3d"
+            aria-labelledby="participate-events-title"
+        >
 
-<i class="fas fa-arrow-up"></i>
+            <div
+                class="cta-depth-layer"
+                aria-hidden="true"
+            ></div>
 
-</button>
 
-<script defer src="../assets/js/core/navigation.js"></script>
-<script defer src="../assets/js/core/accessibility.js"></script>
-<script defer src="../assets/js/core/loader.js"></script>
-<script defer src="../assets/js/core/app.js"></script>
+            <div class="container">
+
+                <div class="cta-3d-panel glass-panel">
+
+                    <span class="section-title">
+                        JOIN THE CONVERSATION
+                    </span>
+
+                    <h2 id="participate-events-title">
+                        Participate in Our Events
+                    </h2>
+
+                    <p>
+                        Be part of a growing network of researchers,
+                        educators, students, professionals, volunteers,
+                        and community leaders working together to
+                        advance science, sustainability, and innovation.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="../membership/membership-application.html"
+                            class="button button--3d"
+                        >
+                            Become a Member
+                        </a>
+
+                        <a
+                            href="../contact.html"
+                            class="button-outline button--3d"
+                        >
+                            Contact the Events Team
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ======================================================
+         BACK TO TOP
+    ======================================================= -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+
+        <i
+            class="fas fa-arrow-up"
+            aria-hidden="true"
+        ></i>
+
+    </button>
+
+
+    <!-- ======================================================
+         MODULAR APPLICATION BOOTSTRAP
+    ======================================================= -->
+
+    <script
+        type="module"
+        src="../assets/js/core/main.js"
+    ></script>
+
 
 </body>
 
