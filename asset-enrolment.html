@@ -3,325 +3,1703 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
 
-Asset Enrolment | SovereignAqua Research & Development Foundation
+    <!-- ======================================================
+         SEO
+    ======================================================= -->
 
-</title>
+    <title>
+        Asset Enrolment |
+        SovereignAqua Research &amp; Development Foundation
+    </title>
 
-<link rel="stylesheet" href="assets/css/global.css">
-<link rel="stylesheet" href="assets/css/navigation.css">
-<link rel="stylesheet" href="assets/css/asset.css">
-<link rel="stylesheet" href="assets/css/footer.css">
-<link rel="stylesheet" href="assets/css/animations.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+    <meta
+        name="description"
+        content="Submit information and supporting documentation for eligible asset enrolment consideration within approved SovereignAqua Foundation programmes."
+    >
+
+    <meta
+        name="robots"
+        content="index,follow"
+    >
+
+    <link
+        rel="canonical"
+        href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/asset-enrolment.html"
+    >
+
+
+    <!-- ======================================================
+         FAVICON
+    ======================================================= -->
+
+    <link
+        rel="icon"
+        href="assets/images/logos/favicon.png"
+        type="image/png"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+
+    <!-- ======================================================
+         FONTS
+    ======================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- ======================================================
+         BASE DESIGN SYSTEM
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/base/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/base/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/base/typography.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/base/global.css"
+    >
+
+
+    <!-- ======================================================
+         LAYOUT
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/layout/navigation.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/layout/footer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/layout/responsive.css"
+    >
+
+
+    <!-- ======================================================
+         COMPONENTS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/buttons.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/cards.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/forms.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components/animations.css"
+    >
+
+
+    <!-- ======================================================
+         PAGE-SPECIFIC STYLES
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/pages/asset-enrolment.css"
+    >
 
 </head>
 
-<body>
 
-<div id="progressBar"></div>
+<body class="page-asset-enrolment">
 
-<div id="loader">
 
-<div class="loader-spinner"></div>
+    <!-- ======================================================
+         ACCESSIBILITY
+    ======================================================= -->
 
-</div>
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Skip to main content
+    </a>
 
-<!-- Copy Navigation -->
 
-<main>
-<header class="page-hero">
+    <!-- ======================================================
+         HYBRID 3D ATMOSPHERE
+    ======================================================= -->
 
-<img
-src="assets/images/asset-banner.jpg"
-alt="Asset Enrolment"
-class="page-hero-image">
+    <div
+        class="site-atmosphere"
+        aria-hidden="true"
+    >
 
-<div class="page-hero-overlay"></div>
+        <div
+            class="atmosphere-orb atmosphere-orb--one"
+        ></div>
 
-<div class="page-hero-content container">
+        <div
+            class="atmosphere-orb atmosphere-orb--two"
+        ></div>
 
-<h1>
+        <div
+            class="atmosphere-grid"
+        ></div>
 
-Asset Enrolment
+        <div
+            class="atmosphere-glow atmosphere-glow--one"
+        ></div>
 
-</h1>
+        <div
+            class="atmosphere-glow atmosphere-glow--two"
+        ></div>
 
-<p>
+    </div>
 
-Securely register and document eligible assets with the Foundation's programs.
 
-</p>
+    <!-- ======================================================
+         PAGE LOADER
+    ======================================================= -->
 
-</div>
+    <div
+        id="loader"
+        class="page-loader"
+        aria-hidden="true"
+    >
 
-</header>
-  
-<!-- Content -->
-<section class="asset-overview">
+        <div
+            class="loader-spinner"
+            aria-hidden="true"
+        ></div>
 
-<div class="container">
+        <span class="sr-only">
+            Loading Asset Enrolment
+        </span>
 
-<div class="section-heading">
+    </div>
 
-<span class="section-title">
 
-ASSET ENROLMENT
+    <!-- ======================================================
+         READING PROGRESS
+    ======================================================= -->
 
-</span>
+    <div
+        id="progressBar"
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Page reading progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+    ></div>
 
-<h2>
 
-About the Program
+    <!-- ======================================================
+         HEADER / SHARED NAVIGATION
+    ======================================================= -->
 
-</h2>
+    <header class="site-header">
 
-</div>
+        <nav
+            class="navbar"
+            aria-label="Primary Navigation"
+        >
 
-<p>
+            <div class="container">
 
-The Asset Enrolment Program provides a structured process for documenting
-eligible assets submitted to the Foundation for participation in approved
-programs. Applicants should review all eligibility requirements and provide
-accurate supporting documentation during the enrolment process.
+                <a
+                    href="index.html"
+                    class="logo"
+                    aria-label="SovereignAqua Home"
+                >
 
-</p>
+                    <img
+                        src="assets/images/logos/logo-white.png"
+                        alt="SovereignAqua Research & Development Foundation Logo"
+                        class="logo-image"
+                        width="60"
+                        height="60"
+                        loading="eager"
+                    >
 
-</div>
+                    <div class="brand">
 
-</section>
-  <section class="eligibility">
+                        <span class="brand-name">
+                            SovereignAqua
+                        </span>
 
-<div class="container">
+                        <span class="brand-tagline">
+                            Research • Innovation • Sustainability
+                        </span>
 
-<div class="section-heading">
+                    </div>
 
-<h2>
+                </a>
 
-Eligibility Requirements
 
-</h2>
+                <a
+                    href="contact.html"
+                    class="button button--3d"
+                >
 
-</div>
+                    <i
+                        class="fas fa-envelope"
+                        aria-hidden="true"
+                    ></i>
 
-<div class="eligibility-grid">
+                    Contact Us
 
-<div class="card">
+                </a>
 
-<h3>Identity Verification</h3>
+            </div>
 
-<p>
+        </nav>
 
-Provide valid identification where required.
+    </header>
 
-</p>
 
-</div>
+    <!-- ======================================================
+         MAIN
+    ======================================================= -->
 
-<div class="card">
+    <main id="main-content">
 
-<h3>Ownership Documentation</h3>
 
-<p>
+        <!-- ==================================================
+             ASSET ENROLMENT HERO
+        =================================================== -->
 
-Submit documentation demonstrating your authority or ownership.
+        <section
+            class="asset-hero hero-3d"
+            aria-labelledby="asset-title"
+        >
 
-</p>
+            <div
+                class="hero-depth-plane"
+                aria-hidden="true"
+            ></div>
 
-</div>
 
-<div class="card">
+            <!-- 3D ASSET VISUALIZATION -->
 
-<h3>Supporting Records</h3>
+            <div
+                class="asset-orbit"
+                aria-hidden="true"
+            >
 
-<p>
+                <div
+                    class="asset-ring asset-ring--one"
+                ></div>
 
-Include all requested supporting documents for review.
+                <div
+                    class="asset-ring asset-ring--two"
+                ></div>
 
-</p>
+                <div
+                    class="asset-ring asset-ring--three"
+                ></div>
 
-</div>
 
-</div>
+                <div
+                    class="asset-node asset-node--one"
+                ></div>
 
-</div>
+                <div
+                    class="asset-node asset-node--two"
+                ></div>
 
-</section>
-  <section class="asset-form">
+                <div
+                    class="asset-node asset-node--three"
+                ></div>
 
-<div class="container">
 
-<div class="section-heading">
+                <div class="asset-core">
 
-<h2>
+                    <i
+                        class="fas fa-cubes"
+                        aria-hidden="true"
+                    ></i>
 
-Asset Enrolment Form
+                </div>
 
-</h2>
+            </div>
 
-</div>
 
-<form>
+            <div class="container">
 
-<input
-type="text"
-placeholder="Applicant Name"
-required>
+                <div class="hero-content-plane">
 
-<input
-type="email"
-placeholder="Email Address"
-required>
+                    <span class="section-title">
+                        ASSET ENROLMENT
+                    </span>
 
-<input
-type="text"
-placeholder="Country">
+                    <h1 id="asset-title">
+                        Asset Enrolment
+                    </h1>
 
-<input
-type="text"
-placeholder="Asset Category">
+                    <p class="hero-description">
+                        Securely submit information and
+                        supporting documentation for eligible
+                        assets considered for participation in
+                        approved Foundation programmes.
+                    </p>
 
-<input
-type="text"
-placeholder="Asset Description">
 
-<textarea
-rows="7"
-placeholder="Additional Information"></textarea>
+                    <div class="hero-buttons">
 
-<button
-class="button">
+                        <a
+                            href="#enrolment-form"
+                            class="button button--3d"
+                        >
 
-Submit Enrolment
+                            <i
+                                class="fas fa-file-circle-plus"
+                                aria-hidden="true"
+                            ></i>
 
-</button>
+                            Begin Enrolment
 
-</form>
+                        </a>
 
-</div>
+                        <a
+                            href="#eligibility"
+                            class="button-outline button--3d"
+                        >
 
-</section>
-  <section class="documents-required">
+                            Review Requirements
 
-<div class="container">
+                        </a>
 
-<div class="section-heading">
+                    </div>
 
-<h2>
+                </div>
 
-Required Documentation
+            </div>
 
-</h2>
+        </section>
 
-</div>
 
-<ul class="document-list">
+        <!-- ==================================================
+             PROGRAMME OVERVIEW
+        =================================================== -->
 
-<li>Government-issued identification (if applicable)</li>
+        <section
+            class="asset-section"
+            aria-labelledby="overview-title"
+        >
 
-<li>Proof of ownership or authority</li>
+            <div class="container">
 
-<li>Supporting records relevant to the asset</li>
+                <div class="section-heading section-heading--3d">
 
-<li>Completed enrolment form</li>
+                    <span class="section-title">
+                        ASSET ENROLMENT
+                    </span>
 
-<li>Any additional documentation requested during review</li>
+                    <h2 id="overview-title">
+                        About the Programme
+                    </h2>
 
-</ul>
+                </div>
 
-</div>
 
-</section>
-  <section class="faq">
+                <div class="content-plane glass-panel">
 
-<div class="container">
+                    <p>
+                        The Asset Enrolment Programme provides
+                        a structured process for documenting
+                        eligible assets submitted to the
+                        Foundation for participation in approved
+                        programmes.
+                    </p>
 
-<div class="section-heading">
+                    <p>
+                        Applicants should review all eligibility
+                        requirements and provide accurate
+                        supporting documentation during the
+                        enrolment process.
+                    </p>
 
-<h2>
+                    <div class="notice-panel">
 
-Frequently Asked Questions
+                        <i
+                            class="fas fa-circle-info"
+                            aria-hidden="true"
+                        ></i>
 
-</h2>
+                        <p>
+                            Submission of an enrolment application
+                            does not, by itself, constitute
+                            acceptance, verification, valuation,
+                            transfer of ownership, custody, or
+                            approval of an asset. Any such action
+                            is subject to applicable programme
+                            requirements and formal review.
+                        </p>
 
-</div>
+                    </div>
 
-<div class="card">
+                </div>
 
-<h3>
+            </div>
 
-How long does the review process take?
+        </section>
 
-</h3>
 
-<p>
+        <!-- ==================================================
+             ELIGIBILITY
+        =================================================== -->
 
-Review times vary depending on the completeness of the submitted information and the nature of the application.
+        <section
+            id="eligibility"
+            class="asset-section"
+            aria-labelledby="eligibility-title"
+        >
 
-</p>
+            <div class="container">
 
-</div>
+                <div class="section-heading section-heading--3d">
 
-<div class="card">
+                    <span class="section-title">
+                        ELIGIBILITY
+                    </span>
 
-<h3>
+                    <h2 id="eligibility-title">
+                        Eligibility Requirements
+                    </h2>
 
-Can I update my application?
+                    <p>
+                        Applicants should prepare the information
+                        necessary for the Foundation's review
+                        process.
+                    </p>
 
-</h3>
+                </div>
 
-<p>
 
-Yes. If additional information is requested, you may submit updates during the review process.
+                <div class="cards-grid cards-grid--3d">
 
-</p>
 
-</div>
+                    <article class="asset-card card--3d">
 
-</div>
+                        <div class="card-content">
 
-</section>
-  <section class="cta-section">
+                            <div class="card-icon">
 
-<div class="container">
+                                <i
+                                    class="fas fa-id-card"
+                                    aria-hidden="true"
+                                ></i>
 
-<h2>
+                            </div>
 
-Need Assistance?
+                            <h3>
+                                Identity Verification
+                            </h3>
 
-</h2>
+                            <p>
+                                Provide valid identification
+                                where required by the applicable
+                                programme or review process.
+                            </p>
 
-<p>
+                        </div>
 
-If you have questions about eligibility, documentation, or the enrolment process, our team is available to assist you.
+                    </article>
 
-</p>
 
-<a href="contact.html"
+                    <article class="asset-card card--3d">
 
-class="button">
+                        <div class="card-content">
 
-Contact Us
+                            <div class="card-icon">
 
-</a>
+                                <i
+                                    class="fas fa-file-shield"
+                                    aria-hidden="true"
+                                ></i>
 
-</div>
+                            </div>
 
-</section>
-  
-</main>
+                            <h3>
+                                Ownership Documentation
+                            </h3>
 
-<!-- Copy Footer -->
+                            <p>
+                                Submit documentation demonstrating
+                                your authority, ownership, or other
+                                lawful interest where applicable.
+                            </p>
 
-<script src="assets/js/navigation.js"></script>
-<script src="assets/js/animations.js"></script>
-<script src="assets/js/main.js"></script>
+                        </div>
+
+                    </article>
+
+
+                    <article class="asset-card card--3d">
+
+                        <div class="card-content">
+
+                            <div class="card-icon">
+
+                                <i
+                                    class="fas fa-folder-open"
+                                    aria-hidden="true"
+                                ></i>
+
+                            </div>
+
+                            <h3>
+                                Supporting Records
+                            </h3>
+
+                            <p>
+                                Include requested supporting
+                                records relevant to the asset
+                                and the applicable programme.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             ENROLMENT PROCESS
+        =================================================== -->
+
+        <section
+            class="asset-section process-section"
+            aria-labelledby="process-title"
+        >
+
+            <div class="container">
+
+                <div class="section-heading section-heading--3d">
+
+                    <span class="section-title">
+                        PROCESS
+                    </span>
+
+                    <h2 id="process-title">
+                        How Asset Enrolment Works
+                    </h2>
+
+                </div>
+
+
+                <div class="process-grid">
+
+
+                    <article class="process-step card--3d">
+
+                        <span class="process-number">
+                            01
+                        </span>
+
+                        <i
+                            class="fas fa-file-pen"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            Submit Information
+                        </h3>
+
+                        <p>
+                            Complete the enrolment form and
+                            provide the requested information.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-step card--3d">
+
+                        <span class="process-number">
+                            02
+                        </span>
+
+                        <i
+                            class="fas fa-magnifying-glass"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            Documentation Review
+                        </h3>
+
+                        <p>
+                            Submitted information and supporting
+                            documentation may be reviewed for
+                            completeness and eligibility.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-step card--3d">
+
+                        <span class="process-number">
+                            03
+                        </span>
+
+                        <i
+                            class="fas fa-clipboard-check"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            Review Outcome
+                        </h3>
+
+                        <p>
+                            Applicants may be contacted if
+                            additional information or documentation
+                            is required.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             ENROLMENT FORM
+        =================================================== -->
+
+        <section
+            id="enrolment-form"
+            class="asset-section form-section"
+            aria-labelledby="form-title"
+        >
+
+            <div class="container">
+
+                <div class="section-heading section-heading--3d">
+
+                    <span class="section-title">
+                        APPLICATION
+                    </span>
+
+                    <h2 id="form-title">
+                        Asset Enrolment Form
+                    </h2>
+
+                    <p>
+                        Complete the fields below with accurate
+                        information. Required fields are marked
+                        with an asterisk.
+                    </p>
+
+                </div>
+
+
+                <div class="form-layout">
+
+
+                    <!-- FORM -->
+
+                    <div class="asset-form-panel glass-panel">
+
+                        <form
+                            id="assetEnrolmentForm"
+                            method="post"
+                            action="#"
+                            enctype="multipart/form-data"
+                            novalidate
+                        >
+
+
+                            <!-- APPLICANT -->
+
+                            <fieldset>
+
+                                <legend>
+                                    Applicant Information
+                                </legend>
+
+
+                                <div class="form-grid">
+
+                                    <div class="form-field">
+
+                                        <label for="applicantName">
+                                            Applicant Name
+                                            <span aria-hidden="true">
+                                                *
+                                            </span>
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="applicantName"
+                                            name="applicantName"
+                                            autocomplete="name"
+                                            required
+                                        >
+
+                                    </div>
+
+
+                                    <div class="form-field">
+
+                                        <label for="email">
+                                            Email Address
+                                            <span aria-hidden="true">
+                                                *
+                                            </span>
+                                        </label>
+
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            autocomplete="email"
+                                            required
+                                        >
+
+                                    </div>
+
+
+                                    <div class="form-field">
+
+                                        <label for="country">
+                                            Country
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="country"
+                                            name="country"
+                                            autocomplete="country-name"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                            </fieldset>
+
+
+                            <!-- ASSET INFORMATION -->
+
+                            <fieldset>
+
+                                <legend>
+                                    Asset Information
+                                </legend>
+
+
+                                <div class="form-grid">
+
+                                    <div class="form-field">
+
+                                        <label for="assetCategory">
+                                            Asset Category
+                                        </label>
+
+                                        <select
+                                            id="assetCategory"
+                                            name="assetCategory"
+                                        >
+
+                                            <option value="">
+                                                Select a category
+                                            </option>
+
+                                            <option value="property">
+                                                Property / Real Estate
+                                            </option>
+
+                                            <option value="equipment">
+                                                Equipment
+                                            </option>
+
+                                            <option value="intellectual-property">
+                                                Intellectual Property
+                                            </option>
+
+                                            <option value="documentary">
+                                                Documentary Asset
+                                            </option>
+
+                                            <option value="other">
+                                                Other
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <div class="form-field">
+
+                                        <label for="assetReference">
+                                            Asset Reference
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="assetReference"
+                                            name="assetReference"
+                                            placeholder="Reference or identifying number"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-field">
+
+                                    <label for="assetDescription">
+                                        Asset Description
+                                    </label>
+
+                                    <textarea
+                                        id="assetDescription"
+                                        name="assetDescription"
+                                        rows="6"
+                                        placeholder="Provide a clear description of the asset."
+                                    ></textarea>
+
+                                </div>
+
+                            </fieldset>
+
+
+                            <!-- SUPPORTING INFORMATION -->
+
+                            <fieldset>
+
+                                <legend>
+                                    Supporting Information
+                                </legend>
+
+
+                                <div class="form-field">
+
+                                    <label for="additionalInformation">
+                                        Additional Information
+                                    </label>
+
+                                    <textarea
+                                        id="additionalInformation"
+                                        name="additionalInformation"
+                                        rows="6"
+                                        placeholder="Provide any additional information relevant to your enrolment."
+                                    ></textarea>
+
+                                </div>
+
+
+                                <div class="form-field">
+
+                                    <label for="supportingDocuments">
+                                        Supporting Documents
+                                    </label>
+
+                                    <input
+                                        type="file"
+                                        id="supportingDocuments"
+                                        name="supportingDocuments"
+                                        multiple
+                                    >
+
+                                    <small>
+                                        Upload only documents relevant
+                                        to your application and permitted
+                                        by the applicable submission
+                                        requirements.
+                                    </small>
+
+                                </div>
+
+                            </fieldset>
+
+
+                            <!-- ACKNOWLEDGEMENT -->
+
+                            <fieldset>
+
+                                <legend>
+                                    Applicant Acknowledgement
+                                </legend>
+
+
+                                <label
+                                    class="checkbox"
+                                    for="accuracy"
+                                >
+
+                                    <input
+                                        type="checkbox"
+                                        id="accuracy"
+                                        name="accuracy"
+                                        required
+                                    >
+
+                                    <span>
+                                        I confirm that the information
+                                        supplied in this application is
+                                        accurate to the best of my
+                                        knowledge and that I understand
+                                        the submission is subject to
+                                        review.
+                                    </span>
+
+                                </label>
+
+                            </fieldset>
+
+
+                            <!-- SUBMIT -->
+
+                            <div class="form-actions">
+
+                                <button
+                                    type="submit"
+                                    class="button button--3d"
+                                >
+
+                                    <i
+                                        class="fas fa-paper-plane"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Submit Enrolment
+
+                                </button>
+
+                                <p class="form-note">
+                                    Your application will be processed
+                                    according to the applicable review
+                                    procedures.
+                                </p>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- FORM INFORMATION -->
+
+                    <aside class="form-information card--3d">
+
+                        <div class="card-content">
+
+                            <span class="section-title">
+                                BEFORE SUBMITTING
+                            </span>
+
+                            <h2>
+                                Prepare Your Documents
+                            </h2>
+
+                            <p>
+                                Providing complete and accurate
+                                documentation can help reduce
+                                unnecessary delays during review.
+                            </p>
+
+
+                            <ul class="document-list">
+
+                                <li>
+                                    <i
+                                        class="fas fa-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Government-issued
+                                    identification, where applicable.
+                                </li>
+
+                                <li>
+                                    <i
+                                        class="fas fa-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Proof of ownership or lawful
+                                    authority.
+                                </li>
+
+                                <li>
+                                    <i
+                                        class="fas fa-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Supporting records relevant
+                                    to the asset.
+                                </li>
+
+                                <li>
+                                    <i
+                                        class="fas fa-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Completed enrolment information.
+                                </li>
+
+                                <li>
+                                    <i
+                                        class="fas fa-check"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Additional documentation if
+                                    requested during review.
+                                </li>
+
+                            </ul>
+
+
+                            <div class="notice-panel">
+
+                                <i
+                                    class="fas fa-shield-halved"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <p>
+                                    Do not submit sensitive
+                                    information unless the Foundation
+                                    specifically requests it through
+                                    an authorized submission channel.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             DOCUMENTATION
+        =================================================== -->
+
+        <section
+            class="asset-section"
+            aria-labelledby="documents-title"
+        >
+
+            <div class="container">
+
+                <div class="section-heading section-heading--3d">
+
+                    <span class="section-title">
+                        DOCUMENTATION
+                    </span>
+
+                    <h2 id="documents-title">
+                        Required Documentation
+                    </h2>
+
+                </div>
+
+
+                <div class="document-grid">
+
+
+                    <article class="document-card card--3d">
+
+                        <i
+                            class="fas fa-id-card"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            Identification
+                        </h3>
+
+                        <p>
+                            Government-issued identification,
+                            where applicable.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document-card card--3d">
+
+                        <i
+                            class="fas fa-file-contract"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            Ownership or Authority
+                        </h3>
+
+                        <p>
+                            Documentation demonstrating
+                            ownership or lawful authority.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document-card card--3d">
+
+                        <i
+                            class="fas fa-folder-tree"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            Supporting Records
+                        </h3>
+
+                        <p>
+                            Relevant records supporting the
+                            submitted asset information.
+                        </p>
+
+                    </article>
+
+
+                    <article class="document-card card--3d">
+
+                        <i
+                            class="fas fa-file-circle-check"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            Additional Materials
+                        </h3>
+
+                        <p>
+                            Any additional documentation
+                            requested during review.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FAQ
+        =================================================== -->
+
+        <section
+            class="asset-section faq-section"
+            aria-labelledby="faq-title"
+        >
+
+            <div class="container">
+
+                <div class="section-heading section-heading--3d">
+
+                    <span class="section-title">
+                        FAQ
+                    </span>
+
+                    <h2 id="faq-title">
+                        Frequently Asked Questions
+                    </h2>
+
+                </div>
+
+
+                <div class="faq-list">
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            How long does the review process take?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Review times vary depending on
+                                the completeness of the submitted
+                                information and the nature of the
+                                application.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            Can I update my application?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. If additional information is
+                                requested, you may submit updates
+                                through the designated review
+                                process.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            Does submitting an asset mean it has
+                            been accepted?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                No. Submission initiates a review
+                                process. Acceptance, eligibility,
+                                verification, or participation in
+                                a programme remains subject to the
+                                applicable requirements and review.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            What if I need assistance?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Contact the Foundation through the
+                                official Contact Centre for questions
+                                concerning eligibility, documentation,
+                                or the enrolment process.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CTA
+        =================================================== -->
+
+        <section
+            class="asset-cta cta-3d"
+            aria-labelledby="assistance-title"
+        >
+
+            <div
+                class="cta-depth-layer"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="container">
+
+                <div class="cta-3d-panel glass-panel">
+
+                    <span class="section-title">
+                        NEED ASSISTANCE?
+                    </span>
+
+                    <h2 id="assistance-title">
+                        Questions About Asset Enrolment?
+                    </h2>
+
+                    <p>
+                        If you have questions about eligibility,
+                        documentation, or the enrolment process,
+                        contact the Foundation for assistance.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="contact.html"
+                            class="button button--3d"
+                        >
+
+                            <i
+                                class="fas fa-envelope"
+                                aria-hidden="true"
+                            ></i>
+
+                            Contact Us
+
+                        </a>
+
+                        <a
+                            href="membership-application.html"
+                            class="button-outline button--3d"
+                        >
+                            Membership
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <section class="footer-column">
+
+                    <img
+                        src="assets/images/logos/logo-white.png"
+                        alt="SovereignAqua Research & Development Foundation Logo"
+                        class="footer-logo"
+                        width="72"
+                        height="72"
+                        loading="lazy"
+                    >
+
+                    <h3>
+                        SovereignAqua Research &amp;
+                        Development Foundation
+                    </h3>
+
+                    <p>
+                        Advancing scientific research,
+                        innovation, environmental stewardship,
+                        education, and sustainable development
+                        through collaboration.
+                    </p>
+
+                </section>
+
+
+                <section class="footer-column">
+
+                    <h4>
+                        Explore
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="research.html">
+                                Research
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="projects.html">
+                                Projects
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="publications.html">
+                                Publications
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <section class="footer-column">
+
+                    <h4>
+                        Resources
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="news.html">
+                                News
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="events.html">
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="membership-application.html">
+                                Membership
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+                <section class="footer-column">
+
+                    <h4>
+                        Legal
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="privacy-policy.html">
+                                Privacy Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="terms.html">
+                                Terms &amp; Conditions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="cookies.html">
+                                Cookie Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="accessibility.html">
+                                Accessibility
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </section>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026
+                    <strong>
+                        SovereignAqua Research &amp;
+                        Development Foundation
+                    </strong>.
+                    All Rights Reserved.
+                </p>
+
+
+                <div class="footer-social">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i
+                            class="fab fa-facebook-f"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="LinkedIn"
+                    >
+                        <i
+                            class="fab fa-linkedin-in"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="X"
+                    >
+                        <i
+                            class="fab fa-x-twitter"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                    >
+                        <i
+                            class="fab fa-youtube"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="GitHub"
+                    >
+                        <i
+                            class="fab fa-github"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ======================================================
+         BACK TO TOP
+    ======================================================= -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+
+        <i
+            class="fas fa-arrow-up"
+            aria-hidden="true"
+        ></i>
+
+    </button>
+
+
+    <!-- ======================================================
+         APPLICATION BOOTSTRAP
+    ======================================================= -->
+
+    <script
+        type="module"
+        src="assets/js/core/main.js"
+    ></script>
 
 </body>
 
