@@ -1,608 +1,1236 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta http-equiv="X-UA-Compatible"
-content="IE=edge">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
 
-<title>
+    <title>
+        Member Portal Login |
+        SovereignAqua Research &amp; Development Foundation
+    </title>
 
-Member Portal Login |
-SovereignAqua Research & Development Foundation
+    <meta
+        name="description"
+        content="Secure member portal providing access to Foundation resources, research collaboration, events, committees, volunteer activities, and member services."
+    >
 
-</title>
+    <meta
+        name="robots"
+        content="noindex,nofollow"
+    >
 
-<meta
-name="description"
-content="Secure member portal providing access to Foundation resources, research collaboration, events, committees, volunteer activities, and member services.">
+    <link
+        rel="canonical"
+        href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/membership/member-login.html"
+    >
 
-<meta
-name="robots"
-content="noindex,nofollow">
 
-<link rel="canonical"
-href="https://www.sovereignaquaresearchanddevelopmentfoundation.org/membership/member-login.html">
+    <!-- ======================================================
+         BASE DESIGN SYSTEM
+    ======================================================= -->
 
-<link rel="stylesheet" href="../assets/css/base/reset.css">
-<link rel="stylesheet" href="../assets/css/base/variables.css">
-<link rel="stylesheet" href="../assets/css/base/typography.css">
-<link rel="stylesheet" href="../assets/css/layout/navigation.css">
-<link rel="stylesheet" href="../assets/css/layout/footer.css">
-<link rel="stylesheet" href="../assets/css/components/forms.css">
-<link rel="stylesheet" href="../assets/css/components/buttons.css">
-<link rel="stylesheet" href="../assets/css/pages/member-login.css">
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/base/typography.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/global.css"
+    >
+
+
+    <!-- ======================================================
+         LAYOUT
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/layout/navigation.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/layout/footer.css"
+    >
+
+
+    <!-- ======================================================
+         COMPONENTS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components/forms.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components/cards.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/components/buttons.css"
+    >
+
+
+    <!-- ======================================================
+         PAGE-SPECIFIC HYBRID 3D SYSTEM
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/pages/member-login.css"
+    >
 
 </head>
 
-<body>
 
-<a href="#main-content"
-class="skip-link">
+<body class="page-member-login">
 
-Skip to main content
 
-</a>
+    <!-- ======================================================
+         ACCESSIBILITY
+    ======================================================= -->
 
-<div id="progressBar"></div>
+    <a
+        href="#main-content"
+        class="skip-link"
+    >
+        Skip to main content
+    </a>
 
-<div id="loader">
 
-<div class="loader-spinner"></div>
+    <!-- ======================================================
+         GLOBAL 3D ATMOSPHERE
+    ======================================================= -->
 
-</div>
+    <div
+        class="site-atmosphere"
+        aria-hidden="true"
+    >
 
-<!-- Shared Navigation -->
+        <div
+            class="atmosphere-orb atmosphere-orb--one"
+        ></div>
 
-<main id="main-content">
+        <div
+            class="atmosphere-orb atmosphere-orb--two"
+        ></div>
 
-<section class="page-hero">
+        <div
+            class="atmosphere-grid"
+        ></div>
 
-<div class="container">
+        <div
+            class="atmosphere-glow atmosphere-glow--one"
+        ></div>
 
-<span class="section-title">
+        <div
+            class="atmosphere-glow atmosphere-glow--two"
+        ></div>
 
-MEMBER PORTAL
+    </div>
 
-</span>
 
-<h1>
+    <!-- ======================================================
+         PAGE LOADER
+    ======================================================= -->
 
-Secure Access for Foundation Members
+    <div
+        id="loader"
+        class="page-loader"
+        aria-hidden="true"
+    >
 
-</h1>
+        <div
+            class="loader-spinner"
+            aria-hidden="true"
+        ></div>
 
-<p>
+        <span class="sr-only">
+            Loading secure member portal
+        </span>
 
-Sign in to access your member dashboard, publications, committee workspaces, volunteer activities, event registrations, and personalized Foundation resources.
+    </div>
 
-</p>
 
-</div>
+    <!-- ======================================================
+         READING PROGRESS
+    ======================================================= -->
 
-  </section>
+    <div
+        id="progressBar"
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Page reading progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+    ></div>
 
-  <section class="section">
 
-<div class="container login-layout">
+    <!-- ======================================================
+         SHARED NAVIGATION
+    ======================================================= -->
 
-<div class="login-card">
+    <header
+        class="site-header"
+        data-site-navigation
+    >
 
-<h2>
+        <!-- Shared SovereignAqua navigation -->
 
-Member Sign In
+    </header>
 
-</h2>
 
-<form>
+    <!-- ======================================================
+         MAIN CONTENT
+    ======================================================= -->
 
-<label for="email">
+    <main id="main-content">
 
-Email Address
 
-</label>
+        <!-- ==================================================
+             SECURE PORTAL HERO
+        =================================================== -->
 
-<input
-type="email"
-id="email"
-placeholder="name@example.org"
-required>
+        <section
+            class="portal-hero hero-3d"
+            aria-labelledby="portal-title"
+        >
 
-<label for="password">
+            <div
+                class="hero-depth-plane"
+                aria-hidden="true"
+            ></div>
 
-Password
+            <div
+                class="hero-orb hero-orb--one"
+                aria-hidden="true"
+            ></div>
 
-</label>
+            <div
+                class="hero-orb hero-orb--two"
+                aria-hidden="true"
+            ></div>
 
-<input
-type="password"
-id="password"
-placeholder="Password"
-required>
 
-<div class="checkbox">
+            <div class="container">
 
-<input
-type="checkbox"
-id="remember">
+                <div class="hero-3d-stage">
 
-<label for="remember">
 
-Remember Me
+                    <!-- SECURITY VISUALIZATION -->
 
-</label>
+                    <div
+                        class="portal-security-orbit"
+                        aria-hidden="true"
+                    >
 
-</div>
+                        <div
+                            class="security-ring security-ring--one"
+                        ></div>
 
-<button
-type="submit"
-class="button">
+                        <div
+                            class="security-ring security-ring--two"
+                        ></div>
 
-Sign In
+                        <div
+                            class="security-ring security-ring--three"
+                        ></div>
 
-</button>
+                        <div
+                            class="security-node security-node--one"
+                        ></div>
 
-<p>
+                        <div
+                            class="security-node security-node--two"
+                        ></div>
 
-<a href="forgot-password.html">
+                        <div
+                            class="security-node security-node--three"
+                        ></div>
 
-Forgot Password?
+                        <div
+                            class="security-core"
+                        >
 
-</a>
+                            <i
+                                class="fas fa-lock"
+                                aria-hidden="true"
+                            ></i>
 
-</p>
+                        </div>
 
-<p>
+                    </div>
 
-<a href="membership-application.html">
 
-Become a Member
+                    <!-- HERO CONTENT -->
 
-</a>
+                    <div class="hero-content-plane">
 
-</p>
+                        <span class="section-title">
+                            MEMBER PORTAL
+                        </span>
 
-</form>
+                        <h1 id="portal-title">
+                            Secure Access for
+                            Foundation Members
+                        </h1>
 
-</div>
+                        <p class="lead">
+                            Sign in to access your member
+                            dashboard, publications, committee
+                            workspaces, volunteer activities,
+                            event registrations, and personalized
+                            Foundation resources.
+                        </p>
 
-<div class="portal-info">
 
-<h2>
+                        <div class="portal-security-status">
 
-Member Portal Features
+                            <span
+                                class="security-indicator"
+                                aria-hidden="true"
+                            ></span>
 
-</h2>
+                            <span>
+                                Secure Member Environment
+                            </span>
 
-<ul>
+                        </div>
 
-<li>Personal Dashboard</li>
+                    </div>
 
-<li>Membership Status</li>
+                </div>
 
-<li>Digital Membership Card</li>
+            </div>
 
-<li>Research Resources</li>
+        </section>
 
-<li>Event Registration</li>
 
-<li>Volunteer Opportunities</li>
+        <!-- ==================================================
+             LOGIN SECTION
+        =================================================== -->
 
-<li>Committee Workspace</li>
+        <section
+            class="portal-section login-section"
+            aria-labelledby="login-title"
+        >
 
-<li>Member Directory</li>
+            <div class="container">
 
-<li>Download Centre</li>
+                <div class="login-layout login-layout--3d">
 
-<li>Certificates</li>
 
-</ul>
+                    <!-- LOGIN CARD -->
 
-</div>
+                    <div
+                        class="login-card card--3d glass-panel"
+                    >
 
-</div>
+                        <div class="login-card__header">
 
-  </section>
+                            <span
+                                class="login-icon"
+                                aria-hidden="true"
+                            >
 
-  <section class="section">
+                                <i
+                                    class="fas fa-right-to-bracket"
+                                ></i>
 
-<div class="container">
+                            </span>
 
-<div class="section-heading">
+                            <div>
 
-<span class="section-title">
+                                <span class="section-title">
+                                    SECURE ACCESS
+                                </span>
 
-MEMBER BENEFITS
+                                <h2 id="login-title">
+                                    Member Sign In
+                                </h2>
 
-</span>
+                            </div>
 
-<h2>
+                        </div>
 
-Everything In One Place
 
-</h2>
+                        <form
+                            id="memberLoginForm"
+                            class="member-login-form"
+                            method="post"
+                            action="#"
+                            autocomplete="on"
+                        >
 
-</div>
 
-<div class="cards-grid">
+                            <!-- EMAIL -->
 
-<div class="card">
+                            <div class="form-field">
 
-<h3>
+                                <label for="email">
+                                    Email Address
+                                </label>
 
-Research Library
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="name@example.org"
+                                    autocomplete="username"
+                                    required
+                                >
 
-</h3>
+                            </div>
 
-<p>
 
-Access publications, reports, journals, and technical resources.
+                            <!-- PASSWORD -->
 
-</p>
+                            <div class="form-field">
 
-</div>
+                                <label for="password">
+                                    Password
+                                </label>
 
-<div class="card">
+                                <div class="password-field">
 
-<h3>
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        autocomplete="current-password"
+                                        required
+                                    >
 
-Professional Development
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        data-password-toggle
+                                        aria-label="Show password"
+                                        aria-controls="password"
+                                        aria-pressed="false"
+                                    >
 
-</h3>
+                                        <i
+                                            class="fas fa-eye"
+                                            aria-hidden="true"
+                                        ></i>
 
-<p>
+                                    </button>
 
-Training, webinars, workshops, and certification opportunities.
+                                </div>
 
-</p>
+                            </div>
 
-</div>
 
-<div class="card">
+                            <!-- OPTIONS -->
 
-<h3>
+                            <div class="login-options">
 
-Community Network
+                                <label
+                                    class="checkbox"
+                                    for="remember"
+                                >
 
-</h3>
+                                    <input
+                                        type="checkbox"
+                                        id="remember"
+                                        name="remember"
+                                    >
 
-<p>
+                                    <span>
+                                        Remember Me
+                                    </span>
 
-Connect with fellow members, researchers, volunteers, and institutional partners.
+                                </label>
 
-</p>
 
-</div>
+                                <a
+                                    href="forgot-password.html"
+                                >
+                                    Forgot Password?
+                                </a>
 
-</div>
+                            </div>
 
-</div>
 
-  </section>
+                            <!-- SUBMIT -->
 
-  <section class="section">
+                            <button
+                                type="submit"
+                                class="button button--3d login-submit"
+                            >
 
-<div class="container">
+                                <i
+                                    class="fas fa-lock-open"
+                                    aria-hidden="true"
+                                ></i>
 
-<div class="section-heading">
+                                Sign In
 
-<span class="section-title">
+                            </button>
 
-PORTAL MODULES
 
-</span>
+                            <!-- REGISTER -->
 
-<h2>
+                            <div class="login-register">
 
-Available Services
+                                <span>
+                                    Don't have a member account?
+                                </span>
 
-</h2>
+                                <a
+                                    href="membership-application.html"
+                                >
+                                    Become a Member
+                                </a>
 
-</div>
+                            </div>
 
-<div class="cards-grid">
 
-<div class="card">
+                            <!-- SECURITY NOTE -->
 
-<h3>
+                            <div
+                                class="login-security-note"
+                                role="note"
+                            >
 
-My Membership
+                                <i
+                                    class="fas fa-shield-halved"
+                                    aria-hidden="true"
+                                ></i>
 
-</h3>
+                                <span>
+                                    Never share your password
+                                    with another person.
+                                </span>
 
-<p>
+                            </div>
 
-View membership details, renewal status, and profile information.
+                        </form>
 
-</p>
+                    </div>
 
-</div>
 
-<div class="card">
+                    <!-- PORTAL FEATURES -->
 
-<h3>
+                    <aside
+                        class="portal-info card--3d"
+                        aria-labelledby="features-title"
+                    >
 
-My Events
+                        <div class="card-content">
 
-</h3>
+                            <span class="section-title">
+                                MEMBER PORTAL
+                            </span>
 
-<p>
+                            <h2 id="features-title">
+                                Member Portal Features
+                            </h2>
 
-Register for conferences, seminars, and Foundation activities.
+                            <p>
+                                Your member account provides
+                                centralized access to Foundation
+                                resources, programmes, activities,
+                                and services.
+                            </p>
 
-</p>
 
-</div>
+                            <ul class="portal-feature-list">
 
-<div class="card">
+                                <li>
+                                    <i
+                                        class="fas fa-gauge-high"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Personal Dashboard
+                                    </span>
+                                </li>
 
-<h3>
+                                <li>
+                                    <i
+                                        class="fas fa-id-card"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Membership Status
+                                    </span>
+                                </li>
 
-Research Projects
+                                <li>
+                                    <i
+                                        class="fas fa-address-card"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Digital Membership Card
+                                    </span>
+                                </li>
 
-</h3>
+                                <li>
+                                    <i
+                                        class="fas fa-book-open"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Research Resources
+                                    </span>
+                                </li>
 
-<p>
+                                <li>
+                                    <i
+                                        class="fas fa-calendar-check"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Event Registration
+                                    </span>
+                                </li>
 
-Participate in collaborative research initiatives.
+                                <li>
+                                    <i
+                                        class="fas fa-hands-helping"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Volunteer Opportunities
+                                    </span>
+                                </li>
 
-</p>
+                                <li>
+                                    <i
+                                        class="fas fa-users-gear"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Committee Workspace
+                                    </span>
+                                </li>
 
-</div>
+                                <li>
+                                    <i
+                                        class="fas fa-address-book"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Member Directory
+                                    </span>
+                                </li>
 
-<div class="card">
+                                <li>
+                                    <i
+                                        class="fas fa-download"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Download Centre
+                                    </span>
+                                </li>
 
-<h3>
+                                <li>
+                                    <i
+                                        class="fas fa-certificate"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>
+                                        Certificates
+                                    </span>
+                                </li>
 
-Volunteer Dashboard
+                            </ul>
 
-</h3>
+                        </div>
 
-<p>
+                    </aside>
 
-Track volunteer opportunities, hours, and programme participation.
+                </div>
 
-</p>
+            </div>
 
-</div>
+        </section>
 
-<div class="card">
 
-<h3>
+        <!-- ==================================================
+             MEMBER BENEFITS
+        =================================================== -->
 
-Committee Workspace
+        <section
+            class="portal-section"
+            aria-labelledby="benefits-title"
+        >
 
-</h3>
+            <div class="container">
 
-<p>
+                <div class="section-heading section-heading--3d">
 
-Access committee documents, meeting agendas, and shared resources.
+                    <span class="section-title">
+                        MEMBER BENEFITS
+                    </span>
 
-</p>
+                    <h2 id="benefits-title">
+                        Everything In One Place
+                    </h2>
 
-</div>
+                </div>
 
-<div class="card">
 
-<h3>
+                <div class="cards-grid cards-grid--3d">
 
-Downloads
 
-</h3>
+                    <article class="portal-card card--3d">
 
-<p>
+                        <div class="card-content">
 
-Retrieve member-exclusive templates, policies, publications, and reports.
+                            <i
+                                class="fas fa-book-open"
+                                aria-hidden="true"
+                            ></i>
 
-</p>
+                            <h3>
+                                Research Library
+                            </h3>
 
-</div>
+                            <p>
+                                Access publications, reports,
+                                journals, and technical resources.
+                            </p>
 
-</div>
+                        </div>
 
-</div>
+                    </article>
 
-  </section>
 
-  <section class="section">
+                    <article class="portal-card card--3d">
 
-<div class="container">
+                        <div class="card-content">
 
-<div class="section-heading">
+                            <i
+                                class="fas fa-graduation-cap"
+                                aria-hidden="true"
+                            ></i>
 
-<span class="section-title">
+                            <h3>
+                                Professional Development
+                            </h3>
 
-SECURITY
+                            <p>
+                                Training, webinars, workshops,
+                                and certification opportunities.
+                            </p>
 
-</span>
+                        </div>
 
-<h2>
+                    </article>
 
-Protecting Your Account
 
-</h2>
+                    <article class="portal-card card--3d">
 
-</div>
+                        <div class="card-content">
 
-<ul class="policy-list">
+                            <i
+                                class="fas fa-network-wired"
+                                aria-hidden="true"
+                            ></i>
 
-<li>Encrypted connections using HTTPS.</li>
+                            <h3>
+                                Community Network
+                            </h3>
 
-<li>Secure password storage.</li>
+                            <p>
+                                Connect with fellow members,
+                                researchers, volunteers, and
+                                institutional partners.
+                            </p>
 
-<li>Optional multi-factor authentication.</li>
+                        </div>
 
-<li>Session timeout for inactive users.</li>
+                    </article>
 
-<li>Privacy controls for member profile information.</li>
+                </div>
 
-<li>Compliance with the Foundation's privacy policy.</li>
+            </div>
 
-</ul>
+        </section>
 
-</div>
 
-  </section>
+        <!-- ==================================================
+             PORTAL MODULES
+        =================================================== -->
 
-  <section class="section faq">
+        <section
+            class="portal-section"
+            aria-labelledby="modules-title"
+        >
 
-<div class="container">
+            <div class="container">
 
-<div class="section-heading">
+                <div class="section-heading section-heading--3d">
 
-<span class="section-title">
+                    <span class="section-title">
+                        PORTAL MODULES
+                    </span>
 
-FAQ
+                    <h2 id="modules-title">
+                        Available Services
+                    </h2>
 
-</span>
+                </div>
 
-<h2>
 
-Portal Questions
+                <div class="cards-grid cards-grid--3d">
 
-</h2>
 
-</div>
+                    <article class="portal-card card--3d">
 
-<div class="faq-list">
+                        <div class="card-content">
 
-<article class="faq-item">
+                            <i
+                                class="fas fa-user-circle"
+                                aria-hidden="true"
+                            ></i>
 
-<h3>
+                            <h3>
+                                My Membership
+                            </h3>
 
-Who can access the Member Portal?
+                            <p>
+                                View membership details,
+                                renewal status, and profile
+                                information.
+                            </p>
 
-</h3>
+                        </div>
 
-<p>
+                    </article>
 
-Active members with an approved account can sign in to access member-only resources and services.
 
-</p>
+                    <article class="portal-card card--3d">
 
-</article>
+                        <div class="card-content">
 
-<article class="faq-item">
+                            <i
+                                class="fas fa-calendar-days"
+                                aria-hidden="true"
+                            ></i>
 
-<h3>
+                            <h3>
+                                My Events
+                            </h3>
 
-Can I update my profile?
+                            <p>
+                                Register for conferences,
+                                seminars, and Foundation
+                                activities.
+                            </p>
 
-</h3>
+                        </div>
 
-<p>
+                    </article>
 
-Yes. Members can update their contact information and profile details after signing in.
 
-</p>
+                    <article class="portal-card card--3d">
 
-</article>
+                        <div class="card-content">
 
-<article class="faq-item">
+                            <i
+                                class="fas fa-flask"
+                                aria-hidden="true"
+                            ></i>
 
-<h3>
+                            <h3>
+                                Research Projects
+                            </h3>
 
-What if I forget my password?
+                            <p>
+                                Participate in collaborative
+                                research initiatives.
+                            </p>
 
-</h3>
+                        </div>
 
-<p>
+                    </article>
 
-Use the "Forgot Password" option to request a secure password reset.
 
-</p>
+                    <article class="portal-card card--3d">
 
-</article>
+                        <div class="card-content">
 
-<article class="faq-item">
+                            <i
+                                class="fas fa-hands-helping"
+                                aria-hidden="true"
+                            ></i>
 
-<h3>
+                            <h3>
+                                Volunteer Dashboard
+                            </h3>
 
-Is my information secure?
+                            <p>
+                                Track volunteer opportunities,
+                                hours, and programme participation.
+                            </p>
 
-</h3>
+                        </div>
 
-<p>
+                    </article>
 
-The Foundation implements appropriate technical and administrative safeguards to help protect member account information.
 
-</p>
+                    <article class="portal-card card--3d">
 
-</article>
+                        <div class="card-content">
 
-</div>
+                            <i
+                                class="fas fa-users-gear"
+                                aria-hidden="true"
+                            ></i>
 
-</div>
+                            <h3>
+                                Committee Workspace
+                            </h3>
 
-  </section>
+                            <p>
+                                Access committee documents,
+                                meeting agendas, and shared
+                                resources.
+                            </p>
 
-  <section class="cta-section">
+                        </div>
 
-<div class="container">
+                    </article>
 
-<span class="section-title">
 
-JOIN OUR COMMUNITY
+                    <article class="portal-card card--3d">
 
-</span>
+                        <div class="card-content">
 
-<h2>
+                            <i
+                                class="fas fa-download"
+                                aria-hidden="true"
+                            ></i>
 
-Become Part of the Foundation
+                            <h3>
+                                Downloads
+                            </h3>
 
-</h2>
+                            <p>
+                                Retrieve member-exclusive
+                                templates, policies,
+                                publications, and reports.
+                            </p>
 
-<p>
+                        </div>
 
-Join researchers, educators, students, professionals, volunteers, institutions, and community leaders committed to advancing science, innovation, and sustainable development.
+                    </article>
 
-</p>
+                </div>
 
-<div class="hero-buttons">
+            </div>
 
-<a href="membership-application.html"
-class="button">
+        </section>
 
-Apply for Membership
 
-</a>
+        <!-- ==================================================
+             SECURITY
+        =================================================== -->
 
-<a href="../contact.html"
-class="button-outline">
+        <section
+            class="portal-section security-section"
+            aria-labelledby="security-title"
+        >
 
-Contact Member Services
+            <div class="container">
 
-</a>
+                <div class="section-heading section-heading--3d">
 
-</div>
+                    <span class="section-title">
+                        SECURITY
+                    </span>
 
-</div>
+                    <h2 id="security-title">
+                        Protecting Your Account
+                    </h2>
 
-  </section>
+                </div>
 
-  </main>
 
-<!-- Shared Footer -->
+                <div class="glass-panel content-plane security-panel">
 
-<button
-id="backToTop"
-class="back-to-top"
-aria-label="Back to Top">
+                    <div class="security-panel__icon">
 
-<i class="fas fa-arrow-up"></i>
+                        <i
+                            class="fas fa-shield-halved"
+                            aria-hidden="true"
+                        ></i>
 
-</button>
+                    </div>
 
-<script defer src="../assets/js/core/navigation.js"></script>
-<script defer src="../assets/js/core/accessibility.js"></script>
-<script defer src="../assets/js/core/loader.js"></script>
-<script defer src="../assets/js/core/app.js"></script>
+
+                    <ul class="policy-list">
+
+                        <li>
+                            Encrypted connections using HTTPS.
+                        </li>
+
+                        <li>
+                            Secure password storage.
+                        </li>
+
+                        <li>
+                            Optional multi-factor authentication.
+                        </li>
+
+                        <li>
+                            Session timeout for inactive users.
+                        </li>
+
+                        <li>
+                            Privacy controls for member
+                            profile information.
+                        </li>
+
+                        <li>
+                            Compliance with the Foundation's
+                            privacy policy.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FAQ
+        =================================================== -->
+
+        <section
+            class="portal-section"
+            aria-labelledby="faq-title"
+        >
+
+            <div class="container">
+
+                <div class="section-heading section-heading--3d">
+
+                    <span class="section-title">
+                        FAQ
+                    </span>
+
+                    <h2 id="faq-title">
+                        Portal Questions
+                    </h2>
+
+                </div>
+
+
+                <div class="faq-list faq-list--3d">
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            Who can access the Member Portal?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Active members with an approved
+                                account can sign in to access
+                                member-only resources and services.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            Can I update my profile?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Members can update their
+                                contact information and profile
+                                details after signing in.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            What if I forget my password?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Use the "Forgot Password" option
+                                to request a secure password reset.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-card">
+
+                        <summary>
+                            Is my information secure?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                The Foundation implements
+                                appropriate technical and
+                                administrative safeguards to help
+                                protect member account information.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CTA
+        =================================================== -->
+
+        <section
+            class="portal-cta cta-3d"
+            aria-labelledby="join-title"
+        >
+
+            <div
+                class="cta-depth-layer"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="container">
+
+                <div class="cta-3d-panel glass-panel">
+
+                    <span class="section-title">
+                        JOIN OUR COMMUNITY
+                    </span>
+
+                    <h2 id="join-title">
+                        Become Part of the Foundation
+                    </h2>
+
+                    <p>
+                        Join researchers, educators, students,
+                        professionals, volunteers, institutions,
+                        and community leaders committed to
+                        advancing science, innovation, and
+                        sustainable development.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="membership-application.html"
+                            class="button button--3d"
+                        >
+                            Apply for Membership
+                        </a>
+
+                        <a
+                            href="../contact.html"
+                            class="button-outline button--3d"
+                        >
+                            Contact Member Services
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ======================================================
+         BACK TO TOP
+    ======================================================= -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+
+        <i
+            class="fas fa-arrow-up"
+            aria-hidden="true"
+        ></i>
+
+    </button>
+
+
+    <!-- ======================================================
+         MODULAR APPLICATION BOOTSTRAP
+    ======================================================= -->
+
+    <script
+        type="module"
+        src="../assets/js/core/main.js"
+    ></script>
+
 
 </body>
 
