@@ -3,7 +3,8 @@ const required = [
   "CLIENT_ID",
   "CLIENT_SECRET",
   "BASE_URL",
-  "SECRET"
+  "SECRET",
+  "DATABASE_URL"
 ];
 
 export function loadConfig(env = process.env) {
@@ -19,6 +20,8 @@ export function loadConfig(env = process.env) {
     baseUrl: env.BASE_URL.replace(/\/$/, ""),
     secret: env.SECRET,
     audience: env.AUDIENCE || undefined,
+    databaseUrl: env.DATABASE_URL,
+    dbPoolMax: Number(env.DB_POOL_MAX || 10),
     port: Number(env.PORT || 3000),
     nodeEnv: env.NODE_ENV || "development"
   };
