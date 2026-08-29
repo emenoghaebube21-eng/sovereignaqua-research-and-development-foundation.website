@@ -1,0 +1,20 @@
+{
+  "name": "sovereignaqua-bff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SovereignAqua server-side authentication BFF/API",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-openid-connect": "^2.19.3",
+    "helmet": "^8.1.0"
+  }
+}
