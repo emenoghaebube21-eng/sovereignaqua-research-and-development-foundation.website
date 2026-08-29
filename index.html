@@ -657,7 +657,7 @@
                     <a
                         href="membership-application.html"
                         class="button-secondary button--3d"
-                    >H
+                    >
                         Join the Foundation
                     </a>
 
@@ -808,7 +808,6 @@
 
                 <div class="about-grid">
 
-
                     <div class="about-image card--3d">
 
                         <img
@@ -820,7 +819,6 @@
                         >
 
                     </div>
-
 
                     <div class="about-content">
 
@@ -2182,10 +2180,11 @@
          JAVASCRIPT
     ======================================================= -->
 
-    <script
-        type="module"
-        src="asset/js/core/main.js"
-    ></script>
+    <script>
+        document.documentElement.classList.remove("no-js");
+    </script>
+    <script src="asset/js/core/boot-safety.js" defer></script>
+    <script type="module" src="asset/js/core/main.js"></script>
 
 </body>
 
