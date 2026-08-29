@@ -1,0 +1,14 @@
+/* The loader must never become the page's permanent content layer. */
+#loader {
+    transition: opacity .5s ease, visibility .5s ease;
+}
+
+html.no-js #loader {
+    display: none !important;
+}
+
+html.no-js .fade-in,
+html.no-js .fade-scale {
+    opacity: 1;
+    transform: none;
+}
