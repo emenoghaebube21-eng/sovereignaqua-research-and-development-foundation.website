@@ -7,7 +7,7 @@ import { createIdentityMiddleware } from "./identity-middleware.js";
 import { hasPermission } from "./authorization.js";
 
 const config = loadConfig();
-const db = createDb();
+const db = createDb(config);
 const app = express();
 
 app.disable("x-powered-by");
