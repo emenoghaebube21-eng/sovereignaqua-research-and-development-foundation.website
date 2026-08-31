@@ -1,16 +1,9 @@
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
-   Core Application Bootstrap
-   Version 2.1
-
-   Responsibilities:
-   - Start core application modules
-   - Maintain application-level initialization
-   - Highlight the current page
-   - Provide a safe module initialization boundary
-
-   Feature behavior belongs in dedicated modules.
+   Core Application Controller
+   Hybrid 3D Architecture
+   Version 3.0
 ========================================================== */
 
 "use strict";
@@ -20,25 +13,95 @@
    MODULE IMPORTS
 ========================================================== */
 
+/*
+   Core modules
+*/
+
 import {
     initNavigation
-} from "../modules/navigation.js";
+} from "./navigation.js";
+
+import {
+    initAccessibility
+} from "./accessibility.js";
+
+
+/*
+   Visual / functional modules
+*/
 
 import {
     initHero
-} from "../modules/hero.js";
+} from "../modules/heroVideo.js";
+
+import {
+    initCounters
+} from "../modules/counter.js";
+
+import {
+    initLoader
+} from "../modules/loader.js";
+
+import {
+    initProgressBar
+} from "../modules/progress-bar.js";
+
+import {
+    initScrollEffects
+} from "../modules/scroll-effects.js";
+
+import {
+    initLazyLoad
+} from "../modules/lazyLoad.js";
 
 
 /* ==========================================================
-   APPLICATION INITIALIZATION
+   APPLICATION STATE
+========================================================== */
+
+const applicationState = {
+
+    initialized: false,
+
+    modules: {
+
+        navigation: false,
+
+        accessibility: false,
+
+        hero: false,
+
+        counters: false,
+
+        loader: false,
+
+        progressBar: false,
+
+        scrollEffects: false,
+
+        lazyLoad: false,
+
+        currentPage: false
+
+    }
+
+};
+
+
+/* ==========================================================
+   BOOTSTRAP
 ========================================================== */
 
 document.addEventListener(
+
     "DOMContentLoaded",
+
     initializeApplication,
+
     {
         once: true
     }
+
 );
 
 
@@ -48,54 +111,125 @@ document.addEventListener(
 
 function initializeApplication() {
 
+    if (
+        applicationState.initialized
+    ) {
+
+        return;
+
+    }
+
+
     console.info(
-        "[SovereignAqua] Website initialization started."
+        "[SovereignAqua] Application initialization started."
     );
 
 
     /*
-       Initialize the navigation module.
+       Initialize the page loader first.
     */
 
-    initializeModule(
+    runModule(
+        "loader",
+        initLoader
+    );
+
+
+    /*
+       Initialize accessibility behavior.
+    */
+
+    runModule(
+        "accessibility",
+        initAccessibility
+    );
+
+
+    /*
+       Initialize navigation.
+    */
+
+    runModule(
         "navigation",
         initNavigation
     );
 
 
     /*
-       Initialize the hero module.
+       Initialize hero media.
     */
 
-    initializeModule(
+    runModule(
         "hero",
         initHero
     );
 
 
     /*
-       Highlight the current page after the navigation
-       has been initialized.
+       Initialize counters.
     */
 
-    initializeModule(
-        "current-page",
+    runModule(
+        "counters",
+        initCounters
+    );
+
+
+    /*
+       Initialize reading progress.
+    */
+
+    runModule(
+        "progressBar",
+        initProgressBar
+    );
+
+
+    /*
+       Initialize scroll effects.
+    */
+
+    runModule(
+        "scrollEffects",
+        initScrollEffects
+    );
+
+
+    /*
+       Initialize lazy loading.
+    */
+
+    runModule(
+        "lazyLoad",
+        initLazyLoad
+    );
+
+
+    /*
+       Highlight the current page.
+    */
+
+    runModule(
+        "currentPage",
         highlightCurrentPage
     );
 
 
+    applicationState.initialized = true;
+
+
     console.info(
-        "[SovereignAqua] Website initialization complete."
+        "[SovereignAqua] Application initialization complete."
     );
 
 }
 
 
 /* ==========================================================
-   SAFE MODULE INITIALIZATION
+   SAFE MODULE EXECUTION
 ========================================================== */
 
-function initializeModule(
+function runModule(
     moduleName,
     initializer
 ) {
@@ -106,7 +240,7 @@ function initializeModule(
     ) {
 
         console.warn(
-            `[SovereignAqua] ${moduleName} initializer is unavailable.`
+            `[SovereignAqua] ${moduleName} module unavailable.`
         );
 
         return false;
@@ -118,14 +252,26 @@ function initializeModule(
 
         initializer();
 
+
+        applicationState.modules[
+            moduleName
+        ] = true;
+
+
         return true;
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         console.error(
+
             `[SovereignAqua] ${moduleName} initialization failed.`,
+
             error
+
         );
+
 
         return false;
 
@@ -147,15 +293,37 @@ function highlightCurrentPage() {
     let currentPage =
         currentPath
             .split("/")
+            .filter(Boolean)
             .pop();
 
 
     /*
-       Directory URLs resolve to the homepage.
+       Root URL.
     */
 
-    if (!currentPage) {
-        currentPage = "index.html";
+    if (
+        !currentPage ||
+        currentPage === ""
+    ) {
+
+        currentPage =
+            "index.html";
+
+    }
+
+
+    /*
+       Normalize directory index pages.
+    */
+
+    if (
+        currentPage ===
+        "index"
+    ) {
+
+        currentPage =
+            "index.html";
+
     }
 
 
@@ -165,8 +333,12 @@ function highlightCurrentPage() {
         );
 
 
-    if (!navigationLinks.length) {
+    if (
+        !navigationLinks.length
+    ) {
+
         return;
+
     }
 
 
@@ -179,25 +351,20 @@ function highlightCurrentPage() {
                 );
 
 
-            if (!href) {
-                return;
-            }
-
-
-            /*
-               Ignore anchor-only links.
-            */
-
             if (
-                href.startsWith("#")
+                !href ||
+                href.startsWith("#") ||
+                href.startsWith("mailto:") ||
+                href.startsWith("tel:")
             ) {
+
                 return;
+
             }
 
 
             /*
-               Remove query strings and fragments
-               before comparing page names.
+               Remove query strings and fragments.
             */
 
             const normalizedHref =
@@ -205,32 +372,48 @@ function highlightCurrentPage() {
                     .split("#")[0]
                     .split("?")[0]
                     .split("/")
+                    .filter(Boolean)
                     .pop();
 
 
-            const isCurrentPage =
+            const isCurrent =
                 normalizedHref ===
                 currentPage;
 
 
             link.classList.toggle(
                 "active",
-                isCurrentPage
+                isCurrent
             );
 
 
-            if (isCurrentPage) {
+            if (isCurrent) {
 
                 link.setAttribute(
                     "aria-current",
                     "page"
                 );
 
-            } else {
+            }
+            else {
 
-                link.removeAttribute(
-                    "aria-current"
-                );
+                /*
+                   Do not remove location/current
+                   semantics from section navigation
+                   unnecessarily.
+                */
+
+                if (
+                    link.getAttribute(
+                        "aria-current"
+                    ) === "page"
+                ) {
+
+                    link.removeAttribute(
+                        "aria-current"
+                    );
+
+                }
 
             }
 
@@ -241,19 +424,26 @@ function highlightCurrentPage() {
 
 
 /* ==========================================================
-   GLOBAL ERROR REPORTING
+   APPLICATION ERROR HANDLING
 ========================================================== */
 
 window.addEventListener(
+
     "error",
+
     event => {
 
         console.error(
+
             "[SovereignAqua] Application error:",
-            event.error || event.message
+
+            event.error ||
+            event.message
+
         );
 
     }
+
 );
 
 
@@ -262,13 +452,35 @@ window.addEventListener(
 ========================================================== */
 
 window.addEventListener(
+
     "unhandledrejection",
+
     event => {
 
         console.error(
+
             "[SovereignAqua] Unhandled promise rejection:",
+
             event.reason
+
         );
 
     }
+
 );
+
+
+/* ==========================================================
+   PUBLIC DEBUG INTERFACE
+========================================================== */
+
+window.SovereignAquaApp = {
+
+    state:
+        applicationState,
+
+    initialized:
+        () =>
+            applicationState.initialized
+
+};
