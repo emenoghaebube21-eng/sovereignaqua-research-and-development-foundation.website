@@ -1,4 +1,5 @@
 ```javascript
+```javascript
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
@@ -6,46 +7,61 @@
    CORE APPLICATION CONTROLLER
    Hybrid 3D Architecture
 
-   This file is the SINGLE JavaScript entry point.
+   SINGLE APPLICATION ENTRY POINT
 
    Responsibilities:
-   - Initialize application modules
-   - Coordinate shared UI behavior
-   - Back-to-top control
-   - Global accessibility
-   - Global error handling
+   - Initialize core modules
+   - Initialize feature modules
+   - Coordinate shared UI
+   - Accessibility
+   - Back-to-top behavior
+   - Current-page state
+   - Runtime error protection
 
-   Feature logic remains inside its own modules.
+   IMPORTANT:
+   Individual modules must NOT independently initialize
+   themselves through DOMContentLoaded.
 ========================================================== */
 
 "use strict";
 
 
 /* ==========================================================
-   MODULE IMPORTS
+   CORE MODULES
 ========================================================== */
 
-import { initNavigation }
-    from "../modules/navigation.js";
+import {
+    initLoader
+} from "./loader.js";
 
-import { initHero }
-    from "../modules/hero.js";
+import {
+    initProgressBar
+} from "./progress-bar.js";
 
-import { initCounter }
-    from "../modules/counter.js";
-
-import { initLoader }
-    from "./loader.js";
-
-import { initProgressBar }
-    from "./progress-bar.js";
-
-import { initScrollEffects }
-    from "./scroll-effects.js";
+import {
+    initScrollEffects
+} from "./scroll-effects.js";
 
 
 /* ==========================================================
-   APPLICATION START
+   FEATURE MODULES
+========================================================== */
+
+import {
+    initNavigation
+} from "../modules/navigation.js";
+
+import {
+    initHero
+} from "../modules/hero.js";
+
+import {
+    initCounter
+} from "../modules/counter.js";
+
+
+/* ==========================================================
+   APPLICATION INITIALIZATION
 ========================================================== */
 
 document.addEventListener(
@@ -64,11 +80,23 @@ document.addEventListener(
 function initializeApplication() {
 
     /*
-     * Each module is initialized independently.
-     * A missing optional component must never
-     * prevent the remainder of the website
-     * from loading.
+     * Initialize each subsystem independently.
+     *
+     * If one optional module fails, the remaining
+     * website should continue functioning.
      */
+
+    safelyInitialize(
+        "Loader",
+        initLoader
+    );
+
+
+    safelyInitialize(
+        "Progress Bar",
+        initProgressBar
+    );
+
 
     safelyInitialize(
         "Navigation",
@@ -85,18 +113,6 @@ function initializeApplication() {
     safelyInitialize(
         "Counter",
         initCounter
-    );
-
-
-    safelyInitialize(
-        "Loader",
-        initLoader
-    );
-
-
-    safelyInitialize(
-        "Progress Bar",
-        initProgressBar
     );
 
 
@@ -124,24 +140,33 @@ function initializeApplication() {
     );
 
 
+    /*
+     * Application-ready state.
+     */
+
     document.documentElement.classList.add(
         "app-ready"
     );
 
 
-    console.log(
-        "SovereignAqua Foundation — Application Ready"
+    /*
+     * Useful for debugging deployment issues.
+     */
+
+    console.info(
+        "SovereignAqua Foundation:",
+        "Hybrid application initialized."
     );
 
 }
 
 
 /* ==========================================================
-   SAFE MODULE INITIALIZATION
+   SAFE INITIALIZATION
 ========================================================== */
 
 function safelyInitialize(
-    name,
+    moduleName,
     initializer
 ) {
 
@@ -150,7 +175,7 @@ function safelyInitialize(
     ) {
 
         console.warn(
-            `SovereignAqua: ${name} initializer unavailable.`
+            `SovereignAqua: ${moduleName} module is unavailable.`
         );
 
         return;
@@ -165,7 +190,7 @@ function safelyInitialize(
     } catch (error) {
 
         console.error(
-            `SovereignAqua: ${name} initialization failed.`,
+            `SovereignAqua: ${moduleName} initialization failed.`,
             error
         );
 
@@ -196,16 +221,23 @@ function initBackToTop() {
     let ticking = false;
 
 
-    /*
-     * Hide the button until the visitor
-     * has moved sufficiently down the page.
-     */
+    function updateButton() {
 
-    function updateVisibility() {
+        const visible =
+            window.scrollY > 400;
+
 
         button.classList.toggle(
             "show",
-            window.scrollY > 400
+            visible
+        );
+
+
+        button.setAttribute(
+            "aria-hidden",
+            visible
+                ? "false"
+                : "true"
         );
 
 
@@ -214,7 +246,7 @@ function initBackToTop() {
     }
 
 
-    function requestVisibilityUpdate() {
+    function requestUpdate() {
 
         if (ticking) {
 
@@ -227,7 +259,7 @@ function initBackToTop() {
 
 
         window.requestAnimationFrame(
-            updateVisibility
+            updateButton
         );
 
     }
@@ -235,43 +267,46 @@ function initBackToTop() {
 
     window.addEventListener(
         "scroll",
-        requestVisibilityUpdate,
+        requestUpdate,
         {
             passive: true
         }
     );
 
 
-    /*
-     * Keyboard and pointer accessible.
-     */
-
     button.addEventListener(
         "click",
-        () => {
-
-            const reducedMotion =
-                window.matchMedia(
-                    "(prefers-reduced-motion: reduce)"
-                ).matches;
-
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior:
-                    reducedMotion
-                        ? "auto"
-                        : "smooth"
-
-            });
-
-        }
+        handleBackToTop
     );
 
 
-    updateVisibility();
+    updateButton();
+
+}
+
+
+/* ==========================================================
+   BACK TO TOP ACTION
+========================================================== */
+
+function handleBackToTop() {
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior:
+            reducedMotion
+                ? "auto"
+                : "smooth"
+
+    });
 
 }
 
@@ -281,12 +316,6 @@ function initBackToTop() {
 ========================================================== */
 
 function initCurrentPage() {
-
-    const currentPage =
-        normalizePage(
-            window.location.pathname
-        );
-
 
     const links =
         document.querySelectorAll(
@@ -299,6 +328,10 @@ function initCurrentPage() {
         return;
 
     }
+
+
+    const currentPage =
+        getCurrentPage();
 
 
     links.forEach(
@@ -318,8 +351,11 @@ function initCurrentPage() {
 
 
             /*
-             * Ignore anchors and external
-             * communication links.
+             * Do not modify:
+             * - anchors
+             * - email links
+             * - telephone links
+             * - external URLs
              */
 
             if (
@@ -341,14 +377,17 @@ function initCurrentPage() {
                 );
 
 
-            if (
-                linkedPage === currentPage
-            ) {
+            const isCurrent =
+                linkedPage === currentPage;
 
-                link.classList.add(
-                    "active"
-                );
 
+            link.classList.toggle(
+                "active",
+                isCurrent
+            );
+
+
+            if (isCurrent) {
 
                 link.setAttribute(
                     "aria-current",
@@ -357,16 +396,6 @@ function initCurrentPage() {
 
             } else {
 
-                /*
-                 * Do not leave stale active
-                 * states on unrelated links.
-                 */
-
-                link.classList.remove(
-                    "active"
-                );
-
-
                 link.removeAttribute(
                     "aria-current"
                 );
@@ -374,6 +403,23 @@ function initCurrentPage() {
             }
 
         }
+    );
+
+}
+
+
+/* ==========================================================
+   GET CURRENT PAGE
+========================================================== */
+
+function getCurrentPage() {
+
+    const pathname =
+        window.location.pathname;
+
+
+    return normalizePage(
+        pathname
     );
 
 }
@@ -394,7 +440,7 @@ function normalizePage(
     }
 
 
-    let page =
+    let normalized =
         String(value)
             .split("?")[0]
             .split("#")[0]
@@ -408,19 +454,15 @@ function normalizePage(
      * Remove trailing slash.
      */
 
-    page =
-        page.replace(
+    normalized =
+        normalized.replace(
             /\/+$/,
             ""
         );
 
 
-    /*
-     * Extract final path segment.
-     */
-
     const segments =
-        page
+        normalized
             .split("/")
             .filter(Boolean);
 
@@ -439,12 +481,13 @@ function normalizePage(
 
 
     /*
-     * Root-style URLs resolve to index.
+     * Treat common root documents
+     * consistently.
      */
 
     if (
-        filename === "" ||
-        filename === "."
+        filename === "." ||
+        filename === ""
     ) {
 
         return "index.html";
@@ -458,7 +501,7 @@ function normalizePage(
 
 
 /* ==========================================================
-   ACCESSIBILITY
+   GLOBAL ACCESSIBILITY
 ========================================================== */
 
 function initAccessibility() {
@@ -469,23 +512,20 @@ function initAccessibility() {
         );
 
 
-    function applyMotionPreference() {
+    function updateMotionState() {
+
+        const reduced =
+            motionPreference.matches;
+
 
         document.documentElement
             .classList.toggle(
                 "reduced-motion",
-                motionPreference.matches
+                reduced
             );
 
 
-        /*
-         * Keep native CSS scroll behavior
-         * aligned with the user's preference.
-         */
-
-        if (
-            motionPreference.matches
-        ) {
+        if (reduced) {
 
             document.documentElement.style
                 .scrollBehavior = "auto";
@@ -493,18 +533,20 @@ function initAccessibility() {
         } else {
 
             document.documentElement.style
-                .scrollBehavior = "";
+                .removeProperty(
+                    "scroll-behavior"
+                );
 
         }
 
     }
 
 
-    applyMotionPreference();
+    updateMotionState();
 
 
     /*
-     * Modern browsers.
+     * Modern MediaQueryList API.
      */
 
     if (
@@ -514,7 +556,7 @@ function initAccessibility() {
 
         motionPreference.addEventListener(
             "change",
-            applyMotionPreference
+            updateMotionState
         );
 
     }
@@ -531,7 +573,7 @@ window.addEventListener(
     event => {
 
         console.error(
-            "SovereignAqua Application Error:",
+            "SovereignAqua runtime error:",
             event.error ||
             event.message
         );
@@ -541,7 +583,7 @@ window.addEventListener(
 
 
 /* ==========================================================
-   UNHANDLED PROMISE HANDLING
+   UNHANDLED PROMISE ERRORS
 ========================================================== */
 
 window.addEventListener(
@@ -549,7 +591,7 @@ window.addEventListener(
     event => {
 
         console.error(
-            "SovereignAqua Unhandled Promise Rejection:",
+            "SovereignAqua unhandled promise rejection:",
             event.reason
         );
 
