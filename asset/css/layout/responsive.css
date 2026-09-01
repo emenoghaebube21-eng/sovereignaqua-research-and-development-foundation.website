@@ -1,392 +1,91 @@
 /* ==========================================================
    RESPONSIVE.CSS
    SovereignAqua Research & Development Foundation
-========================================================== */
-
-/* ==========================================================
-   LARGE DESKTOPS
+   Canonical responsive layer
 ========================================================== */
 
 @media (max-width:1200px){
-
-    .container{
-
-        width:min(95%,1200px);
-
-    }
-
-    .hero-content{
-
-        max-width:700px;
-
-    }
-
+  .container{width:min(95%,1200px)}
+  .hero-content{max-width:700px}
 }
-
-/* ==========================================================
-   TABLETS
-========================================================== */
 
 @media (max-width:992px){
+  h1{font-size:3rem}
+  h2{font-size:2.3rem}
+  section{padding:80px 0}
+  .navbar{min-height:80px}
+  .logo-image{width:50px;height:50px}
+  .brand-tagline{display:none}
+  .hero{min-height:85vh}
+  .hero-content{max-width:650px;margin:0 auto}
+  .hero-buttons{flex-direction:column;align-items:center;gap:20px}
 
-    h1{
+  .about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;gap:40px}
+  .research-grid,.program-grid,.news-grid,.partners-grid,.values-grid,.projects-grid{grid-template-columns:repeat(2,1fr);gap:30px}
 
-        font-size:3rem;
-
-    }
-
-    h2{
-
-        font-size:2.3rem;
-
-    }
-
-    section{
-
-        padding:80px 0;
-
-    }
-
-    /* Navigation */
-
-    .navbar{
-
-        min-height:80px;
-
-    }
-
-    .logo-image{
-
-        width:50px;
-
-        height:50px;
-
-    }
-
-    .brand-tagline{
-
-        display:none;
-
-    }
-
-    /* Hero */
-
-    .hero{
-
-        min-height:85vh;
-
-    }
-
-    .hero-content{
-
-        max-width:650px;
-
-        margin:0 auto;
-
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:20px;
-
-    }
-
-    /* Layout */
-
-    .about-grid,
-    .contact-grid,
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-        gap:40px;
-
-    }
-
-    .research-grid,
-    .program-grid,
-    .news-grid,
-    .partners-grid,
-    .values-grid,
-    .projects-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-        gap:30px;
-
-    }
-
+  /* Canonical mobile navigation. */
+  .nav-links{
+    position:fixed;
+    top:80px;
+    right:-100%;
+    width:min(320px,100%);
+    height:calc(100vh - 80px);
+    background:var(--background,#081424);
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    padding:32px 24px;
+    margin:0;
+    gap:8px;
+    overflow-y:auto;
+    border-left:1px solid var(--border-primary,rgba(0,207,255,.18));
+    box-shadow:-18px 0 45px rgba(0,0,0,.35);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    transition:right .3s ease;
+    z-index:1100;
+  }
+  .nav-links.active{right:0}
+  .menu-toggle{display:inline-flex;z-index:1200}
+  .nav-actions{display:none}
 }
-
-/* ==========================================================
-   MOBILE
-========================================================== */
 
 @media (max-width:768px){
-
-    h1{
-
-        font-size:2.5rem;
-
-    }
-
-    h2{
-
-        font-size:2rem;
-
-    }
-
-    section{
-
-        padding:70px 0;
-
-    }
-
-    .hero{
-
-        min-height:auto;
-
-        padding:140px 0 80px;
-
-    }
-
-    .hero-content{
-
-        padding:20px;
-
-        text-align:center;
-
-    }
-
-    .section-heading{
-
-        margin-bottom:50px;
-
-    }
-
-    /* Grids */
-
-    .research-grid,
-    .program-grid,
-    .news-grid,
-    .partners-grid,
-    .values-grid,
-    .impact-grid,
-    .projects-grid,
-    .stat-grid,
-    .quick-actions-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    /* Cards */
-
-    .card{
-
-        padding:20px;
-
-    }
-
-    .card img{
-
-        height:200px;
-
-    }
-
-    /* Footer */
-
-    .footer-bottom{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        gap:20px;
-
-    }
-
-    .footer-legal{
-
-        justify-content:center;
-
-        flex-wrap:wrap;
-
-        gap:15px;
-
-    }
-
+  h1{font-size:2.5rem}
+  h2{font-size:2rem}
+  section{padding:70px 0}
+  .hero{min-height:auto;padding:120px 0 80px}
+  .hero-content{padding:20px;text-align:center}
+  .section-heading{margin-bottom:50px}
+  .research-grid,.program-grid,.news-grid,.partners-grid,.values-grid,.impact-grid,.projects-grid,.stat-grid,.quick-actions-grid{grid-template-columns:1fr}
+  .card{padding:20px}
+  .card img{height:200px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:20px}
+  .footer-legal{justify-content:center;flex-wrap:wrap;gap:15px}
 }
-
-/* ==========================================================
-   SMALL MOBILE
-========================================================== */
 
 @media (max-width:576px){
-
-    .container{
-
-        width:min(92%,540px);
-
-    }
-
-    h1{
-
-        font-size:2rem;
-
-    }
-
-    h2{
-
-        font-size:1.7rem;
-
-    }
-
-    p{
-
-        font-size:.98rem;
-
-    }
-
-    .button,
-    .button-outline,
-    .button-secondary{
-
-        width:100%;
-
-        padding:16px;
-
-        justify-content:center;
-
-    }
-
-    .logo-image{
-
-        width:45px;
-
-        height:45px;
-
-    }
-
-    .brand-name{
-
-        font-size:1.1rem;
-
-    }
-
-    .navbar{
-
-        padding:0 10px;
-
-    }
-
-    .hero-buttons{
-
-        gap:15px;
-
-    }
-
-    .contact-form input,
-    .contact-form textarea{
-
-        font-size:16px;
-
-    }
-
+  .container{width:min(92%,540px)}
+  h1{font-size:2rem}
+  h2{font-size:1.7rem}
+  p{font-size:.98rem}
+  .button,.button-outline,.button-secondary{width:100%;padding:16px;justify-content:center}
+  .logo-image{width:45px;height:45px}
+  .brand-name{font-size:1.1rem}
+  .navbar{padding:0 10px}
+  .hero-buttons{gap:15px}
+  .contact-form input,.contact-form textarea{font-size:16px}
 }
-
-/* ==========================================================
-   EXTRA SMALL DEVICES
-========================================================== */
 
 @media (max-width:400px){
-
-    h1{
-
-        font-size:1.8rem;
-
-    }
-
-    h2{
-
-        font-size:1.5rem;
-
-    }
-
-    .brand-name{
-
-        font-size:1rem;
-
-    }
-
-    .hero-content{
-
-        padding:15px;
-
-    }
-
-    .card{
-
-        padding:18px;
-
-    }
-
-    .card img{
-
-        height:180px;
-
-    }
-
+  h1{font-size:1.8rem}
+  h2{font-size:1.5rem}
+  .brand-name{font-size:1rem}
+  .hero-content{padding:15px}
+  .card{padding:18px}
+  .card img{height:180px}
 }
 
-@media (max-width:992px){
-
-.nav-links{
-
-position:fixed;
-
-top:130px;
-
-right:-100%;
-
-width:320px;
-
-height:calc(100vh - 130px);
-
-background:white;
-
-display:flex;
-
-flex-direction:column;
-
-padding:40px;
-
-transition:.4s;
-
-box-shadow:-8px 0 30px rgba(0,0,0,.15);
-
-}
-
-.nav-links.active{
-
-right:0;
-
-}
-
-.menu-toggle{
-
-display:block;
-
-}
-
-.nav-actions{
-
-display:none;
-
-}
-
+@media (prefers-reduced-motion:reduce){
+  .nav-links{transition:none}
 }
