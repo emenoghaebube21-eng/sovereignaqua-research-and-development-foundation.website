@@ -1,128 +1,151 @@
 /* ==========================================================
    BUTTONS.CSS
    SovereignAqua Research & Development Foundation
-========================================================== */
-
-/* ==========================================================
-   BASE BUTTON
+   Unified Hybrid 3D Controls
 ========================================================== */
 
 .button,
 .button-outline,
-.button-secondary{
+.button-secondary {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 14px 32px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: var(--weight-semibold);
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    transform: translateZ(0);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition);
+}
 
-    display:inline-flex;
+.button::before,
+.button-outline::before,
+.button-secondary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.18) 50%, transparent 80%);
+    transform: translateX(-120%);
+    transition: transform .55s ease;
+}
 
-    justify-content:center;
+.button:hover::before,
+.button-outline:hover::before,
+.button-secondary:hover::before {
+    transform: translateX(120%);
+}
 
-    align-items:center;
-
-    gap:10px;
-
-    min-height:52px;
-
-    padding:14px 32px;
-
-    border-radius:var(--radius-md);
-
-    font-size:1rem;
-
-    font-weight:600;
-
-    text-decoration:none;
-
-    transition:all var(--transition);
-
-    cursor:pointer;
-
-    user-select:none;
-
+.button > *,
+.button-outline > *,
+.button-secondary > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* ==========================================================
    PRIMARY BUTTON
 ========================================================== */
 
-.button{
-
-    background:var(--primary);
-
-    color:#ffffff;
-
-    border:2px solid var(--primary);
-
+.button {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    box-shadow:
+        0 10px 25px rgba(0,119,182,.22),
+        inset 0 1px 0 rgba(255,255,255,.14);
 }
 
-.button:hover{
+.button:hover {
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary-dark));
+    border-color: var(--primary-hover);
+    transform: translateY(-4px) translateZ(8px);
+    box-shadow:
+        0 16px 35px rgba(0,119,182,.30),
+        0 0 22px rgba(0,207,255,.12),
+        inset 0 1px 0 rgba(255,255,255,.18);
+}
 
-    background:var(--primary-dark);
-
-    border-color:var(--primary-dark);
-
-    transform:translateY(-3px);
-
-    box-shadow:var(--shadow-md);
-
+.button:active {
+    transform: translateY(-1px) translateZ(2px);
 }
 
 /* ==========================================================
    OUTLINE BUTTON
 ========================================================== */
 
-.button-outline{
-
-    background:transparent;
-
-    color:#ffffff;
-
-    border:2px solid #ffffff;
-
+.button-outline {
+    background: rgba(255,255,255,.025);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,.55);
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.16),
+        inset 0 1px 0 rgba(255,255,255,.06);
+    backdrop-filter: blur(8px);
 }
 
-.button-outline:hover{
-
-    background:#ffffff;
-
-    color:var(--background);
-
-    transform:translateY(-3px);
-
-    box-shadow:var(--shadow-md);
-
+.button-outline:hover {
+    background: rgba(255,255,255,.94);
+    color: var(--background);
+    border-color: #ffffff;
+    transform: translateY(-4px) translateZ(8px);
+    box-shadow: 0 16px 35px rgba(0,0,0,.24);
 }
 
 /* ==========================================================
    SECONDARY BUTTON
 ========================================================== */
 
-.button-secondary{
-
-    background:var(--secondary);
-
-    color:#ffffff;
-
-    border:2px solid var(--secondary);
-
+.button-secondary {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: #ffffff;
+    border: 1px solid var(--secondary);
+    box-shadow:
+        0 10px 25px rgba(0,89,120,.20),
+        inset 0 1px 0 rgba(255,255,255,.12);
 }
 
-.button-secondary:hover{
+.button-secondary:hover {
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    border-color: var(--accent);
+    transform: translateY(-4px) translateZ(8px);
+    box-shadow:
+        0 16px 35px rgba(0,89,120,.28),
+        0 0 22px rgba(79,209,197,.10);
+}
 
-    background:var(--accent);
+/* ==========================================================
+   3D BUTTON VARIANT
+========================================================== */
 
-    border-color:var(--accent);
+.button--3d {
+    transform-style: preserve-3d;
+    perspective: 700px;
+}
 
-    transform:translateY(-3px);
-
+.button--3d:hover {
+    transform: translateY(-5px) perspective(700px) rotateX(2deg) translateZ(10px);
 }
 
 /* ==========================================================
    NAVIGATION CTA
 ========================================================== */
 
-.nav-cta{
-
-    margin-left:20px;
-
+.nav-cta {
+    margin-left: 20px;
 }
 
 /* ==========================================================
@@ -131,14 +154,15 @@
 
 .button:disabled,
 .button-outline:disabled,
-.button-secondary:disabled{
-
-    opacity:.5;
-
-    cursor:not-allowed;
-
-    pointer-events:none;
-
+.button-secondary:disabled,
+.button[aria-disabled="true"],
+.button-outline[aria-disabled="true"],
+.button-secondary[aria-disabled="true"] {
+    opacity: .5;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    box-shadow: none;
 }
 
 /* ==========================================================
@@ -147,32 +171,45 @@
 
 .button:focus-visible,
 .button-outline:focus-visible,
-.button-secondary:focus-visible{
-
-    outline:3px solid var(--accent);
-
-    outline-offset:4px;
-
+.button-secondary:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
 }
 
 /* ==========================================================
    MOBILE
 ========================================================== */
 
-@media (max-width:768px){
-
+@media (max-width: 768px) {
     .button,
     .button-outline,
-    .button-secondary{
-
-        width:100%;
-
+    .button-secondary {
+        width: 100%;
     }
 
-    .nav-cta{
+    .nav-cta {
+        margin: 20px auto;
+    }
+}
 
-        margin:20px auto;
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
 
+@media (prefers-reduced-motion: reduce) {
+    .button,
+    .button-outline,
+    .button-secondary,
+    .button::before,
+    .button-outline::before,
+    .button-secondary::before {
+        transition: none;
     }
 
+    .button:hover,
+    .button-outline:hover,
+    .button-secondary:hover,
+    .button--3d:hover {
+        transform: none;
+    }
 }
