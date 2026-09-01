@@ -137,8 +137,8 @@
 
 /* ==========================================================
    HOMEPAGE VISUAL SYSTEM
-   Keep homepage selectors compatible with the unified
-   component system. Avoid legacy white-card overrides.
+   Section-level layout only. Component appearance is owned
+   by the shared component stylesheets.
 ========================================================== */
 
 .statistics-section,
@@ -169,13 +169,6 @@
     margin-bottom: 48px;
 }
 
-/* The component stylesheet owns statistic-card styling. */
-.statistics-section .statistics-grid,
-.statistics-section .stats-grid {
-    position: relative;
-    z-index: 1;
-}
-
 .about-grid {
     align-items: center;
 }
@@ -194,8 +187,8 @@
     gap: 24px;
 }
 
-/* Do not redefine .card here. cards.css and 3d-system.css
-   provide the canonical card surface and interaction model. */
+/* The canonical .card surface and interactions are defined in
+   cards.css and 3d-system.css. */
 
 .values-list {
     display: grid;
@@ -230,7 +223,7 @@
 }
 
 /* ==========================================================
-   3D COMPATIBILITY OVERRIDES
+   3D SECTION COMPATIBILITY
 ========================================================== */
 
 .statistics-section.section--3d,
@@ -251,10 +244,6 @@
 ========================================================== */
 
 @media (max-width: 992px) {
-    .statistics-section .container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .cards-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -272,7 +261,6 @@
 }
 
 @media (max-width: 768px) {
-    .statistics-section .container,
     .cards-grid {
         grid-template-columns: 1fr;
     }
