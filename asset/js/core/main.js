@@ -3,23 +3,8 @@
    MAIN.JS
    SovereignAqua Research & Development Foundation
 
-   CORE APPLICATION CONTROLLER
-   Hybrid 3D Architecture
-
-   SINGLE APPLICATION ENTRY POINT
-
-   Responsibilities:
-   - Initialize core modules
-   - Initialize feature modules
-   - Coordinate shared UI
-   - Accessibility
-   - Back-to-top behavior
-   - Current-page state
-   - Runtime error protection
-
-   IMPORTANT:
-   Individual modules must NOT independently initialize
-   themselves through DOMContentLoaded.
+   CANONICAL APPLICATION ENTRY POINT
+   Hybrid 3D Website Architecture
 ========================================================== */
 
 "use strict";
@@ -29,43 +14,37 @@
    CORE MODULES
 ========================================================== */
 
-import {
-    initLoader
-} from "./loader.js";
+import { initLoader }
+    from "./loader.js";
 
-import {
-    initProgressBar
-} from "./progress-bar.js";
+import { initProgressBar }
+    from "./progress-bar.js";
 
-import {
-    initScrollEffects
-} from "./scroll-effects.js";
+import { initScrollEffects }
+    from "./scroll-effects.js";
 
 
 /* ==========================================================
    FEATURE MODULES
 ========================================================== */
 
-import {
-    initNavigation
-} from "../modules/navigation.js";
+import { initNavigation }
+    from "../modules/navigation.js";
 
-import {
-    initHero
-} from "../modules/hero.js";
+import { initHero }
+    from "../modules/hero.js";
 
-import {
-    initCounter
-} from "../modules/counter.js";
+import { initCounter }
+    from "../modules/counter.js";
 
 
 /* ==========================================================
-   APPLICATION INITIALIZATION
+   APPLICATION BOOT
 ========================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-    initializeApplication,
+    bootApplication,
     {
         once: true
     }
@@ -73,74 +52,78 @@ document.addEventListener(
 
 
 /* ==========================================================
-   INITIALIZE APPLICATION
+   BOOT APPLICATION
 ========================================================== */
 
-function initializeApplication() {
+function bootApplication() {
 
     /*
-     * Initialize each subsystem independently.
-     *
-     * If one optional module fails, the remaining
-     * website should continue functioning.
+     * Core infrastructure.
      */
 
-    safelyInitialize(
+    runModule(
         "Loader",
         initLoader
     );
 
-
-    safelyInitialize(
+    runModule(
         "Progress Bar",
         initProgressBar
     );
 
 
-    safelyInitialize(
+    /*
+     * Site navigation.
+     */
+
+    runModule(
         "Navigation",
         initNavigation
     );
 
 
-    safelyInitialize(
+    /*
+     * Page-level visual systems.
+     */
+
+    runModule(
         "Hero",
         initHero
     );
 
-
-    safelyInitialize(
+    runModule(
         "Counter",
         initCounter
     );
 
-
-    safelyInitialize(
+    runModule(
         "Scroll Effects",
         initScrollEffects
     );
 
 
-    safelyInitialize(
+    /*
+     * Shared utilities.
+     */
+
+    runModule(
         "Back To Top",
         initBackToTop
     );
 
-
-    safelyInitialize(
+    runModule(
         "Current Page",
         initCurrentPage
     );
 
-
-    safelyInitialize(
+    runModule(
         "Accessibility",
         initAccessibility
     );
 
 
     /*
-     * Application-ready state.
+     * Signal successful initialization.
      */
 
     document.documentElement.classList.add(
@@ -148,24 +131,20 @@ function initializeApplication() {
     );
 
 
-    /*
-     * Useful for debugging deployment issues.
-     */
-
     console.info(
-        "SovereignAqua Foundation:",
-        "Hybrid application initialized."
+        "SovereignAqua:",
+        "Hybrid application ready."
     );
 
 }
 
 
 /* ==========================================================
-   SAFE INITIALIZATION
+   SAFE MODULE RUNNER
 ========================================================== */
 
-function safelyInitialize(
-    moduleName,
+function runModule(
+    name,
     initializer
 ) {
 
@@ -174,7 +153,7 @@ function safelyInitialize(
     ) {
 
         console.warn(
-            `SovereignAqua: ${moduleName} module is unavailable.`
+            `SovereignAqua: ${name} initializer unavailable.`
         );
 
         return;
@@ -188,8 +167,13 @@ function safelyInitialize(
 
     } catch (error) {
 
+        /*
+         * One broken optional module must
+         * not take down the entire website.
+         */
+
         console.error(
-            `SovereignAqua: ${moduleName} initialization failed.`,
+            `SovereignAqua: ${name} failed.`,
             error
         );
 
@@ -220,7 +204,7 @@ function initBackToTop() {
     let ticking = false;
 
 
-    function updateButton() {
+    function update() {
 
         const visible =
             window.scrollY > 400;
@@ -258,7 +242,7 @@ function initBackToTop() {
 
 
         window.requestAnimationFrame(
-            updateButton
+            update
         );
 
     }
@@ -275,37 +259,30 @@ function initBackToTop() {
 
     button.addEventListener(
         "click",
-        handleBackToTop
+        () => {
+
+            const reducedMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches;
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior:
+                    reducedMotion
+                        ? "auto"
+                        : "smooth"
+
+            });
+
+        }
     );
 
 
-    updateButton();
-
-}
-
-
-/* ==========================================================
-   BACK TO TOP ACTION
-========================================================== */
-
-function handleBackToTop() {
-
-    const reducedMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior:
-            reducedMotion
-                ? "auto"
-                : "smooth"
-
-    });
+    update();
 
 }
 
@@ -330,7 +307,9 @@ function initCurrentPage() {
 
 
     const currentPage =
-        getCurrentPage();
+        normalizePage(
+            window.location.pathname
+        );
 
 
     links.forEach(
@@ -348,14 +327,6 @@ function initCurrentPage() {
 
             }
 
-
-            /*
-             * Do not modify:
-             * - anchors
-             * - email links
-             * - telephone links
-             * - external URLs
-             */
 
             if (
                 href.startsWith("#") ||
@@ -376,17 +347,17 @@ function initCurrentPage() {
                 );
 
 
-            const isCurrent =
+            const active =
                 linkedPage === currentPage;
 
 
             link.classList.toggle(
                 "active",
-                isCurrent
+                active
             );
 
 
-            if (isCurrent) {
+            if (active) {
 
                 link.setAttribute(
                     "aria-current",
@@ -408,24 +379,7 @@ function initCurrentPage() {
 
 
 /* ==========================================================
-   GET CURRENT PAGE
-========================================================== */
-
-function getCurrentPage() {
-
-    const pathname =
-        window.location.pathname;
-
-
-    return normalizePage(
-        pathname
-    );
-
-}
-
-
-/* ==========================================================
-   NORMALIZE PAGE
+   PAGE NORMALIZATION
 ========================================================== */
 
 function normalizePage(
@@ -439,7 +393,7 @@ function normalizePage(
     }
 
 
-    let normalized =
+    let path =
         String(value)
             .split("?")[0]
             .split("#")[0]
@@ -449,19 +403,15 @@ function normalizePage(
             );
 
 
-    /*
-     * Remove trailing slash.
-     */
-
-    normalized =
-        normalized.replace(
+    path =
+        path.replace(
             /\/+$/,
             ""
         );
 
 
     const segments =
-        normalized
+        path
             .split("/")
             .filter(Boolean);
 
@@ -473,39 +423,22 @@ function normalizePage(
     }
 
 
-    const filename =
+    return (
         segments[
             segments.length - 1
-        ];
-
-
-    /*
-     * Treat common root documents
-     * consistently.
-     */
-
-    if (
-        filename === "." ||
-        filename === ""
-    ) {
-
-        return "index.html";
-
-    }
-
-
-    return filename.toLowerCase();
+        ] || "index.html"
+    ).toLowerCase();
 
 }
 
 
 /* ==========================================================
-   GLOBAL ACCESSIBILITY
+   ACCESSIBILITY
 ========================================================== */
 
 function initAccessibility() {
 
-    const motionPreference =
+    const motion =
         window.matchMedia(
             "(prefers-reduced-motion: reduce)"
         );
@@ -513,18 +446,14 @@ function initAccessibility() {
 
     function updateMotionState() {
 
-        const reduced =
-            motionPreference.matches;
-
-
         document.documentElement
             .classList.toggle(
                 "reduced-motion",
-                reduced
+                motion.matches
             );
 
 
-        if (reduced) {
+        if (motion.matches) {
 
             document.documentElement.style
                 .scrollBehavior = "auto";
@@ -544,16 +473,12 @@ function initAccessibility() {
     updateMotionState();
 
 
-    /*
-     * Modern MediaQueryList API.
-     */
-
     if (
-        typeof motionPreference.addEventListener
+        typeof motion.addEventListener
         === "function"
     ) {
 
-        motionPreference.addEventListener(
+        motion.addEventListener(
             "change",
             updateMotionState
         );
@@ -564,7 +489,7 @@ function initAccessibility() {
 
 
 /* ==========================================================
-   GLOBAL ERROR HANDLING
+   GLOBAL ERROR PROTECTION
 ========================================================== */
 
 window.addEventListener(
@@ -582,7 +507,7 @@ window.addEventListener(
 
 
 /* ==========================================================
-   UNHANDLED PROMISE ERRORS
+   PROMISE ERROR PROTECTION
 ========================================================== */
 
 window.addEventListener(
@@ -590,7 +515,7 @@ window.addEventListener(
     event => {
 
         console.error(
-            "SovereignAqua unhandled promise rejection:",
+            "SovereignAqua promise error:",
             event.reason
         );
 
