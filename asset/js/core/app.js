@@ -1,99 +1,43 @@
 /* ==========================================================
-   MAIN.JS
+   APP.JS
    SovereignAqua Research & Development Foundation
-   Version 2.1
+   Compatibility Bootstrapper
+   Hybrid 3D Architecture
+   Version 3.0.2
 
-   Application bootstrapper.
-
-   Responsibilities:
-   - Initialize site-level modules
-   - Keep module responsibilities separated
-   - Prevent one optional module from stopping the
-     initialization of other modules
+   Purpose:
+   - Preserve the existing app.js entry point
+   - Delegate initialization to the canonical main.js controller
+   - Prevent imports of legacy/non-existent module paths
+   - Allow pages using <script defer src=".../app.js"> to work
+     without requiring every page to be converted at once
 ========================================================== */
 
 "use strict";
 
-
 /* ==========================================================
-   MODULE IMPORTS
+   CANONICAL APPLICATION CONTROLLER
 ========================================================== */
 
-import {
-    initNavigation
-} from "../modules/navigation.js";
+/*
+   main.js is the single source of truth for application
+   initialization. It owns navigation, hero, counters,
+   loader, progress bar, scroll effects, lazy loading,
+   current-page state, and application error handling.
 
-import {
-    initHero
-} from "../modules/hero.js";
+   Dynamic import keeps this compatibility file usable from
+   existing pages that load app.js as a normal deferred script.
+*/
 
-
-/* ==========================================================
-   APPLICATION INITIALIZATION
-========================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    initializeApplication,
-    {
-        once: true
-    }
-);
-
-
-/* ==========================================================
-   INITIALIZE APPLICATION
-========================================================== */
-
-function initializeApplication() {
-
-    initializeModule(
-        "navigation",
-        initNavigation
-    );
-
-    initializeModule(
-        "hero",
-        initHero
-    );
-
-}
-
-
-/* ==========================================================
-   MODULE INITIALIZER
-========================================================== */
-
-function initializeModule(
-    moduleName,
-    initializer
-) {
-
-    if (
-        typeof initializer !==
-        "function"
-    ) {
-
-        console.warn(
-            `[SovereignAqua] ${moduleName} module is unavailable.`
+import("./main.js")
+    .then(() => {
+        console.info(
+            "[SovereignAqua] Compatibility bootstrap loaded."
         );
-
-        return;
-
-    }
-
-
-    try {
-
-        initializer();
-
-    } catch (error) {
-
+    })
+    .catch(error => {
         console.error(
-            `[SovereignAqua] Failed to initialize ${moduleName} module.`,
+            "[SovereignAqua] Failed to load the canonical application controller.",
             error
         );
-
-    }
-
-}
+    });
