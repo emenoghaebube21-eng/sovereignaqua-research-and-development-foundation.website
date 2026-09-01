@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,59 +6,345 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Learn about the mission, vision, and core values of the SovereignAqua Research & Development Foundation.">
+
+    <meta
+        name="theme-color"
+        content="#00CFFF">
 
     <title>
-        Our Mission | SovereignAqua Research & Development Foundation
+        Our Mission |
+        SovereignAqua Research & Development Foundation
     </title>
 
-    <!-- Shared CSS -->
 
-    <link rel="stylesheet" href="assets/css/global.css">
+    <!-- ======================================================
+         FOUNDATION BASE
+    ======================================================= -->
 
-    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/base/reset.css">
 
-    <link rel="stylesheet" href="assets/css/mission.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/base/variables.css">
 
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/base/typography.css">
 
-    <link rel="stylesheet" href="assets/css/animations.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/global.css">
 
-    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- ======================================================
+         LAYOUT
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/hero.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/responsive.css">
+
+
+    <!-- ======================================================
+         COMPONENTS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="asset/css/components/cards.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/components/buttons.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/components/3d-system.css">
+
+
+    <!-- ======================================================
+         PAGE-SPECIFIC STYLES
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="asset/css/pages/mission.css">
 
 </head>
 
+
 <body>
 
-<!-- Progress Bar -->
 
-<div id="progressBar"></div>
+<!-- ========================================================
+     ACCESSIBILITY
+========================================================= -->
 
-<!-- Loader -->
+<a
+    href="#main-content"
+    class="skip-link">
 
-<div id="loader">
+    Skip to main content
 
-    <div class="loader-spinner"></div>
+</a>
+
+
+<!-- ========================================================
+     GLOBAL INTERFACE
+========================================================= -->
+
+<div
+    id="progressBar"
+    aria-hidden="true">
+</div>
+
+
+<div
+    id="loader"
+    aria-hidden="true">
+
+    <div
+        class="loader-spinner">
+    </div>
 
 </div>
 
-<!-- Navigation -->
 
-<!-- Copy the EXACT navigation from index.html -->
+<!-- ========================================================
+     NAVIGATION
+========================================================= -->
 
-<main>
-<header class="page-hero">
+<header
+    class="navbar"
+    id="navbar">
 
-    <img src="assets/images/mission-banner.jpg"
-         alt="Mission Banner"
-         class="page-hero-image">
+    <div
+        class="nav-container container">
 
-    <div class="page-hero-overlay"></div>
 
-    <div class="page-hero-content container">
+        <!-- BRAND -->
 
-        <h1>Our Mission</h1>
+        <a
+            href="index.html"
+            class="logo"
+            aria-label="SovereignAqua Research and Development Foundation home">
+
+            <img
+                src="asset/Images/logo/logo-white.jpg"
+                alt="SovereignAqua Foundation logo"
+                class="logo-image">
+
+            <span class="brand">
+
+                <strong class="brand-name">
+
+                    SovereignAqua
+
+                </strong>
+
+                <small class="brand-tagline">
+
+                    Research • Innovation • Sustainability
+
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            id="menuToggle"
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navigation-menu"
+            aria-label="Open navigation menu">
+
+            <span aria-hidden="true">
+
+                ☰
+
+            </span>
+
+        </button>
+
+
+        <!-- PRIMARY NAVIGATION -->
+
+        <nav
+            aria-label="Primary navigation">
+
+            <ul
+                id="navigation-menu"
+                class="nav-links">
+
+                <li>
+
+                    <a href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a
+                        href="mission.html"
+                        class="active"
+                        aria-current="page">
+
+                        Mission
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="research.html">
+
+                        Research
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="projects.html">
+
+                        Projects
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="publications.html">
+
+                        Publications
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="governance.html">
+
+                        Governance
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- NAVIGATION ACTION -->
+
+        <div class="nav-actions">
+
+            <a
+                href="membership-application.html"
+                class="join-btn">
+
+                Join the Foundation
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+<!-- ========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main
+    id="main-content">
+
+
+<!-- ========================================================
+     MISSION HERO
+========================================================= -->
+
+<header
+    class="page-hero hero--hybrid-3d">
+
+
+    <img
+        src="asset/Images/mission-banner.jpg"
+        alt="SovereignAqua Research and Development Foundation mission"
+        class="page-hero-image">
+
+
+    <div
+        class="page-hero-overlay">
+    </div>
+
+
+    <div
+        class="page-hero-content container">
+
+
+        <span
+            class="section-title">
+
+            OUR PURPOSE
+
+        </span>
+
+
+        <h1>
+
+            Our Mission
+
+        </h1>
+
 
         <p>
 
@@ -67,163 +354,523 @@
 
         </p>
 
+
     </div>
 
 </header>
-    <section class="mission-section">
 
-<div class="container">
 
-<div class="section-heading">
+<!-- ========================================================
+     MISSION
+========================================================= -->
 
-<span class="section-title">
+<section
+    class="mission-section section section--3d">
 
-OUR PURPOSE
+    <div class="container">
 
-</span>
 
-<h2>
+        <div class="section-heading">
 
-Our Mission
+            <span
+                class="section-title">
 
-</h2>
+                OUR PURPOSE
 
-</div>
+            </span>
 
-<p>
 
-The SovereignAqua Research & Development Foundation is committed to advancing scientific knowledge, protecting the environment, supporting sustainable development, and fostering humanitarian initiatives. Through collaboration, innovation, and education, we seek practical solutions that improve lives and strengthen communities worldwide.
+            <h2>
 
-</p>
+                Our Mission
 
-</div>
+            </h2>
 
-</section>
-    <section class="vision-section">
+        </div>
 
-<div class="container">
 
-<div class="section-heading">
+        <article
+            class="card card--3d glass-panel">
 
-<span class="section-title">
 
-OUR VISION
+            <div
+                class="card-icon"
+                aria-hidden="true">
 
-</span>
+                ◈
 
-<h2>
+            </div>
 
-A Better Future
 
-</h2>
+            <p>
 
-</div>
+                The SovereignAqua Research & Development
+                Foundation is committed to advancing
+                scientific knowledge, protecting the
+                environment, supporting sustainable
+                development, and fostering humanitarian
+                initiatives. Through collaboration,
+                innovation, and education, we seek
+                practical solutions that improve lives
+                and strengthen communities worldwide.
 
-<p>
+            </p>
 
-Our vision is to become a globally recognized research institution that delivers innovative solutions, promotes environmental stewardship, and inspires sustainable progress through partnerships and scientific excellence.
 
-</p>
+        </article>
 
-</div>
-
-</section>
-    <section class="values-section">
-
-<div class="container">
-
-<div class="section-heading">
-
-<span class="section-title">
-
-CORE VALUES
-
-</span>
-
-<h2>
-
-Principles That Guide Us
-
-</h2>
-
-</div>
-
-<div class="values-grid">
-
-<div class="card fade-in">
-
-<h3>Integrity</h3>
-
-<p>We uphold honesty, accountability and transparency.</p>
-
-</div>
-
-<div class="card fade-in">
-
-<h3>Innovation</h3>
-
-<p>We encourage creative thinking and scientific discovery.</p>
-
-</div>
-
-<div class="card fade-in">
-
-<h3>Sustainability</h3>
-
-<p>We support responsible management of natural resources.</p>
-
-</div>
-
-<div class="card fade-in">
-
-<h3>Collaboration</h3>
-
-<p>We believe lasting impact is achieved through partnership.</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
-    <section class="cta-section">
 
-<div class="container">
 
-<h2>
+<!-- ========================================================
+     VISION
+========================================================= -->
 
-Join Our Mission
+<section
+    class="vision-section section section--3d">
 
-</h2>
+    <div class="container">
 
-<p>
 
-Become part of a global network dedicated to research,
-innovation, and sustainable development.
+        <div class="section-heading">
 
-</p>
+            <span
+                class="section-title">
 
-<a href="membership-application.html"
+                OUR VISION
 
-class="button">
+            </span>
 
-Become a Member
 
-</a>
+            <h2>
 
-</div>
+                A Better Future
+
+            </h2>
+
+        </div>
+
+
+        <article
+            class="card card--3d glass-panel">
+
+
+            <div
+                class="card-icon"
+                aria-hidden="true">
+
+                ✦
+
+            </div>
+
+
+            <p>
+
+                Our vision is to become a globally
+                recognized research institution that
+                delivers innovative solutions, promotes
+                environmental stewardship, and inspires
+                sustainable progress through
+                partnerships and scientific excellence.
+
+            </p>
+
+
+        </article>
+
+    </div>
 
 </section>
-    
+
+
+<!-- ========================================================
+     CORE VALUES
+========================================================= -->
+
+<section
+    class="values-section section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span
+                class="section-title">
+
+                CORE VALUES
+
+            </span>
+
+
+            <h2>
+
+                Principles That Guide Us
+
+            </h2>
+
+        </div>
+
+
+        <div
+            class="values-grid cards-grid cards-grid--3d">
+
+
+            <!-- INTEGRITY -->
+
+            <article
+                class="card card--3d glass-panel">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ◇
+
+                </div>
+
+
+                <h3>
+
+                    Integrity
+
+                </h3>
+
+
+                <p>
+
+                    We uphold honesty, accountability
+                    and transparency.
+
+                </p>
+
+            </article>
+
+
+            <!-- INNOVATION -->
+
+            <article
+                class="card card--3d glass-panel">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ✧
+
+                </div>
+
+
+                <h3>
+
+                    Innovation
+
+                </h3>
+
+
+                <p>
+
+                    We encourage creative thinking
+                    and scientific discovery.
+
+                </p>
+
+            </article>
+
+
+            <!-- SUSTAINABILITY -->
+
+            <article
+                class="card card--3d glass-panel">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ◎
+
+                </div>
+
+
+                <h3>
+
+                    Sustainability
+
+                </h3>
+
+
+                <p>
+
+                    We support responsible management
+                    of natural resources.
+
+                </p>
+
+            </article>
+
+
+            <!-- COLLABORATION -->
+
+            <article
+                class="card card--3d glass-panel">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ◈
+
+                </div>
+
+
+                <h3>
+
+                    Collaboration
+
+                </h3>
+
+
+                <p>
+
+                    We believe lasting impact is
+                    achieved through partnership.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     MISSION IN ACTION
+========================================================= -->
+
+<section
+    class="mission-principles section section--3d">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span
+                class="section-title">
+
+                OUR APPROACH
+
+            </span>
+
+
+            <h2>
+
+                Research With Purpose
+
+            </h2>
+
+
+            <p>
+
+                The Foundation's mission connects
+                scientific research, innovation,
+                environmental stewardship, education,
+                collaboration, and sustainable
+                development.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="cards-grid cards-grid--3d">
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ◫
+
+                </div>
+
+                <h3>
+
+                    Scientific Research
+
+                </h3>
+
+                <p>
+
+                    Advancing knowledge through
+                    research and scientific inquiry.
+
+                </p>
+
+            </article>
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ◆
+
+                </div>
+
+                <h3>
+
+                    Innovation
+
+                </h3>
+
+                <p>
+
+                    Encouraging practical and
+                    responsible approaches to
+                    emerging challenges.
+
+                </p>
+
+            </article>
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ◇
+
+                </div>
+
+                <h3>
+
+                    Sustainable Development
+
+                </h3>
+
+                <p>
+
+                    Supporting solutions that promote
+                    long-term environmental and
+                    community resilience.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================
+     CALL TO ACTION
+========================================================= -->
+
+<section
+    class="cta-section section section--3d">
+
+    <div class="container">
+
+
+        <span
+            class="section-title">
+
+            JOIN OUR MISSION
+
+        </span>
+
+
+        <h2>
+
+            Join Our Mission
+
+        </h2>
+
+
+        <p>
+
+            Become part of a global network dedicated
+            to research, innovation, and sustainable
+            development.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="membership-application.html"
+                class="button button--3d">
+
+                Become a Member
+
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="button-outline">
+
+                Contact the Foundation
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
 </main>
 
-<!-- Copy the EXACT footer from index.html -->
 
-<script src="assets/js/navigation.js"></script>
-<script src="assets/js/animations.js"></script>
-<script src="assets/js/main.js"></script>
+<!-- ========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+
+    ↑
+
+</button>
+
+
+<!-- ========================================================
+     CANONICAL APPLICATION
+========================================================= -->
+
+<script
+    type="module"
+    src="asset/js/core/main.js">
+</script>
+
 
 </body>
 
 </html>
+```
