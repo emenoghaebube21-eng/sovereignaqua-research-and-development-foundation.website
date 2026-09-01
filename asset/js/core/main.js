@@ -2,8 +2,20 @@
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
-   Core Application Controller
-   Hybrid Architecture
+
+   CORE APPLICATION CONTROLLER
+   Hybrid 3D Architecture
+
+   This file is the SINGLE JavaScript entry point.
+
+   Responsibilities:
+   - Initialize application modules
+   - Coordinate shared UI behavior
+   - Back-to-top control
+   - Global accessibility
+   - Global error handling
+
+   Feature logic remains inside its own modules.
 ========================================================== */
 
 "use strict";
@@ -13,290 +25,151 @@
    MODULE IMPORTS
 ========================================================== */
 
-import { initNavigation } from "../modules/navigation.js";
-import { initHero } from "../modules/hero.js";
-import { initCounter } from "../modules/counter.js";
+import { initNavigation }
+    from "../modules/navigation.js";
+
+import { initHero }
+    from "../modules/hero.js";
+
+import { initCounter }
+    from "../modules/counter.js";
+
+import { initLoader }
+    from "./loader.js";
+
+import { initProgressBar }
+    from "./progress-bar.js";
+
+import { initScrollEffects }
+    from "./scroll-effects.js";
 
 
 /* ==========================================================
-   DOM READY
+   APPLICATION START
 ========================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-    initializeApplication
+    initializeApplication,
+    {
+        once: true
+    }
 );
 
 
 /* ==========================================================
-   APPLICATION INITIALIZATION
+   INITIALIZE APPLICATION
 ========================================================== */
 
 function initializeApplication() {
 
-    initNavigation();
+    /*
+     * Each module is initialized independently.
+     * A missing optional component must never
+     * prevent the remainder of the website
+     * from loading.
+     */
 
-    initHero();
+    safelyInitialize(
+        "Navigation",
+        initNavigation
+    );
 
-    initCounter();
 
-    initLoader();
+    safelyInitialize(
+        "Hero",
+        initHero
+    );
 
-    initProgressBar();
 
-    initScrollEffects();
+    safelyInitialize(
+        "Counter",
+        initCounter
+    );
 
-    initBackToTop();
 
-    initCurrentPage();
+    safelyInitialize(
+        "Loader",
+        initLoader
+    );
 
-    initAccessibility();
+
+    safelyInitialize(
+        "Progress Bar",
+        initProgressBar
+    );
+
+
+    safelyInitialize(
+        "Scroll Effects",
+        initScrollEffects
+    );
+
+
+    safelyInitialize(
+        "Back To Top",
+        initBackToTop
+    );
+
+
+    safelyInitialize(
+        "Current Page",
+        initCurrentPage
+    );
+
+
+    safelyInitialize(
+        "Accessibility",
+        initAccessibility
+    );
+
+
+    document.documentElement.classList.add(
+        "app-ready"
+    );
+
 
     console.log(
-        "SovereignAqua Foundation — Hybrid Application Initialized"
+        "SovereignAqua Foundation — Application Ready"
     );
 
 }
 
 
 /* ==========================================================
-   PAGE LOADER
+   SAFE MODULE INITIALIZATION
 ========================================================== */
 
-function initLoader() {
-
-    const loader =
-        document.getElementById("loader");
-
-    if (!loader) return;
-
-
-    const hideLoader = () => {
-
-        loader.classList.add("is-hidden");
-
-        loader.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-
-        window.setTimeout(() => {
-
-            if (loader && loader.parentNode) {
-
-                loader.remove();
-
-            }
-
-        }, 500);
-
-    };
-
-
-    if (document.readyState === "complete") {
-
-        hideLoader();
-
-    } else {
-
-        window.addEventListener(
-            "load",
-            hideLoader,
-            {
-                once: true
-            }
-        );
-
-    }
-
-}
-
-
-/* ==========================================================
-   SCROLL PROGRESS
-========================================================== */
-
-function initProgressBar() {
-
-    const progressBar =
-        document.getElementById("progressBar");
-
-    if (!progressBar) return;
-
-
-    let ticking = false;
-
-
-    const updateProgress = () => {
-
-        const documentHeight =
-            document.documentElement.scrollHeight -
-            window.innerHeight;
-
-
-        if (documentHeight <= 0) {
-
-            progressBar.style.width = "0%";
-
-            ticking = false;
-
-            return;
-
-        }
-
-
-        const scrollPosition =
-            Math.max(
-                0,
-                Math.min(
-                    window.scrollY,
-                    documentHeight
-                )
-            );
-
-
-        const progress =
-            (scrollPosition / documentHeight) * 100;
-
-
-        progressBar.style.width =
-            `${progress}%`;
-
-
-        ticking = false;
-
-    };
-
-
-    const requestUpdate = () => {
-
-        if (ticking) return;
-
-        ticking = true;
-
-        window.requestAnimationFrame(
-            updateProgress
-        );
-
-    };
-
-
-    window.addEventListener(
-        "scroll",
-        requestUpdate,
-        {
-            passive: true
-        }
-    );
-
-
-    window.addEventListener(
-        "resize",
-        requestUpdate,
-        {
-            passive: true
-        }
-    );
-
-
-    updateProgress();
-
-}
-
-
-/* ==========================================================
-   SCROLL EFFECTS
-========================================================== */
-
-function initScrollEffects() {
-
-    const elements =
-        document.querySelectorAll(
-            ".fade-in, .fade-scale, .reveal"
-        );
-
-
-    if (!elements.length) return;
-
+function safelyInitialize(
+    name,
+    initializer
+) {
 
     if (
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches
+        typeof initializer !== "function"
     ) {
 
-        elements.forEach(element => {
-
-            element.classList.add("show");
-
-        });
+        console.warn(
+            `SovereignAqua: ${name} initializer unavailable.`
+        );
 
         return;
 
     }
 
 
-    if (
-        !("IntersectionObserver" in window)
-    ) {
+    try {
 
-        elements.forEach(element => {
+        initializer();
 
-            element.classList.add("show");
+    } catch (error) {
 
-        });
-
-        return;
-
-    }
-
-
-    const observer =
-        new IntersectionObserver(
-
-            (entries, observerInstance) => {
-
-                entries.forEach(entry => {
-
-                    if (
-                        !entry.isIntersecting
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    entry.target.classList.add(
-                        "show"
-                    );
-
-
-                    observerInstance.unobserve(
-                        entry.target
-                    );
-
-                });
-
-            },
-
-            {
-                threshold: 0.12,
-
-                rootMargin:
-                    "0px 0px -50px 0px"
-
-            }
-
+        console.error(
+            `SovereignAqua: ${name} initialization failed.`,
+            error
         );
 
-
-    elements.forEach(element => {
-
-        observer.observe(element);
-
-    });
+    }
 
 }
 
@@ -313,13 +186,22 @@ function initBackToTop() {
         );
 
 
-    if (!button) return;
+    if (!button) {
+
+        return;
+
+    }
 
 
     let ticking = false;
 
 
-    const updateVisibility = () => {
+    /*
+     * Hide the button until the visitor
+     * has moved sufficiently down the page.
+     */
+
+    function updateVisibility() {
 
         button.classList.toggle(
             "show",
@@ -329,30 +211,40 @@ function initBackToTop() {
 
         ticking = false;
 
-    };
+    }
 
 
-    const handleScroll = () => {
+    function requestVisibilityUpdate() {
 
-        if (ticking) return;
+        if (ticking) {
+
+            return;
+
+        }
+
 
         ticking = true;
+
 
         window.requestAnimationFrame(
             updateVisibility
         );
 
-    };
+    }
 
 
     window.addEventListener(
         "scroll",
-        handleScroll,
+        requestVisibilityUpdate,
         {
             passive: true
         }
     );
 
+
+    /*
+     * Keyboard and pointer accessible.
+     */
 
     button.addEventListener(
         "click",
@@ -390,12 +282,10 @@ function initBackToTop() {
 
 function initCurrentPage() {
 
-    const currentPath =
-        window.location.pathname
-            .split("/")
-            .pop()
-            .toLowerCase()
-        || "index.html";
+    const currentPage =
+        normalizePage(
+            window.location.pathname
+        );
 
 
     const links =
@@ -404,49 +294,165 @@ function initCurrentPage() {
         );
 
 
-    links.forEach(link => {
+    if (!links.length) {
 
-        const rawHref =
-            link.getAttribute("href");
+        return;
 
-
-        if (!rawHref) return;
+    }
 
 
-        if (
-            rawHref.startsWith("#") ||
-            rawHref.startsWith("mailto:") ||
-            rawHref.startsWith("tel:")
-        ) {
+    links.forEach(
+        link => {
 
-            return;
+            const href =
+                link.getAttribute(
+                    "href"
+                );
+
+
+            if (!href) {
+
+                return;
+
+            }
+
+
+            /*
+             * Ignore anchors and external
+             * communication links.
+             */
+
+            if (
+                href.startsWith("#") ||
+                href.startsWith("mailto:") ||
+                href.startsWith("tel:") ||
+                href.startsWith("http://") ||
+                href.startsWith("https://")
+            ) {
+
+                return;
+
+            }
+
+
+            const linkedPage =
+                normalizePage(
+                    href
+                );
+
+
+            if (
+                linkedPage === currentPage
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            } else {
+
+                /*
+                 * Do not leave stale active
+                 * states on unrelated links.
+                 */
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                link.removeAttribute(
+                    "aria-current"
+                );
+
+            }
 
         }
+    );
+
+}
 
 
-        const cleanHref =
-            rawHref
-                .split("#")[0]
-                .split("?")[0]
-                .split("/")
-                .pop()
-                .toLowerCase();
+/* ==========================================================
+   NORMALIZE PAGE
+========================================================== */
+
+function normalizePage(
+    value
+) {
+
+    if (!value) {
+
+        return "index.html";
+
+    }
 
 
-        if (
-            cleanHref === currentPath
-        ) {
-
-            link.classList.add("active");
-
-            link.setAttribute(
-                "aria-current",
-                "page"
+    let page =
+        String(value)
+            .split("?")[0]
+            .split("#")[0]
+            .replace(
+                /\\/g,
+                "/"
             );
 
-        }
 
-    });
+    /*
+     * Remove trailing slash.
+     */
+
+    page =
+        page.replace(
+            /\/+$/,
+            ""
+        );
+
+
+    /*
+     * Extract final path segment.
+     */
+
+    const segments =
+        page
+            .split("/")
+            .filter(Boolean);
+
+
+    if (!segments.length) {
+
+        return "index.html";
+
+    }
+
+
+    const filename =
+        segments[
+            segments.length - 1
+        ];
+
+
+    /*
+     * Root-style URLs resolve to index.
+     */
+
+    if (
+        filename === "" ||
+        filename === "."
+    ) {
+
+        return "index.html";
+
+    }
+
+
+    return filename.toLowerCase();
 
 }
 
@@ -457,33 +463,56 @@ function initCurrentPage() {
 
 function initAccessibility() {
 
-    const reducedMotion =
+    const motionPreference =
         window.matchMedia(
             "(prefers-reduced-motion: reduce)"
         );
 
 
-    const applyMotionPreference =
-        () => {
+    function applyMotionPreference() {
 
-            document.documentElement
-                .classList.toggle(
-                    "reduced-motion",
-                    reducedMotion.matches
-                );
+        document.documentElement
+            .classList.toggle(
+                "reduced-motion",
+                motionPreference.matches
+            );
 
-        };
+
+        /*
+         * Keep native CSS scroll behavior
+         * aligned with the user's preference.
+         */
+
+        if (
+            motionPreference.matches
+        ) {
+
+            document.documentElement.style
+                .scrollBehavior = "auto";
+
+        } else {
+
+            document.documentElement.style
+                .scrollBehavior = "";
+
+        }
+
+    }
 
 
     applyMotionPreference();
 
 
+    /*
+     * Modern browsers.
+     */
+
     if (
-        typeof reducedMotion.addEventListener
+        typeof motionPreference.addEventListener
         === "function"
     ) {
 
-        reducedMotion.addEventListener(
+        motionPreference.addEventListener(
             "change",
             applyMotionPreference
         );
@@ -494,7 +523,7 @@ function initAccessibility() {
 
 
 /* ==========================================================
-   GLOBAL ERROR REPORTING
+   GLOBAL ERROR HANDLING
 ========================================================== */
 
 window.addEventListener(
@@ -503,7 +532,8 @@ window.addEventListener(
 
         console.error(
             "SovereignAqua Application Error:",
-            event.error || event.message
+            event.error ||
+            event.message
         );
 
     }
@@ -511,7 +541,7 @@ window.addEventListener(
 
 
 /* ==========================================================
-   UNHANDLED PROMISE ERRORS
+   UNHANDLED PROMISE HANDLING
 ========================================================== */
 
 window.addEventListener(
