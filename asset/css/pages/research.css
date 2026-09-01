@@ -1,62 +1,380 @@
+```css
 /* ==========================================================
-   RESEARCH PAGE
+   RESEARCH.CSS
+   SovereignAqua Research & Development Foundation
+   Research Page Composition
+   Hybrid 3D Architecture
 ========================================================== */
 
-.research-intro,
-.research-divisions,
-.innovation-lab,
-.current-projects{
 
-padding:100px 0;
+/* ==========================================================
+   RESEARCH HERO
+========================================================== */
 
-}
+.research-hero {
 
-.research-grid,
-.project-grid{
+    position: relative;
 
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
+    overflow: hidden;
 
 }
 
-.research-cta{
 
-padding:100px 0;
+/* ==========================================================
+   RESEARCH HERO DESCRIPTION
+========================================================== */
 
-text-align:center;
+.research-hero .hero-description {
 
-background:linear-gradient(135deg,#0077B6,#00CFFF);
-
-}
-
-.research-cta h2,
-.research-cta p{
-
-color:#ffffff;
+    max-width: 900px;
 
 }
 
-.research-cta p{
 
-max-width:700px;
+/* ==========================================================
+   RESEARCH OVERVIEW
+========================================================== */
 
-margin:20px auto 35px;
+.research-overview {
 
-}
+    position: relative;
 
-@media(max-width:768px){
-
-.research-intro,
-.research-divisions,
-.innovation-lab,
-.current-projects,
-.research-cta{
-
-padding:70px 0;
+    overflow: hidden;
 
 }
 
+
+/* ==========================================================
+   OVERVIEW FEATURE CARD
+========================================================== */
+
+.research-overview .glass-panel {
+
+    width: min(100%, 1050px);
+
+    margin-inline: auto;
+
+    padding: 45px;
+
 }
+
+
+/* ==========================================================
+   QUICK ACTIONS
+========================================================== */
+
+.quick-actions {
+
+    position: relative;
+
+}
+
+
+/* ==========================================================
+   QUICK ACTION GRID
+========================================================== */
+
+.quick-actions .cards-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   QUICK ACTION CARDS
+========================================================== */
+
+.quick-actions .card {
+
+    min-height: 250px;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   QUICK ACTION LINKS
+========================================================== */
+
+.quick-actions .card > a {
+
+    display: inline-flex;
+
+    width: fit-content;
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================================
+   RESEARCH DIVISIONS
+========================================================== */
+
+.research-divisions {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   RESEARCH GRID
+========================================================== */
+
+.research-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   RESEARCH DIVISION CARDS
+========================================================== */
+
+.research-grid .card {
+
+    min-height: 285px;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   RESEARCH CARD ICON
+========================================================== */
+
+.research-grid .card-icon {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================================
+   INNOVATION LABORATORY
+========================================================== */
+
+.innovation-lab {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   INNOVATION LAB CARD
+========================================================== */
+
+.innovation-lab .glass-panel {
+
+    width: min(100%, 1050px);
+
+    margin-inline: auto;
+
+    padding: 45px;
+
+}
+
+
+/* ==========================================================
+   CURRENT PROJECTS
+========================================================== */
+
+.current-projects {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   PROJECT GRID
+========================================================== */
+
+.project-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   PROJECT CARDS
+========================================================== */
+
+.project-grid .card {
+
+    min-height: 270px;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   PROJECT CARD ICON
+========================================================== */
+
+.project-grid .card-icon {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================================
+   RESEARCH CTA
+========================================================== */
+
+.research-cta {
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================================
+   RESEARCH CTA CONTENT
+========================================================== */
+
+.research-cta p {
+
+    width: min(100%, 850px);
+
+    margin-inline: auto;
+
+}
+
+
+/* ==========================================================
+   RESEARCH CTA BUTTONS
+========================================================== */
+
+.research-cta .hero-buttons {
+
+    justify-content: center;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .research-overview .glass-panel,
+    .innovation-lab .glass-panel {
+
+        padding: 38px;
+
+    }
+
+    .research-grid .card,
+    .project-grid .card {
+
+        min-height: 250px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .research-overview .glass-panel,
+    .innovation-lab .glass-panel {
+
+        padding: 30px 24px;
+
+    }
+
+    .quick-actions .card,
+    .research-grid .card,
+    .project-grid .card {
+
+        min-height: auto;
+
+    }
+
+    .research-cta .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .research-overview .glass-panel,
+    .innovation-lab .glass-panel {
+
+        padding: 25px 20px;
+
+    }
+
+    .quick-actions .card > a {
+
+        padding-top: 15px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .research-hero *,
+    .research-overview *,
+    .quick-actions *,
+    .research-divisions *,
+    .innovation-lab *,
+    .current-projects *,
+    .research-cta * {
+
+        animation: none !important;
+
+        transition: none !important;
+
+    }
+
+}
+```
+
