@@ -1,382 +1,956 @@
 /* ==========================================================
    CARDS.CSS
    SovereignAqua Research & Development Foundation
+   Hybrid 3D Component System
+   Version 3.0
 ========================================================== */
+
 
 /* ==========================================================
    BASE CARD
 ========================================================== */
 
-.card{
+.card {
 
-    position:relative;
+    position: relative;
 
-    display:flex;
+    display: flex;
+    flex-direction: column;
 
-    flex-direction:column;
+    width: 100%;
+    height: 100%;
 
-    height:100%;
+    overflow: hidden;
 
-    overflow:hidden;
+    padding: 30px;
 
-    padding:30px;
+    color: var(--text-primary);
 
-    background:var(--card);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        ),
+        var(--card);
 
-    border:1px solid var(--border);
+    border: 1px solid var(--border);
 
-    border-radius:var(--radius-lg);
+    border-radius: var(--radius-lg);
 
-    box-shadow:var(--shadow-sm);
+    box-shadow:
+        var(--shadow-md),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+    transform-style: preserve-3d;
 
     transition:
         transform var(--transition),
         box-shadow var(--transition),
-        border-color var(--transition);
+        border-color var(--transition),
+        background var(--transition);
 
 }
+
+
+/* ==========================================================
+   CARD SURFACE LIGHT
+========================================================== */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            125deg,
+            rgba(0,207,255,.10),
+            transparent 32%,
+            transparent 68%,
+            rgba(79,209,197,.06)
+        );
+
+    opacity: .9;
+
+}
+
+
+/* ==========================================================
+   CARD LOWER GLOW
+========================================================== */
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 12%;
+    right: 12%;
+    bottom: -35%;
+
+    height: 50%;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    background: rgba(0,207,255,.12);
+
+    filter: blur(35px);
+
+    opacity: .65;
+
+}
+
+
+/* ==========================================================
+   CARD CONTENT LAYER
+========================================================== */
+
+.card > * {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
 
 /* ==========================================================
    CARD HOVER
 ========================================================== */
 
-.card:hover{
+.card:hover {
 
-    transform:translateY(-8px);
+    transform:
+        translateY(-8px)
+        perspective(1000px)
+        rotateX(1deg);
 
-    box-shadow:var(--shadow-lg);
+    border-color:
+        var(--border-primary);
 
-    border-color:var(--primary);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.035)
+        ),
+        var(--card-hover);
+
+    box-shadow:
+        var(--shadow-xl),
+        0 0 30px rgba(0,207,255,.08);
 
 }
+
 
 /* ==========================================================
-   ACCESSIBILITY
+   CARD FOCUS
 ========================================================== */
 
-.card:focus-within{
+.card:focus-within {
 
-    outline:2px solid var(--primary);
+    outline:
+        2px solid var(--primary);
 
-    outline-offset:4px;
+    outline-offset: 4px;
 
 }
+
 
 /* ==========================================================
-   CARD IMAGE
+   CARD IMAGES
 ========================================================== */
 
-.card img{
+.card img {
 
-    width:100%;
+    width: 100%;
 
-    height:220px;
+    height: 220px;
 
-    object-fit:cover;
+    object-fit: cover;
 
-    border-radius:var(--radius-md);
+    border-radius: var(--radius-md);
 
-    margin-bottom:20px;
+    margin-bottom: 20px;
 
-    transition:transform .4s ease;
-
-}
-
-.card:hover img{
-
-    transform:scale(1.05);
+    transition:
+        transform var(--transition-slow),
+        filter var(--transition-slow);
 
 }
+
 
 /* ==========================================================
-   CARD TITLE
+   IMAGE HOVER
 ========================================================== */
 
-.card h3{
+.card:hover img {
 
-    margin-bottom:15px;
+    transform:
+        scale(1.04)
+        translateZ(8px);
 
-    color:var(--primary);
-
-    font-size:1.35rem;
-
-    line-height:1.3;
+    filter:
+        saturate(1.08)
+        brightness(1.03);
 
 }
+
+
+/* ==========================================================
+   CARD ICON
+========================================================== */
+
+.card-icon {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid
+        var(--border-primary);
+
+    border-radius:
+        var(--radius-md);
+
+    color:
+        var(--primary);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,207,255,.12),
+            rgba(79,209,197,.05)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.06);
+
+    transform:
+        translateZ(18px);
+
+}
+
+
+/* ==========================================================
+   CARD TITLES
+========================================================== */
+
+.card h3 {
+
+    margin-bottom: 15px;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        1.35rem;
+
+    line-height:
+        1.3;
+
+    transform:
+        translateZ(10px);
+
+}
+
 
 /* ==========================================================
    CARD TEXT
 ========================================================== */
 
-.card p{
+.card p {
 
-    flex:1;
+    flex: 1;
 
-    color:var(--text-secondary);
+    margin-bottom: 20px;
 
-    line-height:1.8;
+    color:
+        var(--text-secondary);
 
-    margin-bottom:20px;
+    line-height:
+        var(--line-loose);
 
 }
+
+
+/* ==========================================================
+   CARD LINKS
+========================================================== */
+
+.card a {
+
+    color:
+        var(--text-link);
+
+}
+
+.card a:hover {
+
+    color:
+        var(--primary-hover);
+
+}
+
 
 /* ==========================================================
    CARD FOOTER
 ========================================================== */
 
-.card-footer{
+.card-footer {
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    align-items: center;
+    justify-content: space-between;
 
-    align-items:center;
+    gap: 20px;
 
-    gap:20px;
+    margin-top: auto;
 
-    margin-top:auto;
+    padding-top: 20px;
 
-    padding-top:20px;
-
-    border-top:1px solid var(--border);
+    border-top:
+        1px solid
+        var(--border);
 
 }
+
 
 /* ==========================================================
-   BUTTONS INSIDE CARDS
+   CARD BUTTON
 ========================================================== */
 
-.card .button{
+.card .button {
 
-    align-self:flex-start;
+    align-self:
+        flex-start;
 
 }
+
 
 /* ==========================================================
    RESEARCH CARD
 ========================================================== */
 
-.research-card{
+.research-card {
 
-    text-align:center;
+    text-align:
+        center;
+
+}
+
+.research-card img {
+
+    height:
+        180px;
 
 }
 
-.research-card img{
-
-    height:180px;
-
-}
 
 /* ==========================================================
    PROJECT CARD
 ========================================================== */
 
-.project-card{
+.project-card {
 
-    overflow:hidden;
+    overflow:
+        hidden;
+
+}
+
+.project-card h3 {
+
+    margin-top:
+        10px;
 
 }
 
-.project-card h3{
-
-    margin-top:10px;
-
-}
 
 /* ==========================================================
    PUBLICATION CARD
 ========================================================== */
 
-.publication-card .button{
+.publication-card .button {
 
-    margin-top:auto;
+    margin-top:
+        auto;
 
 }
+
 
 /* ==========================================================
    TEAM CARD
 ========================================================== */
 
-.team-card{
+.team-card {
 
-    text-align:center;
+    text-align:
+        center;
+
+}
+
+.team-card img {
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    margin:
+        0 auto 20px;
+
+    border:
+        3px solid
+        rgba(0,207,255,.45);
+
+    border-radius:
+        var(--radius-circle);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.25),
+        0 0 20px rgba(0,207,255,.08);
 
 }
 
-.team-card img{
-
-    width:180px;
-
-    height:180px;
-
-    margin:0 auto 20px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:4px solid var(--primary);
-
-}
 
 /* ==========================================================
    PARTNER CARD
 ========================================================== */
 
-.partner-card{
+.partner-card {
 
-    display:flex;
+    display:
+        flex;
 
-    justify-content:center;
+    align-items:
+        center;
 
-    align-items:center;
+    justify-content:
+        center;
 
-    min-height:160px;
+    min-height:
+        160px;
 
-    padding:30px;
+    padding:
+        30px;
+
+}
+
+.partner-card img {
+
+    width:
+        auto;
+
+    height:
+        auto;
+
+    max-width:
+        180px;
+
+    max-height:
+        80px;
+
+    margin:
+        0;
+
+    object-fit:
+        contain;
+
+    opacity:
+        .78;
+
+    filter:
+        grayscale(20%);
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition),
+        filter var(--transition);
 
 }
 
-.partner-card img{
+.partner-card:hover img {
 
-    width:auto;
+    opacity:
+        1;
 
-    height:auto;
+    filter:
+        grayscale(0);
 
-    max-width:180px;
-
-    max-height:80px;
-
-    margin:0;
-
-    object-fit:contain;
+    transform:
+        scale(1.05)
+        translateZ(10px);
 
 }
+
 
 /* ==========================================================
    NEWS CARD
 ========================================================== */
 
-.news-card time{
+.news-card time {
 
-    display:block;
+    display:
+        block;
 
-    margin-bottom:15px;
+    margin-bottom:
+        15px;
 
-    font-size:.9rem;
+    font-size:
+        .9rem;
 
-    color:var(--text-muted);
+    color:
+        var(--text-muted);
 
 }
+
 
 /* ==========================================================
    STATISTICS CARD
 ========================================================== */
 
-.stat-card{
+.stat-card {
 
-    text-align:center;
+    text-align:
+        center;
 
-    padding:35px;
-
-}
-
-.stat-card h3{
-
-    margin:15px 0 10px;
-
-    font-size:2.2rem;
-
-    color:var(--primary);
+    padding:
+        35px 25px;
 
 }
 
-.stat-card p{
-
-    margin:0;
-
-}
 
 /* ==========================================================
-   QUICK ACTION CARD
+   STATISTIC ICON
 ========================================================== */
 
-.quick-actions .card{
+.stat-icon {
 
-    text-align:center;
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    margin:
+        0 auto 18px;
+
+    border:
+        1px solid
+        var(--border-primary);
+
+    border-radius:
+        var(--radius-circle);
+
+    color:
+        var(--primary);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,207,255,.14),
+            rgba(0,207,255,.025)
+        );
+
+    box-shadow:
+        0 0 25px rgba(0,207,255,.10),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    transform:
+        translateZ(20px);
 
 }
 
-.quick-actions .card a{
-
-    margin-top:auto;
-
-}
 
 /* ==========================================================
-   RESPONSIVE
+   COUNTER
 ========================================================== */
 
-@media (max-width:992px){
+.counter {
 
-    .card{
+    display:
+        block;
 
-        padding:25px;
+    margin-bottom:
+        10px;
+
+    color:
+        var(--primary);
+
+    font-size:
+        clamp(2.4rem, 5vw, 3.5rem);
+
+    font-weight:
+        var(--weight-bold);
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -.03em;
+
+    text-shadow:
+        0 0 22px rgba(0,207,255,.20);
+
+    transform:
+        translateZ(24px);
+
+}
+
+
+/* ==========================================================
+   STATISTIC LABEL
+========================================================== */
+
+.stat-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        .95rem;
+
+    font-weight:
+        var(--weight-medium);
+
+}
+
+
+/* ==========================================================
+   VALUES
+========================================================== */
+
+.values-list {
+
+    display:
+        grid;
+
+    gap:
+        10px;
+
+    margin-top:
+        18px;
+
+}
+
+.values-list li {
+
+    padding:
+        11px 14px;
+
+    color:
+        var(--text-secondary);
+
+    background:
+        rgba(79,209,197,.055);
+
+    border:
+        1px solid
+        rgba(79,209,197,.08);
+
+    border-radius:
+        var(--radius-sm);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+
+}
+
+.values-list li:hover {
+
+    background:
+        rgba(79,209,197,.10);
+
+    border-color:
+        rgba(79,209,197,.20);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* ==========================================================
+   QUICK ACTION CARDS
+========================================================== */
+
+.quick-actions .card {
+
+    text-align:
+        center;
+
+}
+
+.quick-actions .card a {
+
+    margin-top:
+        auto;
+
+}
+
+
+/* ==========================================================
+   3D CARD VARIANT
+========================================================== */
+
+.card--3d {
+
+    transform-style:
+        preserve-3d;
+
+    perspective:
+        1000px;
+
+}
+
+
+/* ==========================================================
+   3D CARD CONTENT
+========================================================== */
+
+.card--3d > * {
+
+    transform-style:
+        preserve-3d;
+
+}
+
+
+/* ==========================================================
+   3D GRID
+========================================================== */
+
+.cards-grid--3d {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        24px;
+
+    perspective:
+        1400px;
+
+}
+
+
+/* ==========================================================
+   GENERIC CARD GRID
+========================================================== */
+
+.cards-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        24px;
+
+}
+
+
+/* ==========================================================
+   TWO COLUMN GRID
+========================================================== */
+
+.cards-grid--2 {
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+}
+
+
+/* ==========================================================
+   FOUR COLUMN GRID
+========================================================== */
+
+.cards-grid--4 {
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .cards-grid,
+    .cards-grid--3d {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
 
     }
 
 }
 
-@media (max-width:768px){
 
-    .card{
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
 
-        padding:20px;
+@media (max-width: 768px) {
 
-    }
+    .card {
 
-    .card img{
-
-        height:200px;
-
-    }
-
-    .card h3{
-
-        font-size:1.2rem;
+        padding:
+            24px;
 
     }
 
-    .team-card img{
+    .cards-grid,
+    .cards-grid--3d,
+    .cards-grid--2,
+    .cards-grid--4 {
 
-        width:140px;
-
-        height:140px;
+        grid-template-columns:
+            1fr;
 
     }
 
-    .card-footer{
+    .card img {
 
-        flex-direction:column;
+        height:
+            200px;
 
-        align-items:flex-start;
+    }
+
+    .card h3 {
+
+        font-size:
+            1.2rem;
+
+    }
+
+    .team-card img {
+
+        width:
+            140px;
+
+        height:
+            140px;
+
+    }
+
+    .card-footer {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
 
     }
 
 }
 
-@media (max-width:480px){
 
-    .card{
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
 
-        padding:18px;
+@media (max-width: 480px) {
+
+    .card {
+
+        padding:
+            20px;
 
     }
 
-    .card img{
+    .card img {
 
-        height:180px;
+        height:
+            180px;
+
+    }
+
+    .stat-card {
+
+        padding:
+            28px 18px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .card,
+    .card:hover,
+    .card img,
+    .partner-card img,
+    .values-list li {
+
+        transform:
+            none;
+
+        transition:
+            none;
 
     }
 
