@@ -1,5 +1,4 @@
 ```javascript
-```javascript
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
