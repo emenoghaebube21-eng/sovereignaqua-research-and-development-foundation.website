@@ -1,0 +1,251 @@
+```css
+/* ==========================================================
+   MISSION.CSS
+   SovereignAqua Research & Development Foundation
+   Mission Page Composition
+   Hybrid 3D Architecture
+========================================================== */
+
+
+/* ==========================================================
+   MISSION SECTION
+========================================================== */
+
+.mission-section,
+.vision-section,
+.values-section,
+.mission-principles {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   MISSION / VISION FEATURE CARDS
+========================================================== */
+
+.mission-section .glass-panel,
+.vision-section .glass-panel {
+
+    width: min(100%, 1000px);
+
+    margin-inline: auto;
+
+    padding: 45px;
+
+}
+
+
+/* ==========================================================
+   FEATURE CARD ICON
+========================================================== */
+
+.mission-section .card-icon,
+.vision-section .card-icon {
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==========================================================
+   FEATURE CARD TEXT
+========================================================== */
+
+.mission-section .card p,
+.vision-section .card p {
+
+    margin: 0;
+
+    max-width: 900px;
+
+    color: var(--text-secondary);
+
+    font-size: 1.08rem;
+
+    line-height: var(--line-loose);
+
+}
+
+
+/* ==========================================================
+   VALUES GRID
+========================================================== */
+
+.values-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   VALUE CARDS
+========================================================== */
+
+.values-grid .card {
+
+    min-height: 250px;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   VALUE ICON
+========================================================== */
+
+.values-grid .card-icon {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================================
+   MISSION APPROACH
+========================================================== */
+
+.mission-principles {
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0,207,255,.055),
+            transparent 30%
+        );
+
+}
+
+
+/* ==========================================================
+   MISSION APPROACH GRID
+========================================================== */
+
+.mission-principles .cards-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   APPROACH CARDS
+========================================================== */
+
+.mission-principles .card {
+
+    min-height: 240px;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   APPROACH CARD ICON
+========================================================== */
+
+.mission-principles .card-icon {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.mission-section + .vision-section + .values-section + .mission-principles + .cta-section {
+
+    text-align: center;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .mission-section .glass-panel,
+    .vision-section .glass-panel {
+
+        padding: 38px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .mission-section .glass-panel,
+    .vision-section .glass-panel {
+
+        padding: 30px 24px;
+
+    }
+
+    .mission-section .card p,
+    .vision-section .card p {
+
+        font-size: 1rem;
+
+    }
+
+    .values-grid .card,
+    .mission-principles .card {
+
+        min-height: auto;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .mission-section .glass-panel,
+    .vision-section .glass-panel {
+
+        padding: 25px 20px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mission-section *,
+    .vision-section *,
+    .values-section *,
+    .mission-principles * {
+
+        animation: none !important;
+
+        transition: none !important;
+
+    }
+
+}
+```
