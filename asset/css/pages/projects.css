@@ -1,0 +1,533 @@
+```css
+/* ==========================================================
+   PROJECTS.CSS
+   SovereignAqua Research & Development Foundation
+   Projects Page Composition
+   Hybrid 3D Architecture
+========================================================== */
+
+
+/* ==========================================================
+   PROJECT HERO
+========================================================== */
+
+.projects-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   PROJECTS OVERVIEW
+========================================================== */
+
+.projects-overview {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   FEATURED PROJECTS
+========================================================== */
+
+.featured-projects {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   PROJECT GRID
+========================================================== */
+
+.project-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   PROJECT CARDS
+========================================================== */
+
+.featured-projects .project-grid .card {
+
+    min-height: 290px;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   PROJECT CARD LINKS
+========================================================== */
+
+.featured-projects .card > a {
+
+    display: inline-flex;
+
+    width: fit-content;
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+
+}
+
+
+.featured-projects .card > a:hover {
+
+    color: var(--accent);
+
+    transform: translateX(4px);
+
+}
+
+
+/* ==========================================================
+   TIMELINE
+========================================================== */
+
+.timeline-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   TIMELINE CONTAINER
+========================================================== */
+
+.timeline {
+
+    position: relative;
+
+    width: min(100%, 1050px);
+
+    margin-inline: auto;
+
+    display: grid;
+
+    gap: 28px;
+
+}
+
+
+/* ==========================================================
+   TIMELINE CONNECTOR
+========================================================== */
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+
+    bottom: 25px;
+
+    left: 28px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--primary),
+            transparent
+        );
+
+    opacity: .45;
+
+}
+
+
+/* ==========================================================
+   TIMELINE ITEM
+========================================================== */
+
+.timeline-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 58px 1fr;
+
+    gap: 24px;
+
+    align-items: center;
+
+    min-height: 170px;
+
+}
+
+
+/* ==========================================================
+   TIMELINE MARKER
+========================================================== */
+
+.timeline-marker {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 56px;
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* ==========================================================
+   TIMELINE CONTENT
+========================================================== */
+
+.timeline-content {
+
+    min-width: 0;
+
+}
+
+
+/* ==========================================================
+   TIMELINE YEAR
+========================================================== */
+
+.timeline-year {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary);
+
+    font-size: .9rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ==========================================================
+   IMPACT SECTION
+========================================================== */
+
+.impact-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   STATISTICS GRID
+========================================================== */
+
+.stats-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   STAT CARDS
+========================================================== */
+
+.stat-card {
+
+    min-height: 230px;
+
+    text-align: center;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* ==========================================================
+   STAT ICON
+========================================================== */
+
+.stat-icon {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    font-size: 1.6rem;
+
+}
+
+
+/* ==========================================================
+   COUNTER
+========================================================== */
+
+.stat-card .counter {
+
+    margin-bottom: 8px;
+
+    color: var(--primary);
+
+    font-size: clamp(2.4rem, 5vw, 4rem);
+
+    line-height: 1;
+
+}
+
+
+/* ==========================================================
+   STAT LABEL
+========================================================== */
+
+.stat-card p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-weight: 500;
+
+}
+
+
+/* ==========================================================
+   PROJECT COLLABORATION
+========================================================== */
+
+.project-collaboration {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   COLLABORATION CARD
+========================================================== */
+
+.project-collaboration .glass-panel {
+
+    width: min(100%, 1050px);
+
+    margin-inline: auto;
+
+    padding: 45px;
+
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.projects-hero + .projects-overview + .featured-projects
++ .timeline-section + .impact-section
++ .project-collaboration + .cta-section {
+
+    text-align: center;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .featured-projects .project-grid .card {
+
+        min-height: 260px;
+
+    }
+
+    .project-collaboration .glass-panel {
+
+        padding: 38px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .featured-projects .project-grid .card {
+
+        min-height: auto;
+
+    }
+
+    .timeline {
+
+        gap: 20px;
+
+    }
+
+    .timeline::before {
+
+        left: 23px;
+
+    }
+
+    .timeline-item {
+
+        grid-template-columns: 48px 1fr;
+
+        gap: 18px;
+
+        min-height: auto;
+
+    }
+
+    .timeline-marker {
+
+        width: 46px;
+
+        height: 46px;
+
+        font-size: .85rem;
+
+    }
+
+    .project-collaboration .glass-panel {
+
+        padding: 30px 24px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .timeline {
+
+        gap: 16px;
+
+    }
+
+    .timeline-item {
+
+        grid-template-columns: 42px 1fr;
+
+        gap: 14px;
+
+    }
+
+    .timeline::before {
+
+        left: 20px;
+
+    }
+
+    .timeline-marker {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: .75rem;
+
+    }
+
+    .project-collaboration .glass-panel {
+
+        padding: 25px 20px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .projects-hero *,
+    .projects-overview *,
+    .featured-projects *,
+    .timeline-section *,
+    .impact-section *,
+    .project-collaboration *,
+    .cta-section * {
+
+        animation: none !important;
+
+        transition: none !important;
+
+    }
+
+}
+```
