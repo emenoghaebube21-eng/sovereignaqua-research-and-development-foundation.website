@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,489 +6,1081 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explore the research programs, scientific divisions, innovation initiatives, and current research projects of the SovereignAqua Research & Development Foundation.">
+
+    <meta
+        name="theme-color"
+        content="#00CFFF">
 
     <title>
-        Our Mission | SovereignAqua Research & Development Foundation
+        Research & Innovation |
+        SovereignAqua Research & Development Foundation
     </title>
 
-    <!-- Shared CSS -->
 
-    <link rel="stylesheet" href="assets/css/global.css">
+    <!-- ======================================================
+         FOUNDATION BASE
+    ======================================================= -->
 
-    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/base/reset.css">
 
-    <link rel="stylesheet" href="assets/css/mission.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/base/variables.css">
 
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/base/typography.css">
 
-    <link rel="stylesheet" href="assets/css/animations.css">
+    <link
+        rel="stylesheet"
+        href="asset/css/global.css">
 
-    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- ======================================================
+         LAYOUT
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/hero.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/layout/responsive.css">
+
+
+    <!-- ======================================================
+         COMPONENTS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="asset/css/components/cards.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/components/buttons.css">
+
+    <link
+        rel="stylesheet"
+        href="asset/css/components/3d-system.css">
+
+
+    <!-- ======================================================
+         PAGE
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="asset/css/pages/research.css">
 
 </head>
 
-     <!-- ==========================================
-     RESEARCH HERO
-========================================== -->
 
-<header class="page-hero research-hero">
+<body>
 
-    <div class="container">
 
-        <span class="section-title">
-            RESEARCH
-        </span>
+<!-- ========================================================
+     ACCESSIBILITY
+========================================================= -->
 
-        <h1>
-            Advancing Scientific Discovery Through Research & Innovation
-        </h1>
+<a
+    href="#main-content"
+    class="skip-link">
 
-        <p class="hero-description">
+    Skip to main content
 
-            SovereignAqua Research & Development Foundation conducts multidisciplinary research focused on environmental sustainability, water science, renewable energy, artificial intelligence, and emerging technologies that improve lives and strengthen communities.
+</a>
 
-        </p>
 
-        <div class="hero-buttons">
+<!-- ========================================================
+     GLOBAL UI
+========================================================= -->
 
-            <a href="#research-divisions" class="button">
-                Explore Research
-            </a>
+<div
+    id="progressBar"
+    aria-hidden="true">
+</div>
 
-            <a href="projects.html" class="button-outline">
-                View Projects
-            </a>
 
-        </div>
+<div
+    id="loader"
+    aria-hidden="true">
 
+    <div
+        class="loader-spinner">
     </div>
 
- </header>
+</div>
 
-  <section class="research-overview">
 
-    <div class="container">
+<!-- ========================================================
+     NAVIGATION
+========================================================= -->
 
-        <div class="section-heading">
+<header
+    class="navbar"
+    id="navbar">
 
-            <span class="section-title">
-                OUR APPROACH
+    <div
+        class="nav-container container">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="index.html"
+            class="logo"
+            aria-label="SovereignAqua Research and Development Foundation home">
+
+            <img
+                src="asset/Images/logo/logo-white.jpg"
+                alt="SovereignAqua Foundation logo"
+                class="logo-image">
+
+            <span class="brand">
+
+                <strong class="brand-name">
+
+                    SovereignAqua
+
+                </strong>
+
+                <small class="brand-tagline">
+
+                    Research • Innovation • Sustainability
+
+                </small>
+
             </span>
 
-            <h2>
-                Science That Creates Lasting Impact
-            </h2>
+        </a>
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            id="menuToggle"
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navigation-menu"
+            aria-label="Open navigation menu">
+
+            <span aria-hidden="true">
+
+                ☰
+
+            </span>
+
+        </button>
+
+
+        <!-- PRIMARY NAVIGATION -->
+
+        <nav
+            aria-label="Primary navigation">
+
+            <ul
+                id="navigation-menu"
+                class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mission.html">
+                        Mission
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="research.html"
+                        class="active"
+                        aria-current="page">
+
+                        Research
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="publications.html">
+                        Publications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="governance.html">
+                        Governance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- NAV ACTION -->
+
+        <div class="nav-actions">
+
+            <a
+                href="membership-application.html"
+                class="join-btn">
+
+                Join the Foundation
+
+            </a>
 
         </div>
-
-        <p>
-
-            Our research combines scientific excellence, technological innovation, interdisciplinary collaboration, and community engagement to develop practical solutions for environmental sustainability and global development.
-
-        </p>
-
-    </div>
-
-  </section>
-  
- <section class="quick-actions">
-
-<div class="container">
-
-<div class="cards-grid">
-
-<div class="card">
-
-<h3>
-
-🔬 Research Programs
-
-</h3>
-
-<p>
-
-Explore active scientific programmes.
-
-</p>
-
-<a href="research.html">
-
-Learn More
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-📚 Publications
-
-</h3>
-
-<p>
-
-Browse reports and journals.
-
-</p>
-
-<a href="publications.html">
-
-Browse
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-🤝 Strategic Partnerships
-
-</h3>
-
-<p>
-
-Collaborate with our Foundation.
-
-</p>
-
-<a href="contact.html">
-
-Connect
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-🌍 Join Our Network
-
-</h3>
-
-<p>
-
-Join our international network.
-
-</p>
-
-<a href="membership-application.html">
-
-Apply
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<header class="page-hero">
-
-    <img src="assets/images/hero/research-banner.jpg"
-         alt="Research"
-         class="page-hero-image">
-
-    <div class="page-hero-overlay"></div>
-
-    <div class="page-hero-content container">
-
-        <h1>
-
-            Research & Innovation
-
-        </h1>
-
-        <p>
-
-            Advancing scientific knowledge through interdisciplinary
-            research, innovation, collaboration, and sustainable
-            development.
-
-        </p>
 
     </div>
 
 </header>
 
-<section class="research-intro">
 
-<div class="container">
+<!-- ========================================================
+     MAIN CONTENT
+========================================================= -->
 
-<div class="section-heading">
+<main id="main-content">
 
-<span class="section-title">
 
-OUR RESEARCH
+<!-- ========================================================
+     RESEARCH HERO
+========================================================= -->
 
-</span>
+<header
+    class="page-hero research-hero hero--hybrid-3d">
 
-<h2>
 
-Building Knowledge That Creates Lasting Impact
+    <img
+        src="asset/Images/hero/research-banner.jpg"
+        alt="SovereignAqua research and innovation"
+        class="page-hero-image">
 
-</h2>
 
-</div>
+    <div
+        class="page-hero-overlay">
+    </div>
 
-<p>
 
-The SovereignAqua Research & Development Foundation conducts
-multidisciplinary research that addresses environmental,
-technological, social, and economic challenges. Through
-collaboration with researchers, universities, industry, and
-communities, we aim to develop practical solutions that improve
-quality of life and support sustainable development.
+    <div
+        class="page-hero-content container">
 
-</p>
 
-</div>
+        <span
+            class="section-title">
+
+            RESEARCH & INNOVATION
+
+        </span>
+
+
+        <h1>
+
+            Advancing Scientific Discovery
+            Through Research & Innovation
+
+        </h1>
+
+
+        <p
+            class="hero-description">
+
+            SovereignAqua Research & Development
+            Foundation conducts multidisciplinary
+            research focused on environmental
+            sustainability, water science, renewable
+            energy, artificial intelligence, and
+            emerging technologies that improve lives
+            and strengthen communities.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#research-divisions"
+                class="button button--3d">
+
+                Explore Research
+
+            </a>
+
+
+            <a
+                href="projects.html"
+                class="button-outline">
+
+                View Projects
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================================
+     RESEARCH OVERVIEW
+========================================================= -->
+
+<section
+    class="research-overview section section--3d">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span
+                class="section-title">
+
+                OUR APPROACH
+
+            </span>
+
+
+            <h2>
+
+                Science That Creates
+                Lasting Impact
+
+            </h2>
+
+        </div>
+
+
+        <article
+            class="card card--3d glass-panel">
+
+            <div
+                class="card-icon"
+                aria-hidden="true">
+
+                ◈
+
+            </div>
+
+
+            <p>
+
+                Our research combines scientific
+                excellence, technological innovation,
+                interdisciplinary collaboration, and
+                community engagement to develop
+                practical solutions for environmental
+                sustainability and global development.
+
+            </p>
+
+        </article>
+
+    </div>
 
 </section>
 
-<section class="research-divisions">
 
-<div class="container">
+<!-- ========================================================
+     QUICK ACTIONS
+========================================================= -->
 
-<div class="section-heading">
+<section
+    class="quick-actions section">
 
-<h2>
+    <div class="container">
 
-Research Divisions
 
-</h2>
+        <div class="section-heading">
 
-</div>
+            <span
+                class="section-title">
 
-<div class="research-grid">
+                RESEARCH NETWORK
 
-<div class="card">
+            </span>
 
-<h3>Water Science</h3>
 
-<p>
+            <h2>
 
-Research focused on water quality, conservation, purification,
-watershed management, and sustainable water systems.
+                Explore the Foundation
 
-</p>
+            </h2>
 
-</div>
+        </div>
 
-<div class="card">
 
-<h3>Environmental Sustainability</h3>
+        <div
+            class="cards-grid cards-grid--3d">
 
-<p>
 
-Developing practical strategies that promote ecosystem
-protection, biodiversity, and responsible resource management.
+            <article class="card card--3d">
 
-</p>
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
 
-</div>
+                    🔬
 
-<div class="card">
+                </div>
 
-<h3>Renewable Energy</h3>
+                <h3>
 
-<p>
+                    Research Programs
 
-Exploring solar, wind, hydrogen, and other renewable energy
-technologies for resilient communities.
+                </h3>
 
-</p>
+                <p>
 
-</div>
+                    Explore active scientific
+                    programmes.
 
-<div class="card">
+                </p>
 
-<h3>Artificial Intelligence</h3>
+                <a
+                    href="#research-divisions">
 
-<p>
+                    Learn More
 
-Applying data science and AI to environmental monitoring,
-research analysis, and innovation.
+                </a>
 
-</p>
+            </article>
 
-</div>
 
-<div class="card">
+            <article class="card card--3d">
 
-<h3>Agricultural Innovation</h3>
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
 
-<p>
+                    📚
 
-Supporting sustainable farming systems, food security, and
-climate-smart agriculture.
+                </div>
 
-</p>
+                <h3>
 
-</div>
+                    Publications
 
-<div class="card">
+                </h3>
 
-<h3>Marine & Coastal Research</h3>
+                <p>
 
-<p>
+                    Browse reports and journals.
 
-Investigating aquatic ecosystems, coastal resilience, and marine
-resource conservation.
+                </p>
 
-</p>
+                <a
+                    href="publications.html">
 
-</div>
+                    Browse
 
-</div>
+                </a>
 
-</div>
+            </article>
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    🤝
+
+                </div>
+
+                <h3>
+
+                    Strategic Partnerships
+
+                </h3>
+
+                <p>
+
+                    Collaborate with our Foundation.
+
+                </p>
+
+                <a
+                    href="contact.html">
+
+                    Connect
+
+                </a>
+
+            </article>
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    🌍
+
+                </div>
+
+                <h3>
+
+                    Join Our Network
+
+                </h3>
+
+                <p>
+
+                    Join our international network.
+
+                </p>
+
+                <a
+                    href="membership-application.html">
+
+                    Apply
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
 
 </section>
 
-<section class="innovation-lab">
 
-<div class="container">
+<!-- ========================================================
+     RESEARCH DIVISIONS
+========================================================= -->
 
-<div class="section-heading">
+<section
+    id="research-divisions"
+    class="research-divisions section section--3d">
 
-<h2>
+    <div class="container">
 
-Innovation Laboratory
 
-</h2>
+        <div class="section-heading">
 
-</div>
+            <span
+                class="section-title">
 
-<p>
+                RESEARCH AREAS
 
-Our Innovation Laboratory transforms research into practical
-solutions by developing prototypes, testing technologies, and
-supporting collaboration between researchers, entrepreneurs,
-industry partners, and public institutions.
+            </span>
 
-</p>
 
-</div>
+            <h2>
+
+                Research Divisions
+
+            </h2>
+
+
+            <p>
+
+                Multidisciplinary research addressing
+                environmental, technological, social,
+                and economic challenges.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="research-grid cards-grid cards-grid--3d">
+
+
+            <!-- WATER SCIENCE -->
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    💧
+
+                </div>
+
+                <h3>
+
+                    Water Science
+
+                </h3>
+
+                <p>
+
+                    Research focused on water quality,
+                    conservation, purification,
+                    watershed management, and
+                    sustainable water systems.
+
+                </p>
+
+            </article>
+
+
+            <!-- ENVIRONMENT -->
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    🌱
+
+                </div>
+
+                <h3>
+
+                    Environmental Sustainability
+
+                </h3>
+
+                <p>
+
+                    Developing practical strategies
+                    that promote ecosystem protection,
+                    biodiversity, and responsible
+                    resource management.
+
+                </p>
+
+            </article>
+
+
+            <!-- ENERGY -->
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ⚡
+
+                </div>
+
+                <h3>
+
+                    Renewable Energy
+
+                </h3>
+
+                <p>
+
+                    Exploring solar, wind, hydrogen,
+                    and other renewable energy
+                    technologies for resilient
+                    communities.
+
+                </p>
+
+            </article>
+
+
+            <!-- AI -->
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ◉
+
+                </div>
+
+                <h3>
+
+                    Artificial Intelligence
+
+                </h3>
+
+                <p>
+
+                    Applying data science and AI to
+                    environmental monitoring,
+                    research analysis, and innovation.
+
+                </p>
+
+            </article>
+
+
+            <!-- AGRICULTURE -->
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    🌾
+
+                </div>
+
+                <h3>
+
+                    Agricultural Innovation
+
+                </h3>
+
+                <p>
+
+                    Supporting sustainable farming
+                    systems, food security, and
+                    climate-smart agriculture.
+
+                </p>
+
+            </article>
+
+
+            <!-- MARINE -->
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    🌊
+
+                </div>
+
+                <h3>
+
+                    Marine & Coastal Research
+
+                </h3>
+
+                <p>
+
+                    Investigating aquatic ecosystems,
+                    coastal resilience, and marine
+                    resource conservation.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
 
 </section>
 
-<section class="current-projects">
 
-<div class="container">
+<!-- ========================================================
+     INNOVATION LABORATORY
+========================================================= -->
 
-<div class="section-heading">
+<section
+    class="innovation-lab section">
 
-<h2>
+    <div class="container">
 
-Current Research Projects
 
-</h2>
+        <article
+            class="card card--3d glass-panel">
 
-</div>
 
-<div class="project-grid">
+            <div
+                class="section-heading">
 
-<div class="card">
+                <span
+                    class="section-title">
 
-<h3>Clean Water Technologies</h3>
+                    INNOVATION
 
-<p>
+                </span>
 
-Developing affordable purification systems for communities with
-limited access to safe drinking water.
 
-</p>
+                <h2>
 
-</div>
+                    Innovation Laboratory
 
-<div class="card">
+                </h2>
 
-<h3>Climate Adaptation</h3>
+            </div>
 
-<p>
 
-Studying resilient environmental practices to support long-term
-climate adaptation.
+            <p>
 
-</p>
+                Our Innovation Laboratory transforms
+                research into practical solutions by
+                developing prototypes, testing
+                technologies, and supporting
+                collaboration between researchers,
+                entrepreneurs, industry partners, and
+                public institutions.
 
-</div>
+            </p>
 
-<div class="card">
 
-<h3>Renewable Energy Systems</h3>
+        </article>
 
-<p>
-
-Evaluating renewable energy technologies for sustainable
-infrastructure.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<section class="research-cta">
 
-<div class="container">
+<!-- ========================================================
+     CURRENT RESEARCH PROJECTS
+========================================================= -->
 
-<h2>
+<section
+    class="current-projects section section--3d">
 
-Collaborate With Our Researchers
+    <div class="container">
 
-</h2>
 
-<p>
+        <div class="section-heading">
 
-We welcome partnerships with universities, research institutes,
-industry leaders, nonprofit organizations, and government
-agencies committed to advancing scientific research and
-innovation.
+            <span
+                class="section-title">
 
-</p>
+                CURRENT WORK
 
-<a href="contact.html"
-class="button">
+            </span>
 
-Become a Research Partner
 
-</a>
+            <h2>
 
-</div>
+                Current Research Projects
+
+            </h2>
+
+        </div>
+
+
+        <div
+            class="project-grid cards-grid cards-grid--3d">
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    💧
+
+                </div>
+
+                <h3>
+
+                    Clean Water Technologies
+
+                </h3>
+
+                <p>
+
+                    Developing affordable purification
+                    systems for communities with limited
+                    access to safe drinking water.
+
+                </p>
+
+            </article>
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    🌍
+
+                </div>
+
+                <h3>
+
+                    Climate Adaptation
+
+                </h3>
+
+                <p>
+
+                    Studying resilient environmental
+                    practices to support long-term
+                    climate adaptation.
+
+                </p>
+
+            </article>
+
+
+            <article class="card card--3d">
+
+                <div
+                    class="card-icon"
+                    aria-hidden="true">
+
+                    ⚡
+
+                </div>
+
+                <h3>
+
+                    Renewable Energy Systems
+
+                </h3>
+
+                <p>
+
+                    Evaluating renewable energy
+                    technologies for sustainable
+                    infrastructure.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
 
 </section>
 
-<button id="backToTop"
-        aria-label="Back to Top">
 
-↑
+<!-- ========================================================
+     RESEARCH COLLABORATION
+========================================================= -->
+
+<section
+    class="research-cta cta-section section section--3d">
+
+    <div class="container">
+
+
+        <span
+            class="section-title">
+
+            COLLABORATION
+
+        </span>
+
+
+        <h2>
+
+            Collaborate With Our Researchers
+
+        </h2>
+
+
+        <p>
+
+            We welcome partnerships with universities,
+            research institutes, industry leaders,
+            nonprofit organizations, and government
+            agencies committed to advancing scientific
+            research and innovation.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="contact.html"
+                class="button button--3d">
+
+                Become a Research Partner
+
+            </a>
+
+
+            <a
+                href="projects.html"
+                class="button-outline">
+
+                Explore Projects
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
+
+    ↑
 
 </button>
 
-<script src="assets/js/core/navigation.js"></script>
 
-<script src="assets/js/core/animations.js"></script>
+<!-- ========================================================
+     CANONICAL APPLICATION CONTROLLER
+========================================================= -->
 
-<script src="assets/js/modules/counter.js"></script>
+<script
+    type="module"
+    src="asset/js/core/main.js">
+</script>
 
-<script src="assets/js/core/main.js"></script>
 
 </body>
 
 </html>
+```
