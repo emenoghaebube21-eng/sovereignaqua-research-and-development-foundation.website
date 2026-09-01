@@ -1,23 +1,24 @@
+```javascript
 /* ==========================================================
    COUNTER.JS
    SovereignAqua Research & Development Foundation
-   Version 2.1
 
-   Responsibilities:
-   - Detect statistic counters
-   - Animate counters when visible
+   Hybrid Application Module
+   Purpose:
+   - Animate numerical statistics
    - Respect reduced-motion preferences
-   - Prevent duplicate initialization
+   - Use IntersectionObserver when available
+   - Prevent counters from running repeatedly
 ========================================================== */
 
 "use strict";
 
 
 /* ==========================================================
-   INITIALIZE COUNTERS
+   PUBLIC INITIALIZER
 ========================================================== */
 
-export function initCounters() {
+export function initCounter() {
 
     const counters =
         document.querySelectorAll(
@@ -26,88 +27,75 @@ export function initCounters() {
 
 
     if (!counters.length) {
+
         return;
+
     }
 
 
     /*
-       Prevent the same counter elements from being
-       initialized more than once.
-    */
-
-    const uninitializedCounters =
-        Array.from(counters).filter(
-            counter =>
-                counter.dataset.counterInitialized !==
-                "true"
-        );
-
-
-    if (!uninitializedCounters.length) {
-        return;
-    }
-
-
-    uninitializedCounters.forEach(
-        counter => {
-
-            counter.dataset.counterInitialized =
-                "true";
-
-        }
-    );
-
-
-    /*
-       Users who prefer reduced motion receive the final
-       value immediately.
-    */
-
-    if (prefersReducedMotion()) {
-
-        uninitializedCounters.forEach(
-            counter => {
-
-                setFinalCounterValue(
-                    counter
-                );
-
-            }
-        );
-
-        return;
-    }
-
-
-    /*
-       Fallback for browsers without IntersectionObserver.
-    */
+     * Respect accessibility preferences.
+     * Users who request reduced motion receive
+     * the final values immediately.
+     */
 
     if (
-        !(
-            "IntersectionObserver" in
-            window
-        )
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
     ) {
 
-        uninitializedCounters.forEach(
-            counter => {
-
-                animateCounter(
-                    counter
-                );
-
-            }
+        counters.forEach(
+            setFinalValue
         );
 
         return;
+
     }
 
+
+    /*
+     * IntersectionObserver provides efficient
+     * viewport-based activation.
+     */
+
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
+
+        observeCounters(
+            counters
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * Older-browser fallback.
+     */
+
+    counters.forEach(
+        animateCounter
+    );
+
+}
+
+
+/* ==========================================================
+   OBSERVE COUNTERS
+========================================================== */
+
+function observeCounters(
+    counters
+) {
 
     const observer =
         new IntersectionObserver(
 
-            (entries, obs) => {
+            (entries, observerInstance) => {
 
                 entries.forEach(
                     entry => {
@@ -126,7 +114,7 @@ export function initCounters() {
                         );
 
 
-                        obs.unobserve(
+                        observerInstance.unobserve(
                             entry.target
                         );
 
@@ -136,13 +124,17 @@ export function initCounters() {
             },
 
             {
-                threshold: 0.5
+                threshold: 0.35,
+
+                rootMargin:
+                    "0px 0px -40px 0px"
+
             }
 
         );
 
 
-    uninitializedCounters.forEach(
+    counters.forEach(
         counter => {
 
             observer.observe(
@@ -163,18 +155,13 @@ function animateCounter(
     counter
 ) {
 
-    if (!counter) {
-        return;
-    }
-
-
     /*
-       Prevent duplicate animation.
-    */
+     * Prevent duplicate animations.
+     */
 
     if (
-        counter.dataset.counterAnimated ===
-        "true"
+        counter.dataset.counterAnimated
+        === "true"
     ) {
 
         return;
@@ -193,18 +180,15 @@ function animateCounter(
 
 
     const duration =
-        parseDuration(
-            counter.dataset.duration
+        parseNumber(
+            counter.dataset.duration,
+            1800
         );
 
 
     if (
-        target === null ||
-        duration === null
+        target === null
     ) {
-
-        counter.textContent =
-            "0";
 
         return;
 
@@ -212,15 +196,33 @@ function animateCounter(
 
 
     /*
-       Reduced-motion may be enabled after the observer
-       has been created, so check again at animation time.
-    */
+     * Preserve optional formatting.
+     */
 
-    if (prefersReducedMotion()) {
+    const prefix =
+        counter.dataset.prefix || "";
 
-        setFinalCounterValue(
+
+    const suffix =
+        counter.dataset.suffix || "";
+
+
+    /*
+     * Respect reduced motion if the
+     * preference changes after page load.
+     */
+
+    if (
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ) {
+
+        renderValue(
             counter,
-            target
+            target,
+            prefix,
+            suffix
         );
 
         return;
@@ -229,42 +231,22 @@ function animateCounter(
 
 
     const startValue =
-        0;
+        parseNumber(
+            counter.dataset.start,
+            0
+        );
 
 
-    let startTime = null;
+    const startTime =
+        performance.now();
 
 
-    function updateCounter(
-        timestamp
+    function update(
+        currentTime
     ) {
 
-        /*
-           Respect a motion preference that changes while
-           the animation is running.
-        */
-
-        if (prefersReducedMotion()) {
-
-            setFinalCounterValue(
-                counter,
-                target
-            );
-
-            return;
-
-        }
-
-
-        if (startTime === null) {
-
-            startTime = timestamp;
-
-        }
-
-
         const elapsed =
-            timestamp -
+            currentTime -
             startTime;
 
 
@@ -276,11 +258,12 @@ function animateCounter(
 
 
         /*
-           Ease-out interpolation produces a more natural
-           visual finish than a strictly linear counter.
-        */
+         * Ease-out interpolation.
+         * This gives the number a smoother
+         * finish than linear counting.
+         */
 
-        const easedProgress =
+        const eased =
             1 -
             Math.pow(
                 1 - progress,
@@ -293,38 +276,33 @@ function animateCounter(
             (
                 target -
                 startValue
-            ) *
-            easedProgress;
+            ) * eased;
 
 
-        counter.textContent =
-            formatCounterValue(
-                currentValue,
-                target
-            );
+        renderValue(
+            counter,
+            currentValue,
+            prefix,
+            suffix,
+            progress >= 1
+        );
 
 
-        if (progress < 1) {
+        if (
+            progress < 1
+        ) {
 
             window.requestAnimationFrame(
-                updateCounter
+                update
             );
 
-            return;
-
         }
-
-
-        setFinalCounterValue(
-            counter,
-            target
-        );
 
     }
 
 
     window.requestAnimationFrame(
-        updateCounter
+        update
     );
 
 }
@@ -334,39 +312,32 @@ function animateCounter(
    SET FINAL VALUE
 ========================================================== */
 
-function setFinalCounterValue(
-    counter,
-    value = null
+function setFinalValue(
+    counter
 ) {
 
-    if (!counter) {
-        return;
-    }
-
-
     const target =
-        value !== null
-            ? value
-            : parseNumber(
-                counter.dataset.target
-            );
+        parseNumber(
+            counter.dataset.target
+        );
 
 
-    if (target === null) {
-
-        counter.textContent =
-            "0";
+    if (
+        target === null
+    ) {
 
         return;
 
     }
 
 
-    counter.textContent =
-        formatCounterValue(
-            target,
-            target
-        );
+    renderValue(
+        counter,
+        target,
+        counter.dataset.prefix || "",
+        counter.dataset.suffix || "",
+        true
+    );
 
 
     counter.dataset.counterAnimated =
@@ -376,59 +347,59 @@ function setFinalCounterValue(
 
 
 /* ==========================================================
-   FORMAT COUNTER VALUE
+   RENDER VALUE
 ========================================================== */
 
-function formatCounterValue(
+function renderValue(
+    counter,
     value,
-    target
+    prefix = "",
+    suffix = "",
+    completed = false
 ) {
 
     /*
-       Preserve decimal precision when the target
-       contains decimal places.
-    */
+     * Counters in the current Foundation
+     * design use whole-number metrics.
+     */
 
-    const targetString =
-        String(target);
+    const formatted =
+        Math.round(
+            value
+        ).toLocaleString();
 
 
-    const decimalPosition =
-        targetString.indexOf(
-            "."
+    counter.textContent =
+        `${prefix}${formatted}${suffix}`;
+
+
+    /*
+     * If the original markup used a
+     * visually-hidden label, it remains
+     * independent of the animated value.
+     */
+
+    if (
+        completed
+    ) {
+
+        counter.setAttribute(
+            "data-counter-complete",
+            "true"
         );
 
-
-    const decimalPlaces =
-        decimalPosition === -1
-            ? 0
-            : targetString.length -
-              decimalPosition -
-              1;
-
-
-    return Number(
-        value
-    ).toLocaleString(
-        undefined,
-        {
-            minimumFractionDigits:
-                decimalPlaces,
-
-            maximumFractionDigits:
-                decimalPlaces
-        }
-    );
+    }
 
 }
 
 
 /* ==========================================================
-   PARSE TARGET
+   SAFE NUMBER PARSER
 ========================================================== */
 
 function parseNumber(
-    value
+    value,
+    fallback = null
 ) {
 
     if (
@@ -437,86 +408,26 @@ function parseNumber(
         value === ""
     ) {
 
-        return null;
+        return fallback;
 
     }
 
 
     const number =
         Number(
-            value
+            String(value)
+                .replace(
+                    /,/g,
+                    ""
+                )
         );
 
 
-    if (
-        !Number.isFinite(
-            number
-        )
-    ) {
-
-        return null;
-
-    }
-
-
-    return number;
+    return Number.isFinite(
+        number
+    )
+        ? number
+        : fallback;
 
 }
-
-
-/* ==========================================================
-   PARSE DURATION
-========================================================== */
-
-function parseDuration(
-    value
-) {
-
-    if (
-        value === undefined ||
-        value === null ||
-        value === ""
-    ) {
-
-        return 2000;
-
-    }
-
-
-    const duration =
-        Number(
-            value
-        );
-
-
-    if (
-        !Number.isFinite(
-            duration
-        ) ||
-        duration <= 0
-    ) {
-
-        return 2000;
-
-    }
-
-
-    return Math.min(
-        duration,
-        10000
-    );
-
-}
-
-
-/* ==========================================================
-   REDUCED MOTION
-========================================================== */
-
-function prefersReducedMotion() {
-
-    return window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-}
+```
