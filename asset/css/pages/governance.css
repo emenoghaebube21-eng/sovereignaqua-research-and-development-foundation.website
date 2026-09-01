@@ -1,0 +1,289 @@
+```css
+/* ==========================================================
+   GOVERNANCE.CSS
+   SovereignAqua Research & Development Foundation
+   Governance Page Composition
+   Hybrid 3D Architecture
+========================================================== */
+
+
+/* ==========================================================
+   GOVERNANCE INTRO
+========================================================== */
+
+.governance-intro {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   GOVERNANCE INTRO CARD
+========================================================== */
+
+.governance-intro .glass-panel {
+
+    max-width: 980px;
+
+    margin-inline: auto;
+
+    padding: 40px;
+
+}
+
+
+/* ==========================================================
+   BOARD SECTION
+========================================================== */
+
+.board-section {
+
+    position: relative;
+
+}
+
+
+/* ==========================================================
+   BOARD GRID
+========================================================== */
+
+.board-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   TEAM CARD CONTENT
+========================================================== */
+
+.board-grid .team-card {
+
+    min-height: 300px;
+
+    text-align: center;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   TEAM CARD ICON
+========================================================== */
+
+.board-grid .card-icon {
+
+    margin-inline: auto;
+
+}
+
+
+/* ==========================================================
+   GOVERNANCE PRINCIPLES
+========================================================== */
+
+.principles-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   PRINCIPLES GRID
+========================================================== */
+
+.principles-grid {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   PRINCIPLE CARDS
+========================================================== */
+
+.principles-grid .card {
+
+    min-height: 250px;
+
+}
+
+
+/* ==========================================================
+   DOCUMENTS
+========================================================== */
+
+.documents-section {
+
+    position: relative;
+
+}
+
+
+/* ==========================================================
+   DOCUMENT GRID
+========================================================== */
+
+.document-list {
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================================
+   DOCUMENT CARDS
+========================================================== */
+
+.document-list .card {
+
+    min-height: 270px;
+
+    justify-content: flex-start;
+
+}
+
+
+/* ==========================================================
+   DOCUMENT STATUS
+========================================================== */
+
+.document-list .text-muted {
+
+    display: block;
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    font-size: .9rem;
+
+    color: var(--text-muted);
+
+}
+
+
+/* ==========================================================
+   ACCOUNTABILITY
+========================================================== */
+
+.governance-accountability {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   ACCOUNTABILITY CARD
+========================================================== */
+
+.governance-accountability .glass-panel {
+
+    max-width: 1000px;
+
+    margin-inline: auto;
+
+    padding: 45px;
+
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.governance-accountability + .cta-section {
+
+    text-align: center;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .governance-intro .glass-panel,
+    .governance-accountability .glass-panel {
+
+        padding: 35px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .governance-intro .glass-panel,
+    .governance-accountability .glass-panel {
+
+        padding: 28px 22px;
+
+    }
+
+    .board-grid .team-card,
+    .principles-grid .card,
+    .document-list .card {
+
+        min-height: auto;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .governance-intro .glass-panel,
+    .governance-accountability .glass-panel {
+
+        padding: 24px 18px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .governance-intro *,
+    .board-section *,
+    .principles-section *,
+    .documents-section *,
+    .governance-accountability * {
+
+        transition: none !important;
+
+        animation: none !important;
+
+    }
+
+}
+```
