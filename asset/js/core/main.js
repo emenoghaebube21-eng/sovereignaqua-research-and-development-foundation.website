@@ -1,221 +1,528 @@
+```javascript
 /* ==========================================================
    MAIN.JS
    SovereignAqua Research & Development Foundation
    Core Application Controller
-   Hybrid 3D Architecture
-   Version 3.0.1
+   Hybrid Architecture
 ========================================================== */
 
 "use strict";
+
 
 /* ==========================================================
    MODULE IMPORTS
 ========================================================== */
 
-import {
-    initNavigation
-} from "./navigation.js";
+import { initNavigation } from "../modules/navigation.js";
+import { initHero } from "../modules/hero.js";
+import { initCounter } from "../modules/counter.js";
 
-/*
-   accessibility.js currently self-initializes on
-   DOMContentLoaded. It is intentionally not imported here
-   until it exposes a module-safe initializer.
-*/
-
-import {
-    initHero
-} from "../modules/heroVideo.js";
-
-import {
-    initCounters
-} from "../modules/counter.js";
-
-import {
-    initLoader
-} from "../modules/loader.js";
-
-import {
-    initProgressBar
-} from "../modules/progress-bar.js";
-
-import {
-    initScrollEffects
-} from "../modules/scroll-effects.js";
-
-import {
-    initLazyLoad
-} from "../modules/lazyLoad.js";
 
 /* ==========================================================
-   APPLICATION STATE
-========================================================== */
-
-const applicationState = {
-    initialized: false,
-    modules: {
-        navigation: false,
-        hero: false,
-        counters: false,
-        loader: false,
-        progressBar: false,
-        scrollEffects: false,
-        lazyLoad: false,
-        currentPage: false
-    }
-};
-
-/* ==========================================================
-   BOOTSTRAP
+   DOM READY
 ========================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-    initializeApplication,
-    { once: true }
+    initializeApplication
 );
 
+
 /* ==========================================================
-   INITIALIZE APPLICATION
+   APPLICATION INITIALIZATION
 ========================================================== */
 
 function initializeApplication() {
 
-    if (applicationState.initialized) {
-        return;
-    }
+    initNavigation();
 
-    console.info(
-        "[SovereignAqua] Application initialization started."
+    initHero();
+
+    initCounter();
+
+    initLoader();
+
+    initProgressBar();
+
+    initScrollEffects();
+
+    initBackToTop();
+
+    initCurrentPage();
+
+    initAccessibility();
+
+    console.log(
+        "SovereignAqua Foundation — Hybrid Application Initialized"
     );
 
-    runModule("loader", initLoader);
-    runModule("navigation", initNavigation);
-    runModule("hero", initHero);
-    runModule("counters", initCounters);
-    runModule("progressBar", initProgressBar);
-    runModule("scrollEffects", initScrollEffects);
-    runModule("lazyLoad", initLazyLoad);
-    runModule("currentPage", highlightCurrentPage);
-
-    applicationState.initialized = true;
-
-    console.info(
-        "[SovereignAqua] Application initialization complete."
-    );
 }
 
+
 /* ==========================================================
-   SAFE MODULE EXECUTION
+   PAGE LOADER
 ========================================================== */
 
-function runModule(moduleName, initializer) {
+function initLoader() {
 
-    if (typeof initializer !== "function") {
-        console.warn(
-            `[SovereignAqua] ${moduleName} module unavailable.`
+    const loader =
+        document.getElementById("loader");
+
+    if (!loader) return;
+
+
+    const hideLoader = () => {
+
+        loader.classList.add("is-hidden");
+
+        loader.setAttribute(
+            "aria-hidden",
+            "true"
         );
-        return false;
+
+
+        window.setTimeout(() => {
+
+            if (loader && loader.parentNode) {
+
+                loader.remove();
+
+            }
+
+        }, 500);
+
+    };
+
+
+    if (document.readyState === "complete") {
+
+        hideLoader();
+
+    } else {
+
+        window.addEventListener(
+            "load",
+            hideLoader,
+            {
+                once: true
+            }
+        );
+
     }
 
-    try {
-        initializer();
-        applicationState.modules[moduleName] = true;
-        return true;
-    }
-    catch (error) {
-        console.error(
-            `[SovereignAqua] ${moduleName} initialization failed.`,
-            error
-        );
-        return false;
-    }
 }
 
+
 /* ==========================================================
-   CURRENT PAGE HIGHLIGHT
+   SCROLL PROGRESS
 ========================================================== */
 
-function highlightCurrentPage() {
+function initProgressBar() {
 
-    const currentPath = window.location.pathname;
+    const progressBar =
+        document.getElementById("progressBar");
 
-    let currentPage = currentPath
-        .split("/")
-        .filter(Boolean)
-        .pop();
+    if (!progressBar) return;
 
-    if (!currentPage) {
-        currentPage = "index.html";
-    }
 
-    if (currentPage === "index") {
-        currentPage = "index.html";
-    }
+    let ticking = false;
 
-    const navigationLinks = document.querySelectorAll(
-        ".nav-links a[href]"
+
+    const updateProgress = () => {
+
+        const documentHeight =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
+
+
+        if (documentHeight <= 0) {
+
+            progressBar.style.width = "0%";
+
+            ticking = false;
+
+            return;
+
+        }
+
+
+        const scrollPosition =
+            Math.max(
+                0,
+                Math.min(
+                    window.scrollY,
+                    documentHeight
+                )
+            );
+
+
+        const progress =
+            (scrollPosition / documentHeight) * 100;
+
+
+        progressBar.style.width =
+            `${progress}%`;
+
+
+        ticking = false;
+
+    };
+
+
+    const requestUpdate = () => {
+
+        if (ticking) return;
+
+        ticking = true;
+
+        window.requestAnimationFrame(
+            updateProgress
+        );
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        requestUpdate,
+        {
+            passive: true
+        }
     );
 
-    if (!navigationLinks.length) {
+
+    window.addEventListener(
+        "resize",
+        requestUpdate,
+        {
+            passive: true
+        }
+    );
+
+
+    updateProgress();
+
+}
+
+
+/* ==========================================================
+   SCROLL EFFECTS
+========================================================== */
+
+function initScrollEffects() {
+
+    const elements =
+        document.querySelectorAll(
+            ".fade-in, .fade-scale, .reveal"
+        );
+
+
+    if (!elements.length) return;
+
+
+    if (
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ) {
+
+        elements.forEach(element => {
+
+            element.classList.add("show");
+
+        });
+
         return;
+
     }
 
-    navigationLinks.forEach(link => {
 
-        const href = link.getAttribute("href");
+    if (
+        !("IntersectionObserver" in window)
+    ) {
+
+        elements.forEach(element => {
+
+            element.classList.add("show");
+
+        });
+
+        return;
+
+    }
+
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries, observerInstance) => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        !entry.isIntersecting
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    entry.target.classList.add(
+                        "show"
+                    );
+
+
+                    observerInstance.unobserve(
+                        entry.target
+                    );
+
+                });
+
+            },
+
+            {
+                threshold: 0.12,
+
+                rootMargin:
+                    "0px 0px -50px 0px"
+
+            }
+
+        );
+
+
+    elements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+}
+
+
+/* ==========================================================
+   BACK TO TOP
+========================================================== */
+
+function initBackToTop() {
+
+    const button =
+        document.getElementById(
+            "backToTop"
+        );
+
+
+    if (!button) return;
+
+
+    let ticking = false;
+
+
+    const updateVisibility = () => {
+
+        button.classList.toggle(
+            "show",
+            window.scrollY > 400
+        );
+
+
+        ticking = false;
+
+    };
+
+
+    const handleScroll = () => {
+
+        if (ticking) return;
+
+        ticking = true;
+
+        window.requestAnimationFrame(
+            updateVisibility
+        );
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        handleScroll,
+        {
+            passive: true
+        }
+    );
+
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const reducedMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches;
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior:
+                    reducedMotion
+                        ? "auto"
+                        : "smooth"
+
+            });
+
+        }
+    );
+
+
+    updateVisibility();
+
+}
+
+
+/* ==========================================================
+   CURRENT PAGE
+========================================================== */
+
+function initCurrentPage() {
+
+    const currentPath =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase()
+        || "index.html";
+
+
+    const links =
+        document.querySelectorAll(
+            ".nav-links a[href]"
+        );
+
+
+    links.forEach(link => {
+
+        const rawHref =
+            link.getAttribute("href");
+
+
+        if (!rawHref) return;
+
 
         if (
-            !href ||
-            href.startsWith("#") ||
-            href.startsWith("mailto:") ||
-            href.startsWith("tel:")
+            rawHref.startsWith("#") ||
+            rawHref.startsWith("mailto:") ||
+            rawHref.startsWith("tel:")
         ) {
+
             return;
+
         }
 
-        const normalizedHref = href
-            .split("#")[0]
-            .split("?")[0]
-            .split("/")
-            .filter(Boolean)
-            .pop();
 
-        const isCurrent = normalizedHref === currentPage;
+        const cleanHref =
+            rawHref
+                .split("#")[0]
+                .split("?")[0]
+                .split("/")
+                .pop()
+                .toLowerCase();
 
-        link.classList.toggle("active", isCurrent);
 
-        if (isCurrent) {
-            link.setAttribute("aria-current", "page");
+        if (
+            cleanHref === currentPath
+        ) {
+
+            link.classList.add("active");
+
+            link.setAttribute(
+                "aria-current",
+                "page"
+            );
+
         }
-        else if (link.getAttribute("aria-current") === "page") {
-            link.removeAttribute("aria-current");
-        }
+
     });
+
 }
 
-/* ==========================================================
-   APPLICATION ERROR HANDLING
-========================================================== */
-
-window.addEventListener("error", event => {
-    console.error(
-        "[SovereignAqua] Application error:",
-        event.error || event.message
-    );
-});
-
-window.addEventListener("unhandledrejection", event => {
-    console.error(
-        "[SovereignAqua] Unhandled promise rejection:",
-        event.reason
-    );
-});
 
 /* ==========================================================
-   PUBLIC DEBUG INTERFACE
+   ACCESSIBILITY
 ========================================================== */
 
-window.SovereignAquaApp = {
-    state: applicationState,
-    initialized: () => applicationState.initialized
-};
+function initAccessibility() {
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+
+    const applyMotionPreference =
+        () => {
+
+            document.documentElement
+                .classList.toggle(
+                    "reduced-motion",
+                    reducedMotion.matches
+                );
+
+        };
+
+
+    applyMotionPreference();
+
+
+    if (
+        typeof reducedMotion.addEventListener
+        === "function"
+    ) {
+
+        reducedMotion.addEventListener(
+            "change",
+            applyMotionPreference
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   GLOBAL ERROR REPORTING
+========================================================== */
+
+window.addEventListener(
+    "error",
+    event => {
+
+        console.error(
+            "SovereignAqua Application Error:",
+            event.error || event.message
+        );
+
+    }
+);
+
+
+/* ==========================================================
+   UNHANDLED PROMISE ERRORS
+========================================================== */
+
+window.addEventListener(
+    "unhandledrejection",
+    event => {
+
+        console.error(
+            "SovereignAqua Unhandled Promise Rejection:",
+            event.reason
+        );
+
+    }
+);
+```
