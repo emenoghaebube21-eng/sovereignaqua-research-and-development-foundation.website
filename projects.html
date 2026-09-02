@@ -12,84 +12,45 @@
 
     <meta
         name="description"
-        content="Explore SovereignAqua Research & Development Foundation projects, initiatives, research partnerships, development roadmap, and reported areas of impact.">
+        content="Explore research, environmental, water security, renewable energy, and sustainable development projects of the SovereignAqua Research & Development Foundation.">
 
     <meta
-        name="theme-color"
-        content="#00CFFF">
+        name="robots"
+        content="index,follow">
 
     <title>
-        Projects |
-        SovereignAqua Research & Development Foundation
+        Projects | SovereignAqua Research & Development Foundation
     </title>
 
 
     <!-- ======================================================
-         FOUNDATION BASE
+         SHARED FOUNDATION CSS
     ======================================================= -->
 
     <link
         rel="stylesheet"
-        href="asset/css/base/reset.css">
+        href="assets/css/global.css">
 
     <link
         rel="stylesheet"
-        href="asset/css/base/variables.css">
+        href="assets/css/navigation.css">
 
     <link
         rel="stylesheet"
-        href="asset/css/base/typography.css">
+        href="assets/css/projects.css">
 
     <link
         rel="stylesheet"
-        href="asset/css/global.css">
-
-
-    <!-- ======================================================
-         LAYOUT
-    ======================================================= -->
+        href="assets/css/footer.css">
 
     <link
         rel="stylesheet"
-        href="asset/css/layout/navigation.css">
+        href="assets/css/animations.css">
 
     <link
         rel="stylesheet"
-        href="asset/css/layout/hero.css">
+        href="assets/css/responsive.css">
 
-    <link
-        rel="stylesheet"
-        href="asset/css/layout/footer.css">
-
-    <link
-        rel="stylesheet"
-        href="asset/css/layout/responsive.css">
-
-
-    <!-- ======================================================
-         COMPONENTS
-    ======================================================= -->
-
-    <link
-        rel="stylesheet"
-        href="asset/css/components/cards.css">
-
-    <link
-        rel="stylesheet"
-        href="asset/css/components/buttons.css">
-
-    <link
-        rel="stylesheet"
-        href="asset/css/components/3d-system.css">
-
-
-    <!-- ======================================================
-         PAGE
-    ======================================================= -->
-
-    <link
-        rel="stylesheet"
-        href="asset/css/pages/projects.css">
 
 </head>
 
@@ -97,9 +58,9 @@
 <body>
 
 
-<!-- ========================================================
+<!-- ==========================================================
      ACCESSIBILITY
-========================================================= -->
+=========================================================== -->
 
 <a
     href="#main-content"
@@ -110,9 +71,9 @@
 </a>
 
 
-<!-- ========================================================
-     GLOBAL UI
-========================================================= -->
+<!-- ==========================================================
+     PAGE PROGRESS
+=========================================================== -->
 
 <div
     id="progressBar"
@@ -120,162 +81,138 @@
 </div>
 
 
+<!-- ==========================================================
+     PAGE LOADER
+=========================================================== -->
+
 <div
     id="loader"
-    aria-hidden="true">
+    aria-hidden="false">
 
     <div
-        class="loader-spinner">
+        class="loader-spinner"
+        aria-hidden="true">
     </div>
 
 </div>
 
 
-<!-- ========================================================
-     NAVIGATION
-========================================================= -->
+<!-- ==========================================================
+     GLOBAL NAVIGATION
+=========================================================== -->
 
 <header
-    class="navbar"
-    id="navbar">
+    id="navbar"
+    class="site-header">
 
-    <div
-        class="nav-container container">
+    <div class="container nav-container">
 
 
-        <!-- BRAND -->
+        <!-- Brand -->
 
         <a
             href="index.html"
             class="logo"
-            aria-label="SovereignAqua Research and Development Foundation home">
+            aria-label="SovereignAqua Foundation Home">
 
             <img
-                src="asset/Images/logo/logo-white.jpg"
-                alt="SovereignAqua Foundation logo"
+                src="assets/images/logos/logo-white.png"
+                alt=""
                 class="logo-image">
 
-            <span class="brand">
-
-                <strong class="brand-name">
-
-                    SovereignAqua
-
-                </strong>
-
-                <small class="brand-tagline">
-
-                    Research • Innovation • Sustainability
-
-                </small>
-
+            <span class="logo-text">
+                SovereignAqua
             </span>
 
         </a>
 
 
-        <!-- MOBILE NAVIGATION -->
+        <!-- Mobile Navigation Toggle -->
 
         <button
             id="menuToggle"
             class="menu-toggle"
             type="button"
-            aria-expanded="false"
             aria-controls="navigation-menu"
+            aria-expanded="false"
             aria-label="Open navigation menu">
 
-            <span aria-hidden="true">
-
-                ☰
-
-            </span>
+            <span></span>
+            <span></span>
+            <span></span>
 
         </button>
 
 
-        <!-- PRIMARY NAVIGATION -->
+        <!-- Navigation -->
 
         <nav
-            aria-label="Primary navigation">
+            id="navigation-menu"
+            class="navigation"
+            aria-label="Primary Navigation">
 
-            <ul
-                id="navigation-menu"
-                class="nav-links">
+            <ul class="nav-links">
 
                 <li>
-
                     <a href="index.html">
-
                         Home
-
                     </a>
-
                 </li>
 
-
                 <li>
-
                     <a href="mission.html">
-
                         Mission
-
                     </a>
-
                 </li>
 
-
                 <li>
-
                     <a href="research.html">
-
                         Research
-
                     </a>
-
                 </li>
 
-
                 <li>
-
                     <a
                         href="projects.html"
-                        class="active"
-                        aria-current="page">
+                        aria-current="page"
+                        class="active">
 
                         Projects
 
                     </a>
-
                 </li>
 
-
                 <li>
-
-                    <a href="publications.html">
-
-                        Publications
-
+                    <a href="global-impact.html">
+                        Global Impact
                     </a>
-
                 </li>
 
-
                 <li>
-
                     <a href="governance.html">
-
                         Governance
-
                     </a>
-
                 </li>
 
+                <li>
+                    <a href="publications.html">
+                        Publications
+                    </a>
+                </li>
 
                 <li>
+                    <a href="member-login.html">
+                        Member Portal
+                    </a>
+                </li>
 
-                    <a href="contact.html">
+                <li class="nav-cta">
 
-                        Contact
+                    <a
+                        href="membership-application.html"
+                        class="button">
+
+                        Join Foundation
 
                     </a>
 
@@ -285,813 +222,804 @@
 
         </nav>
 
-
-        <!-- NAVIGATION ACTION -->
-
-        <div class="nav-actions">
-
-            <a
-                href="membership-application.html"
-                class="join-btn">
-
-                Join the Foundation
-
-            </a>
-
-        </div>
-
     </div>
 
 </header>
 
 
-<!-- ========================================================
+<!-- ==========================================================
      MAIN CONTENT
-========================================================= -->
+=========================================================== -->
 
 <main id="main-content">
 
 
-<!-- ========================================================
-     PROJECT HERO
-========================================================= -->
+    <!-- ======================================================
+         HYBRID 3D HERO
+    ======================================================= -->
 
-<header
-    class="page-hero projects-hero hero--hybrid-3d">
+    <header class="page-hero projects-hero">
 
+        <img
+            src="assets/images/projects-banner.jpg"
+            alt="SovereignAqua research and development projects"
+            class="page-hero-image">
 
-    <img
-        src="asset/Images/projects-banner.jpg"
-        alt="SovereignAqua research and development projects"
-        class="page-hero-image">
-
-
-    <div
-        class="page-hero-overlay">
-    </div>
-
-
-    <div
-        class="page-hero-content container">
-
-
-        <span
-            class="section-title">
-
-            PROJECTS & INITIATIVES
-
-        </span>
-
-
-        <h1>
-
-            Transforming Research
-            Into Practical Solutions
-
-        </h1>
-
-
-        <p>
-
-            Transforming research into practical
-            solutions for communities worldwide.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a
-                href="#featured-projects"
-                class="button button--3d">
-
-                Explore Projects
-
-            </a>
-
-
-            <a
-                href="contact.html"
-                class="button-outline">
-
-                Discuss Collaboration
-
-            </a>
-
+        <div
+            class="page-hero-overlay"
+            aria-hidden="true">
         </div>
 
-    </div>
 
-</header>
+        <!-- Decorative depth layer -->
 
-
-<!-- ========================================================
-     PROJECT OVERVIEW
-========================================================= -->
-
-<section
-    class="projects-overview section section--3d">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <span
-                class="section-title">
-
-                PROJECT PORTFOLIO
-
-            </span>
-
-
-            <h2>
-
-                From Research to Implementation
-
-            </h2>
-
-
-            <p>
-
-                The Foundation's project portfolio
-                connects research, innovation,
-                environmental sustainability,
-                community development, and
-                collaborative partnerships.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================
-     FEATURED PROJECTS
-========================================================= -->
-
-<section
-    id="featured-projects"
-    class="featured-projects section">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <span
-                class="section-title">
-
-                FEATURED PROJECTS
-
-            </span>
-
-
-            <h2>
-
-                Current Initiatives
-
-            </h2>
-
+        <div
+            class="hero-depth-layer"
+            aria-hidden="true">
         </div>
 
 
         <div
-            class="project-grid cards-grid cards-grid--3d">
+            class="page-hero-content container">
 
-
-            <!-- CLEAN WATER -->
-
-            <article
-                class="card card--3d glass-panel">
-
-                <div
-                    class="card-icon"
-                    aria-hidden="true">
-
-                    💧
-
-                </div>
-
-
-                <h3>
-
-                    Clean Water Access
-
-                </h3>
-
-
-                <p>
-
-                    Developing affordable water
-                    purification systems for
-                    underserved communities.
-
-                </p>
-
-
-                <a
-                    href="research.html#research-divisions">
-
-                    Related Research
-
-                </a>
-
-            </article>
-
-
-            <!-- CLIMATE -->
-
-            <article
-                class="card card--3d glass-panel">
-
-                <div
-                    class="card-icon"
-                    aria-hidden="true">
-
-                    🌍
-
-                </div>
-
-
-                <h3>
-
-                    Climate Adaptation
-
-                </h3>
-
-
-                <p>
-
-                    Researching strategies that
-                    strengthen resilience to
-                    climate change.
-
-                </p>
-
-
-                <a
-                    href="research.html">
-
-                    Research Focus
-
-                </a>
-
-            </article>
-
-
-            <!-- RENEWABLE ENERGY -->
-
-            <article
-                class="card card--3d glass-panel">
-
-                <div
-                    class="card-icon"
-                    aria-hidden="true">
-
-                    ⚡
-
-                </div>
-
-
-                <h3>
-
-                    Renewable Energy
-
-                </h3>
-
-
-                <p>
-
-                    Supporting sustainable energy
-                    solutions through innovation
-                    and partnerships.
-
-                </p>
-
-
-                <a
-                    href="research.html">
-
-                    Research Focus
-
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================
-     PROJECT ROADMAP
-========================================================= -->
-
-<section
-    class="timeline-section section section--3d">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <span
-                class="section-title">
-
-                ROADMAP
-
+            <span class="section-title">
+                PROJECTS
             </span>
 
-
-            <h2>
-
-                Project Timeline
-
-            </h2>
-
+            <h1>
+                Turning Research Into Practical Solutions
+            </h1>
 
             <p>
 
-                The current roadmap describes the
-                development direction supplied for
-                the Foundation's project portfolio.
+                SovereignAqua develops and supports initiatives
+                that translate scientific research, innovation,
+                environmental stewardship, and community
+                collaboration into practical solutions.
 
             </p>
 
-        </div>
 
+            <div class="hero-buttons">
 
-        <div class="timeline">
+                <a
+                    href="#featured-projects"
+                    class="button">
 
+                    Explore Projects
 
-            <!-- 2026 -->
+                </a>
 
-            <article
-                class="timeline-item card card--3d">
+                <a
+                    href="research.html"
+                    class="button-outline">
 
-                <div
-                    class="timeline-marker"
-                    aria-hidden="true">
+                    Explore Research
 
-                    01
+                </a>
 
-                </div>
-
-
-                <div class="timeline-content">
-
-                    <span class="timeline-year">
-
-                        2026
-
-                    </span>
-
-
-                    <h3>
-
-                        Environmental Research
-                        & Water Security
-
-                    </h3>
-
-
-                    <p>
-
-                        Launch of environmental
-                        research and water security
-                        initiatives.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- 2027 -->
-
-            <article
-                class="timeline-item card card--3d">
-
-                <div
-                    class="timeline-marker"
-                    aria-hidden="true">
-
-                    02
-
-                </div>
-
-
-                <div class="timeline-content">
-
-                    <span class="timeline-year">
-
-                        2027
-
-                    </span>
-
-
-                    <h3>
-
-                        Global Research Partnerships
-
-                    </h3>
-
-
-                    <p>
-
-                        Expansion of global research
-                        partnerships and pilot
-                        programs.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- 2028+ -->
-
-            <article
-                class="timeline-item card card--3d">
-
-                <div
-                    class="timeline-marker"
-                    aria-hidden="true">
-
-                    03
-
-                </div>
-
-
-                <div class="timeline-content">
-
-                    <span class="timeline-year">
-
-                        2028+
-
-                    </span>
-
-
-                    <h3>
-
-                        International Collaboration
-                        & Community Impact
-
-                    </h3>
-
-
-                    <p>
-
-                        International collaboration,
-                        publications, and community
-                        impact projects.
-
-                    </p>
-
-                </div>
-
-            </article>
-
+            </div>
 
         </div>
 
-    </div>
+    </header>
 
-</section>
 
+    <!-- ======================================================
+         PROJECT OVERVIEW
+    ======================================================= -->
 
-<!-- ========================================================
-     IMPACT
-========================================================= -->
+    <section
+        class="project-overview section">
 
-<section
-    class="impact-section section">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <span
-                class="section-title">
-
-                OUR IMPACT
-
-            </span>
-
-
-            <h2>
-
-                Making Research Matter
-
-            </h2>
-
-
-            <p>
-
-                Reported portfolio indicators
-                associated with the project
-                structure.
-
-            </p>
-
-        </div>
-
-
-        <div
-            class="stats-grid cards-grid cards-grid--3d">
-
-
-            <!-- PROJECTS -->
-
-            <article
-                class="stat-card card card--3d">
-
-                <span
-                    class="stat-icon"
-                    aria-hidden="true">
-
-                    ◈
-
-                </span>
-
-
-                <h2
-                    class="counter"
-                    data-target="25"
-                    data-duration="1800"
-                    aria-label="25 plus research projects">
-
-                    25+
-
-                </h2>
-
-
-                <p>
-
-                    Research Projects
-
-                </p>
-
-            </article>
-
-
-            <!-- COUNTRIES -->
-
-            <article
-                class="stat-card card card--3d">
-
-                <span
-                    class="stat-icon"
-                    aria-hidden="true">
-
-                    🌍
-
-                </span>
-
-
-                <h2
-                    class="counter"
-                    data-target="15"
-                    data-duration="1600"
-                    aria-label="15 countries engaged">
-
-                    15
-
-                </h2>
-
-
-                <p>
-
-                    Countries Engaged
-
-                </p>
-
-            </article>
-
-
-            <!-- COLLABORATORS -->
-
-            <article
-                class="stat-card card card--3d">
-
-                <span
-                    class="stat-icon"
-                    aria-hidden="true">
-
-                    ◇
-
-                </span>
-
-
-                <h2
-                    class="counter"
-                    data-target="120"
-                    data-duration="2000"
-                    aria-label="120 plus collaborators">
-
-                    120+
-
-                </h2>
-
-
-                <p>
-
-                    Collaborators
-
-                </p>
-
-            </article>
-
-
-            <!-- PARTNERS -->
-
-            <article
-                class="stat-card card card--3d">
-
-                <span
-                    class="stat-icon"
-                    aria-hidden="true">
-
-                    🤝
-
-                </span>
-
-
-                <h2
-                    class="counter"
-                    data-target="40"
-                    data-duration="1800"
-                    aria-label="40 plus strategic partners">
-
-                    40+
-
-                </h2>
-
-
-                <p>
-
-                    Strategic Partners
-
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================
-     PROJECT COLLABORATION
-========================================================= -->
-
-<section
-    class="project-collaboration section section--3d">
-
-    <div class="container">
-
-
-        <div
-            class="card card--3d glass-panel">
-
+        <div class="container">
 
             <div class="section-heading">
 
-                <span
-                    class="section-title">
-
-                    COLLABORATION
-
+                <span class="section-title">
+                    OUR WORK
                 </span>
 
+                <h2>
+                    Research With Measurable Purpose
+                </h2>
+
+            </div>
+
+            <p>
+
+                Our project portfolio connects scientific
+                investigation with practical implementation.
+                Initiatives may involve research institutions,
+                communities, educators, industry partners,
+                public institutions, and other organizations
+                working toward sustainable development.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FEATURED PROJECTS
+    ======================================================= -->
+
+    <section
+        id="featured-projects"
+        class="featured-projects section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-title">
+                    FEATURED PROJECTS
+                </span>
 
                 <h2>
-
-                    Projects Built Through Partnership
-
+                    Current Initiatives
                 </h2>
 
             </div>
 
 
+            <div class="project-grid">
+
+
+                <!-- Clean Water -->
+
+                <article
+                    class="card project-card reveal">
+
+                    <div
+                        class="project-card-depth"
+                        aria-hidden="true">
+                    </div>
+
+                    <div class="project-card-content">
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Clean Water Access
+                        </h3>
+
+                        <p>
+
+                            Developing affordable water
+                            purification and water-security
+                            approaches for communities with
+                            limited access to safe water.
+
+                        </p>
+
+                        <a
+                            href="research.html"
+                            class="text-link">
+
+                            Explore Research
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Climate -->
+
+                <article
+                    class="card project-card reveal">
+
+                    <div
+                        class="project-card-depth"
+                        aria-hidden="true">
+                    </div>
+
+                    <div class="project-card-content">
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Climate Adaptation
+                        </h3>
+
+                        <p>
+
+                            Researching practical strategies
+                            that strengthen resilience to
+                            environmental and climate-related
+                            challenges.
+
+                        </p>
+
+                        <a
+                            href="global-impact.html"
+                            class="text-link">
+
+                            Global Impact
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Renewable Energy -->
+
+                <article
+                    class="card project-card reveal">
+
+                    <div
+                        class="project-card-depth"
+                        aria-hidden="true">
+                    </div>
+
+                    <div class="project-card-content">
+
+                        <span class="project-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Renewable Energy
+                        </h3>
+
+                        <p>
+
+                            Supporting research and partnerships
+                            focused on resilient and sustainable
+                            energy systems.
+
+                        </p>
+
+                        <a
+                            href="research.html"
+                            class="text-link">
+
+                            Energy Research
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PROJECT ROADMAP
+    ======================================================= -->
+
+    <section
+        class="timeline-section section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-title">
+                    ROADMAP
+                </span>
+
+                <h2>
+                    Project Development Timeline
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-marker">
+                        2026
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            Research & Foundation
+                        </h3>
+
+                        <p>
+
+                            Launch and development of
+                            environmental research,
+                            water-security initiatives,
+                            and collaborative programmes.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-marker">
+                        2027
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            Expansion & Pilot Programs
+                        </h3>
+
+                        <p>
+
+                            Expansion of research partnerships,
+                            pilot programmes, field studies,
+                            and innovation initiatives.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-marker">
+                        2028+
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            International Collaboration
+                        </h3>
+
+                        <p>
+
+                            Continued international research,
+                            publications, partnerships,
+                            technology development, and
+                            community-impact programmes.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         IMPACT METRICS
+    ======================================================= -->
+
+    <section
+        class="impact-section section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-title">
+                    OUR IMPACT
+                </span>
+
+                <h2>
+                    Making Research Matter
+                </h2>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+
+                <article class="stat-card reveal">
+
+                    <span
+                        class="counter"
+                        data-target="25"
+                        data-duration="1600"
+                        data-suffix="+">
+
+                        25+
+
+                    </span>
+
+                    <p>
+                        Research Projects
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card reveal">
+
+                    <span
+                        class="counter"
+                        data-target="15"
+                        data-duration="1600">
+
+                        15
+
+                    </span>
+
+                    <p>
+                        Countries Engaged
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card reveal">
+
+                    <span
+                        class="counter"
+                        data-target="120"
+                        data-duration="1800"
+                        data-suffix="+">
+
+                        120+
+
+                    </span>
+
+                    <p>
+                        Collaborators
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card reveal">
+
+                    <span
+                        class="counter"
+                        data-target="40"
+                        data-duration="1600"
+                        data-suffix="+">
+
+                        40+
+
+                    </span>
+
+                    <p>
+                        Strategic Partners
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PARTNERSHIP CTA
+    ======================================================= -->
+
+    <section
+        class="cta-section project-cta">
+
+        <div class="container">
+
+            <span class="section-title">
+                COLLABORATION
+            </span>
+
+            <h2>
+                Build the Next Project With Us
+            </h2>
+
             <p>
 
-                We invite researchers, institutions,
-                government agencies, and industry
-                leaders to collaborate on projects
-                that advance science and improve
-                communities.
+                We welcome researchers, institutions,
+                government agencies, nonprofit organizations,
+                communities, and industry partners interested
+                in responsible scientific collaboration.
 
             </p>
 
 
-        </div>
+            <div class="hero-buttons">
 
-    </div>
+                <a
+                    href="membership-application.html"
+                    class="button">
 
-</section>
+                    Become a Partner
 
+                </a>
 
-<!-- ========================================================
-     CALL TO ACTION
-========================================================= -->
+                <a
+                    href="contact.html"
+                    class="button-outline">
 
-<section
-    class="cta-section section section--3d">
+                    Contact Foundation
 
-    <div class="container">
+                </a>
 
-
-        <span
-            class="section-title">
-
-            PARTNER WITH US
-
-        </span>
-
-
-        <h2>
-
-            Help Advance the Next Project
-
-        </h2>
-
-
-        <p>
-
-            Connect with the Foundation to explore
-            research, project, institutional, and
-            community collaboration opportunities.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a
-                href="membership-application.html"
-                class="button button--3d">
-
-                Become a Partner
-
-            </a>
-
-
-            <a
-                href="contact.html"
-                class="button-outline">
-
-                Contact the Foundation
-
-            </a>
+            </div>
 
         </div>
 
-    </div>
-
-</section>
-
+    </section>
 
 </main>
 
 
-<!-- ========================================================
+<!-- ==========================================================
+     GLOBAL FOOTER
+=========================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <section class="footer-column footer-brand">
+
+                <a
+                    href="index.html"
+                    aria-label="SovereignAqua Foundation Home">
+
+                    <img
+                        src="assets/images/logos/logo-white.png"
+                        alt="SovereignAqua Foundation"
+                        class="footer-logo">
+
+                </a>
+
+                <h2>
+                    SovereignAqua Research &
+                    Development Foundation
+                </h2>
+
+                <p>
+
+                    Advancing scientific research,
+                    innovation, education, environmental
+                    stewardship, and sustainable development.
+
+                </p>
+
+            </section>
+
+
+            <section class="footer-column">
+
+                <h3>
+                    Foundation
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="mission.html">
+                            Mission
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="research.html">
+                            Research
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="projects.html">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="governance.html">
+                            Governance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="global-impact.html">
+                            Global Impact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <section class="footer-column">
+
+                <h3>
+                    Resources
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="publications.html">
+                            Publications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="events.html">
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="downloads.html">
+                            Downloads
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <section class="footer-column">
+
+                <h3>
+                    Membership
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="membership-application.html">
+                            Apply for Membership
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="member-login.html">
+                            Member Portal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="asset-enrolment.html">
+                            Asset Enrolment
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <section class="footer-column">
+
+                <h3>
+                    Connect
+                </h3>
+
+                <p>
+                    Research, innovation,
+                    and sustainable development.
+                </p>
+
+                <a href="contact.html"
+                   class="footer-contact-link">
+
+                    Contact Foundation
+
+                </a>
+
+            </section>
+
+        </div>
+
+
+        <hr class="footer-divider">
+
+
+        <div class="footer-bottom">
+
+            <p>
+
+                ©
+                <span id="year">
+                    2026
+                </span>
+
+                SovereignAqua Research &
+                Development Foundation.
+                All Rights Reserved.
+
+            </p>
+
+
+            <nav
+                class="footer-legal"
+                aria-label="Legal Navigation">
+
+                <a href="privacy-policy.html">
+                    Privacy
+                </a>
+
+                <a href="terms-of-use.html">
+                    Terms
+                </a>
+
+                <a href="accessibility.html">
+                    Accessibility
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================================================
      BACK TO TOP
-========================================================= -->
+=========================================================== -->
 
 <button
     id="backToTop"
     class="back-to-top"
     type="button"
-    aria-label="Back to top">
+    aria-label="Back to top"
+    aria-hidden="true">
 
     ↑
 
 </button>
 
 
-<!-- ========================================================
-     CANONICAL APPLICATION CONTROLLER
-========================================================= -->
+<!-- ==========================================================
+     CANONICAL APPLICATION ENTRY
+=========================================================== -->
 
 <script
     type="module"
     src="assets/js/core/main.js">
 </script>
-    
+
+
 </body>
 
 </html>
