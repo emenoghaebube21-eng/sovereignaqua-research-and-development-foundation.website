@@ -6,105 +6,37 @@
 /* ==========================================================
    LARGE DESKTOPS
 ========================================================== */
-
 @media (max-width:1200px){
-
-    .container{
-
-        width:min(95%,1200px);
-
-    }
-
-    .hero-content{
-
-        max-width:700px;
-
-    }
-
+    .container{width:min(95%,1200px);}
+    .hero-content{max-width:700px;}
 }
 
 /* ==========================================================
    TABLETS
 ========================================================== */
-
 @media (max-width:992px){
+    h1{font-size:3rem;}
+    h2{font-size:2.3rem;}
+    section{padding:80px 0;}
 
-    h1{
+    .navbar{min-height:80px;}
+    .logo-image{width:50px;height:50px;}
+    .brand-tagline{display:none;}
 
-        font-size:3rem;
-
-    }
-
-    h2{
-
-        font-size:2.3rem;
-
-    }
-
-    section{
-
-        padding:80px 0;
-
-    }
-
-    /* Navigation */
-
-    .navbar{
-
-        min-height:80px;
-
-    }
-
-    .logo-image{
-
-        width:50px;
-
-        height:50px;
-
-    }
-
-    .brand-tagline{
-
-        display:none;
-
-    }
-
-    /* Hero */
-
-    .hero{
-
-        min-height:85vh;
-
-    }
-
-    .hero-content{
-
-        max-width:650px;
-
-        margin:0 auto;
-
-    }
+    .hero{min-height:85vh;}
+    .hero-content{max-width:650px;margin:0 auto;}
 
     .hero-buttons{
-
         flex-direction:column;
-
         align-items:center;
-
         gap:20px;
-
     }
-
-    /* Layout */
 
     .about-grid,
     .contact-grid,
     .footer-grid{
-
         grid-template-columns:1fr;
-
         gap:40px;
-
     }
 
     .research-grid,
@@ -113,62 +45,65 @@
     .partners-grid,
     .values-grid,
     .projects-grid{
-
         grid-template-columns:repeat(2,1fr);
-
         gap:30px;
-
     }
-
 }
 
 /* ==========================================================
    MOBILE
 ========================================================== */
-
 @media (max-width:768px){
-
-    h1{
-
-        font-size:2.5rem;
-
-    }
-
-    h2{
-
-        font-size:2rem;
-
-    }
-
-    section{
-
-        padding:70px 0;
-
-    }
+    h1{font-size:2.5rem;}
+    h2{font-size:2rem;}
+    section{padding:70px 0;}
 
     .hero{
-
         min-height:auto;
-
         padding:140px 0 80px;
-
     }
 
     .hero-content{
-
-        padding:20px;
-
+        width:min(94%,700px);
+        max-width:700px;
+        margin-inline:auto;
+        padding:20px 0;
         text-align:center;
-
+        min-width:0;
     }
 
-    .section-heading{
-
-        margin-bottom:50px;
-
+    /*
+      Mobile typography guard:
+      Never allow headings to split individual words.
+      This prevents fragments such as "resea / rch" when a
+      desktop grid or narrow flex item is inherited on mobile.
+    */
+    h1,
+    h2,
+    h3,
+    .hero h1,
+    .hero .brand-name,
+    .page-hero h1,
+    .section-heading h1{
+        min-width:0;
+        max-width:100%;
+        word-break:normal !important;
+        overflow-wrap:normal !important;
+        hyphens:none;
+        white-space:normal;
     }
 
-    /* Grids */
+    .hero-description,
+    .section-heading p,
+    .card p,
+    .about-content,
+    .page-hero-content{
+        min-width:0;
+        max-width:100%;
+        overflow-wrap:break-word;
+        word-break:normal;
+        hyphens:none;
+    }
 
     .research-grid,
     .program-grid,
@@ -179,214 +114,121 @@
     .projects-grid,
     .stat-grid,
     .quick-actions-grid{
-
         grid-template-columns:1fr;
-
+        min-width:0;
     }
 
-    /* Cards */
-
-    .card{
-
-        padding:20px;
-
-    }
-
-    .card img{
-
-        height:200px;
-
-    }
-
-    /* Footer */
+    .card{padding:20px;min-width:0;}
+    .card img{height:200px;}
 
     .footer-bottom{
-
         flex-direction:column;
-
         text-align:center;
-
         gap:20px;
-
     }
 
     .footer-legal{
-
         justify-content:center;
-
         flex-wrap:wrap;
-
         gap:15px;
-
     }
-
 }
 
 /* ==========================================================
    SMALL MOBILE
 ========================================================== */
-
 @media (max-width:576px){
-
-    .container{
-
-        width:min(92%,540px);
-
-    }
-
-    h1{
-
-        font-size:2rem;
-
-    }
-
-    h2{
-
-        font-size:1.7rem;
-
-    }
-
-    p{
-
-        font-size:.98rem;
-
-    }
+    .container{width:min(92%,540px);}
+    h1{font-size:2rem;}
+    h2{font-size:1.7rem;}
+    p{font-size:.98rem;}
 
     .button,
     .button-outline,
     .button-secondary{
-
         width:100%;
-
         padding:16px;
-
         justify-content:center;
-
     }
 
-    .logo-image{
-
-        width:45px;
-
-        height:45px;
-
-    }
-
-    .brand-name{
-
-        font-size:1.1rem;
-
-    }
-
-    .navbar{
-
-        padding:0 10px;
-
-    }
-
-    .hero-buttons{
-
-        gap:15px;
-
-    }
+    .logo-image{width:45px;height:45px;}
+    .brand-name{font-size:1.1rem;}
+    .navbar{padding:0 10px;}
+    .hero-buttons{gap:15px;}
 
     .contact-form input,
-    .contact-form textarea{
+    .contact-form textarea{font-size:16px;}
+}
 
-        font-size:16px;
-
-    }
-
+@media (max-width:400px){
+    h1{font-size:1.8rem;}
+    h2{font-size:1.5rem;}
+    .brand-name{font-size:1rem;}
+    .hero-content{padding:15px 0;}
+    .card{padding:18px;}
+    .card img{height:180px;}
 }
 
 /* ==========================================================
-   EXTRA SMALL DEVICES
+   MOBILE NAVIGATION
 ========================================================== */
-
-@media (max-width:400px){
-
-    h1{
-
-        font-size:1.8rem;
-
-    }
-
-    h2{
-
-        font-size:1.5rem;
-
-    }
-
-    .brand-name{
-
-        font-size:1rem;
-
-    }
-
-    .hero-content{
-
-        padding:15px;
-
-    }
-
-    .card{
-
-        padding:18px;
-
-    }
-
-    .card img{
-
-        height:180px;
-
-    }
-
-}
-
 @media (max-width:992px){
+    .nav-links{
+        position:fixed;
+        top:130px;
+        right:-100%;
+        width:320px;
+        max-width:calc(100vw - 24px);
+        height:calc(100vh - 130px);
+        background:white;
+        display:flex;
+        flex-direction:column;
+        padding:40px;
+        transition:.4s;
+        box-shadow:-8px 0 30px rgba(0,0,0,.15);
+    }
 
-.nav-links{
-
-position:fixed;
-
-top:130px;
-
-right:-100%;
-
-width:320px;
-
-height:calc(100vh - 130px);
-
-background:white;
-
-display:flex;
-
-flex-direction:column;
-
-padding:40px;
-
-transition:.4s;
-
-box-shadow:-8px 0 30px rgba(0,0,0,.15);
-
+    .nav-links.active{right:0;}
+    .menu-toggle{display:block;}
+    .nav-actions{display:none;}
 }
 
-.nav-links.active{
+/* ==========================================================
+   MOBILE OVERFLOW SAFETY
+   Applies after all component rules so inherited desktop
+   constraints cannot collapse text into narrow columns.
+========================================================== */
+@media (max-width:768px){
+    .hero *,
+    .container *,
+    .section-heading *,
+    .about-grid *,
+    .cards-grid *,
+    .research-grid *,
+    .projects-grid *,
+    .program-grid *,
+    .news-grid *,
+    .partners-grid *{
+        min-width:0;
+    }
 
-right:0;
+    .hero h1,
+    .hero .brand-name{
+        width:100%;
+        max-width:100%;
+        margin-inline:auto;
+    }
 
-}
+    .hero-content,
+    .hero-logo,
+    .hero-logo .brand{
+        width:100%;
+        max-width:100%;
+    }
 
-.menu-toggle{
-
-display:block;
-
-}
-
-.nav-actions{
-
-display:none;
-
-}
-
+    html,
+    body{
+        max-width:100%;
+        overflow-x:hidden;
+    }
 }
